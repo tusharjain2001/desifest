@@ -1,6 +1,6 @@
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div className="flex justify-center items-center text-white">HomePage</div>
   );
 };
 

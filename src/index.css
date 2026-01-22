@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+/* ===== DESIFEST THEME ===== */
+@theme {
+  --color-neon-yellow: #EEFE08;
+  --color-deep-purple: #453361;
+  --color-coral-red: #ED4B59;
+  --color-soft-lavender: #BCA6DF;
+  --color-light-lavender: #C6B7DD;
+  --color-off-white-lavender: #F5F1FB;
+  --color-midnight-purple: #26193A;
+  --color-pure-white: #FFFFFF;
+  --color-glass-white: #FEFEFE1F;
+
+}
