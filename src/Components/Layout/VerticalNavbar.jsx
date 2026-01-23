@@ -12,56 +12,52 @@ const navItems = [
 export default function VerticalNavbar() {
   return (
     <aside
-      className="
-        hidden md:flex
-        fixed left-0 top-0
-        h-screen
-        w-24
-        bg-glass-white
-        
-        z-40
-      "
+      className="hidden md:flex bg-glass-white z-40 fixed top-0 left-0 h-22 origin-top-left"
+      style={{ width: "100vh", transform: "rotate(-90deg) translateX(-100%)" }}
     >
-      <div className="flex flex-col items-center w-full">
+      <div className="flex flex-row-reverse items-center gap-4 w-full h-full px-4">
         {/* Navigation */}
-        <div className="flex flex-col items-center space-y-16 mt-24">
+        <div className="flex flex-row-reverse items-center gap-4">
           {navItems.map((item) => (
-            <NavLink
+            <div
               key={item.label}
-              to={item.path}
-              className={({ isActive }) =>
-                `
-                rotate-[-90deg]
-                whitespace-nowrap
-                px-5 py-2
-                rounded-full
-                text-xs
-                tracking-wide
-                border
-                transition
-                ${
-                  isActive
-                    ? "border-neon-yellow text-neon-yellow"
-                    : "border-soft-lavender/40 text-soft-lavender hover:border-pureWhite hover:text-pureWhite"
-                }
-                `
-              }
+              className="h-28 flex items-center justify-center shrink-0"
             >
-              {item.label}
-            </NavLink>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `
+    text-center
+    px-5 py-2
+    rounded-full
+    text-xm
+    tracking-wide
+    border
+    transition
+    ${
+      isActive
+        ? "border-neon-yellow text-neon-yellow "
+        : "border-white text-white "
+    }
+    `
+                }
+              >
+                {item.label}
+              </NavLink>
+            </div>
           ))}
         </div>
 
         {/* Social Icons (below nav) */}
-        <div className="flex flex-col items-center gap-4 text-soft-lavender mt-10">
-          <a href="#" className="hover:text-pureWhite transition">
-            <FaFacebookF size={14} />
+        <div className="flex flex-row-reverse items-center gap-4 text-soft-lavender">
+          <a href="#" className="hover:text-white transition rotate-90">
+            <FaFacebookF size={20} />
           </a>
-          <a href="#" className="hover:text-pureWhite transition">
-            <FaInstagram size={14} />
+          <a href="#" className="hover:text-white transition rotate-90">
+            <FaInstagram size={20} />
           </a>
-          <a href="#" className="hover:text-pureWhite transition">
-            <FaYoutube size={14} />
+          <a href="#" className="hover:text-white transition rotate-90">
+            <FaYoutube size={20} />
           </a>
         </div>
       </div>
