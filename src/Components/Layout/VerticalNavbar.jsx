@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import insta from "../../Assets/COMMON/insta.svg";
+import facebook from "../../Assets/COMMON/facebook.svg";
+import youtube from "../../Assets/COMMON/youtube.svg";
 
 const navItems = [
   { label: "The 2026 Concert", path: "/concerts" },
@@ -50,14 +52,25 @@ export default function VerticalNavbar() {
 
         {/* Social Icons (below nav) */}
         <div className="flex flex-row-reverse items-center gap-4 text-soft-lavender">
-          <a href="#" className="hover:text-white transition rotate-90">
-            <FaFacebookF size={20} />
+          <a
+            href="#"
+            className="hover:opacity-100 opacity-70 transition rotate-90"
+          >
+            <img src={facebook} alt="Facebook" className="" />
           </a>
-          <a href="#" className="hover:text-white transition rotate-90">
-            <FaInstagram size={20} />
+
+          <a
+            href="#"
+            className="hover:opacity-100 opacity-70 transition rotate-90"
+          >
+            <img src={insta} alt="Instagram" className="" />
           </a>
-          <a href="#" className="hover:text-white transition rotate-90">
-            <FaYoutube size={20} />
+
+          <a
+            href="#"
+            className="hover:opacity-100 opacity-70 transition rotate-90"
+          >
+            <img src={youtube} alt="YouTube" className="" />
           </a>
         </div>
       </div>
