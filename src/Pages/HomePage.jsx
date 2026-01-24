@@ -14,10 +14,10 @@ const HomePage = () => {
         className="absolute inset-0 w-full h-screen object-cover opacity-[0.16]"
       />
       <div
-        className="absolute inset-0"
+        className="absolute z-10 inset-0"
         style={{
           background:
-            "linear-gradient(324deg, #000000 -0.34%, rgba(0, 0, 0, 0) 56.45%)",
+            "linear-gradient(270deg , #000000 -0.34%, rgba(0, 0, 0, 0) 56.45%)",
         }}
       />
 
