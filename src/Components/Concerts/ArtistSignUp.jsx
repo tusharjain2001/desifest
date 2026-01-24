@@ -1,0 +1,26 @@
+import React from "react";
+import ArtistSignupForm from "./ArtistSignupForm";
+
+const ArtistSignUp = () => {
+  return (
+    <div className=" bg-off-white-lavender pl-16 py-10 mt-20 ml-28">
+      {/* Top row: title + line */}
+      <div className="flex items-center gap-6">
+        <h1 className="text-3xl md:text-9xl font-medium tracking-wide text-[#100422] whitespace-nowrap">
+          ARTIST SIGN UP 2026
+        </h1>
+
+        <div className="flex-1 h-2 bg-[#100422]" />
+      </div>
+
+      {/* Subtitle */}
+      <p className="mt-4 text-2xl uppercase tracking-widest text-[#100422]">
+        Please find here the artists submissions signup for 2026 Desifest
+      </p>
+
+      <ArtistSignupForm />
+    </div>
+  );
+};
+
+export default ArtistSignUp;
