@@ -1,116 +1,97 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Hero = () => {
-  const [activeTab, setActiveTab] = useState("vendors");
   return (
-    <div className="min-h-screen bg-gradient-to-br mt-20 pl-16 py-10 ml-28 from-indigo-950 via-purple-950 to-indigo-900 text-white p-8 font-sans">
-      <div className="">
-        {/* Header Navigation */}
-        <div className="flex gap-4 mb-12">
-          <button
-            onClick={() => setActiveTab("vendors")}
-            className={`px-6 py-2 border-2 transition-all duration-300 ${
-              activeTab === "vendors"
-                ? "border-yellow-400 bg-yellow-400 text-black"
-                : "border-yellow-400 text-yellow-400 hover:bg-yellow-400/10"
-            }`}
-          >
+    <div className="min-h-screen mt-20 py-16 px-20 flex justify-between">
+      {/* Header Navigation */}
+      <div className="flex flex-col flex-1">
+        <div className="flex gap-4 mb-6">
+          <button className="text-neon-yellow border-neon-yellow bg-midnight-purple border-2 text-xl px-3 py-2">
             Vendors
           </button>
-          <button
-            onClick={() => setActiveTab("sponsors")}
-            className={`px-6 py-2 border-2 transition-all duration-300 ${
-              activeTab === "sponsors"
-                ? "border-yellow-400 bg-yellow-400 text-black"
-                : "border-yellow-400 text-yellow-400 hover:bg-yellow-400/10"
-            }`}
-          >
+          <button className="text-neon-yellow bg-midnight-purple border-neon-yellow border-2 text-xl px-3 py-2">
             Sponsors
           </button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Main Title */}
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <h1 className="text-6xl md:text-7xl font-bold text-purple-200 leading-tight">
+        {/* MAIN FLEX CONTAINER */}
+
+        {/* LEFT SECTION */}
+        <div className="flex flex-col space-y-3">
+          <div className="">
+            <div className="flex gap-3 items-end leading-none">
+              <div className="text-6xl md:text-9xl font-bold text-soft-lavender leading-none">
                 THE
-              </h1>
-              <h2 className="text-7xl md:text-8xl font-black text-yellow-400 leading-none animate-pulse">
-                2026
-              </h2>
-              <h1 className="text-6xl md:text-7xl font-bold text-purple-200 leading-tight">
-                CONCERT
-              </h1>
+              </div>
+              <div className="text-white">
+                <div className="text-lg">TWO DAYS.</div>
+                <div className="text-lg">ONE COMMUNITY.</div>
+                <div className="text-lg">COUNTLESS MOMENTS.</div>
+              </div>
             </div>
-
-            <div className="space-y-1 text-purple-200">
-              <p className="text-lg">TWO DAYS.</p>
-              <p className="text-lg">ONE COMMUNITY.</p>
-              <p className="text-lg">COUNTLESS MOMENTS.</p>
+            <div className="text-7xl md:text-[190px] font-black text-neon-yellow leading-none">
+              2026
             </div>
-
-            <p className="text-xl text-purple-300 font-light tracking-wide">
-              LIVE MUSIC. SHARED ENERGY. REAL CONNECTION
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-6">
-              <button className="px-8 py-4 bg-yellow-400 text-black font-bold text-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-400/50">
-                ARTIST SIGN UP
-              </button>
-              <button className="px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-bold text-lg hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                VOLUNTEER
-              </button>
+            <div className="text-6xl md:text-[100px] font-bold text-soft-lavender leading-none">
+              CONCERT
             </div>
           </div>
 
-          {/* Right Column - Event Details */}
-          <div className="space-y-8">
-            {/* Day 01 */}
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-purple-400/30 hover:border-yellow-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
-              <p className="text-purple-300 text-sm font-semibold mb-1">
-                DAY 01
-              </p>
-              <h3 className="text-5xl font-bold mb-2">JUNE 19</h3>
-              <p className="text-xl text-purple-200 mb-6">7:00PM - 10:00PM</p>
+          <p className="text-xl text-white font-light tracking-wide">
+            LIVE MUSIC. SHARED ENERGY. REAL CONNECTION
+          </p>
 
-              <div className="border-t border-purple-400/30 pt-4">
-                <h4 className="text-xl font-bold mb-2 tracking-wide">
-                  EVENING SHOWCASE
-                </h4>
-                <p className="text-purple-300">
-                  19+ International artist for a ticketed event
-                </p>
-              </div>
-            </div>
-
-            {/* Day 02 */}
-            <div className="bg-white/5 backdrop-blur-sm p-8 rounded-lg border border-purple-400/30 hover:border-yellow-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
-              <p className="text-purple-300 text-sm font-semibold mb-1">
-                DAY 02
-              </p>
-              <h3 className="text-5xl font-bold mb-2">JUNE 20</h3>
-              <p className="text-xl text-purple-200 mb-6">5:00PM - 10:00PM</p>
-
-              <div className="border-t border-purple-400/30 pt-4">
-                <h4 className="text-xl font-bold mb-2 tracking-wide">
-                  FOOD VENDORS, BRAND ACTIVATION
-                </h4>
-                <p className="text-purple-300">
-                  8 to 10 fusion and multicultural performances, focusing on
-                  HipHop, Dance and Pop music
-                </p>
-              </div>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 pt-6">
+            <button className="px-8 py-4 bg-neon-yellow text-black font-medium text-3xl  transition-all duration-300">
+              ARTIST SIGN UP
+            </button>
+            <button className="px-8 py-4 border-2 border-neon-yellow text-neon-yellow bg-midnight-purple font-medium text-3xl  transition-all duration-300">
+              VOLUNTEER
+            </button>
           </div>
         </div>
+      </div>
 
-        {/* Decorative Elements */}
-        <div className="mt-16 flex justify-center gap-8 opacity-20">
-          <div className="w-16 h-16 border-4 border-yellow-400 rotate-45"></div>
-          <div className="w-16 h-16 bg-purple-400 rounded-full"></div>
-          <div className="w-16 h-16 border-4 border-purple-400"></div>
+      {/* RIGHT SECTION */}
+      <div className="flex flex-col text-white flex-1">
+        {/* Day 01 */}
+        <div className="pb-10  border-b border-white">
+          <p className="text-xl  font-semibold tracking-wider mb-2">
+            DAY 01
+          </p>
+
+          <h3 className="text-5xl font-extrabold mb-3">JUNE 19</h3>
+
+          <p className="text-lg mb-6">7:00PM – 10:00PM</p>
+
+          <h4 className="text-2xl font-medium tracking-wide mb-2">
+            EVENING SHOWCASE
+          </h4>
+
+          <p className="text-white/60 max-w-md font-extralight text-xl">
+            19+ International artist for a ticketed event
+          </p>
+        </div>
+
+        {/* Day 02 */}
+        <div className="py-8 border-b border-white">
+          <p className="text-xl font-semibold tracking-wider mb-2">
+            DAY 02
+          </p>
+
+          <h3 className="text-5xl font-extrabold mb-3">JUNE 20</h3>
+
+          <p className="text-lg mb-6">5:00PM – 10:00PM</p>
+
+          <h4 className="text-2xl font-bold tracking-wide mb-2">
+            FOOD VENDORS, BRAND ACTIVATION
+          </h4>
+
+          <p className="text-white/60 max-w-md font-extralight text-xl">
+            8 to 10 fusion and multicultural performances, focusing on HipHop,
+            Dance and Pop music
+          </p>
         </div>
       </div>
     </div>

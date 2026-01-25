@@ -5,7 +5,7 @@ import React from "react";
 
 const ConcertPage = () => {
   return (
-    <div>
+    <div className="ml-24">
       <Hero />
       <ArtistSignUp />
       <Volunteer2026 />
