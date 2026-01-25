@@ -5,7 +5,7 @@ import Footer from "@/Components/Layout/Footer";
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen flex bg-[#100422]">
+    <div className="relative min-h-screen max-w-360 mx-auto flex bg-[#100422]">
       <VerticalNavbar />
 
       <div className="flex-1 flex flex-col">

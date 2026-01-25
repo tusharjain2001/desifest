@@ -9,7 +9,7 @@ const HeroSection = () => {
 				<img
 					src={artist}
 					alt="Artist"
-					className="absolute left-86 bottom-1 max-h-[75vh] object-contain [mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
+					className="absolute left-96 bottom-1 max-h-[75vh] object-contain [mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
   "
 				/>
 
@@ -22,7 +22,7 @@ const HeroSection = () => {
 						<span className="block text-neon-yellow text-[64px] md:text-[84px]">
 							Asian Culture
 						</span>
-						<span className="inline-block bg-white text-black px-2 w-[660px] 	 py-2 mt-4 text-[44px] md:text-[72px]">
+						<span className="inline-block bg-white text-black px-2 w-2xl 	 py-2 mt-4 text-[44px] md:text-[72px]">
 							Meets the World.
 						</span>
 					</h1>
