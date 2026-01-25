@@ -4,12 +4,12 @@ import artist from "@/Assets/home/Artist.png";
 const HeroSection = () => {
 	return (
 		<>
-			<section className="hidden lg:flex relative items-start justify-center h-screen">
+			<section className="hidden relative  md:flex  items-start justify-center h-220">
 				{/* RIGHT ARTIST IMAGE */}
 				<img
 					src={artist}
 					alt="Artist"
-					className="absolute left-86 bottom-1 max-h-[75vh] object-contain [mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
+					className="absolute left-90 bottom-1 h-180 max-h-180 object-contain [mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
   "
 				/>
 
@@ -22,7 +22,7 @@ const HeroSection = () => {
 						<span className="block text-neon-yellow text-[64px] md:text-[84px]">
 							Asian Culture
 						</span>
-						<span className="inline-block bg-white text-black px-2 w-[660px] 	 py-2 mt-4 text-[44px] md:text-[72px]">
+						<span className="inline-block bg-white text-black px-2 w-160 	 py-2 mt-4 text-[44px] md:text-[72px]">
 							Meets the World.
 						</span>
 					</h1>
@@ -108,63 +108,59 @@ const HeroSection = () => {
 				</div>
 			</section>
 			{/* MOBILE HERO */}
-			<section className="lg:hidden relative min-h-screen flex flex-col items-center text-center px-6 pt-24 text-white">
+			<section className="md:hidden relative h-220 w-full  flex flex-col items-center px-6 text-center pt-20 text-white">
 				{/* DATE BLOCK */}
 				<div className="mb-6">
-					<div className="text-white/10 font-[Oswald] text-[72px] leading-none">
+					<div className="text-white/10 font-[Oswald] text-[92px] leading-none">
 						2026
 					</div>
-					<h3 className="font-['Special_Gothic_Expanded_One'] uppercase text-[32px] leading-[1]">
+					<h3 className="font-['Special_Gothic_Expanded_One'] uppercase text-[40px] leading-[1]">
 						June 19 – 20
 					</h3>
-					<p className="mt-1 font-['DM_Sans'] uppercase text-[16px] tracking-[-0.04em] text-white/90">
+					<p className="mt-1 font-['DM_Sans'] uppercase text-[20px] tracking-[-0.04em] text-white/90">
 						Sankofa Square, Canada
 					</p>
 				</div>
 
 				{/* HEADLINE */}
-				<h1 className="font-[oswald] uppercase leading-tight mb-4">
-					<span className="block text-neon-yellow text-[36px]">
+				<h1 className="font-[oswald] uppercase flex flex-col items-start w-full justify-start leading-tight mb-5">
+					<span className="block text-neon-yellow text-[46px]">
 						Where South
 					</span>
-					<span className="block text-neon-yellow text-[44px]">
+					<span className="block text-neon-yellow text-[56px]">
 						Asian Culture
 					</span>
-					<span className="block bg-white text-black px-3 py-2 mt-3 text-[28px]">
+					<span className="block bg-white text-black px-4  mt-3 text-[46px]">
 						Meets the World.
 					</span>
 				</h1>
 
 				{/* DESCRIPTION */}
-				<p className="text-sm text-gray-300 max-w-md mb-8">
-					Canada’s largest South Asian music and arts
-					festival—unifying generations, genres, and voices on one
-					iconic stage.
+				<p className="text-[16px] text-gray-300 w-full text-start mb-8 leading-snug">
+					Canada’s largest South Asian music and <br /> arts
+					festival—unifying generations, genres, <br /> and voices on
+					one iconic stage.
 				</p>
-
 				{/* ARTIST IMAGE */}
 				<img
 					src={artist}
 					alt="Artist"
-					className="
-      w-[220px]
-      object-contain
-      mb-8
-      [mask-image:linear-gradient(to_top,black_0%,black_90%,transparent_100%)]
-      [-webkit-mask-image:linear-gradient(to_top,black_0%,black_90%,transparent_100%)]
-    "
+					className="absolute left-56 top-58  h-180 max-h-180 object-contain [mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
+  "
 				/>
 
 				{/* ARROW + RINGS */}
-				<div className="relative w-[260px] h-[260px] flex items-center justify-center">
-					<div className="absolute inset-[78px] rounded-full border border-white/40" />
-					<div className="absolute inset-[52px] rounded-full border border-white/30" />
-					<div className="absolute inset-[26px] rounded-full border border-white/20" />
+				<div className="absolute -bottom-48 -right-24  h-100 w-100 z-20  flex items-center justify-center">
+					<div className="absolute inset-[99px] rounded-full border border-white/40" />
+					<div className="absolute inset-[66px] rounded-full border border-white/30" />
+					<div className="absolute inset-[33px] rounded-full border border-white/20" />
 					<div className="absolute inset-0 rounded-full border border-white/10" />
 
-					<div className="relative z-10 flex items-center gap-4">
-						<img src={arrow} alt="Arrow" className="w-[64px]" />
-						<div className="text-white text-xs uppercase leading-tight">
+					<div className="relative z-10 flex items-center gap-6">
+						<div className="relative w-[108px] h-[108px]">
+							<img src={arrow} alt="Arrow" />
+						</div>
+						<div className="text-white text-[0.95rem] uppercase leading-tight tracking-wide">
 							<div>Explore</div>
 							<div>Join</div>
 							<div>Enjoy</div>
