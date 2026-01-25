@@ -18,9 +18,9 @@ const Footer = () => {
     { name: "youtube", icon: youtube },
   ];
   return (
-    <footer className="bg-midnight-purple w-full text-white flex flex-col px-20 py-10 z-50">
+    <footer className="bg-midnight-purple w-full text-white flex flex-col md:px-20 md:py-10 p-8 z-50">
       {/* TOP */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+      <div className="flex items-center justify-between gap-4">
         {/* LOGO */}
         <div>
           <img src={logo} alt="DesiFest" className="h-14" />
@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
 
       {/* NAV */}
-      <nav className="mt-10 flex flex-wrap justify-between gap-x-8 gap-y-4 text-sm uppercase opacity-80">
+      <nav className="mt-10 flex md:flex-wrap md:flex-row flex-col justify-between gap-x-8 gap-y-4 text-sm uppercase opacity-80">
         {[
           "Home",
           "The 2026 Concert",

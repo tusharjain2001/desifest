@@ -7,8 +7,8 @@ import FoodFestival from "@/Components/Concerts/FoodFestival";
 
 const ConcertPage = () => {
 	return (
-		<div className="relative min-h-screen w-full overflow-hidden">
-			{/* Background */}
+		<div className="relative min-h-screen">
+		
 			<img
 				src={backgroung1}
 				alt="background"
@@ -21,7 +21,7 @@ const ConcertPage = () => {
 						"linear-gradient(270deg , #000000 -0.34%, rgba(0, 0, 0, 0) 56.45%)",
 				}}
 			/>
-			{/* Page Content */}
+
 			<div className="relative z-10 ml-24">
 				<Hero />
         <FoodFestival />
