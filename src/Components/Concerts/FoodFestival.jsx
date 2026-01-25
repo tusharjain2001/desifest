@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import left from "../../Assets/concerts/leftwhitearrow.svg";
 import right from "../../Assets/concerts/rightwhitearrow.svg";
 import foodimage from "../../Assets/concerts/foodimage.svg";
@@ -32,8 +32,24 @@ const vendors = [
 ];
 
 const FoodFestivalSection = () => {
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({
+      left: -350,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({
+      left: 350,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section className="relative bg-[#100422] overflow-hidden">
+    <section className="relative bg-blue-black overflow-hidden">
       {/* CONTAINER */}
       <div className="max-w-[90%] mx-auto px-4">
         {/* Header */}
@@ -45,7 +61,7 @@ const FoodFestivalSection = () => {
 
             <div className="flex flex-col w-full">
               {/* Line */}
-              <div className="h-[2px] bg-white w-full" />
+              <div className="h-0.5 bg-white w-full" />
 
               {/* Text */}
               <div className="text-white text-xl mt-3 whitespace-nowrap">
@@ -56,31 +72,40 @@ const FoodFestivalSection = () => {
 
           {/* Arrows */}
           <div className="flex items-center gap-4 ml-10 shrink-0">
-            <button className="hover:opacity-70 transition">
+            <button
+              onClick={scrollLeft}
+              className="hover:opacity-70 transition"
+            >
               <img src={left} alt="left" />
             </button>
-            <button className="hover:opacity-70 transition">
+            <button
+              onClick={scrollRight}
+              className="hover:opacity-70 transition"
+            >
               <img src={right} alt="right" />
             </button>
           </div>
         </div>
 
         {/* Cards Row */}
-        <div className="flex gap-10 overflow-x-auto pb-6 scrollbar-hide">
+        <div
+          ref={scrollRef}
+          className="flex gap-10 overflow-x-auto pb-6 scrollbar-hide"
+        >
           {vendors.map((vendor, index) => (
             <div
               key={index}
-              className="relative min-w-[320px] bg-black border-4 border-white flex-shrink-0"
+              className="relative min-w-[320px] bg-black border-4 border-white shrink-0"
             >
               {/* Accent lines */}
-              <span className="absolute top-0 left-0 w-full h-[2px] bg-white" />
-              <span className="absolute top-0 right-0 w-[2px] h-full bg-white" />
+              <span className="absolute top-0 left-0 w-full h-0.5 bg-white" />
+              <span className="absolute top-0 right-0 w-0.5 h-full bg-white" />
 
               {/* Image */}
               <img
                 src={foodimage}
                 alt={vendor.name}
-                className="w-full h-[360px] object-cover grayscale"
+                className="w-full h-90 object-cover grayscale"
               />
 
               {/* Overlay */}
