@@ -49,13 +49,13 @@ const FoodFestivalSection = () => {
   };
 
   return (
-    <section className="relative bg-blue-black overflow-hidden">
+    <section className="relative py-10 bg-blue-black overflow-hidden">
       {/* CONTAINER */}
       <div className="max-w-[90%] mx-auto px-4">
         {/* Header */}
         <div className="flex items-center justify-between mb-14">
-          <div className="flex items-end gap-8 w-full">
-            <h2 className="text-white text-9xl font-medium tracking-wide whitespace-nowrap">
+          <div className="flex md:items-end items-center gap-8 w-full">
+            <h2 className="text-white text-2xl md:text-9xl font-medium tracking-wide whitespace-nowrap">
               FOOD FESTIVAL
             </h2>
 
@@ -64,7 +64,7 @@ const FoodFestivalSection = () => {
               <div className="h-0.5 bg-white w-full" />
 
               {/* Text */}
-              <div className="text-white text-xl mt-3 whitespace-nowrap">
+              <div className="text-white md:block hidden text-xl mt-3 whitespace-nowrap">
                 Flavour, culture, and community.
               </div>
             </div>
@@ -76,13 +76,17 @@ const FoodFestivalSection = () => {
               onClick={scrollLeft}
               className="hover:opacity-70 transition"
             >
-              <img src={left} alt="left" />
+              <img src={left} alt="left" className="md:h-10 md:w-10 h-8 w-8" />
             </button>
             <button
               onClick={scrollRight}
               className="hover:opacity-70 transition"
             >
-              <img src={right} alt="right" />
+              <img
+                src={right}
+                alt="right"
+                className="md:h-10 md:w-10 h-8 w-8"
+              />
             </button>
           </div>
         </div>
@@ -90,12 +94,24 @@ const FoodFestivalSection = () => {
         {/* Cards Row */}
         <div
           ref={scrollRef}
-          className="flex gap-10 overflow-x-auto pb-6 scrollbar-hide"
+          className="
+    flex gap-6 md:gap-10
+    overflow-x-auto pb-6
+    scrollbar-hide scroll-smooth
+    px-1 md:px-0
+  "
         >
           {vendors.map((vendor, index) => (
             <div
               key={index}
-              className="relative min-w-[320px] bg-black border-4 border-white shrink-0"
+              className="
+    relative
+    w-[90%] sm:w-[80%] md:w-auto
+    min-w-[90%] sm:min-w-[80%] md:min-w-[320px]
+    bg-black border-4 border-white
+    shrink-0
+    mx-auto md:mx-0
+  "
             >
               {/* Accent lines */}
               <span className="absolute top-0 left-0 w-full h-0.5 bg-white" />
@@ -105,7 +121,11 @@ const FoodFestivalSection = () => {
               <img
                 src={foodimage}
                 alt={vendor.name}
-                className="w-full h-90 object-cover grayscale"
+                className="
+    w-full
+    h-75 sm:h-85 md:h-90
+    object-cover grayscale
+  "
               />
 
               {/* Overlay */}
