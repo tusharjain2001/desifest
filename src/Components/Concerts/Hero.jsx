@@ -1,4 +1,5 @@
 import React from "react";
+import Digit from "../Animations/Digit";
 
 const Hero = () => {
   return (
@@ -29,8 +30,11 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="text-9xl sm:text-7xl md:text-[190px] font-black text-neon-yellow leading-none">
-            2026
+          <div className="flex text-9xl sm:text-7xl md:text-[190px] font-black text-neon-yellow leading-none">
+            <Digit value={2} delay={0} />
+            <Digit value={0} delay={0.1} />
+            <Digit value={2} delay={0.2} />
+            <Digit value={6} delay={0.3} />
           </div>
 
           <div className="text-7xl sm:text-6xl md:text-[100px] font-bold text-soft-lavender leading-none">
