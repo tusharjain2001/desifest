@@ -1,5 +1,5 @@
 import arrow from "@/Assets/home/image.png";
-import artist from "@/Assets/home/artist.png";
+import artist from "@/Assets/home/Artist.png";
 
 const HeroSection = () => {
 	return (
