@@ -25,7 +25,7 @@ const ConcertPage = () => {
 
 			<div className="relative z-10 md:ml-24">
 				<Hero />
-        {/* <FoodFestival /> */}
+        <FoodFestival />
 				<ArtistSignUp />
 				<Volunteer2026 />
         <ContactForm />
