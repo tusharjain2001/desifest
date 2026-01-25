@@ -3,6 +3,7 @@ import Hero from "@/Components/Concerts/Hero";
 import Volunteer2026 from "@/Components/Concerts/Volunteer2026";
 import backgroung1 from "@/Assets/home/background_1.png";
 import React from "react";
+import FoodFestival from "@/Components/Concerts/FoodFestival";
 
 const ConcertPage = () => {
 	return (
@@ -23,6 +24,7 @@ const ConcertPage = () => {
 			{/* Page Content */}
 			<div className="relative z-10 ml-24">
 				<Hero />
+        <FoodFestival />
 				<ArtistSignUp />
 				<Volunteer2026 />
 			</div>
