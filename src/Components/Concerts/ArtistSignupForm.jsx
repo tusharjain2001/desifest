@@ -29,7 +29,7 @@ export default function ArtistSignupForm() {
   return (
     <div className="w-full mx-auto bg-[#F6F3FA] p-6 md:p-10 text-[#100422]">
       {/* CHOOSE EVENT */}
-      <div className="mb-8 flex gap-10 justify-start items-center">
+      <div className="mb-8 flex flex-col md:flex-row gap-10 justify-start items-center">
         <div className="text-2xl text-[#100422] uppercase font-medium">
           Choose Your Event
         </div>
@@ -89,7 +89,7 @@ export default function ArtistSignupForm() {
 
         {/* Phone with country code selector */}
         <div className="flex flex-col gap-1">
-          <label className="text-sm text-[#100422]">Phone</label>
+          <label className="text-md text-[#100422]">Phone</label>
 
           <div className="flex items-center gap-2 border-b border-[#6F6486] py-2">
             <select className="bg-transparent text-sm text-[#100422] outline-none">
@@ -109,7 +109,7 @@ export default function ArtistSignupForm() {
         </div>
 
         <div className="md:col-span-2 flex flex-col gap-4">
-          <label className="text-sm text-[#100422]">Address</label>
+          <label className="text-md text-[#100422]">Address</label>
 
           {/* Address line + City */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
@@ -174,8 +174,16 @@ export default function ArtistSignupForm() {
           {selectedGenre === "OTHER" && (
             <input
               type="text"
-              placeholder="Please specify"
-              className="ml-2 w-60 border-b border-[#100422] bg-transparent py-2 text-sm focus:outline-none"
+              placeholder="OTHER :"
+              className="
+      w-full sm:w-60
+      mt-2 sm:mt-0
+      sm:ml-2
+      border-b border-[#100422]
+      bg-transparent py-2 text-sm
+      placeholder:text-[#100422]
+      focus:outline-none
+    "
             />
           )}
         </div>
@@ -320,7 +328,7 @@ export default function ArtistSignupForm() {
 
       {/* AGREEMENT */}
       <div className="flex flex-col gap-2 mb-10">
-        <label className="text-sm text-[#100422]">
+        <label className="text-lg text-[#100422] font-medium">
           If you have any ideas on your set to help us put on a fantastic show,
           do share them here.
         </label>
@@ -382,7 +390,7 @@ const RadioButton = ({ label, checked = false }) => {
 function Input({ label, placeholder, error, type = "text", value, onChange }) {
   return (
     <div className="flex flex-col gap-1">
-      {label && <label className="text-sm text-[#100422]">{label}</label>}
+      {label && <label className="text-md text-[#100422]">{label}</label>}
 
       <input
         type={type}
@@ -417,6 +425,8 @@ function Select({ label, options }) {
 
 function SectionTitle({ text }) {
   return (
-    <p className="text-xl text-[#100422] font-medium uppercase mb-4">{text}</p>
+    <p className="md:text-xl text-[#100422] md:font-medium uppercase mb-4">
+      {text}
+    </p>
   );
 }

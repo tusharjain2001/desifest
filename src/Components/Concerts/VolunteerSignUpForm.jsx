@@ -15,7 +15,7 @@ export default function VolunteerSignupForm() {
     email.length > 0 && !email.includes("@") ? "Not a valid mailID" : "";
 
   return (
-    <div className="w-full mx-auto  p-6 md:p-10 text-[#100422]">
+    <div className="w-full mx-auto px-2 py-6 md:p-10 text-[#100422]">
       {/* BASIC INFO */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 mb-10">
         <Input label="Name*" placeholder="" />
@@ -105,9 +105,9 @@ export default function VolunteerSignupForm() {
 
       {/* AGREEMENT */}
       <div className="flex flex-col gap-2 mb-10 mt-10">
-        <label className="text-md text-[#100422]">
-          How Can You Help? <br/> Please share a little about yourself, any past
-          volunteer experience (including with us) and what skills or
+        <label className="text-md font-medium text-[#100422]">
+          How Can You Help? <br /> Please share a little about yourself, any
+          past volunteer experience (including with us) and what skills or
           experiences can you bring to our shows this year.
         </label>
 
@@ -130,9 +130,10 @@ export default function VolunteerSignupForm() {
       </div>
 
       <div className="flex flex-col gap-2 mb-10">
-        <label className="text-md text-[#100422]">
-          How Can We Help You?<br/> What experiences are you looking to achieve while
-          working with DESIFEST?
+        <label className="text-md font-medium text-[#100422]">
+          How Can We Help You?
+          <br /> What experiences are you looking to achieve while working with
+          DESIFEST?
         </label>
 
         <textarea
@@ -181,7 +182,7 @@ export default function VolunteerSignupForm() {
 function Input({ label, placeholder, error, type = "text", value, onChange }) {
   return (
     <div className="flex flex-col gap-1">
-      {label && <label className="text-sm text-[#100422]">{label}</label>}
+      {label && <label className="text-md text-[#100422]">{label}</label>}
 
       <input
         type={type}
