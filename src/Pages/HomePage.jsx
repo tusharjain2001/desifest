@@ -3,6 +3,9 @@ import GovernmentSupport from "@/Components/Home/GovernmentSupport";
 import PartnerSupport from "@/Components/Home/PartnerSupport";
 import ContactForm from "@/Components/Home/ContactForm";
 import backgroung1 from "@/Assets/home/background_1.png";
+import Animation from "@/Components/Home/Animation";
+import Shop from "@/Components/Home/Shop.jsx";
+import BlogsAndMedia from "@/Components/Home/BlogandMedia";
 
 const HomePage = () => {
 	return (
@@ -21,9 +24,17 @@ const HomePage = () => {
 					className="absolute inset-0 pointer-events-none"
 					style={{
 						background: `
-        linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 55%),
-        linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%)
-      `,
+      linear-gradient(
+        to left,
+        rgba(16, 4, 34, 0.8) 0%,
+        rgba(16, 4, 34, 0) 55%
+      ),
+      linear-gradient(
+        to top,
+        rgba(16, 4, 34, 0.9) 0%,
+        rgba(16, 4, 34, 0) 60%
+      )
+    `,
 					}}
 				/>
 			</div>
@@ -33,9 +44,13 @@ const HomePage = () => {
 				{/* OPTIONAL: left spacing for vertical navbar */}
 				<div className="lg:ml-18">
 					<HeroSection />
+					<Animation />
 					<GovernmentSupport />
 					<PartnerSupport />
+					<BlogsAndMedia />
+					<Shop />
 					<ContactForm />
+
 				</div>
 			</div>
 		</div>

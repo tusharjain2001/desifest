@@ -13,5 +13,41 @@
   --color-midnight-purple: #26193A;
   --color-pure-white: #FFFFFF;
   --color-glass-white: #FEFEFE1F;
+  --color-blue-black: #100422 ;
 
+}
+
+
+
+/* Hide scrollbar but keep scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.dm-sans-300 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: light;
+}
+.dm-sans-500 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: medium;
+}
+
+.oswald-heading {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 188.5px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
 }
