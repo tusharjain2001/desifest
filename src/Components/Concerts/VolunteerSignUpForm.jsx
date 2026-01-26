@@ -9,65 +9,176 @@ export default function VolunteerSignupForm() {
     "SKILL BASED VOLUNTEERING (eg. sponshorship, planning, media, activation)",
   ];
 
-  const [selectedGenre, setSelectedGenre] = useState("");
-  const [email, setEmail] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneCode: "+91",
+    phone: "",
+    address: "",
+    city: "",
+    province: "",
+    postalCode: "",
+    country: "",
+    genre: "",
+    howCanYouHelp: "",
+    howCanWeHelpYou: "",
+    consent: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(
+        "http://localhost:5000/api/send-volunteer-email",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        },
+      );
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error);
+
+      alert("Form submitted successfully ✅");
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneCode: "+91",
+        phone: "",
+        address: "",
+        city: "",
+        province: "",
+        postalCode: "",
+        country: "",
+        genre: "",
+        howCanYouHelp: "",
+        howCanWeHelpYou: "",
+        consent: false,
+      });
+    } catch (err) {
+      alert("Something went wrong ❌");
+      console.log(err);
+    }
+  };
+
   const emailError =
-    email.length > 0 && !email.includes("@") ? "Not a valid mailID" : "";
+    formData.email.length > 0 && !formData.email.includes("@")
+      ? "Not a valid mailID"
+      : "";
 
   return (
-    <div className="w-full mx-auto px-2 py-6 md:p-10 text-[#100422]">
+    <div className="w-full mx-auto px-2 py-6 md:p-10 text-blue-black">
       {/* BASIC INFO */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 mb-10">
-        <Input label="Name*" placeholder="" />
-        <Input label="Last Name" placeholder="Enter your last name here" />
+        <Input
+          label="Name*"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
+        />
+
+        <Input
+          label="Last Name"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+        />
 
         <Input
           label="Work Email*"
           type="email"
+          name="email"
           placeholder="abcd@gmail.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={formData.email}
+          onChange={handleChange}
           error={emailError}
         />
 
         {/* Phone with country code selector */}
         <div className="flex flex-col gap-1">
-          <label className="text-sm text-[#100422]">Phone</label>
+          <label className="text-sm text-blue-black">Phone</label>
 
           <div className="flex items-center gap-2 border-b border-[#6F6486] py-2">
-            <select className="bg-transparent text-sm text-[#100422] outline-none">
+            <select
+              name="phoneCode"
+              value={formData.phoneCode}
+              onChange={handleChange}
+              className="bg-transparent text-sm text-blue-black outline-none"
+            >
               <option>+91</option>
               <option>+1</option>
               <option>+44</option>
             </select>
 
-            <span className="text-[#6F6486]">|</span>
-
             <input
               type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               placeholder="Enter your phone number here"
-              className="flex-1 bg-transparent text-sm outline-none placeholder:text-[#9C92B3] text-[#100422]"
+              className="flex-1 bg-transparent text-sm outline-none"
             />
           </div>
         </div>
 
         <div className="md:col-span-2 flex flex-col gap-4">
-          <label className="text-sm text-[#100422]">Address</label>
+          <label className="text-sm text-blue-black">Address</label>
 
           {/* Address line + City */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
-            <Input placeholder="Address Line*" />
-            <Input placeholder="Enter your City" />
+            <Input
+              placeholder="Address Line*"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+            />
+
+            <Input
+              placeholder="Enter your City"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+            />
           </div>
 
           {/* Province / Postal / Country */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-4">
-            <Input placeholder="Enter your Province" />
-            <Input placeholder="Enter your Postal Code" />
+            <Input
+              placeholder="Enter your Province"
+              name="province"
+              value={formData.province}
+              onChange={handleChange}
+            />
+
+            <Input
+              placeholder="Enter your Postal Code"
+              name="postalCode"
+              value={formData.postalCode}
+              onChange={handleChange}
+            />
 
             <div className="flex flex-col gap-1">
-              <select className="bg-transparent border-b border-[#6F6486] py-2 text-sm text-[#9C92B3] outline-none">
-                <option>Choose your country</option>
+              <select
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                className="bg-transparent border-b border-[#6F6486] py-2 text-sm"
+              >
+                <option value="">Choose your country</option>
                 <option>India</option>
                 <option>United States</option>
                 <option>United Kingdom</option>
@@ -80,7 +191,7 @@ export default function VolunteerSignupForm() {
       {/* GENRE */}
       <div className="mb-5">
         {/* GENRE */}
-        <p className="text-sm font-semibold uppercase tracking-widest mb-4 text-[#100422]">
+        <p className="text-sm font-semibold uppercase tracking-widest mb-4 text-blue-black">
           Genre
         </p>
 
@@ -89,13 +200,13 @@ export default function VolunteerSignupForm() {
             <button
               key={genre}
               type="button"
-              onClick={() => setSelectedGenre(genre)}
+              onClick={() => setFormData((prev) => ({ ...prev, genre }))}
               className={`px-4 py-2 border text-xs uppercase font-medium transition
-        ${
-          selectedGenre === genre
-            ? "bg-white text-[#100422] border-[#100422]"
-            : "border-[#100422] text-[#100422] hover:text-[#100422]"
-        }`}
+  ${
+    formData.genre === genre
+      ? "bg-white text-blue-black border-blue-black"
+      : "border-blue-black text-blue-black"
+  }`}
             >
               {genre}
             </button>
@@ -105,7 +216,7 @@ export default function VolunteerSignupForm() {
 
       {/* AGREEMENT */}
       <div className="flex flex-col gap-2 mb-10 mt-10">
-        <label className="text-md font-medium text-[#100422]">
+        <label className="text-md font-medium text-blue-black">
           How Can You Help? <br /> Please share a little about yourself, any
           past volunteer experience (including with us) and what skills or
           experiences can you bring to our shows this year.
@@ -113,6 +224,9 @@ export default function VolunteerSignupForm() {
 
         <textarea
           rows={2}
+          name="howCanYouHelp"
+          value={formData.howCanYouHelp}
+          onChange={handleChange}
           placeholder=""
           className="
       w-full
@@ -121,7 +235,7 @@ export default function VolunteerSignupForm() {
       border-[#6F6486]
       resize-none
       text-sm
-      text-[#100422]
+      text-blue-black
       outline-none
       placeholder:text-[#9C92B3]
       py-2
@@ -130,7 +244,7 @@ export default function VolunteerSignupForm() {
       </div>
 
       <div className="flex flex-col gap-2 mb-10">
-        <label className="text-md font-medium text-[#100422]">
+        <label className="text-md font-medium text-blue-black">
           How Can We Help You?
           <br /> What experiences are you looking to achieve while working with
           DESIFEST?
@@ -138,6 +252,9 @@ export default function VolunteerSignupForm() {
 
         <textarea
           rows={2}
+          name="howCanWeHelpYou"
+          value={formData.howCanWeHelpYou}
+          onChange={handleChange}
           placeholder=""
           className="
       w-full
@@ -146,7 +263,7 @@ export default function VolunteerSignupForm() {
       border-[#6F6486]
       resize-none
       text-sm
-      text-[#100422]
+      text-blue-black
       outline-none
       placeholder:text-[#9C92B3]
       py-2
@@ -157,17 +274,24 @@ export default function VolunteerSignupForm() {
       <label className="flex items-center py-10">
         <input
           type="checkbox"
-          className="mr-2 w-4 h-4 text-[#100422] border-gray-300 rounded "
+          className="mr-2 w-4 h-4 text-blue-black border-gray-300 rounded "
+          name="consent"
+          checked={formData.consent}
+          onChange={handleChange}
         />
         I agree to be contacted about sponsorship opportunities
       </label>
 
       {/* SUBMIT */}
-      <button className="bg-neon-yellow p-3 text-xl font-bold uppercase transition shadow-md">
+      <button
+        onClick={handleSubmit}
+        type="submit"
+        className="bg-neon-yellow p-3 text-xl font-bold uppercase transition shadow-md"
+      >
         Submit
       </button>
 
-      <div className="py-10 font-medium text-[#100422] text-xl">
+      <div className="py-10 font-medium text-blue-black text-xl">
         We appreciate your interest and frankly, DESIFEST is a community project
         and volunteers like you have made it possible for the past 18 years. If
         you are not not already following us, please follow us on Instagram
@@ -179,18 +303,27 @@ export default function VolunteerSignupForm() {
 
 /* ---------- Reusable Components ---------- */
 
-function Input({ label, placeholder, error, type = "text", value, onChange }) {
+function Input({
+  label,
+  placeholder,
+  error,
+  type = "text",
+  value,
+  onChange,
+  name,
+}) {
   return (
     <div className="flex flex-col gap-1">
-      {label && <label className="text-md text-[#100422]">{label}</label>}
+      {label && <label className="text-md text-blue-black">{label}</label>}
 
       <input
         type={type}
+        name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         className={
-          "bg-transparent border-b text-sm outline-none py-2 placeholder:text-[#9C92B3] text-[#100422] " +
+          "bg-transparent border-b text-sm outline-none py-2 placeholder:text-[#9C92B3] text-blue-black " +
           (error ? "border-red-500" : "border-[#6F6486]")
         }
       />
