@@ -5,13 +5,13 @@ import Footer from "@/Components/Layout/Footer";
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen flex bg-[#100422]">
+    <div className="w-full bg-[#100422]">
       <VerticalNavbar />
 
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1  flex flex-col">
         <Navbar />
 
-        <main className="flex-1">
+        <main className="flex-1 w-full">
           <Outlet />
         </main>
 

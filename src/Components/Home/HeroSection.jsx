@@ -4,7 +4,7 @@ import artist from "@/Assets/home/Artist.png";
 const HeroSection = () => {
 	return (
 		<>
-			<section className="hidden relative w-screen  md:flex  items-start justify-center h-220">
+			<section className="relative hidden md:flex w-full h-220 overflow-hidden">
 				{/* RIGHT ARTIST IMAGE */}
 				<img
 					src={artist}
@@ -108,7 +108,7 @@ const HeroSection = () => {
 				</div>
 			</section>
 			{/* MOBILE HERO */}
-			<section className="md:hidden relative h-220 w-screen  flex flex-col items-center px-0 text-center pt-20 text-white">
+			<section className="md:hidden relative h-220 w-screen  flex flex-col  text-center pt-20 text-white">
 				{/* DATE BLOCK */}
 				<div className="mb-6">
 					<div className="text-white/10 font-[Oswald] text-[82px] leading-none">
@@ -142,28 +142,28 @@ const HeroSection = () => {
 					one iconic stage.
 				</p>
 				<div className=" font-[oswald]  text-white/20 text-[110px] text-start leading-28 w-full uppercase">
-						20th
-					</div>
-					<div className=" font-[oswald] text-white/20 text-[44px] text-start w-full uppercase">
-						Anniversary
-					</div>
+					20th
+				</div>
+				<div className=" font-[oswald] text-white/20 text-[44px] text-start w-full uppercase">
+					Anniversary
+				</div>
 				{/* ARTIST IMAGE */}
 				<img
 					src={artist}
 					alt="Artist"
-					className="absolute left-44 top-32  h-180 scale-110 object-contain [mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
+					className="absolute left-44 top-32  h-180 scale-110 object-contain [mask-image:linear-gradient(to_top,transparent_32%,black_41%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_32%,black_41%,black_100%)]
   "
 				/>
 
 				{/* ARROW + RINGS */}
-				<div className="absolute -bottom-48 -right-24  h-100 w-100 z-20  flex items-center justify-center">
+				<div className="absolute -bottom-0 -right-24 h-100 w-100 z-20 flex items-center justify-center scale-[0.75] origin-center">
 					<div className="absolute inset-[99px] rounded-full border border-white/40" />
 					<div className="absolute inset-[66px] rounded-full border border-white/30" />
 					<div className="absolute inset-[33px] rounded-full border border-white/20" />
 					<div className="absolute inset-0 rounded-full border border-white/10" />
 
 					<div className="relative z-10 flex items-center gap-6">
-						<div className="relative w-[108px] h-[108px]">
+						<div className="relative w-[82px] h-[82px]">
 							<img src={arrow} alt="Arrow" />
 						</div>
 						<div className="text-white text-[0.95rem] uppercase leading-tight tracking-wide">
