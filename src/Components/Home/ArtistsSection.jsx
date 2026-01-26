@@ -93,7 +93,7 @@ const ArtistsSection = () => {
 			/>
 
 			{/* CONTENT — FORCE ABOVE */}
-			<div className="relative z-10 flex flex-col sm:flex-row sm:items-start px-16 w-full sm:justify-around">
+			<div className="relative z-10 flex flex-col sm:flex-row sm:items-start px-16 w-full gap-2 sm:justify-around">
 				<ArtistCard image={img1} title="Featured Artists" />
 
 				<div className="sm:mt-32">

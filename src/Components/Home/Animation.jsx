@@ -6,18 +6,19 @@ const Animation = () => {
   return (
     <section className="relative w-full mt-32">
       {/* IMAGE STRIP */}
-      <div className="relative w-full h-[180px] ">
+      <div className="relative w-full  ">
         <img
           src={background2}
           alt="background"
-          className="absolute inset-0 w-full h-full object-cover"
+          className=" inset-0 w-full h-full object-cover"
         />
+		<div className="absolute w-full h-[260px] bottom-0 bg-transparent  overflow-hidden">
+        <ParallaxColumns />
+      </div>
       </div>
 
       {/* PARALLAX AREA */}
-      <div className="relative w-full h-[260px] bg-[#100422] overflow-hidden">
-        <ParallaxColumns />
-      </div>
+      
 
       {/* ARTISTS SECTION (BELOW COLUMNS) */}
       <ArtistsSection />
