@@ -1,5 +1,6 @@
 import EventCard from "./meadiacard";
 import meadiaback from "@/Assets/home/Media/image copy.png";
+import background from "@/Assets/home/Media/image.png";
 // BLOG IMAGES
 import blog1 from "@/Assets/home/Media/image1.png";
 import blog2 from "@/Assets/home/Media/image2.png";
@@ -37,32 +38,57 @@ const BlogsAndMedia = () => {
 	];
 
 	return (
-		<section className="relative py-24 px-4 sm:px-8 lg:px-16 text-white overflow-hidden">
+		<section className="relative py-4 px-4 sm:px-8 lg:px-16 text-white overflow-hidden">
 			{/* OVERLAY for readability (background already exists) */}
-			
-
-			<div className="relative z-10 max-w-7xl mx-auto">
-            <img
+			<div className="relative z-20 max-w-7xl  mx-auto">
+				<img
 					src={meadiaback}
 					alt="background"
-					className="absolute inset-0 w-full h-full object-cover opacity-[0.16]"
+					className=" absolute w-full -top-20 object-cover "
 				/>
+
 				{/* TITLE */}
-				<h2 className="text-center text-4xl sm:text-5xl lg:text-6xl  oswald-heading text-neon-yellow tracking-wide mb-16">
+				<h2 className="text-center text-4xl z-20 sm:text-5xl lg:text-6xl  oswald-heading text-neon-yellow tracking-wide mb-16">
 					BLOGS & MEDIA
 				</h2>
 
 				{/* CARDS */}
-				<div className="flex flex-wrap justify-center gap-10">
-					{blogs.map((blog) => (
-						<EventCard
+				<div className="flex flex-wrap justify-center z-30 relative mt-48 gap-10">
+					<img
+						src={background}
+						alt="background"
+						className="absolute w-full z-0 -top-48 object-cover"
+						style={{
+							WebkitMaskImage: `
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0) 46%,
+        rgba(0,0,0,1) 125%
+      )
+    `,
+							maskImage: `
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0) 46%,
+        rgba(0,0,0,1) 125%
+      )
+    `,
+						}}
+					/>
+
+					{blogs.map((blog, index) => (
+						<div
 							key={blog.id}
-							image={blog.image}
-							title={blog.title}
-							date={blog.date}
-							description={blog.description}
-							readMoreLink={blog.link}
-						/>
+							className={index === 1 ? "mt-20" : ""}
+						>
+							<EventCard
+								image={blog.image}
+								title={blog.title}
+								date={blog.date}
+								description={blog.description}
+								readMoreLink={blog.link}
+							/>
+						</div>
 					))}
 				</div>
 			</div>

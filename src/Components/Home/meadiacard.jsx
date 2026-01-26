@@ -8,7 +8,7 @@ const EventCard = ({
   readMoreLink,
 }) => {
   return (
-    <div className="w-[384px] h-[456px] overflow-hidden p-3 bg-[#2A1B3D] text-white shadow-lg">
+    <div className="w-[384px] h-[456px] overflow-hidden z-30 relative p-3 bg-[#2A1B3D] text-white shadow-lg">
       
       {/* IMAGE */}
       <div className="relative h-[140px]">
