@@ -39,7 +39,7 @@ export default function VolunteerSignupForm() {
 
     try {
       const res = await fetch(
-        "http://localhost:5000/api/send-volunteer-email",
+        "https://desifest-backend-eight.vercel.app/api/send-volunteer-email",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

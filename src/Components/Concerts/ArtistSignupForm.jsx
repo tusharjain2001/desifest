@@ -122,7 +122,7 @@ export default function ArtistSignupForm() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/send-artist-email",
+        "https://desifest-backend-eight.vercel.app/api/send-volunteer-email",
         {
           method: "POST",
           headers: {
