@@ -6,6 +6,7 @@ import backgroung1 from "@/Assets/home/background_1.png";
 import Animation from "@/Components/Home/Animation";
 import Shop from "@/Components/Home/Shop.jsx";
 import BlogsAndMedia from "@/Components/Home/BlogandMedia";
+import Community from "@/Components/Home/Community";
 
 const HomePage = () => {
 	return (
@@ -45,6 +46,7 @@ const HomePage = () => {
 				<div className="lg:ml-18">
 					<HeroSection />
 					<Animation />
+					<Community />
 					<GovernmentSupport />
 					<PartnerSupport />
 					<BlogsAndMedia />
