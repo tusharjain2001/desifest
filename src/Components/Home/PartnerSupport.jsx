@@ -10,18 +10,25 @@ const partners = [partner1, partner2, partner3, partner4, partner5, partner6];
 const PartnerSupport = () => {
 	return (
 		<section className="w-full py-20 bg-transparent">
-			<div className="max-w-7xl mx-auto px-6">
+			
 				{/* Title */}
-				<div className="flex items-center justify-center gap-6 mb-16">
-					<div className="hidden md:block flex-1 h-1 rounded-full bg-white" />
-					<h2 className="font-[Oswald] font-medium text-white uppercase text-[40px] md:text-[64px] leading-[50px] md:leading-[80px]">
+				<div className="flex items-center justify-center gap-1 mb-10 md:mb-16">
+					<div className=" flex-1  h-[3px] rounded-full bg-white" />
+
+					<h2
+						className="font-[Oswald] font-medium text-white uppercase
+        text-[24px] sm:text-[40px] md:text-[64px]
+        leading-[36px] sm:leading-[50px] md:leading-[80px]
+        text-center whitespace-nowrap"
+					>
 						Partners & Sponsors
 					</h2>
-					<div className="hidden md:block flex-1 h-1 rounded-full bg-white" />
+
+					<div className=" flex-1 h-[3px] rounded-full bg-white" />
 				</div>
 
 				{/* Cards */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+				<div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-10">
 					{partners.map((logo, index) => (
 						<div
 							key={index}
@@ -47,7 +54,7 @@ const PartnerSupport = () => {
 						</div>
 					))}
 				</div>
-			</div>
+			
 		</section>
 	);
 };

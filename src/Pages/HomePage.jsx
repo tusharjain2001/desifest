@@ -47,8 +47,8 @@ const HomePage = () => {
 					<HeroSection />
 					{/* <Animation /> */}
 					<Community />
-					{/* <GovernmentSupport />
-					<PartnerSupport /> */}
+					<GovernmentSupport />
+					<PartnerSupport />
 					<div className="relative w-full py-20 krona-one-regular ">
 						<style>
 							{`
