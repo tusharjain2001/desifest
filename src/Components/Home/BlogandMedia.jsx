@@ -5,6 +5,8 @@ import background from "@/Assets/home/Media/image.png";
 import blog1 from "@/Assets/home/Media/image1.png";
 import blog2 from "@/Assets/home/Media/image2.png";
 import blog3 from "@/Assets/home/Media/image3.png";
+import { useEffect, useRef } from "react";
+import { useState } from "react";
 
 const BlogsAndMedia = () => {
 	const blogs = [
@@ -48,16 +50,16 @@ const BlogsAndMedia = () => {
 				/>
 
 				{/* TITLE */}
-				<h2 className="text-center text-4xl z-20 sm:text-5xl lg:text-6xl  oswald-heading text-neon-yellow tracking-wide mb-16">
+				<h2 className="text-center text-5xl z-20 sm:text-5xl lg:text-6xl  oswald text-neon-yellow tracking-wide mb-16">
 					BLOGS & MEDIA
 				</h2>
 
 				{/* CARDS */}
-				<div className="flex flex-wrap justify-center z-30 relative mt-48 gap-10">
+				<div className=" hidden sm:flex flex-wrap justify-center z-30 relative  sm:mt-48 gap-10">
 					<img
 						src={background}
 						alt="background"
-						className="absolute w-full z-0 -top-48 object-cover"
+						className="absolute w-full z-0 -top-44 object-cover"
 						style={{
 							WebkitMaskImage: `
       linear-gradient(
@@ -91,9 +93,123 @@ const BlogsAndMedia = () => {
 						</div>
 					))}
 				</div>
+				{/* MOBILE SLIDER */}
+				<div className="sm:hidden relative mt-24 z-30">
+					{/* Background */}
+					<img
+						src={background}
+						alt="background"
+						className="absolute w-full z-0 -top-14 object-cover"
+						style={{
+							WebkitMaskImage: `
+        linear-gradient(
+          to top,
+          rgba(0,0,0,0) 46%,
+          rgba(0,0,0,1) 125%
+        )
+      `,
+							maskImage: `
+        linear-gradient(
+          to top,
+          rgba(0,0,0,0) 46%,
+          rgba(0,0,0,1) 125%
+        )
+      `,
+						}}
+					/>
+
+					{/* Scroll Container */}
+					<MobileBlogSlider blogs={blogs} />
+				</div>
 			</div>
 		</section>
 	);
 };
 
 export default BlogsAndMedia;
+
+const MobileBlogSlider = ({ blogs }) => {
+	const sliderRef = useRef(null);
+	const [activeIndex, setActiveIndex] = useState(0);
+
+	// Center middle card on load
+	useEffect(() => {
+		if (!sliderRef.current) return;
+
+		const middleIndex = Math.floor(blogs.length / 2);
+		const middleCard = sliderRef.current.children[middleIndex];
+
+		if (middleCard) {
+			sliderRef.current.scrollTo({
+				left:
+					middleCard.offsetLeft -
+					sliderRef.current.offsetWidth / 2 +
+					middleCard.offsetWidth / 2,
+				behavior: "smooth",
+			});
+			setActiveIndex(middleIndex);
+		}
+	}, [blogs]);
+
+	// Detect center card
+	useEffect(() => {
+		if (!sliderRef.current) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setActiveIndex(Number(entry.target.dataset.index));
+					}
+				});
+			},
+			{
+				root: sliderRef.current,
+				threshold: 0.6,
+			}
+		);
+
+		Array.from(sliderRef.current.children).forEach((child) =>
+			observer.observe(child)
+		);
+
+		return () => observer.disconnect();
+	}, []);
+
+	return (
+		<div
+			ref={sliderRef}
+			className="
+    relative z-10
+	
+    flex gap-10
+    overflow-x-auto 
+    snap-x snap-mandatory
+    px-[50vw]
+    scrollbar-hide
+    touch-pan-x
+  "
+		>
+			{blogs.map((blog, index) => (
+				<div
+					key={blog.id}
+					data-index={index}
+					className={`
+			  flex-shrink-0 snap-center
+			  pb-16
+			  transition-transform duration-500 ease-out
+			  ${activeIndex === index ? "translate-y-10" : "translate-y-0"}
+			`}
+				>
+					<EventCard
+						image={blog.image}
+						title={blog.title}
+						date={blog.date}
+						description={blog.description}
+						readMoreLink={blog.link}
+					/>
+				</div>
+			))}
+		</div>
+	);
+};

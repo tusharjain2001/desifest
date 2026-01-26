@@ -43,7 +43,7 @@ const HomePage = () => {
 			{/* DESIGN CANVAS (1440px) */}
 			<div className=" z-20 mx-auto  px-2 flex flex-col w-full items-center">
 				{/* OPTIONAL: left spacing for vertical navbar */}
-				<div className="w-full sm:ml-32">
+				<div className="w-full sm:ml-44">
 					<HeroSection />
 					{/* <Animation /> */}
 					<Community />
@@ -107,9 +107,9 @@ const HomePage = () => {
 						</div>
 					</div>
 
-					{/* <BlogsAndMedia />
+					<BlogsAndMedia />
 					<Shop />
-					<ContactForm /> */}
+					<ContactForm />
 				</div>
 			</div>
 		</div>

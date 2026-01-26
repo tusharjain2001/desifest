@@ -8,13 +8,13 @@ const ContactForm = () => {
         <img
           src={contactusimg}
           alt="Crowd"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 sm:w-full sm:h-full object-cover"
         />
 
         {/* Gradient Overlay */}
         {/* Mobile Gradient — Bottom → Top */}
         {/* Mobile Vignette Overlay */}
-        <div className="absolute inset-0 md:hidden pointer-events-none bg-gradient-to-b from-[#100422]/90 via-[#100422]/40 to-[#100422]/90" />
+        <div className="absolute inset-0 md:hidden -bottom-10 pointer-events-none bg-gradient-to-b from-[#100422]/90 via-[#100422]/40 to-[#100422]/90" />
 
         {/* Desktop Gradient — Right → Left */}
         <div className="absolute inset-0 hidden md:block pointer-events-none bg-gradient-to-r from-[#100422]/30 to-[#100422]" />
