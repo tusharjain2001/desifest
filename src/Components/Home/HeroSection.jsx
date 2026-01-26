@@ -4,7 +4,7 @@ import artist from "@/Assets/home/Artist.png";
 const HeroSection = () => {
 	return (
 		<>
-			<section className="hidden relative  md:flex  items-start justify-center h-220">
+			<section className="hidden relative w-screen  md:flex  items-start justify-center h-220">
 				{/* RIGHT ARTIST IMAGE */}
 				<img
 					src={artist}
@@ -108,13 +108,13 @@ const HeroSection = () => {
 				</div>
 			</section>
 			{/* MOBILE HERO */}
-			<section className="md:hidden relative h-220 w-full  flex flex-col items-center px-6 text-center pt-20 text-white">
+			<section className="md:hidden relative h-220 w-screen  flex flex-col items-center px-0 text-center pt-20 text-white">
 				{/* DATE BLOCK */}
 				<div className="mb-6">
-					<div className="text-white/10 font-[Oswald] text-[92px] leading-none">
+					<div className="text-white/10 font-[Oswald] text-[82px] leading-none">
 						2026
 					</div>
-					<h3 className="font-['Special_Gothic_Expanded_One'] uppercase text-[40px] leading-[1]">
+					<h3 className="font-['Special_Gothic_Expanded_One'] uppercase text-[36px] leading-[1]">
 						June 19 – 20
 					</h3>
 					<p className="mt-1 font-['DM_Sans'] uppercase text-[20px] tracking-[-0.04em] text-white/90">
@@ -124,28 +124,34 @@ const HeroSection = () => {
 
 				{/* HEADLINE */}
 				<h1 className="font-[oswald] uppercase flex flex-col items-start w-full justify-start leading-tight mb-5">
-					<span className="block text-neon-yellow text-[46px]">
+					<span className="block text-neon-yellow text-[36px]">
 						Where South
 					</span>
-					<span className="block text-neon-yellow text-[56px]">
+					<span className="block text-neon-yellow text-[46px]">
 						Asian Culture
 					</span>
-					<span className="block bg-white text-black px-4  mt-3 text-[46px]">
+					<span className="block bg-white text-black px-4  mt-3 text-[36px]">
 						Meets the World.
 					</span>
 				</h1>
 
 				{/* DESCRIPTION */}
-				<p className="text-[16px] text-gray-300 w-full text-start mb-8 leading-snug">
+				<p className="text-[12px] text-gray-300 w-full text-start mb-0 leading-snug">
 					Canada’s largest South Asian music and <br /> arts
 					festival—unifying generations, genres, <br /> and voices on
 					one iconic stage.
 				</p>
+				<div className=" font-[oswald]  text-white/20 text-[110px] text-start leading-28 w-full uppercase">
+						20th
+					</div>
+					<div className=" font-[oswald] text-white/20 text-[44px] text-start w-full uppercase">
+						Anniversary
+					</div>
 				{/* ARTIST IMAGE */}
 				<img
 					src={artist}
 					alt="Artist"
-					className="absolute left-56 top-58  h-180 max-h-180 object-contain [mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
+					className="absolute left-44 top-32  h-180 scale-110 object-contain [mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
   "
 				/>
 
