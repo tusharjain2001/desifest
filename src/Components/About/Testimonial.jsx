@@ -37,23 +37,18 @@ export default function TestimonialCarousel() {
     const container = scrollRef.current;
     if (!container) return;
 
-    let animationFrameId;
-    const speed = 0.5; // adjust speed here
+    const speed = 1; // smoother & visible
+    let intervalId;
 
-    const autoScroll = () => {
+    intervalId = setInterval(() => {
       container.scrollLeft += speed;
 
-      // seamless infinite loop
       if (container.scrollLeft >= container.scrollWidth / 2) {
         container.scrollLeft = 0;
       }
+    }, 16); // ~60fps
 
-      animationFrameId = requestAnimationFrame(autoScroll);
-    };
-
-    animationFrameId = requestAnimationFrame(autoScroll);
-
-    return () => cancelAnimationFrame(animationFrameId);
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -72,7 +67,7 @@ export default function TestimonialCarousel() {
             className="min-w-[320px] max-w-[320px] bg-[#1c1033] text-white rounded-xl p-6 flex flex-col justify-between shadow-lg"
           >
             <div className="">
-              <img src={quote} className="mb-3"/>
+              <img src={quote} className="mb-3" />
               <p className="text-sm leading-relaxed text-gray-300">
                 {item.quote}
               </p>

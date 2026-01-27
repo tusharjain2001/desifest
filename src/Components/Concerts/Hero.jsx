@@ -1,7 +1,9 @@
 import React from "react";
 import Digit from "../Animations/Digit";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen mt-20 px-6 py-12 md:px-20 md:py-16 flex flex-col md:flex-row md:justify-between gap-16">
       {/* LEFT SECTION */}
@@ -47,11 +49,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-row gap-4 pt-6">
-            <button className="px-6 md:px-8 py-4 bg-neon-yellow text-black font-medium text-lg md:text-3xl">
+            <button onClick={() => navigate("/artistsignup")} className="px-6 md:px-8 py-4 bg-neon-yellow text-black font-medium text-lg md:text-3xl hover:cursor-pointer">
               ARTIST SIGN UP
             </button>
 
-            <button className="px-6 md:px-8 py-4 border-2 border-neon-yellow text-neon-yellow bg-midnight-purple font-medium text-lg md:text-3xl">
+            <button onClick={() => navigate("/volunteersignup")} className="px-6 md:px-8 py-4 border-2 border-neon-yellow text-neon-yellow bg-midnight-purple font-medium text-lg md:text-3xl hover:cursor-pointer">
               VOLUNTEER
             </button>
           </div>

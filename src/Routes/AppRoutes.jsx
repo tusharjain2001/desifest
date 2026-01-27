@@ -15,6 +15,8 @@ import NotFoundPage from "@/Pages/NotFoundPage";
 // ===== Community Pages =====
 import OpenMic from "@/Pages/Community/OpenMic";
 import SofaSession from "@/Pages/Community/SofaSession";
+import ArtistSignUp from "@/Components/Concerts/ArtistSignUp";
+import Volunteer2026 from "@/Components/Concerts/Volunteer2026";
 
 export default function AppRoutes() {
   return (
@@ -31,6 +33,8 @@ export default function AppRoutes() {
         <Route path="media" element={<MediaPage />} />
         <Route path="press-kit" element={<PressKitPage />} />
         <Route path="shop" element={<ShopPage />} />
+        <Route path="artistsignup" element={<ArtistSignUp />} />
+        <Route path="volunteersignup" element={<Volunteer2026 />} />
 
         {/* Community */}
         <Route path="community">

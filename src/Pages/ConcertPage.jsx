@@ -7,31 +7,30 @@ import FoodFestival from "@/Components/Concerts/FoodFestival";
 import ContactForm from "@/Components/Home/ContactForm";
 
 const ConcertPage = () => {
-	return (
-		<div className="relative min-h-screen">
-		
-			<img
-				src={backgroung1}
-				alt="background"
-				className="absolute inset-0 w-full h-screen object-cover opacity-[0.16]"
-			/>
-			<div
-				className="absolute z-10 inset-0"
-				style={{
-					background:
-						"linear-gradient(270deg , #000000 -0.34%, rgba(0, 0, 0, 0) 56.45%)",
-				}}
-			/>
+  return (
+    <div className="relative min-h-screen">
+      <img
+        src={backgroung1}
+        alt="background"
+        className="absolute inset-0 w-full h-screen object-cover opacity-[0.16]"
+      />
+      <div
+        className="absolute z-10 inset-0"
+        style={{
+          background:
+            "linear-gradient(270deg , #000000 -0.34%, rgba(0, 0, 0, 0) 56.45%)",
+        }}
+      />
 
-			<div className="relative z-10 md:ml-24">
-				<Hero />
+      <div className="relative z-10 md:ml-24">
+        <Hero />
         <FoodFestival />
-				<ArtistSignUp />
-				<Volunteer2026 />
+        {/* <ArtistSignUp />
+				<Volunteer2026 /> */}
         <ContactForm />
-			</div>
-		</div>
-	);
+      </div>
+    </div>
+  );
 };
 
 export default ConcertPage;
