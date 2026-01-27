@@ -3,27 +3,26 @@ import ParallaxColumns from "./paralaxcoolumn.jsx";
 import ArtistsSection from "./ArtistsSection.jsx";
 
 const Animation = () => {
-  return (
-    <section className="relative w-full mt-32">
-      {/* IMAGE STRIP */}
-      <div className="relative w-full  ">
-        <img
-          src={background2}
-          alt="background"
-          className=" inset-0 w-full h-full object-cover"
-        />
-		<div className="absolute w-full h-[260px] bottom-0 bg-transparent  overflow-hidden">
-        <ParallaxColumns />
-      </div>
-      </div>
+	return (
+		<section className="relative w-full sm:mt-32">
+			{/* IMAGE STRIP */}
+			<div className="relative w-full h-[600px]">
+				<img
+					src={background2}
+					alt="background"
+					className="absolute inset-0 w-full h-full object-cover z-0"
+				/>
 
-      {/* PARALLAX AREA */}
-      
+				{/* PARALLAX COLUMNS */}
+				<div className="absolute bottom-0 w-full h-[260px] overflow-hidden z-10">
+					<ParallaxColumns />
+				</div>
+			</div>
 
-      {/* ARTISTS SECTION (BELOW COLUMNS) */}
-      <ArtistsSection />
-    </section>
-  );
+			{/* ARTISTS SECTION */}
+			<ArtistsSection />
+		</section>
+	);
 };
 
 export default Animation;
