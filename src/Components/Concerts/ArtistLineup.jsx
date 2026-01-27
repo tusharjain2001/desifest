@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import lineup from "../../Assets/concerts/artistlineup.svg";
 import lineuptwo from "../../Assets/concerts/artistlineup2.svg";
 
 const ArtistLineup = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
   // Artist data - replace image paths with your actual images
   const artists = [
     {
@@ -111,8 +109,8 @@ const ArtistLineup = () => {
       <div className="absolute inset-0 opacity-10" />
 
       {/* Header */}
-      <section className="   px-12">
-        <div className=" flex  items-center gap-6">
+      <section className="px-12">
+        <div className="flex items-center gap-6">
           {/* Left title */}
           <h2 className="whitespace-nowrap text-3xl font-medium tracking-wide text-white md:text-[100px]">
             ARTIST LINEUP
@@ -130,37 +128,72 @@ const ArtistLineup = () => {
 
       {/* Artist Cards Container */}
       <div className="relative w-full h-[2800px] max-w-5xl mx-auto mb-40">
-        {artists.map((artist, index) => (
+        {artists.map((artist) => (
           <div
             key={artist.id}
-            className="absolute transition-all duration-300 ease-in-out"
+            className="absolute"
             style={{
               top: artist.top,
               left: artist.left,
               right: artist.right,
             }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="flex items-center gap-4">
-              {/* Image Container */}
+            <div className="flex items-center gap-4 group">
+              {/* IMAGE WRAPPER */}
               <div
-                className={`relative transition-all duration-300 ease-in-out overflow-hidden ${
-                  hoveredIndex === index ? "rounded-full" : "rounded-3xl"
-                }`}
+                className="
+        relative
+        rounded-3xl
+        transition-[border-radius] duration-300 ease-out
+        group-hover:rounded-full
+        ring-0 ring-white
+        group-hover:ring-4
+      "
               >
-                <img
-                  src={artist.image}
-                  alt={artist.name}
-                  className="w-full h-full object-cover"
-                />
+                {/* IMAGE */}
+                <div className="relative overflow-hidden rounded-inherit">
+                  <img
+                    src={artist.image}
+                    alt={artist.name}
+                    className="
+            w-[280px] h-[280px] object-cover
+            transition-transform duration-300 ease-out
+            group-hover:rounded-full 
+            
+          "
+                  />
+
+                  {/* TEXT INSIDE IMAGE (SAFE ZONE) */}
+                  <div
+                    className="
+            absolute bottom-8 right-8
+            text-right
+            z-10
+            opacity-0 translate-y-2
+            transition-all duration-300 ease-out
+            group-hover:opacity-100 group-hover:translate-y-0 flex flex-col
+          "
+                  >
+                    <div className="text-neon-yellow font-extrabold text-2xl leading-tight drop-shadow">
+                      {artist.name}
+                    </div>
+                    <div className="text-white text-lg drop-shadow">
+                      {artist.handle}
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Text on Right when not hovered */}
-
-              <div className="text-white animate-fadeIn">
-                <h3 className="font-bold text-lg">{artist.name}</h3>
-                <p className="text-white text-sm">{artist.handle}</p>
+              {/* RIGHT TEXT (HIDES SMOOTHLY) */}
+              <div
+                className="
+        text-white
+        transition-all duration-200
+        group-hover:opacity-0 group-hover:translate-x-2 px-2 border-l-2 border-[#D9D9D9]
+      "
+              >
+                <h3 className="font-bold text-2xl">{artist.name}</h3>
+                <p className="text-lg">{artist.handle}</p>
               </div>
             </div>
           </div>
