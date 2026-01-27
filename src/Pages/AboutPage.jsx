@@ -1,6 +1,12 @@
+import Hero from "@/Components/About/Hero";
+import OurTeam from "@/Components/About/OurTeam";
+
 const AbooutPage = () => {
   return (
-    <div>AbooutPage</div>
+    <div>
+      <Hero />
+      <OurTeam />
+    </div>
   );
 };
 
