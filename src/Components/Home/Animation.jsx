@@ -2,7 +2,7 @@ import background2 from "@/Assets/home/background_2.png";
 import ParallaxColumns from "./paralaxcoolumn.jsx";
 import ArtistsSection from "./ArtistsSection.jsx";
 
-const Animation = () => {
+const Animation = ({ scrollY }) => {
 	return (
 		<section className="relative w-full sm:mt-32">
 			{/* IMAGE STRIP */}
@@ -14,8 +14,8 @@ const Animation = () => {
 				/>
 
 				{/* PARALLAX COLUMNS */}
-				<div className="absolute bottom-0 w-full h-[260px] overflow-hidden z-10">
-					<ParallaxColumns />
+				<div className="absolute bottom-0 w-full h-full overflow-hidden z-10">
+					<ParallaxColumns scrollY={scrollY} />
 				</div>
 			</div>
 
