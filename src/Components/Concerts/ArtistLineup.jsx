@@ -75,7 +75,7 @@ const ArtistLineup = () => {
       handle: "@musebox.photographer",
       image: lineup,
       top: "75%",
-      right: "16%",
+      right: "5%",
     },
     {
       id: 10,
@@ -90,7 +90,7 @@ const ArtistLineup = () => {
       name: "MUSE BOX",
       handle: "@musebox.photographer",
       image: lineup,
-      top: "88%",
+      top: "89%",
       right: "3%",
     },
     {
@@ -98,7 +98,7 @@ const ArtistLineup = () => {
       name: "MUSE BOX",
       handle: "@musebox.photographer",
       image: lineup,
-      top: "95%",
+      top: "96%",
       left: "12%",
     },
   ];
@@ -127,7 +127,7 @@ const ArtistLineup = () => {
       </section>
 
       {/* Artist Cards Container */}
-      <div className="relative w-full h-[2800px] max-w-5xl mx-auto mb-40">
+      <div className="relative w-full h-[2800px] max-w-5xl mx-auto mb-48">
         {artists.map((artist) => (
           <div
             key={artist.id}
