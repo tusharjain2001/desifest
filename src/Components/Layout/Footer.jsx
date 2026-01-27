@@ -18,7 +18,7 @@ const Footer = () => {
     { name: "youtube", icon: youtube },
   ];
   return (
-    <footer className="bg-midnight-purple w-full text-white flex flex-col md:px-20 md:py-10 p-8 z-50">
+    <footer className="bg-midnight-purple w-full text-white flex flex-col md:px-20 md:py-10 p-8 z-70">
       {/* TOP */}
       <div className="flex items-center justify-between gap-4">
         {/* LOGO */}
