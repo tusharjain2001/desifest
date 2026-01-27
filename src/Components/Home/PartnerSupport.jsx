@@ -9,7 +9,7 @@ const partners = [partner1, partner2, partner3, partner4, partner5, partner6];
 
 const PartnerSupport = () => {
 	return (
-		<section className="w-full py-20 bg-transparent">
+		<section className="w-full py-20 md:px-4 bg-transparent">
 			
 				{/* Title */}
 				<div className="flex items-center justify-center gap-1 mb-10 md:mb-16">

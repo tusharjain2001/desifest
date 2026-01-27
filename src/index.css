@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-
-
-/* ===== DESIFEST THEME ===== */
+/* =========================================================
+   DESIFEST THEME VARIABLES
+   ========================================================= */
 @theme {
   --color-neon-yellow: #EEFE08;
   --color-deep-purple: #453361;
@@ -13,41 +13,48 @@
   --color-midnight-purple: #26193A;
   --color-pure-white: #FFFFFF;
   --color-glass-white: #FEFEFE1F;
-  --color-blue-black: #100422 ;
-
+  --color-blue-black: #100422;
 }
 
-
-
-/* Hide scrollbar but keep scroll */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
+/* =========================================================
+   SCROLLBAR UTILITIES (HIDE BUT KEEP SCROLL)
+   ========================================================= */
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE & Edge */
   scrollbar-width: none;     /* Firefox */
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+/* =========================================================
+   FONT UTILITIES — DM SANS
+   ========================================================= */
 .dm-sans-300 {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: light;
 }
+
+.dm-sans-400 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: regular;
+}
+
 .dm-sans-500 {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: medium;
 }
-.dm-sans-400 {
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: regular ;
-}
 
+/* =========================================================
+   FONT UTILITIES — OSWALD
+   ========================================================= */
 .oswald-heading {
   font-family: "Oswald", sans-serif;
   font-weight: 500;
@@ -57,27 +64,19 @@
   text-transform: uppercase;
   text-align: center;
 }
+
 .oswald {
   font-family: "Oswald", sans-serif;
   letter-spacing: 0;
   text-transform: uppercase;
   text-align: center;
 }
-/* Hide scrollbar for Chrome, Safari and Opera */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
-}
+/* =========================================================
+   FONT UTILITIES — KRONA ONE
+   ========================================================= */
 .krona-one-regular {
   font-family: "Krona One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

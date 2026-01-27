@@ -71,7 +71,7 @@ const ShopSection = () => {
   };
 
   return (
-    <section className="relative bg-[#100422] py-10 sm:py-14 px-4 sm:px-6 lg:px-12 overflow-hidden">
+    <section className="relative bg-[#100422] py-10 sm:py-14 pl-2 overflow-hidden">
       
       {/* HEADER */}
       <div className="flex items-center justify-between mb-8 gap-4">

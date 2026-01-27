@@ -10,7 +10,7 @@ import Community from "@/Components/Home/Community";
 
 const HomePage = () => {
 	return (
-		<div className="relative min-h-screen w-full scrollbar-hide overflow-hidden">
+		<div className="relative min-h-screen w-full overflow-y-scroll scrollbar-hide">
 			{/* BACKGROUND (FULL WIDTH) */}
 			<div className="absolute inset-0 h-220">
 				{/* BACKGROUND IMAGE */}
@@ -43,7 +43,7 @@ const HomePage = () => {
 			{/* DESIGN CANVAS (1440px) */}
 			<div className=" z-20 mx-auto  px-2 flex flex-col w-full scrollbar-hide items-center">
 				{/* OPTIONAL: left spacing for vertical navbar */}
-				<div className="w-full sm:ml-44">
+				<div className="w-full sm:pl-22">
 					<HeroSection />
 					<Animation />
 					<Community />

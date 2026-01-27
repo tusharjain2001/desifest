@@ -16,7 +16,7 @@ const sponsors = [
 
 const GovernmentSupport = () => {
 	return (
-		<section className="w-full py-14 md:py-20 bg-transparent">
+		<section className="w-full py-14 md:py-20 md:px-4 bg-transparent">
 			{/* Title */}
 			<div className="flex items-center justify-center gap-1 mb-10 md:mb-16">
 				<div className=" flex-1  h-[3px] rounded-full bg-white" />
