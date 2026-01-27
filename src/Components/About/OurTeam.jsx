@@ -25,10 +25,10 @@ const row3Images = [
 ];
 
   return (
-    <div className="pb-10 flex flex-col justify-center items-center gap-5">
+    <div className="pb-10 px-5 flex flex-col justify-center items-center gap-5">
       <div className="flex gap-5">
-        <div className="text-soft-lavender text-[100px] font-medium">Our</div>
-        <div className="text-neon-yellow text-[100px] font-medium">Team</div>
+        <div className="text-soft-lavender text-[80px] md:text-[100px] font-medium">Our</div>
+        <div className="text-neon-yellow text-[80px] md:text-[100px] font-medium">Team</div>
       </div>
       <div className="flex flex-col gap-10">
         {/* Row 1 */}
