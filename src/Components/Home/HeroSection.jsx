@@ -1,7 +1,9 @@
 import arrow from "@/Assets/home/image.png";
 import artist from "@/Assets/home/Artist.png";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+	const navigate = useNavigate();
 	return (
 		<>
 			<section className="relative hidden md:flex w-full h-220 overflow-hidden">
@@ -93,9 +95,9 @@ const HeroSection = () => {
 						{/* Center content */}
 						<div className="relative z-10 flex items-center gap-6">
 							{/* Arrow */}
-							<div className="relative w-[108px] h-[108px]">
+							<button onClick={() => navigate("/concerts")} className="relative w-[108px] h-[108px] hover:scale-105">
 								<img src={arrow} alt="Arrow" />
-							</div>
+							</button>
 
 							{/* Text */}
 							<div className="text-white text-[0.95rem] uppercase leading-tight tracking-wide">
@@ -163,9 +165,14 @@ const HeroSection = () => {
 					<div className="absolute inset-0 rounded-full border border-white/10" />
 
 					<div className="relative z-10 flex items-center gap-6">
-						<div className="relative w-[82px] h-[82px]">
+						<button
+							className="relative w-[82px] h-[82px] hover:scale-105 "
+
+							onClick={() => navigate("/concerts")}
+						>
 							<img src={arrow} alt="Arrow" />
-						</div>
+						</button>
+
 						<div className="text-white text-[0.95rem] uppercase leading-tight tracking-wide">
 							<div>Explore</div>
 							<div>Join</div>
