@@ -14,7 +14,7 @@ const Animation = ({ scrollY }) => {
 				/>
 
 				{/* PARALLAX COLUMNS */}
-				<div className="absolute bottom-0 w-full h-full overflow-hidden z-10">
+				<div className="absolute bottom-0 w-full h-full  z-10">
 					<ParallaxColumns scrollY={scrollY} />
 				</div>
 			</div>

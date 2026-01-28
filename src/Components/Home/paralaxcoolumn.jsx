@@ -24,23 +24,23 @@ const ParallaxColumns = ({ scrollY }) => {
 	}, [scrollY]); // 👈 react to parent scroll
 
 	return (
-		<div className="relative w-full h-full overflow-hidden">
+		<div className="relative w-full h-full ">
 			<div className="absolute bottom-0 left-0 flex items-end w-full">
 				{columns.map((col, i) => (
 					<div
 						key={i}
 						ref={(el) => (refs.current[i] = el)}
-						className="flex-1 will-change-transform"
+						className="flex-1 w-1/4 will-change-transform"
 						style={{
 							height: col.height,
 							background: "#453361",
 						}}
 					>
 						<div className="h-full flex flex-col justify-start pt-4 items-center">
-							<h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold dm-sans-700">
+							<h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold dm-sans-700">
 								{col.text}
 							</h2>
-							<p className="text-white text-lg md:text-xl lg:text-2xl mt-2 dm-sans-400">
+							<p className="text-white text-sm md:text-xl lg:text-2xl mt-2 dm-sans-400">
 								{col.text2}
 							</p>
 						</div>
