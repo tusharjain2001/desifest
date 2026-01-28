@@ -87,3 +87,11 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.clip-rounded {
+  clip-path: inset(0 round 24px);
+  transition: clip-path 0.5s ease;
+}
+
+.group:hover .clip-rounded {
+  clip-path: inset(0 round 999px);
+}
