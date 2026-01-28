@@ -1,6 +1,7 @@
 import VerticalNavbar from "@/Components/Layout/VerticalNavbar";
 import backgroung1 from "@/Assets/community/image.png";
 import Hero from "@/Components/Community/Hero";
+import ContactForm from "@/Components/Home/ContactForm";
 
 const CommunityPage = () => {
 	return (
@@ -18,6 +19,7 @@ const CommunityPage = () => {
 			<div className="z-20 mx-auto px-2 flex flex-col w-full items-center">
 				<div className="w-full sm:pl-22">
 					<Hero />
+          <ContactForm />
 				</div>
 			</div>
 		</div>
