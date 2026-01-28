@@ -4,7 +4,7 @@ import group from "../../Assets/community/circlegroup.svg";
 const Hero = () => {
   return (
     <div className="h-screen relative justify-center items-center flex flex-col gap-5 text-white leading-none">
-      <img src={group} className="absolute top-0 right-0" />
+      <img src={group} className="absolute top-0 right-0 " />
       <div className="relative z-10 max-w-4xl px-6">
         {/* TITLE */}
         <div className="font-[Oswald] uppercase leading-none flex flex-col items-center">
