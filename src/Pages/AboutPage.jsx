@@ -6,7 +6,8 @@ import ContactForm from "@/Components/Home/ContactForm";
 
 const AbooutPage = () => {
   return (
-    <div className="md:ml-24">
+    <div className="relative min-h-screen h-full overflow-clip w-full">
+			<VerticalNavbar />
       <Hero />
       <OurTeam />
       <Testimonial />
