@@ -45,7 +45,7 @@ const HomePage = () => {
 				/>
 			</div>
 
-			<div className="z-20 mx-auto px-2 flex flex-col w-full items-center">
+			<div className="z-20 mx-auto px-1 flex flex-col w-full items-center">
 				<div className="w-full sm:pl-22">
 					<HeroSection />
 

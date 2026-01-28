@@ -1,4 +1,4 @@
-import background2 from "@/Assets/home/background_2.png";
+import backgroundVideo from "@/Assets/home/animation/video.mp4";
 import ParallaxColumns from "./paralaxcoolumn.jsx";
 import ArtistsSection from "./ArtistsSection.jsx";
 
@@ -7,10 +7,13 @@ const Animation = ({ scrollY }) => {
 		<section className="relative w-full sm:mt-32">
 			{/* IMAGE STRIP */}
 			<div className="relative w-full h-[600px]">
-				<img
-					src={background2}
-					alt="background"
+				<video
 					className="absolute inset-0 w-full h-full object-cover z-0"
+					src={backgroundVideo}
+					autoPlay
+					loop
+					muted
+					playsInline
 				/>
 
 				{/* PARALLAX COLUMNS */}
