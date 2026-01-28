@@ -1,6 +1,7 @@
 import React from "react";
-import lineup from "../../Assets/concerts/artistlineup.svg";
+import lineup from "../../Assets/concerts/artistlineupwb.svg";
 import lineuptwo from "../../Assets/concerts/artistlineup2.svg";
+import lineupbg from "../../Assets/concerts/artistlineupbg.svg";
 
 const ArtistLineup = () => {
   // Artist data - replace image paths with your actual images
@@ -149,6 +150,11 @@ const ArtistLineup = () => {
 
       {/* Artist Cards Container */}
       <div className="hidden md:block relative w-full h-[2800px] max-w-5xl mx-auto mb-48">
+        <img
+          src={lineupbg}
+          alt="background"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
         {artists.map((artist) => (
           <div
             key={artist.id}
@@ -174,7 +180,7 @@ const ArtistLineup = () => {
       "
               >
                 {/* IMAGE */}
-                <div className="relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out group-hover:rounded-full">
+                <div className="relative border-4 border-white overflow-hidden rounded-3xl transition-all duration-500 ease-in-out group-hover:rounded-full">
                   <img
                     src={artist.image}
                     alt={artist.name}
@@ -182,7 +188,7 @@ const ArtistLineup = () => {
             w-[280px] h-[280px] object-cover
             scale-100
             transition-all duration-500 ease-in-out
-            group-hover:scale-105
+            group-hover:scale-105 
           "
                   />
 
