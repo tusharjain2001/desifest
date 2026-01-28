@@ -108,7 +108,7 @@ const HeroSection = () => {
 				</div>
 			</section>
 			{/* MOBILE HERO */}
-			<section className="md:hidden relative h-220 w-screen  flex flex-col  text-center pt-20 text-white">
+			<section className="md:hidden relative h-220 w-full overflow-x-clip  flex flex-col  text-center pt-20 text-white">
 				{/* DATE BLOCK */}
 				<div className="mb-6">
 					<div className="text-white/10 font-[Oswald] text-[82px] leading-none">
