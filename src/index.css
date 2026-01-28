@@ -87,3 +87,13 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* =========================================================
+  FONT UTILITIES - SPECIAL GOTHIC EXPANDED ONE
+   ========================================================= */
+   .special-gothic-one-regular {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
