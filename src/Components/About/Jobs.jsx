@@ -15,7 +15,7 @@ const jobs = [
 
 export default function Jobs() {
   return (
-    <section className="py-20 pl-5 md:pl-12">
+    <section className="py-20 pl-5 md:pl-28">
       <div className="">
         <div className="flex items-center gap-6 mb-12">
           <h2 className="text-white text-[36px] md:text-[100px] font-bold tracking-wide whitespace-nowrap">

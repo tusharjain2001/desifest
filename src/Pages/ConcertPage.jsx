@@ -38,7 +38,7 @@ const ConcertPage = () => {
 				/>
 			</div>
 
-			<div className="z-20 mx-auto px-2 flex flex-col w-full sm:pl-22 items-center">
+			<div className="z-20 mx-auto px-2 flex flex-col w-full sm:pl-22">
 				<Hero />
 				<ArtistLineup />
 				<FoodFestival />
