@@ -9,13 +9,15 @@ import Animation from "@/Components/Home/Animation";
 import Shop from "@/Components/Home/Shop.jsx";
 import BlogsAndMedia from "@/Components/Home/BlogandMedia";
 import Community from "@/Components/Home/Community";
+import VerticalNavbar from "@/Components/Layout/VerticalNavbar";
 
 const HomePage = () => {
 	// 👇 GET SCROLL FROM MAINLAYOUT
 	const { scrollRef, scrollY } = useOutletContext();
 
 	return (
-		<div className="relative min-h-screen w-full">
+		<div className="relative min-h-screen h-full overflow-clip w-full">
+			<VerticalNavbar />
 			{/* BACKGROUND */}
 			<div className="absolute inset-0 h-220">
 				<img

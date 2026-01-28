@@ -30,7 +30,7 @@ export default function MainLayout() {
 			ref={scrollRef}
 			className="w-full h-screen bg-[#100422] overflow-y-auto scrollbar-hide"
 		>
-			<VerticalNavbar />
+			
 
 			<div className="flex min-h-full flex-col">
 				<Navbar />

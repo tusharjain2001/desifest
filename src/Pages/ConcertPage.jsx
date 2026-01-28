@@ -6,33 +6,48 @@ import React from "react";
 import FoodFestival from "@/Components/Concerts/FoodFestival";
 import ContactForm from "@/Components/Home/ContactForm";
 import ArtistLineup from "@/Components/Concerts/ArtistLineup";
+import VerticalNavbar from "@/Components/Layout/VerticalNavbar";
 
 const ConcertPage = () => {
-  return (
-    <div className="relative min-h-screen">
-      <img
-        src={backgroung1}
-        alt="background"
-        className="absolute inset-0 w-full h-screen object-cover opacity-[0.16]"
-      />
-      <div
-        className="absolute z-10 inset-0"
-        style={{
-          background:
-            "linear-gradient(270deg , #000000 -0.34%, rgba(0, 0, 0, 0) 56.45%)",
-        }}
-      />
+	return (
+		<div className="relative min-h-screen h-full overflow-clip w-full">
+			<VerticalNavbar />
+			<div className="absolute inset-0 h-220">
+				<img
+					src={backgroung1}
+					alt="background"
+					className="absolute inset-0 w-full h-full object-cover opacity-[0.16]"
+				/>
 
-      <div className="relative z-10 md:ml-24">
-        <Hero />
-        <ArtistLineup />
-        <FoodFestival />
-        {/* <ArtistSignUp />
+				<div
+					className="absolute inset-0 pointer-events-none"
+					style={{
+						background: `
+              linear-gradient(
+                to left,
+                rgba(16, 4, 34, 0.8) 0%,
+                rgba(16, 4, 34, 0) 55%
+              ),
+              linear-gradient(
+                to top,
+                rgba(16, 4, 34, 0.9) 0%,
+                rgba(16, 4, 34, 0) 60%
+              )
+            `,
+					}}
+				/>
+			</div>
+
+			<div className="z-20 mx-auto px-2 flex flex-col w-full sm:pl-22 items-center">
+				<Hero />
+				<ArtistLineup />
+				<FoodFestival />
+				{/* <ArtistSignUp />
 				<Volunteer2026 /> */}
-        <ContactForm />
-      </div>
-    </div>
-  );
+				<ContactForm />
+			</div>
+		</div>
+	);
 };
 
 export default ConcertPage;

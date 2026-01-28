@@ -49,7 +49,7 @@ const FoodFestivalSection = () => {
   };
 
   return (
-    <section className="relative py-10 bg-blue-black overflow-hidden">
+    <section className="relative py-10 w-full bg-blue-black overflow-hidden">
       {/* CONTAINER */}
       <div className="max-w-[90%] mx-auto px-4">
         {/* Header */}
