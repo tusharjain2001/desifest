@@ -2,7 +2,7 @@ import contactusimg from "@/Assets/home/Contact_us_bg.png";
 
 const ContactForm = () => {
   return (
-    <section className="relative w-full min-h-screen flex flex-col md:flex-row bg-transparent overflow-hidden">
+    <section id="contact" className="relative w-full min-h-screen flex flex-col md:flex-row bg-transparent overflow-hidden">
       {/* IMAGE SECTION */}
       <div className="relative w-full h-[280px] md:h-auto md:basis-[40%]">
         <img
