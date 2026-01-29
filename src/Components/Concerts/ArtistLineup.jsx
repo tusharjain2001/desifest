@@ -113,7 +113,7 @@ const ArtistLineup = () => {
       <section className="px-12">
         <div className="flex items-center gap-6">
           {/* Left title */}
-          <h2 className="whitespace-nowrap text-3xl font-medium tracking-wide text-white md:text-[100px]">
+          <h2 className="whitespace-nowrap oswaldd text-3xl font-medium tracking-wide text-white md:text-[100px]">
             ARTIST LINEUP
           </h2>
 
@@ -121,7 +121,7 @@ const ArtistLineup = () => {
           <div className="h-1 flex-1 bg-white" />
 
           {/* Right text */}
-          <p className="whitespace-nowrap text-sm font-semibold tracking-widest text-white md:text-2xl">
+          <p className="whitespace-nowrap oswaldd text-sm font-medium tracking-widest text-white md:text-2xl">
             2026 LINEUP IS <span className="text-neon-yellow">COMING SOON</span>
           </p>
         </div>

@@ -18,13 +18,13 @@ export default function Jobs() {
     <section className="py-20 pl-5 md:pl-28">
       <div className="">
         <div className="flex items-center gap-6 mb-12">
-          <h2 className="text-white text-[36px] md:text-[100px] font-bold tracking-wide whitespace-nowrap">
+          <h2 className="text-white font-[OSWALD] text-[36px] md:text-[100px] font-bold tracking-wide whitespace-nowrap">
             VIEW OUR JOBS
           </h2>
           <div className="h-1 flex-1 bg-white" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pr-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pr-5 font-[DmSans]">
           {jobs.map((job, index) => (
             <div
               key={index}

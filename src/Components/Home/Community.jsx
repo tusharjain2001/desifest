@@ -6,7 +6,7 @@ import img3 from "@/Assets/home/Community/image.png";
 
 const Community = () => {
 	return (
-		<section className="w-full py-24 bg-transparent">
+		<section className="w-full py-24 pl-4 bg-transparent">
 			<div className="w-full">
 				<div
 					className="

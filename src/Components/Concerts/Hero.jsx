@@ -21,39 +21,39 @@ const Hero = () => {
         {/* HERO TEXT */}
         <div className="flex flex-col space-y-4">
           <div className="flex gap-3 items-end leading-none">
-            <div className="text-8xl md:text-9xl font-bold text-soft-lavender leading-none">
+            <div className="text-8xl md:text-9xl font-medium oswaldd text-soft-lavender leading-none">
               THE
             </div>
 
-            <div className="text-white text-sm md:text-lg">
+            <div className="text-white text-sm md:text-lg dm-sans-400">
               <div>TWO DAYS.</div>
               <div>ONE COMMUNITY.</div>
               <div>COUNTLESS MOMENTS.</div>
             </div>
           </div>
 
-          <div className="flex text-9xl sm:text-7xl md:text-[190px] font-black text-neon-yellow leading-none">
+          <div className="flex text-9xl sm:text-7xl md:text-[120px] font-black special-gothic-one-regular text-neon-yellow leading-none">
             <Digit value={2} delay={0} />
             <Digit value={0} delay={0.1} />
             <Digit value={2} delay={0.2} />
             <Digit value={6} delay={0.3} />
           </div>
 
-          <div className="text-7xl sm:text-6xl md:text-[100px] font-bold text-soft-lavender leading-none">
+          <div className="text-7xl sm:text-6xl md:text-[120px] oswaldd font-medium text-soft-lavender leading-none">
             CONCERT
           </div>
 
-          <p className="text-sm sm:text-lg md:text-xl text-white font-light tracking-wide max-w-xl">
+          <p className="text-sm sm:text-lg md:text-xl dm-sans-400 text-white font-light tracking-wide max-w-xl">
             LIVE MUSIC. SHARED ENERGY. REAL CONNECTION
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-row gap-4 pt-6">
-            <button onClick={() => navigate("/artistsignup")} className="px-6 md:px-8 py-4 bg-neon-yellow text-black font-medium text-lg md:text-3xl hover:cursor-pointer">
+            <button onClick={() => navigate("/artistsignup")} className="px-6 oswaldd md:px-8 py-4 bg-neon-yellow text-black font-medium text-lg md:text-3xl hover:cursor-pointer">
               ARTIST SIGN UP
             </button>
 
-            <button onClick={() => navigate("/volunteersignup")} className="px-6 md:px-8 py-4 border-2 border-neon-yellow text-neon-yellow bg-midnight-purple font-medium text-lg md:text-3xl hover:cursor-pointer">
+            <button onClick={() => navigate("/volunteersignup")} className="px-6 md:px-8 py-4 border-2 oswaldd border-neon-yellow text-neon-yellow bg-midnight-purple font-medium text-lg md:text-3xl hover:cursor-pointer">
               VOLUNTEER
             </button>
           </div>
@@ -61,18 +61,18 @@ const Hero = () => {
       </div>
 
       {/* RIGHT SECTION */}
-      <div className="flex flex-col text-white flex-1 gap-10">
+      <div className="flex flex-col text-white flex-1 gap-10 dm-sans-400">
         {/* Day 01 */}
         <div className="pb-10 border-b border-white">
-          <p className="text-xl md:text-xl font-semibold tracking-wider mb-2">
+          <p className="text-xl md:text-xl font-semibold tracking-wider mb-2 ">
             DAY 01
           </p>
 
-          <h3 className="text-5xl md:text-5xl font-extrabold mb-3">JUNE 19</h3>
+          <h3 className="text-5xl md:text-5xl font-extrabold mb-3 special-gothic-one-regular">JUNE 19</h3>
 
           <p className="text-xl md:text-lg mb-6">7:00PM – 10:00PM</p>
 
-          <h4 className="text-2xl md:text-2xl font-medium tracking-wide mb-2">
+          <h4 className="text-2xl md:text-2xl font-medium oswaldd tracking-wide mb-2">
             EVENING SHOWCASE
           </h4>
 
@@ -87,11 +87,11 @@ const Hero = () => {
             DAY 02
           </p>
 
-          <h3 className="text-5xl md:text-5xl font-extrabold mb-3">JUNE 20</h3>
+          <h3 className="text-5xl md:text-5xl font-extrabold mb-3 special-gothic-one-regular">JUNE 20</h3>
 
           <p className="text-xl md:text-lg mb-6">5:00PM – 10:00PM</p>
 
-          <h4 className="text-2xl md:text-2xl font-bold tracking-wide mb-2">
+          <h4 className="text-2xl md:text-2xl font-medium oswaldd tracking-wide mb-2">
             FOOD VENDORS, BRAND ACTIVATION
           </h4>
 

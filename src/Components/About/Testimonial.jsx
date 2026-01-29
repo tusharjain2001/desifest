@@ -53,7 +53,7 @@ export default function TestimonialCarousel() {
 
   return (
     <div className="w-full bg-[#120822] py-16 gap-5 overflow-hidden">
-      <h2 className="text-center text-white text-4xl font-medium mb-10">
+      <h2 className="text-center font-[OSWALD] text-white text-4xl font-medium mb-10">
         WHAT PEOPLE SAY ABOUT US...
       </h2>
 
@@ -75,7 +75,7 @@ export default function TestimonialCarousel() {
 
             <div className="mt-6 pt-4 border-t border-neon-yellow flex items-center gap-4">
               <div className="w-10 h-10 bg-purple-300 rounded-md" />
-              <div>
+              <div className="font-[DmSans]">
                 <p className="text-sm ">{item.name}</p>
                 <p className="text-xs">{item.role}</p>
               </div>
