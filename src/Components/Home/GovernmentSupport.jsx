@@ -1,67 +1,43 @@
-import ontarioTrillium from "@/Assets/home/govtsupp/image.png";
-import ontarioCreates from "@/Assets/home/govtsupp/image copy.png";
-import factor from "@/Assets/home/govtsupp/image copy 2.png";
-import torontoArts from "@/Assets/home/govtsupp/image copy 3.png";
-import cityToronto from "@/Assets/home/govtsupp/image copy 4.png";
-import canada from "@/Assets/home/govtsupp/image copy 5.png";
+import ontarioTrillium from '@/Assets/home/govtsupp/image.png'
+import ontarioCreates from '@/Assets/home/govtsupp/image copy.png'
+import factor from '@/Assets/home/govtsupp/image copy 2.png'
+import torontoArts from '@/Assets/home/govtsupp/image copy 3.png'
+import cityToronto from '@/Assets/home/govtsupp/image copy 4.png'
+import canada from '@/Assets/home/govtsupp/image copy 5.png'
 
-const sponsors = [
-	ontarioTrillium,
-	ontarioCreates,
-	factor,
-	torontoArts,
-	cityToronto,
-	canada,
-];
+const sponsors = [ontarioTrillium, ontarioCreates, factor, torontoArts, cityToronto, canada]
 
 const GovernmentSupport = () => {
-	return (
-		<section className="w-full py-14 md:py-20 md:px-4 bg-transparent">
-			{/* Title */}
-			<div className="flex items-center justify-center gap-1 mb-10 md:mb-16">
-				<div className=" flex-1  h-[3px] rounded-full bg-white" />
+    return (
+        <section className="w-full bg-transparent pb-14 md:px-4 md:py-20">
+            {/* Title */}
+            <div className="mb-10 flex items-center justify-center gap-1 md:mb-16">
+                <div className="h-0.75 flex-1 rounded-full bg-white" />
 
-				<h2
-					className="font-[Oswald] font-medium text-white uppercase
-        text-[28px] sm:text-[40px] md:text-[64px]
-        leading-[36px] sm:leading-[50px] md:leading-[80px]
-        text-center whitespace-nowrap"
-				>
-					Government Support
-				</h2>
+                <h2 className="text-center font-[Oswald] text-[28px] leading-9 font-medium whitespace-nowrap text-white uppercase sm:text-[40px] sm:leading-12.5 md:text-[64px] md:leading-20">
+                    Government Support
+                </h2>
 
-				<div className=" flex-1 h-[3px] rounded-full bg-white" />
-			</div>
+                <div className="h-0.75 flex-1 rounded-full bg-white" />
+            </div>
 
-			{/* Cards */}
-			<div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-10">
-				{sponsors.map((logo, index) => (
-					<div
-						key={index}
-						className="
-						  flex items-center justify-center
-						  min-h-[110px] sm:min-h-[140px]
-						  px-6 sm:px-10
-						  bg-[#FFFFFF1F]
-						  rounded-2xl sm:rounded-3xl
-					  
-						  transition-[border-radius]
-						  duration-500
-						  ease-in-out
-					   delay-0
-						  hover:rounded-[999px]
-						"
-					>
-						<img
-							src={logo}
-							alt="Government Support Logo"
-							className="max-h-12 sm:max-h-16 md:max-h-20 object-contain"
-						/>
-					</div>
-				))}
-			</div>
-		</section>
-	);
-};
+            {/* Cards */}
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 md:gap-10 lg:grid-cols-3">
+                {sponsors.map((logo, index) => (
+                    <div
+                        key={index}
+                        className="flex min-h-27.5 items-center justify-center rounded-2xl bg-[#FFFFFF1F] px-6 transition-[border-radius] delay-0 duration-500 ease-in-out hover:rounded-[999px] sm:min-h-35 sm:rounded-3xl sm:px-10"
+                    >
+                        <img
+                            src={logo}
+                            alt="Government Support Logo"
+                            className="max-h-12 object-contain sm:max-h-16 md:max-h-20"
+                        />
+                    </div>
+                ))}
+            </div>
+        </section>
+    )
+}
 
-export default GovernmentSupport;
+export default GovernmentSupport

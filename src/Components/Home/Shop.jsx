@@ -71,7 +71,7 @@ const ShopSection = () => {
   };
 
   return (
-    <section className="relative bg-[#100422] py-10 sm:py-14 pl-4 px-4 overflow-hidden">
+    <section className="relative bg-blue-black py-10 sm:py-14 pl-4 px-4 overflow-hidden">
       
       {/* HEADER */}
       <div className="flex items-center justify-between mb-8 gap-4">
@@ -79,7 +79,7 @@ const ShopSection = () => {
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-[oswald] text-white whitespace-nowrap">
             SHOP
           </h2>
-          <span className="h-[3px] flex-1 rounded-full bg-white/80" />
+          <span className="h-0.75 flex-1 rounded-full bg-white/80" />
         </div>
 
         <a

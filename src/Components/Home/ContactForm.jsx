@@ -23,7 +23,7 @@ const ContactForm = () => {
       {/* FORM SECTION */}
       <div className="relative w-full md:basis-[60%] flex items-center px-6 md:px-16 py-12 md:py-0">
         <div className="w-full max-w-xl text-white">
-          <h2 className="text-6xl md:text-5xl font-[Oswald] font-medium uppercase">
+          <h2 className="text-6xl md:text-5xl font-[Oswald] font-bold uppercase">
             Contact Us
           </h2>
 

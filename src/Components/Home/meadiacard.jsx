@@ -8,10 +8,10 @@ const EventCard = ({
   readMoreLink,
 }) => {
   return (
-    <div className="sm:w-[384px] w-[288px]  sm:h-[456px] overflow-hidden z-30 relative p-3 bg-[#2A1B3D] text-white shadow-lg">
+    <div className="sm:w-[384px] w-[288px]  sm:h-114 overflow-hidden z-30 relative p-3 bg-[#2A1B3D] text-white shadow-lg">
       
       {/* IMAGE */}
-      <div className="relative h-[140px]">
+      <div className="relative h-35">
         <img
           src={image}
           alt={title}
@@ -37,7 +37,7 @@ const EventCard = ({
 
         <a
           href={readMoreLink}
-          className="inline-flex absolute bottom-4 items-center gap-2 text-neon-yellow font-medium hover:gap-3 transition-all"
+          className="inline-flex absolute bottom-4 oswaldd items-center gap-2 text-neon-yellow font-medium hover:gap-3 transition-all"
         >
           Read More <ArrowRight size={16} />
         </a>
