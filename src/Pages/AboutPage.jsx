@@ -38,7 +38,7 @@ const AbooutPage = () => {
 					}}
 				/>
 			</div>
-			<VerticalNavbar />
+			
 			<div className=" sm:pl-22 ">
 			<Hero />
 			<Pannel scrollY={scrollY} scrollRef={scrollRef}/>

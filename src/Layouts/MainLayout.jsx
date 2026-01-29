@@ -27,6 +27,7 @@ export default function MainLayout() {
 		>
 			{/* ✅ FIXED */}
 			<ScrollToTop scrollRef={scrollRef} />
+			<VerticalNavbar />
 
 			<div className="flex min-h-full flex-col">
 				<Navbar />

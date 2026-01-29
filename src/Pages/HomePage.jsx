@@ -17,7 +17,7 @@ const HomePage = () => {
 
 	return (
 		<div className="relative min-h-screen h-full overflow-clip w-full">
-			<VerticalNavbar />
+			
 			{/* BACKGROUND */}
 			<div className="absolute inset-0 h-220">
 				<img

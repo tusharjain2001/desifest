@@ -11,7 +11,7 @@ import VerticalNavbar from "@/Components/Layout/VerticalNavbar";
 const ConcertPage = () => {
 	return (
 		<div className="relative min-h-screen h-full overflow-clip w-full">
-			<VerticalNavbar />
+			
 			<div className="absolute inset-0 h-220">
 				<img
 					src={backgroung1}
