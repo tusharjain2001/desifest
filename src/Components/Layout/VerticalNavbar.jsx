@@ -14,7 +14,7 @@ const navItems = [
 export default function VerticalNavbar() {
   return (
     <aside
-      className="hidden md:flex bg-[#2C223C] z-60 absolute w-[99999px]  top-0 left-0 h-24 origin-top-left"
+      className="hidden fixed md:flex bg-[#2C223C] z-60 absolute w-[99999px]  top-0 left-0 h-24 origin-top-left"
       style={{  transform: "rotate(-90deg) translateX(-100%)" }}
     >
       <div className="flex flex-row-reverse items-center gap-4 w-full h-full px-2">
@@ -30,10 +30,11 @@ export default function VerticalNavbar() {
                 className={({ isActive }) =>
                   `
     text-center
-    px-4 py-2
+    px-2 py-2
     rounded-full
-    text-xs
+    text-xm
     tracking-wide
+    dm-sans-400
     border
     transition
     ${
@@ -56,21 +57,21 @@ export default function VerticalNavbar() {
             href="#"
             className="hover:opacity-100 opacity-70 transition rotate-90"
           >
-            <img src={facebook} alt="Facebook" className="h-8" />
+            <img src={facebook} alt="Facebook" className="h-10" />
           </a>
 
           <a
             href="#"
             className="hover:opacity-100 opacity-70 transition rotate-90"
           >
-            <img src={insta} alt="Instagram" className="h-8" />
+            <img src={insta} alt="Instagram" className="h-10" />
           </a>
 
           <a
             href="#"
             className="hover:opacity-100 opacity-70 transition rotate-90"
           >
-            <img src={youtube} alt="YouTube" className="h-8" />
+            <img src={youtube} alt="YouTube" className="h-10" />
           </a>
         </div>
       </div>
