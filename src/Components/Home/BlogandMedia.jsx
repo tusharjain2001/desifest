@@ -8,7 +8,22 @@ import blog3 from '@/Assets/home/Media/image3.png'
 import { useEffect, useRef } from 'react'
 import { useState } from 'react'
 
-const BlogsAndMedia = () => {
+const BlogsAndMedia = ({ scrollY }) => {
+    const blogRefs = useRef([])
+
+    useEffect(() => {
+        const y = scrollY ?? 0
+
+        blogRefs.current.forEach((el, index) => {
+            if (!el) return
+
+            // different speed for each card
+            const speeds = [0.06, 0.02, 0.06]
+            const speed = speeds[index] || 0.1
+
+            el.style.transform = `translateY(-${y * speed}px)`
+        })
+    }, [scrollY])
     const blogs = [
         {
             id: 1,
@@ -50,12 +65,12 @@ const BlogsAndMedia = () => {
                 />
 
                 {/* TITLE */}
-                <h2 className="oswald text-neon-yellow z-20 mb-16 text-center oswaldd text-5xl tracking-wide sm:text-5xl lg:text-6xl">
+                <h2 className="oswald text-neon-yellow oswaldd z-20 mb-16 text-center text-5xl tracking-wide sm:text-5xl lg:text-6xl">
                     BLOGS & MEDIA
                 </h2>
 
                 {/* CARDS */}
-                <div className="relative z-30 hidden flex-wrap justify-center gap-10 sm:mt-48 sm:flex">
+                <div className="relative z-30 pt-46 hidden flex-wrap justify-center gap-10 sm:mt-48 sm:flex">
                     <img
                         src={background}
                         alt="background"
@@ -79,7 +94,11 @@ const BlogsAndMedia = () => {
                     />
 
                     {blogs.map((blog, index) => (
-                        <div key={blog.id} className={index === 1 ? 'mt-20' : ''}>
+                        <div
+                            key={blog.id}
+                            ref={(el) => (blogRefs.current[index] = el)}
+                            className="transition-transform duration-200 ease-out will-change-transform"
+                        >
                             <EventCard
                                 image={blog.image}
                                 title={blog.title}

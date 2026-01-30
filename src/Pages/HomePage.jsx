@@ -87,7 +87,7 @@ const HomePage = () => {
   </div>
 </div>
 
-					<BlogsAndMedia />
+					<BlogsAndMedia scrollY={scrollY} scrollRef={scrollRef} />
 					<Shop />
 					<ContactForm />
 				</div>
