@@ -26,7 +26,7 @@ const GovernmentSupport = () => {
                 {sponsors.map((logo, index) => (
                     <div
                         key={index}
-                        className="flex min-h-27.5 items-center justify-center rounded-2xl bg-[#FFFFFF1F] px-6 transition-[border-radius] delay-0 duration-500 ease-in-out hover:rounded-[999px] sm:min-h-35 sm:rounded-3xl sm:px-10"
+                        className="flex min-h-27.5 items-center justify-center rounded-2xl bg-[#FFFFFF1F] px-6 transition-[border-radius] delay-0 duration-500 ease-in-out hover:rounded-[80px] sm:min-h-35 sm:rounded-3xl sm:px-10"
                     >
                         <img
                             src={logo}

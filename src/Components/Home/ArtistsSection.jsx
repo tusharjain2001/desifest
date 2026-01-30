@@ -90,6 +90,7 @@ const ArtistsSection = () => {
           maskComposite: "intersect",
         }}
       />
+      <div className="absolute -bott inset-0 bg-gradient-to-t from-[#100422]/100 to-[#100422]/0 z-10"></div>
 
       {/* CONTENT — FORCE ABOVE */}
       <div className="relative z-10 flex flex-col sm:flex-row sm:items-start px-2 w-full gap-2 sm:justify-around">

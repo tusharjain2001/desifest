@@ -15,6 +15,7 @@ const Animation = ({ scrollY }) => {
 					muted
 					playsInline
 				/>
+				<div className="absolute inset-0 bg-gradient-to-b from-[#100422]/100 to-[#100422]/0 z-10"></div>
 
 				{/* PARALLAX COLUMNS */}
 				<div className="absolute bottom-0 w-full h-full  z-10">

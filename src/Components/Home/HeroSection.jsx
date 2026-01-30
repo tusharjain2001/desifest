@@ -11,17 +11,17 @@ const HeroSection = () => {
         <img
           src={artist}
           alt="Artist"
-          className="absolute left-90 bottom-1 h-180 max-h-180 object-contain mask-[linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
+          className="absolute left-90 bottom-0 h-180 max-h-180 object-contain mask-[linear-gradient(to_top,transparent_0%,black_25%,black_100%)]  [-webkit-mask-image:linear-gradient(to_top,transparent_0%,black_25%,black_100%)]
   "
         />
 
         {/* LEFT TEXT */}
         <div className="w-full h-screen lg:w-2/3 px-6 pt-24 text-white">
           <h1 className="font-[oswald] font-medium uppercase leading-tight">
-            <span className="block text-neon-yellow text-[56px] md:text-[72px]">
+            <span className="block text-neon-yellow my-4 text-3xl sm:text-7xl">
               Where South
             </span>
-            <span className="block text-neon-yellow text-[64px] md:text-[84px]">
+            <span className="block text-neon-yellow text-5xl sm:text-8xl \">
               Asian Culture
             </span>
             <span className="inline-block bg-white text-black px-2 w-160 	 py-2 mt-4 text-[44px] md:text-[72px]">
@@ -95,13 +95,13 @@ const HeroSection = () => {
               {/* Arrow */}
               <button
                 onClick={() => navigate("/concerts")}
-                className="relative w-27 h-27 hover:scale-105"
+                className="relative w-29 h-29 mt-4 hover:scale-105"
               >
                 <img src={arrow} alt="Arrow" />
               </button>
 
               {/* Text */}
-              <div className="text-white text-[0.95rem] uppercase oswaldd leading-tight tracking-wide">
+              <div className="text-white text-3xl uppercase oswaldd leading-tight tracking-wide">
                 <div>Explore</div>
                 <div>Join</div>
                 <div>Enjoy</div>

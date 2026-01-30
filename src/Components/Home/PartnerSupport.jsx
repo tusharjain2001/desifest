@@ -43,7 +43,7 @@ const PartnerSupport = () => {
             duration-500
             ease-in-out
            delay-0
-            hover:rounded-[999px]
+            hover:rounded-[80px]
           "
 						>
 							<img
