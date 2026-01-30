@@ -14,7 +14,7 @@ const Hero = () => {
           <span className="block font-medium text-neon-yellow text-[72px] md:text-[110px] tracking-wide">
             Community
           </span>
-          <div className="mt-6 text-sm md:text-base text-white leading-relaxed font-[DMSans] font-medium uppercase flex flex-col items-center">
+          <div className="mt-6 text-sm md:text-[20px] text-white leading-relaxed dm-sans-400 font-medium uppercase flex flex-col items-center">
             <div>More than a festival. A year-round movement.</div>
 
             <div>But also go through our...</div>

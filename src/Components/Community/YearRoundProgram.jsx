@@ -70,24 +70,24 @@ const YearRoundProgram = () => {
               >
                 {/* Image */}
                 <div className="w-full lg:w-auto flex justify-center lg:justify-end">
-                  <div className="rounded-3xl overflow-hidden shadow-lg max-w-sm lg:max-w-xs border-2 border-white/30 p-4">
+                  <div className="rounded-3xl overflow-hidden shadow-lg max-w-sm lg:max-w-xs border-2 rounded-[80px] border-white/30 p-4">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover rounded-2xl"
+                      className="w-full h-full object-cover rounded-[80px]"
                     />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="text-white max-w-2xl lg:max-w-md flex flex-col">
-                  <span className="text-md w-fit p-2 uppercase font-[DMSans] tracking-widest text-neon-yellow bg-[#2C223C] mb-3">
+                  <span className="text-md w-fit p-2 uppercase dm-sans-400 tracking-widest text-neon-yellow bg-[#2C223C] mb-3">
                     {item.tag}
                   </span>
-                  <h3 className="text-2xl md:text-5xl font-[DMSans] lg:text-4xl mb-4">
+                  <h3 className="text-2xl md:text-5xl lg:text-4xl dm-sans-400  mb-4">
                     {isYellowFirst ? (
                       <>
-                        <span className="text-neon-yellow font-bold">
+                        <span className="text-neon-yellow special-gothic-one-regular">
                           {titleWords[0]}
                         </span>{" "}
                         {titleWords.slice(1).join(" ")}
@@ -95,13 +95,13 @@ const YearRoundProgram = () => {
                     ) : (
                       <>
                         {titleWords.slice(0, -1).join(" ")}{" "}
-                        <span className="text-neon-yellow font-bold">
+                        <span className="text-neon-yellow  special-gothic-one-regular ">
                           {titleWords[titleWords.length - 1]}
                         </span>
                       </>
                     )}
                   </h3>
-                  <p className="text-gray-300 font-[DMSans] leading-relaxed">
+                  <p className="text-gray-300 dm-sans-400 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
