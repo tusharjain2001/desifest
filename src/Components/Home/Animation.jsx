@@ -1,32 +1,34 @@
-import backgroundVideo from "@/Assets/home/animation/video.mp4";
-import ParallaxColumns from "./paralaxcoolumn.jsx";
-import ArtistsSection from "./ArtistsSection.jsx";
+import backgroundVideo from '@/Assets/home/animation/video.mp4'
+import ParallaxColumns from './paralaxcoolumn.jsx'
+import ArtistsSection from './ArtistsSection.jsx'
 
 const Animation = ({ scrollY }) => {
-	return (
-		<section className="relative w-full sm:mt-32">
-			{/* IMAGE STRIP */}
-			<div className="relative w-full h-[600px]">
-				<video
-					className="absolute inset-0 w-full h-full object-cover z-0"
-					src={backgroundVideo}
-					autoPlay
-					loop
-					muted
-					playsInline
-				/>
-				<div className="absolute inset-0 bg-gradient-to-b from-[#100422]/100 to-[#100422]/0 z-10"></div>
+    return (
+        <section className="relative w-full overflow-hidden sm:mt-32">
+            {/* VIDEO + PARALLAX */}
+            <div className="relative z-0 h-[600px] w-full">
+                <video
+                    className="absolute inset-0 z-0 h-full w-full object-cover"
+                    src={backgroundVideo}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                />
 
-				{/* PARALLAX COLUMNS */}
-				<div className="absolute bottom-0 w-full h-full  z-10">
-					<ParallaxColumns scrollY={scrollY} />
-				</div>
-			</div>
+                <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#100422] to-transparent"></div>
 
-			{/* ARTISTS SECTION */}
-			<ArtistsSection />
-		</section>
-	);
-};
+                {/* Parallax should stay BELOW artists */}
+                <div className="absolute bottom-0 z-20 h-full w-full">
+                    <ParallaxColumns scrollY={scrollY} />
+                </div>
+            </div>
 
-export default Animation;
+            {/* ARTISTS SECTION ABOVE EVERYTHING */}
+            <div className="relative z-50">
+                <ArtistsSection scrollY={scrollY} />
+            </div>
+        </section>
+    )
+}
+export default Animation

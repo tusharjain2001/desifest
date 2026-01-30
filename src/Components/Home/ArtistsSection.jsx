@@ -1,118 +1,98 @@
-import arrow from "@/Assets/home/animation/image.png";
-import background2 from "@/Assets/home/background_2.png";
+import arrow from '@/Assets/home/animation/image.png'
+import background2 from '@/Assets/home/background_2.png'
+import { useEffect, useRef } from 'react'
 // IMAGES
-import img1 from "@/Assets/home/animation/communitythird.svg";
-import img2 from "@/Assets/home/animation/image copy.png";
+import img1 from '@/Assets/home/animation/communitythird.svg'
+import img2 from '@/Assets/home/animation/image copy.png'
 
 const ArtistCard = ({ image, title }) => {
-  return (
-    <div
-      className="
-        group relative
-       sm:h-130 sm:w-92
-        bg-white
-        transition-all  duration-500 ease-out
-        hover:bg-neon-yellow
-        flex sm:flex-col
-flex-row        justify-between
-        p-6
-        cursor-pointer
-      "
-    >
-      {/* IMAGE */}
-      <div className=" overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-1/2 h-full object-cover grayscale"
-        />
-      </div>
+    return (
+        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-col justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-180">
+            {/* IMAGE */}
+            <div className="overflow-hidden">
+                <img
+                    src={image}
+                    alt={title}
+                    className="h-60 w-1/2 object-cover grayscale transition-all duration-500 ease-out group-hover:w-3/4"
+                />
+            </div>
 
-      {/* BOTTOM CONTENT */}
-      <div className="flex items-start flex-col justify-between">
-        {/* TITLE */}
-        <h3 className="text-black uppercase text-2xl dm-sans-400 leading-tight max-w-35">
-          {title}
-        </h3>
+            {/* BOTTOM CONTENT */}
+            <div className="flex flex-col items-start justify-between">
+                {/* TITLE */}
+                <h3 className="dm-sans-400 max-w-35 text-5xl leading-tight text-black uppercase">
+                    {title}
+                </h3>
 
-        {/* ARROW */}
-        <div className="w-full flex justify-end">
-          <img
-            src={arrow}
-            alt=""
-            className="
-            w-8
-            rotate-0
-            transition-transform duration-500 ease-out
-            group-hover:-rotate-45
-          "
-          />
+                {/* ARROW */}
+                <div className="flex w-full justify-end">
+                    <img
+                        src={arrow}
+                        alt=""
+                        className="w-14 rotate-0 transition-transform duration-500 ease-out group-hover:-rotate-45"
+                    />
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-const ArtistsSection = () => {
-  return (
-    <section className="relative py-32 bg-deep-purple w-full">
-      {/* BACKGROUND IMAGE */}
-      <img
-        src={background2}
-        alt="background"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        style={{
-          WebkitMaskImage: `
-      linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.74) -2%,
-        rgba(0, 0, 0, 0) 77%	
-      ),
-      linear-gradient(
-        to top,
-        rgba(16, 4, 34, 1) 0%,
-        rgba(16, 4, 34, 0) 35%
-      )
-    `,
-          WebkitMaskComposite: "destination-in",
-          maskImage: `
-      linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.74) -2%,
-        rgba(0, 0, 0, 0) 77%
-      ),
-      linear-gradient(
-        to top,
-        rgba(16, 4, 34, 1) 0%,
-        rgba(16, 4, 34, 0) 35%
-      )
-    `,
-          maskComposite: "intersect",
-        }}
-      />
-      <div className="absolute -bott inset-0 bg-gradient-to-t from-[#100422]/100 to-[#100422]/0 z-10"></div>
+const ArtistsSection = ({ scrollY }) => {
+    const featuredRef = useRef(null)
+    const communityRef = useRef(null)
+    const imageRef = useRef(null)
 
-      {/* CONTENT — FORCE ABOVE */}
-      <div className="relative z-10 flex flex-col sm:flex-row sm:items-start px-2 w-full gap-2 sm:justify-around">
-        <img
-          src={img1}
-          className="flex sm:hidden   self-center h-90  w-3/4   mb-36"
-          alt=""
-        />
-        <ArtistCard image={img1} title="Featured Artists" />
+    useEffect(() => {
+        const y = scrollY ?? 0
 
-        <div className="sm:mt-32">
-          <ArtistCard image={img2} title="Community Artists" />
-        </div>
+        if (featuredRef.current) {
+            featuredRef.current.style.transform = `translateY(-${y * 0.15}px)`
+        }
 
-        <img
-          src={img1}
-          className="hidden sm:flex  sm:h-130 sm:w-92 sm:mt-56"
-          alt=""
-        />
-      </div>
-    </section>
-  );
-};
+        if (communityRef.current) {
+            communityRef.current.style.transform = `translateY(-${y * 0.1}px)`
+        }
 
-export default ArtistsSection;
+        if (imageRef.current) {
+            imageRef.current.style.transform = `translateY(-${y * 0.05}px)`
+        }
+    }, [scrollY])
+
+    return (
+        <section className="bg-deep-purple relative w-full py-32">
+            {/* BACKGROUND IMAGE */}
+            <img
+                src={background2}
+                alt="background"
+                className="absolute inset-0 z-0 h-full w-full object-cover"
+            />
+
+            <div className="absolute inset-0 -bottom-4 z-20 bg-gradient-to-t from-[#100422]/100 to-[#100422]/0"></div>
+            <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#453361]/100 to-[#453361]/50"></div>
+
+            {/* GRID CONTAINER (UNCHANGED) */}
+            <div className="relative z-30 mx-auto pt-28 grid w-full max-w-full grid-cols-1 gap-10 px-6 sm:grid-cols-3">
+                {/* Featured Artist */}
+                <div ref={featuredRef}>
+                    <ArtistCard image={img2} title="Featured Artists" />
+                </div>
+
+                {/* Community Artist */}
+                <div ref={communityRef} className="">
+                    <ArtistCard image={img2} title="Community Artists" />
+                </div>
+
+                {/* Image Card */}
+                <div ref={imageRef}>
+                    <img
+                        src={img1}
+                        className="hidden h-full w-full object-contain sm:block"
+                        alt=""
+                    />
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default ArtistsSection
