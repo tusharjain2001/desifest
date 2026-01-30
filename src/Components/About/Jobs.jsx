@@ -15,10 +15,10 @@ const jobs = [
 
 export default function Jobs() {
   return (
-    <section className="py-20 pl-5 md:pl-28">
+    <section className="py-20 pl-8">
       <div className="">
         <div className="flex items-center gap-6 mb-12">
-          <h2 className="text-white font-[OSWALD] text-[36px] md:text-[100px] font-bold tracking-wide whitespace-nowrap">
+          <h2 className="text-white font-[OSWALD] text-[36px] md:text-[64px] font-medium tracking-wide whitespace-nowrap">
             VIEW OUR JOBS
           </h2>
           <div className="h-1 flex-1 bg-white" />

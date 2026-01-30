@@ -75,7 +75,7 @@ export default function TestimonialCarousel() {
 
             <div className="mt-6 pt-4 border-t border-neon-yellow flex items-center gap-4">
               <div className="w-10 h-10 bg-purple-300 rounded-md" />
-              <div className="font-[DmSans]">
+              <div className="dm-sans-400">
                 <p className="text-sm ">{item.name}</p>
                 <p className="text-xs">{item.role}</p>
               </div>
