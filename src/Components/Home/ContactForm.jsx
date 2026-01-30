@@ -1,5 +1,6 @@
 import { useState } from "react";
 import contactusimg from "@/Assets/home/Contact_us_bg.png";
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -21,47 +22,57 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
-      alert("Please fill all required fields");
-      return;
-    }
+  if (!formData.name || !formData.email || !formData.message) {
+    toast.error("Please fill all required fields");
+    return;
+  }
 
-    try {
-      setLoading(true);
+  if (!formData.consent) {
+    toast.error("Please agree to be contacted");
+    return;
+  }
 
-      const res = await fetch(
-        "https://desifest-backend.vercel.app/api/send-contact-email",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+  const toastId = toast.loading("Sending message...");
 
-      const data = await res.json();
+  try {
+    setLoading(true);
 
-      if (!res.ok) {
-        throw new Error(data.error || "Something went wrong");
+    const res = await fetch(
+      "https://desifest-backend.vercel.app/api/send-contact-email",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       }
+    );
 
-      alert("Message sent successfully!");
+    const data = await res.json();
 
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-        consent: false,
-      });
-    } catch (err) {
-      alert(err.message);
-    } finally {
-      setLoading(false);
+    if (!res.ok) {
+      throw new Error(data.error || "Something went wrong");
     }
-  };
+
+    toast.success("Message sent successfully ✨", { id: toastId });
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+      consent: false,
+    });
+  } catch (err) {
+    toast.error(err.message || "Failed to send message ❌", {
+      id: toastId,
+    });
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <section

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function VolunteerSignupForm() {
   const genres = [
@@ -35,45 +36,54 @@ export default function VolunteerSignupForm() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await fetch(
-        "https://desifest-backend.vercel.app/api/send-volunteer-email",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        },
-      );
+  // optional: validation
+  if (!formData.consent) {
+    toast.error("Please agree to be contacted");
+    return;
+  }
 
-      const data = await res.json();
+  const toastId = toast.loading("Submitting form...");
 
-      if (!res.ok) throw new Error(data.error);
+  try {
+    const res = await fetch(
+      "https://desifest-backend.vercel.app/api/send-volunteer-email",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }
+    );
 
-      alert("Form submitted successfully ✅");
+    const data = await res.json();
 
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phoneCode: "+91",
-        phone: "",
-        address: "",
-        city: "",
-        province: "",
-        postalCode: "",
-        country: "",
-        genre: "",
-        howCanYouHelp: "",
-        howCanWeHelpYou: "",
-        consent: false,
-      });
-    } catch (err) {
-      alert("Something went wrong ❌");
-      console.log(err);
-    }
-  };
+    if (!res.ok) throw new Error(data.error);
+
+    toast.success("Form submitted successfully 🎉", { id: toastId });
+
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneCode: "+91",
+      phone: "",
+      address: "",
+      city: "",
+      province: "",
+      postalCode: "",
+      country: "",
+      genre: "",
+      howCanYouHelp: "",
+      howCanWeHelpYou: "",
+      consent: false,
+    });
+  } catch (err) {
+    toast.error("Something went wrong ❌", { id: toastId });
+    console.error(err);
+  }
+};
+
 
   const emailError =
     formData.email.length > 0 && !formData.email.includes("@")
