@@ -62,7 +62,7 @@ const ArtistCard = ({ image, title, description }) => {
 				{title}
 			</h3>
 			{/* DESCRIPTION */}
-			<div className="text-black dm-sans-400  w-full text-start text-xl sm:text-3xl mt-4 max-w-sm">
+			<div className="text-black dm-sans-400  w-full text-start text-xl sm:text-2xl mt-4 max-w-sm">
 				{description}
 			</div>
 

@@ -68,7 +68,7 @@ export default function TestimonialCarousel() {
           >
             <div className="">
               <img src={quote} className="mb-3" />
-              <p className="text-sm leading-relaxed text-gray-300">
+              <p className="text-sm leading-relaxed helva text-gray-300">
                 {item.quote}
               </p>
             </div>

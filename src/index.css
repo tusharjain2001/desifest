@@ -51,6 +51,12 @@
   font-weight: 500;
   font-style: medium;
 }
+.dm-sans-600 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: medium;
+}
 
 /* =========================================================
    FONT UTILITIES — OSWALD
@@ -118,3 +124,16 @@
     font-style: normal;
   }
   
+
+
+  @font-face {
+    font-family: "HelveticaNeueMedium";
+    src: url("./Fonts/HelveticaNeueLight.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  .helva {
+    font-family: "HelveticaNeueMedium";
+  }

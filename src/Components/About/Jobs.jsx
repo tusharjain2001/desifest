@@ -31,18 +31,18 @@ export default function Jobs() {
               className="border border-white p-6 flex flex-col justify-between hover:bg-midnight-purple"
             >
               <div>
-                <div className="text-white text-xl font-semibold">
+                <div className="text-white uppercase dm-sans-600 text-xl font-semibold">
                   {job.title}
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex flex-col gap-1">
-                    <p className="text-white text-sm">
+                    <p className="text-white dm-sans-300 text-sm">
                       Location: {job.location}
                     </p>
-                    <p className="text-white text-sm">{job.type}</p>
+                    <p className="text-white dm-sans-500 text-sm">{job.type}</p>
                   </div>
                   <button
-                    className="mt-6 self-end border-2 border-white text-white px-6 py-2 text-sm tracking-wide hover:bg-midnight-purple font-medium"
+                    className="mt-6 self-end oswald-500 border-2 border-white text-white px-6 py-2 text-sm tracking-wide hover:bg-midnight-purple font-medium"
                     type="button"
                   >
                     APPLY
