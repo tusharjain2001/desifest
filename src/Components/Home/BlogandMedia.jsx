@@ -70,7 +70,7 @@ const BlogsAndMedia = ({ scrollY }) => {
                 </h2>
 
                 {/* CARDS */}
-                <div className="relative z-30 pt-46 hidden flex-wrap justify-center gap-10 sm:mt-48 sm:flex">
+                <div className="relative z-30 hidden w-full pt-36 justify-center gap-10 sm:mt-48 sm:flex">
                     <img
                         src={background}
                         alt="background"
