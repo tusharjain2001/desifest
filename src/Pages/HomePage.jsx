@@ -55,63 +55,37 @@ const HomePage = () => {
 					<Community />
 					<GovernmentSupport />
 					<PartnerSupport />
-					<div className="relative w-full py-20 krona-one-regular ">
-						<style>
-							{`
-      @keyframes marquee-ltr {
-        0% { transform: translateX(-25%); }
-        100% { transform: translateX(25%); }
-      }
+					<div className="relative w-full py-20 krona-one-regular">
+  {/* FRONT RIBBON — STATIC */}
+  <div className="absolute w-full h-12 bg-[#C6B7DD] -rotate-3 z-10 overflow-hidden flex items-center">
+    <div className="flex w-max">
+      {Array.from({ length: 8 }).map((_, i) => (
+        <span
+          key={i}
+          className="whitespace-nowrap px-6 text-[12px] krona-one-regular text-[#1A102A]"
+        >
+          Canada’s #1 South Asian music festival
+          Toronto’s iconic Sankofa Square ·
+        </span>
+      ))}
+    </div>
+  </div>
 
-      @keyframes marquee-rtl {
-        0% { transform: translateX(25%); }
-        100% { transform: translateX(-25%); }
-      }
-    `}
-						</style>
-
-						{/* FRONT RIBBON — LEFT ➜ RIGHT */}
-						<div className="absolute w-full h-12 bg-[#C6B7DD] -rotate-3 z-10 overflow-hidden flex items-center">
-							<div
-								className="flex w-max"
-								style={{
-									animation:
-										"marquee-ltr 18s linear infinite",
-								}}
-							>
-								{Array.from({ length: 8 }).map((_, i) => (
-									<span
-										key={i}
-										className="whitespace-nowrap px-6 text-xl  text-[#1A102A]"
-									>
-										Canada’s #1 South Asian music festival
-										Toronto’s iconic Sankofa Square ·
-									</span>
-								))}
-							</div>
-						</div>
-
-						{/* BACK RIBBON — RIGHT ➜ LEFT */}
-						<div className="absolute w-full h-12 bg-[#453361] rotate-3 z-0 overflow-hidden flex items-center">
-							<div
-								className="flex w-max"
-								style={{
-									animation:
-										"marquee-rtl 18s linear infinite",
-								}}
-							>
-								{Array.from({ length: 8 }).map((_, i) => (
-									<span
-										key={i}
-										className="whitespace-nowrap px-6 text-xl text-white"
-									>
-										Toronto’s iconic Sankofa Square ·
-										Canada’s #1 South Asian music festival ·
-									</span>
-								))}
-							</div>
-						</div>
-					</div>
+  {/* BACK RIBBON — STATIC */}
+  <div className="absolute w-full h-12 bg-[#453361] rotate-3 z-0 overflow-hidden flex items-center">
+    <div className="flex w-max">
+      {Array.from({ length: 8 }).map((_, i) => (
+        <span
+          key={i}
+          className="whitespace-nowrap px-6 text-[12px] krona-one-regular text-white"
+        >
+          Toronto’s iconic Sankofa Square ·
+          Canada’s #1 South Asian music festival ·
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
 
 					<BlogsAndMedia />
 					<Shop />

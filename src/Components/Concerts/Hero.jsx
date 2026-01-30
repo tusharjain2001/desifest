@@ -19,7 +19,7 @@ const Hero = () => {
         </div>
 
         {/* HERO TEXT */}
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col">
           <div className="flex gap-3 items-end leading-none">
             <div className="text-8xl md:text-9xl font-medium oswaldd text-soft-lavender leading-none">
               THE
@@ -32,14 +32,14 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex text-9xl sm:text-7xl items-center h-32  md:text-[120px] font-black special-gothic-one-regular text-neon-yellow leading-none">
+          <div className="flex text-8xl sm:text-7xl items-center h-32  md:text-[120px] font-black special-gothic-one-regular text-neon-yellow leading-none">
             <Digit value={2} delay={0} />
             <Digit value={0} delay={0.1} />
             <Digit value={2} delay={0.2} />
             <Digit value={6} delay={0.3} />
           </div>
 
-          <div className="text-7xl sm:text-6xl md:text-[120px] oswaldd font-medium text-soft-lavender leading-none">
+          <div className="text-8xl sm:text-6xl md:text-[120px] oswaldd font-medium text-soft-lavender leading-none">
             CONCERT
           </div>
 
