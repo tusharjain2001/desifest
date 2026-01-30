@@ -2,8 +2,9 @@ import React from "react";
 import lineup from "../../Assets/concerts/artistlineupwb.svg";
 import lineuptwo from "../../Assets/concerts/artistlineup2.svg";
 import lineupbg from "../../Assets/concerts/artistlineupbg.svg";
-
-const ArtistLineup = () => {
+import { useEffect, useRef } from "react";
+const ArtistLineup = ({ scrollY }) => {
+  const cardRefs = useRef([]);
   // Artist data - replace image paths with your actual images
   const artists = [
     {
@@ -103,7 +104,20 @@ const ArtistLineup = () => {
       left: "12%",
     },
   ];
-
+  useEffect(() => {
+    const y = scrollY ?? 0;
+  
+    cardRefs.current.forEach((el, i) => {
+      if (!el) return;
+  
+      // subtle different speeds for depth
+      const speed = 0.1 ;
+  
+      const translate = y * speed;
+  
+      el.style.transform = `translateY(-${translate}px)`;
+    });
+  }, [scrollY]);
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
       {/* Checkered Background Pattern */}
@@ -156,16 +170,17 @@ const ArtistLineup = () => {
           alt="background"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        {artists.map((artist) => (
+        {artists.map((artist, i) => (
           <div
-            key={artist.id}
-            className="absolute"
-            style={{
-              top: artist.top,
-              left: artist.left,
-              right: artist.right,
-            }}
-          >
+  key={artist.id}
+  ref={(el) => (cardRefs.current[i] = el)}
+  className="absolute will-change-transform"
+  style={{
+    top: artist.top,
+    left: artist.left,
+    right: artist.right,
+  }}
+>
    <div className="flex items-center gap-4 group">
   {/* IMAGE WRAPPER */}
   <div
@@ -206,10 +221,12 @@ const ArtistLineup = () => {
       />
 
       {/* TEXT INSIDE IMAGE */}
-      <div
+
+    </div>
+    <div
         className="
-          absolute bottom-8 right-8
-          text-right z-10 flex flex-col
+          absolute bottom-4 -right-8
+          text-left z-10 flex flex-col
           opacity-0 translate-y-4
           transition-[opacity,transform]
           duration-700
@@ -217,16 +234,17 @@ const ArtistLineup = () => {
           group-hover:opacity-100
           group-hover:translate-y-0
           group-hover:delay-150
+          overflow-visible
+          bg-[#10042299]
         "
       >
-        <div className="text-neon-yellow font-extrabold text-2xl leading-tight drop-shadow-lg">
+        <div className="text-neon-yellow dm-sans-600  text-2xl leading-tight drop-shadow-lg">
           {artist.name}
         </div>
-        <div className="text-white text-lg drop-shadow-lg">
+        <div className="text-white dm-sans-400 text-lg drop-shadow-lg">
           {artist.handle}
         </div>
       </div>
-    </div>
   </div>
 
   {/* RIGHT TEXT */}
@@ -242,8 +260,8 @@ const ArtistLineup = () => {
       group-hover:translate-x-4
     "
   >
-    <h3 className="font-bold text-2xl">{artist.name}</h3>
-    <p className="text-lg">{artist.handle}</p>
+    <h3 className="font-bold dm-sans-400 text-2xl">{artist.name}</h3>
+    <p className="text-lg dm-sans-400">{artist.handle}</p>
   </div>
 </div>
           </div>

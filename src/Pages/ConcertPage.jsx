@@ -7,8 +7,9 @@ import FoodFestival from "@/Components/Concerts/FoodFestival";
 import ContactForm from "@/Components/Home/ContactForm";
 import ArtistLineup from "@/Components/Concerts/ArtistLineup";
 import VerticalNavbar from "@/Components/Layout/VerticalNavbar";
-
+import { useOutletContext } from "react-router-dom";
 const ConcertPage = () => {
+	const { scrollRef, scrollY } = useOutletContext();
 	return (
 		<div className="relative min-h-screen h-full overflow-clip w-full">
 			
@@ -40,8 +41,8 @@ const ConcertPage = () => {
 
 			<div className="z-20 mx-auto px-2 flex flex-col w-full sm:pl-22">
 				<Hero />
-				<ArtistLineup />
-				<FoodFestival />
+				<ArtistLineup scrollY={scrollY} scrollRef={scrollRef} />
+				<FoodFestival  />
 				{/* <ArtistSignUp />
 				<Volunteer2026 /> */}
 				<ContactForm />
