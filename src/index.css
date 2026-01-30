@@ -64,6 +64,14 @@
   text-transform: uppercase;
   text-align: center;
 }
+.oswald-500 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+}
+.oswald-300 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
 
 .oswaldd {
   font-family: "Oswald", sans-serif;

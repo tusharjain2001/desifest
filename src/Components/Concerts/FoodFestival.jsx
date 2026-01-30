@@ -64,7 +64,7 @@ const FoodFestivalSection = () => {
                             <div className="h-0.5 w-full bg-white" />
 
                             {/* Text */}
-                            <div className="mt-3 hidden text-xl pb-5 whitespace-nowrap text-white md:block">
+                            <div className="mt-3 hidden text-xl pb-5 dm-sans-400 whitespace-nowrap text-white md:block">
                                 Flavour, culture, and community.
                             </div>
                         </div>

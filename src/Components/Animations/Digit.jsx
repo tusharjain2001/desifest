@@ -5,7 +5,7 @@ const Digit = ({ value, delay = 0 }) => {
   const numbers = Array.from({ length: 10 }, (_, i) => i);
 
   return (
-    <div className="overflow-hidden h-47.5">
+    <div className="overflow-hidden h-42">
       <motion.div
         initial={{ y: 0 }}
         animate={{ y: -value * 190 }}

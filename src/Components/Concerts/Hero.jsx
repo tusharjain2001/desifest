@@ -9,7 +9,7 @@ const Hero = () => {
       {/* LEFT SECTION */}
       <div className="flex flex-col flex-1">
         {/* Header Navigation */}
-        <div className="flex gap-4 mb-6">
+        <div className="flex gap-4 mb-6 dm-sans-400">
           <button className="text-neon-yellow border-neon-yellow bg-midnight-purple border-2 text-sm md:text-xl px-3 py-2">
             Vendors
           </button>
@@ -32,7 +32,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex text-9xl sm:text-7xl md:text-[120px] font-black special-gothic-one-regular text-neon-yellow leading-none">
+          <div className="flex text-9xl sm:text-7xl items-center h-32  md:text-[120px] font-black special-gothic-one-regular text-neon-yellow leading-none">
             <Digit value={2} delay={0} />
             <Digit value={0} delay={0.1} />
             <Digit value={2} delay={0.2} />
@@ -64,7 +64,7 @@ const Hero = () => {
       <div className="flex flex-col text-white flex-1 gap-10 dm-sans-400">
         {/* Day 01 */}
         <div className="pb-10 border-b border-white">
-          <p className="text-xl md:text-xl font-semibold tracking-wider mb-2 ">
+          <p className="text-xl md:text-xl font-semibold dm-sans-500 tracking-wider mb-2 ">
             DAY 01
           </p>
 
@@ -83,7 +83,7 @@ const Hero = () => {
 
         {/* Day 02 */}
         <div className="pb-10 border-b border-white">
-          <p className="text-xl md:text-xl font-semibold tracking-wider mb-2">
+          <p className="text-xl md:text-xl font-semibold dm-sans-500 tracking-wider mb-2">
             DAY 02
           </p>
 
