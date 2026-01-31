@@ -1,9 +1,13 @@
 import backgroung1 from '@/Assets/media/BACKGROUND.png'
+import ContactForm from '@/Components/Home/ContactForm'
+import Animate from '@/Components/Media/animate.jsx'
+import Media from '@/Components/Media/Media.jsx'
+import Boost from '@/Components/Media/boost.jsx'
 
 const MediaPage = () => {
     return (
         <>
-            <div className="relative h-500 min-h-screen w-full overflow-clip">
+            <div className="relative min-h-screen w-full overflow-clip">
                 <div className="absolute inset-0 h-120 overflow-hidden">
                     <img
                         src={backgroung1}
@@ -12,7 +16,7 @@ const MediaPage = () => {
                     />
                     <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#100422] to-transparent"></div>
                 </div>
-                <div className="relative w-full h-120 overflow-hidden px-6 py-16">
+                <div className="relative h-120 w-full overflow-hidden px-6 py-16">
                     {/* Background subtle glow */}
                     <div className="relative z-10 mx-auto max-w-6xl text-center">
                         {/* Small Top Text */}
@@ -32,8 +36,9 @@ const MediaPage = () => {
                         </h1>
                     </div>
                 </div>
+                <Animate />
 
-                <div className="mx-auto oswald-500 flex max-w-6xl flex-col items-center justify-center gap-4 sm:flex-row">
+                <div className="oswald-500 mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 sm:flex-row">
                     {/* Left Text */}
                     <p className="text-sm font-semibold tracking-wide text-white uppercase md:text-base">
                         Get Our Press Details Here!
@@ -43,6 +48,14 @@ const MediaPage = () => {
                     <button className="bg-neon-yellow px-6 py-3 font-bold text-black uppercase transition-all duration-300 hover:bg-lime-300">
                         View Press Kit
                     </button>
+                </div>
+                <div className="w-full sm:pl-25">
+                    <Media />
+                    <Boost />
+                </div>
+                <div className="relative">
+                    <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#100422] to-transparent h-24"></div>
+                    <ContactForm />
                 </div>
             </div>
         </>

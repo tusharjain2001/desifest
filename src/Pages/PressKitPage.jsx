@@ -13,3 +13,4 @@ const PressKitPage = () => {
     </div>
   );
 };
+export default PressKitPage;

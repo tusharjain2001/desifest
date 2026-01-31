@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 
 const EventCard = ({ image, title, date, description, readMoreLink }) => {
     return (
-        <div className="relative w-[320px] flex-shrink-0 overflow-hidden bg-[#2A1B3D] p-3 text-white shadow-lg">
+        <div className="relative w-[420px]  flex-shrink-0 overflow-hidden bg-[#2A1B3D] p-3 text-white shadow-lg">
             {/* IMAGE */}
             <div className="relative h-35">
                 <img src={image} alt={title} className="h-full w-full object-cover" />
