@@ -1,6 +1,10 @@
+import MissionStatement from "@/Components/Media/MissionStatement";
+
 const MediaPage = () => {
   return (
-    <div>MediaPage</div>
+    <div>
+      <MissionStatement />
+    </div>
   );
 };
 
