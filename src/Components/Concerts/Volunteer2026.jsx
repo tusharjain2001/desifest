@@ -1,7 +1,7 @@
 import React from "react";
 import VolunteerSignupForm from "./VolunteerSignUpForm";
 import VerticalNavbar from "../Layout/VerticalNavbar";
-
+import bg from "@/Assets/artist/image copy.png";
 const Volunteer2026 = () => {
   return (
     <div className="relative min-h-screen h-full overflow-clip w-full">
@@ -20,7 +20,7 @@ const Volunteer2026 = () => {
       <p className="mt-4 md:text-2xl uppercase tracking-widest text-[#100422]">
         Please find here the volunteer submission for 2026 desifest
       </p>
-
+      <img src={bg} alt="" className="my-4" />
       <VolunteerSignupForm />
     </div>
     </div>
