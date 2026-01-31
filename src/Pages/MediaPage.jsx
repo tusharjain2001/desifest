@@ -3,8 +3,10 @@ import ContactForm from '@/Components/Home/ContactForm'
 import Animate from '@/Components/Media/animate.jsx'
 import Media from '@/Components/Media/Media.jsx'
 import Boost from '@/Components/Media/boost.jsx'
+import { useOutletContext } from 'react-router-dom'
 
 const MediaPage = () => {
+    const { scrollRef, scrollY } = useOutletContext();
     return (
         <>
             <div className="relative min-h-screen w-full overflow-clip">
@@ -36,7 +38,7 @@ const MediaPage = () => {
                         </h1>
                     </div>
                 </div>
-                <Animate />
+                <Animate scrollY={scrollY} scrollRef={scrollRef}/>
 
                 <div className="oswald-500 mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 sm:flex-row">
                     {/* Left Text */}
