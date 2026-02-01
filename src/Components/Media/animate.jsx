@@ -77,12 +77,20 @@ const Skiper30 = () => {
 
         const progress = Math.max(0, Math.min(1, -rect.top / (rect.height + vh)))
 
+
         colRefs.current.forEach((el, i) => {
             if (!el) return
-            const translateY = -INITIAL_OFFSETS_PX[i] + progress * vh * SPEEDS[i]
+        
+            // Amount gallery has moved upward
+            const galleryOffset = -rect.top
+        
+            // Parallax: column moves slower than gallery
+            const translateY =
+                -INITIAL_OFFSETS_PX[i] +
+                galleryOffset * (SPEEDS[i] * 0.2)
+        
             el.style.transform = `translateY(${translateY}px)`
         })
-
         rafRef.current = requestAnimationFrame(tick)
     }, [])
 
