@@ -81,8 +81,8 @@ const PopularCaseStudies = () => {
 
             {/* Cards Wrapper */}
             <div
-                ref={scrollRef}
-                className="flex cursor-grab justify-center gap-8 overflow-x-auto pb-4 active:cursor-grabbing sm:flex-wrap sm:overflow-visible"
+                
+                className="flex  justify-center gap-8 overflow-x-auto pb-4 sm:flex-wrap sm:overflow-visible"
             >
                 {mediaData.map((item, index) => (
                     <div
