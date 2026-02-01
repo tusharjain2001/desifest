@@ -14,13 +14,13 @@ const EventCard = ({ image, title, date, description, readMoreLink }) => {
             <div className="space-y-3 p-5">
                 <h3 className="dm-sans-500 text-2xl leading-snug">{title}</h3>
 
-                <p className="font-['DM_Sans'] text-sm text-[#8D8D8D]">{date}</p>
+                <p className="dm-sans-400 font-medium text-sm text-[#8D8D8D]">{date}</p>
 
                 <p className="dm-sans-300 line-clamp-3 text-sm text-white">{description}</p>
 
                 <a
                     href={readMoreLink}
-                    className="oswaldd text-neon-yellow absolute bottom-4 inline-flex items-center gap-2 font-medium transition-all hover:gap-3"
+                    className="oswaldd text-neon-yellow absolute bottom-4 inline-flex items-center gap-2 transition-all hover:gap-3 underline"
                 >
                     Read More <ArrowRight size={16} />
                 </a>
