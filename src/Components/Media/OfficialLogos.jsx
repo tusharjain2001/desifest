@@ -19,24 +19,53 @@ const logos = [
 
 const OfficialLogos = () => {
     return (
-        <section className="w-full bg-gradient-to-b from-[#0b021a] to-[#140326] py-20">
+        <section className="w-full py-24">
             <div className="mx-auto max-w-7xl px-6">
-                {/* Heading */}
-                <h2 className="oswaldd mb-16 text-center text-3xl tracking-widest text-white md:text-4xl">
+                <h2 className="oswaldd mb-20 text-center text-3xl tracking-widest text-white md:text-4xl">
                     OUR OFFICIAL LOGOS
                 </h2>
 
-                {/* Logos Grid */}
-                <div className="grid grid-cols-2  gap-y-12 md:grid-cols-4 md:gap-y-16">
+                {/* MOBILE LAYOUT */}
+                <div className="grid grid-cols-2 gap-x-10 gap-y-16 md:hidden">
                     {logos.map((logo, index) => (
-                        <div key={index} className="flex items-center justify-center">
+                        <div
+                            key={index}
+                            className={`flex justify-center ${index >= 4 ? 'col-span-2' : ''}`}
+                        >
                             <img
                                 src={logo}
                                 alt="Official logo"
-                                className="object-contain opacity-90"
+                                className="h-16 w-auto object-contain opacity-90"
                             />
                         </div>
                     ))}
+                </div>
+
+                {/* DESKTOP LAYOUT */}
+                <div className="hidden md:block">
+                    {/* Top row */}
+                    <div className="mb-24 flex items-center justify-between">
+                        {logos.slice(0, 4).map((logo, index) => (
+                            <img
+                                key={index}
+                                src={logo}
+                                alt="Official logo"
+                                className="h-24 w-auto object-contain opacity-90"
+                            />
+                        ))}
+                    </div>
+
+                    {/* Bottom row */}
+                    <div className="flex items-center justify-center gap-x-24">
+                        {logos.slice(4).map((logo, index) => (
+                            <img
+                                key={index}
+                                src={logo}
+                                alt="Official logo"
+                                className="h-20 w-auto object-contain opacity-90"
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
