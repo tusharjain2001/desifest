@@ -27,7 +27,7 @@ export default function MissionSection() {
                 </h1>
 
                 {/* DESCRIPTION */}
-                <p className="dm-sans-400 mx-auto mb-16 max-w-3xl text-sm text-gray-300 md:text-base">
+                <p className="dm-sans-400 mx-auto mb-16 max-w-3xl text-[18px] text-gray-300 md:text-base">
                     To become the leading global platform for South Asian Arts & Culture. We aim to
                     connect artists, creators and audiences from the diverse South Asian diaspora,
                     fostering a profound sense of belonging and mutual appreciation.
