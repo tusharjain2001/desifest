@@ -40,9 +40,10 @@ const MediaPage = () => {
                         </h1>
                     </div>
                 </div>
-                <Animate scrollY={scrollY} scrollRef={scrollRef} />
-
-                <div className="oswald-500 mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 sm:flex-row">
+                <div className="w-full sm:pl-25 my-4">
+                    <Animate scrollY={scrollY} scrollRef={scrollRef} />
+                </div>
+                <div className="oswald-500 mx-auto hidden max-w-6xl flex-col items-center justify-center gap-4 sm:flex sm:flex-row">
                     {/* Left Text */}
                     <p className="text-sm font-semibold tracking-wide text-white uppercase md:text-base">
                         Get Our Press Details Here!
@@ -56,12 +57,12 @@ const MediaPage = () => {
                         View Press Kit
                     </button>
                 </div>
-                <div className="w-full sm:pl-25">
+                <div className="w-full sm:pl-25 ">
                     <Media />
                     <Boost />
                 </div>
                 <div className="relative">
-                    <div className="absolute  inset-0 z-10 h-24 bg-gradient-to-b from-[#100422] to-transparent"></div>
+                    <div className="absolute inset-0 z-10 h-24 bg-gradient-to-b from-[#100422] to-transparent"></div>
                     <ContactForm />
                 </div>
             </div>

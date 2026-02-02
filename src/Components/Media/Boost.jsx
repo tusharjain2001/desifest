@@ -32,7 +32,7 @@ const Boost = () => {
     return (
         <>
             {/* Header */}
-            <div className="oswald-500 mb-10 flex w-full items-center gap-3 text-3xl text-white uppercase sm:gap-4 sm:text-5xl">
+            <div className="oswald-500 mb-10 flex w-full items-center gap-3 text-4xl text-white uppercase sm:gap-4 sm:text-5xl">
                 <span className="whitespace-nowrap">Boost Outreach</span>
                 <div className="h-[2px] flex-1 rounded-full bg-white sm:h-[3px]" />
             </div>

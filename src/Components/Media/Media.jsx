@@ -67,7 +67,7 @@ const MediaBlogs = () => {
     }
 
     return (
-        <div className="flex flex-col px-2">
+        <div className=" my-6 flex flex-col px-2">
             {/* Header */}
             <div className="mb-8 text-white uppercase">
                 
@@ -78,8 +78,8 @@ const MediaBlogs = () => {
                 </div>
 
                 {/* Mobile header */}
-                <div className="sm:hidden">
-                    <div className="oswald-500 text-3xl">MEDIA BLOGS</div>
+                <div className="sm:hidden flex flex-row ">
+                    <div className="oswald-500 text-nowrap mr-4 text-4xl">MEDIA BLOGS</div>
 
                     <div className="mt-3 flex w-full justify-center">
                         <div className="flex w-full items-center gap-3">
