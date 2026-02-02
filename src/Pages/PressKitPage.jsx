@@ -19,16 +19,16 @@ const PressKitPage = () => {
                 />
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#100422] to-transparent"></div>
             </div>
-            <div className="relative h-120 w-full overflow-hidden px-6 py-16">
+            <div className="relative md:h-120 w-full overflow-hidden px-6 py-16 mt-10">
                 {/* Background subtle glow */}
                 <div className="relative z-10 mx-auto max-w-6xl text-center">
                     {/* Small Top Text */}
-                    <p className="dm-sans-500 mb-4 text-xs tracking-[0.3em] text-white/80 uppercase md:text-base">
-                        The Story Behind The Stage
+                    <p className="dm-sans-500 mb-4 text-[20px] tracking-[0.3em] text-white uppercase md:text-[20px]">
+                        Everything you need to tell our story right
                     </p>
 
                     {/* Main Heading */}
-                    <h1 className="text-5xl font-extrabold tracking-tight md:text-9xl">
+                    <h1 className="text-[64px] font-extrabold tracking-tight md:text-9xl">
                         <span className="special-gothic-one-regular bg-gradient-to-r from-yellow-300 to-lime-400 bg-clip-text text-transparent">
                             PRESS
                         </span>{' '}
