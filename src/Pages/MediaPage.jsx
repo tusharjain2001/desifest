@@ -45,14 +45,14 @@ const MediaPage = () => {
                 </div>
                 <div className="oswald-500 mx-auto hidden max-w-6xl flex-col items-center justify-center gap-4 sm:flex sm:flex-row">
                     {/* Left Text */}
-                    <p className="text-sm font-semibold tracking-wide text-white uppercase md:text-base">
+                    <p className="text-sm md:text-[32px] font-medium tracking-wide text-white uppercase oswaldd">
                         Get Our Press Details Here!
                     </p>
 
                     {/* Button */}
                     <button
                         onClick={() => navigate('/press-kit')}
-                        className="bg-neon-yellow px-6 py-3 font-bold text-black uppercase transition-all duration-300 hover:bg-lime-300"
+                        className="bg-neon-yellow px-6 py-3 mt-5 font-medium md:text-[32px] oswaldd text-black uppercase transition-all duration-300 hover:bg-lime-300"
                     >
                         View Press Kit
                     </button>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from 'react'
 
-import Blackandwhite from '@/Assets/media/image copy.png'
-import Rgbbg from '@/Assets/media/image.png'
+import Blackandwhite from '@/Assets/media/bw.svg'
+import Rgbbg from '@/Assets/media/color.svg'
 // ---------------------------------------------------------------------------
 // Images — 5 columns, 5-6 images each
 // ---------------------------------------------------------------------------
