@@ -5,13 +5,14 @@ import blog3 from '@/Assets/home/Media/image3.png'
 import left from '../../Assets/concerts/leftwhitearrow.svg'
 import right from '../../Assets/concerts/rightwhitearrow.svg'
 import { useRef } from 'react'
+
 const mediaData = [
     {
         image: blog1,
-        title: 'DESIFEST 2025 “We are Canadian” return...',
+        title: 'DESIFEST 2025 "We are Canadian" return...',
         date: 'May 15, 2025',
         description:
-            'DESIFEST 2025 Doubles Down on Canadian South Asian Talent with Bold “We Are Canadian” Return to Sankofa Square...',
+            'DESIFEST 2025 Doubles Down on Canadian South Asian Talent with Bold "We Are Canadian" Return to Sankofa Square...',
         readMoreLink: '#',
     },
     {
@@ -19,7 +20,7 @@ const mediaData = [
         title: 'Open Mic Unplugged Brings Back...',
         date: 'May 15, 2025',
         description:
-            'Open Mic Unplugged Brings South Asian Music Back to the Heart of Gerrard Street May 31,...',
+            'Open Mic Unplugged Brings South Asian Music Back to the Heart of Gerrard Street May 31,...',
         readMoreLink: '#',
     },
     {
@@ -31,20 +32,22 @@ const mediaData = [
         readMoreLink: '#',
     },
 ]
+
 const PopularCaseStudies = () => {
     const scrollRef = useRef(null)
 
     const scroll = (dir) => {
         if (!scrollRef.current) return
+        // Card width (280px) + gap (32px from gap-8)
+        const cardWidth = 280 + 32
         scrollRef.current.scrollBy({
-            left: dir === 'left' ? -350 : 350,
+            left: dir === 'left' ? -cardWidth : cardWidth,
             behavior: 'smooth',
         })
     }
 
     return (
         <div className="flex flex-col px-2 sm:pl-30">
-            {/* Header */}
             {/* Header */}
             <div className="mb-8 text-white uppercase">
                 {/* Desktop header */}
@@ -81,8 +84,9 @@ const PopularCaseStudies = () => {
 
             {/* Cards Wrapper */}
             <div
-                
-                className="flex  justify-center gap-8 overflow-x-auto pb-4 sm:flex-wrap sm:overflow-visible"
+                ref={scrollRef}
+                className="flex justify-start gap-8 overflow-x-auto pb-4 sm:justify-center sm:flex-wrap sm:overflow-visible"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 {mediaData.map((item, index) => (
                     <div
