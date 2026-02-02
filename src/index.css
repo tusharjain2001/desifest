@@ -137,3 +137,11 @@
   .helva {
     font-family: "HelveticaNeueMedium";
   }
+
+  /* Clamp to 3 lines with ellipsis */
+.description-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;     /* Number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

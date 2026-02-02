@@ -3,7 +3,10 @@ import blog1 from '@/Assets/home/Media/image1.png'
 import blog2 from '@/Assets/home/Media/image2.png'
 import blog3 from '@/Assets/home/Media/image3.png'
 import blog456 from '@/Assets/media/BWBG.png'
+import left from '../../Assets/concerts/leftwhitearrow.svg'
+import right from '../../Assets/concerts/rightwhitearrow.svg'
 import { useRef } from 'react'
+
 const mediaData = [
     {
         image: blog1,
@@ -51,53 +54,78 @@ const mediaData = [
         readMoreLink: '#',
     },
 ]
-const Media = () => {
+
+const MediaBlogs = () => {
     const scrollRef = useRef(null)
 
     const scroll = (dir) => {
         if (!scrollRef.current) return
         scrollRef.current.scrollBy({
-            left: dir === 'left' ? -350 : 350,
+            left: dir === 'left' ? -320 : 320,
             behavior: 'smooth',
         })
     }
 
     return (
-        <>
+        <div className="flex flex-col px-2">
             {/* Header */}
-            <div className="oswald-500 mb-8 flex items-center justify-between text-3xl text-white uppercase sm:text-5xl">
-                <div className="flex w-full items-center gap-3 sm:gap-4">
-                    <span className="whitespace-nowrap">Media Blogs</span>
-                    <div className="h-[2px] flex-1 rounded-full bg-white sm:h-[3px]" />
+            <div className="mb-8 text-white uppercase">
+                
+                {/* Desktop header */}
+                <div className="oswald-500 hidden items-center gap-4 text-5xl sm:flex">
+                    <span className="whitespace-nowrap">MEDIA BLOGS</span>
+                    <div className="h-[3px] flex-1 rounded-full bg-white" />
                 </div>
 
-                {/* Mobile Arrows */}
-                <div className="ml-4 flex gap-3 sm:hidden">
-                    <button onClick={() => scroll('left')} className="text-2xl">
-                        ‹
-                    </button>
-                    <button onClick={() => scroll('right')} className="text-2xl">
-                        ›
-                    </button>
+                {/* Mobile header */}
+                <div className="sm:hidden">
+                    <div className="oswald-500 text-3xl">MEDIA BLOGS</div>
+
+                    <div className="mt-3 flex w-full justify-center">
+                        <div className="flex w-full items-center gap-3">
+                            <div className="h-[2px] flex-1 rounded-full bg-white" />
+                            <div className="flex items-center gap-2">
+                                <button
+                                    onClick={() => scroll('left')}
+                                    className="flex h-4 w-4 items-center justify-center"
+                                >
+                                    <img src={left} className="h-full w-full object-contain" />
+                                </button>
+                                <button
+                                    onClick={() => scroll('right')}
+                                    className="flex h-4 w-4 items-center justify-center"
+                                >
+                                    <img src={right} className="h-full w-full object-contain" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             {/* Cards Wrapper */}
             <div
                 ref={scrollRef}
-                className="flex cursor-grab gap-8 justify-center overflow-x-auto pb-4 active:cursor-grabbing sm:flex-wrap sm:overflow-visible"
+                className="
+                    flex gap-6 overflow-x-auto pb-4 
+                    cursor-grab active:cursor-grabbing
+                    sm:grid sm:grid-cols-3 sm:gap-8 sm:overflow-visible
+                "
             >
                 {mediaData.map((item, index) => (
                     <div
                         key={index}
-                        className="min-w-[280px] flex-shrink-0 justify-center h-full items-center sm:max-w-[30%] sm:basis-1/3"
+                        className="
+                            min-w-[280px] flex-shrink-0
+                            sm:min-w-0
+                        "
                     >
                         <EventCard {...item} />
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
-export default Media
+export default MediaBlogs

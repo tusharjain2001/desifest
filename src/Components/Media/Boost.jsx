@@ -1,5 +1,6 @@
 import BoostCard from './boostcard'
 import blog456 from '@/Assets/media/BWBG.png'
+
 const boostData = [
     {
         image: blog456,
@@ -36,12 +37,10 @@ const Boost = () => {
                 <div className="h-[2px] flex-1 rounded-full bg-white sm:h-[3px]" />
             </div>
 
-            {/* Cards */}
-            <div className="scrollbar-hide flex gap-8 overflow-x-auto">
+            {/* Responsive Grid */}
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
                 {boostData.map((item, index) => (
-                    <div key={index}>
-                        <BoostCard {...item} />
-                    </div>
+                    <BoostCard key={index} {...item} />
                 ))}
             </div>
         </>
