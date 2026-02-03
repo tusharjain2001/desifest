@@ -52,7 +52,7 @@ const MediaPage = () => {
                     {/* Button */}
                     <button
                         onClick={() => navigate('/press-kit')}
-                        className="bg-neon-yellow px-6 py-3 mt-5 font-medium md:text-[32px] oswaldd text-black uppercase transition-all duration-300 hover:bg-lime-300"
+                        className="bg-neon-yellow hover:bg-lime-300 px-6 py-3 mt-5 font-medium md:text-[32px] oswaldd text-black uppercase transition-all duration-300 hover:bg-lime-300"
                     >
                         View Press Kit
                     </button>

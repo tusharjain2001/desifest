@@ -20,11 +20,11 @@ const Hero = () => {
             <div>But also go through our...</div>
           </div>
           <div className="mt-10 flex items-center justify-center gap-6">
-            <button className="bg-neon-yellow text-black px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl hover:opacity-90 transition font-medium">
+            <button className="bg-neon-yellow text-black px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl hover:opacity-90 transition font-medium hover:bg-lime-300">
               Open-Mic
             </button>
 
-            <button className="border border-neon-yellow text-neon-yellow px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl hover:bg-neon-yellow hover:text-black font-medium transition">
+            <button className="border border-neon-yellow hover:bg-[#26193A80] text-neon-yellow px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl font-medium transition">
               Sofa-Sessions
             </button>
           </div>

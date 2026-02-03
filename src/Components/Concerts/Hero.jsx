@@ -49,11 +49,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-row gap-4 pt-6">
-            <button onClick={() => navigate("/artistsignup")} className="px-6 oswaldd md:px-8 py-4 bg-neon-yellow text-black font-medium text-lg md:text-3xl hover:cursor-pointer">
+            <button onClick={() => navigate("/artistsignup")} className="px-6 oswaldd md:px-8 py-4 bg-neon-yellow hover:bg-lime-300 text-black font-medium text-lg md:text-3xl hover:cursor-pointer">
               ARTIST SIGN UP
             </button>
 
-            <button onClick={() => navigate("/volunteersignup")} className="px-6 md:px-8 py-4 border-2 oswaldd border-neon-yellow text-neon-yellow bg-midnight-purple font-medium text-lg md:text-3xl hover:cursor-pointer">
+            <button onClick={() => navigate("/volunteersignup")} className="px-6 md:px-8 py-4 border-2 oswaldd border-neon-yellow hover:bg-[#26193A80] text-neon-yellow bg-midnight-purple font-medium text-lg md:text-3xl hover:cursor-pointer">
               VOLUNTEER
             </button>
           </div>
