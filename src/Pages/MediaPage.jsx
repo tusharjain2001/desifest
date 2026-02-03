@@ -2,7 +2,7 @@ import backgroung1 from '@/Assets/media/BACKGROUND.png'
 import ContactForm from '@/Components/Home/ContactForm'
 import Animate from '@/Components/Media/animate.jsx'
 import Media from '@/Components/Media/Media.jsx'
-import Boost from '@/Components/Media/boost.jsx'
+import Boost from '@/Components/Media/Boost.jsx'
 import { useOutletContext } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
