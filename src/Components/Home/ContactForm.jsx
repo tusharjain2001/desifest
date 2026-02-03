@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import contactusimg from '@/Assets/home/Contact_us_bg.png'
+import contactusimgm from '@/Assets/home/image copy 2.png'
 import toast from 'react-hot-toast'
 
 const ContactForm = () => {
@@ -76,9 +77,16 @@ const ContactForm = () => {
             className="relative flex min-h-screen w-full flex-col overflow-hidden bg-transparent md:flex-row"
         >
             {/* IMAGE SECTION */}
-            <div className="relative h-70 w-full md:h-auto md:basis-[40%]">
+            <div className="hidden sm:relative h-70 w-full md:h-auto md:basis-[40%]">
                 <img
                     src={contactusimg}
+                    alt="Crowd"
+                    className="absolute inset-0 object-cover sm:h-full sm:w-full"
+                />
+            </div>
+            <div className="relative h-60 w-full md:h-auto md:basis-[40%]">
+                <img
+                    src={contactusimgm}
                     alt="Crowd"
                     className="absolute inset-0 object-cover sm:h-full sm:w-full"
                 />
