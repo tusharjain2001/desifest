@@ -74,23 +74,7 @@ const BlogsAndMedia = ({ scrollY }) => {
                     <img
                         src={background}
                         alt="background"
-                        className="absolute -top-44 z-0 w-full object-cover"
-                        style={{
-                            WebkitMaskImage: `
-      linear-gradient(
-        to top,
-        rgba(0,0,0,0) 46%,
-        rgba(0,0,0,1) 125%
-      )
-    `,
-                            maskImage: `
-      linear-gradient(
-        to top,
-        rgba(0,0,0,0) 46%,
-        rgba(0,0,0,1) 125%
-      )
-    `,
-                        }}
+                        className="absolute bottom-44 z-0 w-full object-cover"
                     />
 
                     {blogs.map((blog, index) => (
