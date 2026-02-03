@@ -94,28 +94,13 @@ const BlogsAndMedia = ({ scrollY }) => {
                     ))}
                 </div>
                 {/* MOBILE SLIDER */}
-                <div className="relative z-30 mt-24 sm:hidden">
+                <div className="relative z-30 mt-50 sm:hidden">
                     {/* Background */}
                     <img
                         src={background}
                         alt="background"
-                        className="absolute -top-14 z-0 w-full object-cover"
-                        style={{
-                            WebkitMaskImage: `
-        linear-gradient(
-          to top,
-          rgba(0,0,0,0) 46%,
-          rgba(0,0,0,1) 125%
-        )
-      `,
-                            maskImage: `
-        linear-gradient(
-          to top,
-          rgba(0,0,0,0) 46%,
-          rgba(0,0,0,1) 125%
-        )
-      `,
-                        }}
+                        className="absolute -top-40 z-0 w-full object-cover"
+                        
                     />
 
                     {/* Scroll Container */}
@@ -177,13 +162,13 @@ const MobileBlogSlider = ({ blogs }) => {
     return (
         <div
             ref={sliderRef}
-            className="scrollbar-hide relative z-10 flex touch-pan-x snap-x snap-mandatory gap-10 overflow-x-auto px-[50vw]"
+            className="scrollbar-hide relative z-10 flex touch-pan-x snap-x snap-mandatory gap-4 overflow-x-auto px-[50vw]"
         >
             {blogs.map((blog, index) => (
                 <div
                     key={blog.id}
                     data-index={index}
-                    className={`flex-shrink-0 snap-center pb-16 transition-transform duration-500 ease-out ${activeIndex === index ? 'translate-y-10' : 'translate-y-0'} `}
+                    className={`flex snap-center w-72 pb-16 shrink-0 transition-transform duration-500 ease-out ${activeIndex === index ? 'translate-y-10' : 'translate-y-0'} `}
                 >
                     <EventCard
                         image={blog.image}

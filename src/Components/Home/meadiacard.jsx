@@ -2,7 +2,7 @@ import arrow from '../../Assets/media/yellowarrow.svg'
 
 const EventCard = ({ image, title, date, description, readMoreLink }) => {
     return (
-        <div className="relative w-[420px] flex-shrink-0 overflow-hidden bg-[#2A1B3D] p-3 text-white shadow-lg">
+        <div className="relative w-full  overflow-hidden bg-[#2A1B3D] p-3 text-white shadow-lg">
             
             <div className="relative h-40">
                 <img
@@ -15,11 +15,11 @@ const EventCard = ({ image, title, date, description, readMoreLink }) => {
 
             <div className="flex flex-col p-5 space-y-3">
                 
-                <h3 className="dm-sans-500 text-[28px] leading-snug">
+                <h3 className="dm-sans-500 text-xl  sm:text-[28px]  leading-snug">
                     {title}
                 </h3>
 
-                <p className="dm-sans-400 text-[16px] font-medium text-[#8D8D8D]">
+                <p className="dm-sans-400 sm:text-[16px] font-medium text-[#8D8D8D]">
                     {date}
                 </p>
 
