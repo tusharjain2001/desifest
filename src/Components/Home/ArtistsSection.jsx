@@ -7,20 +7,20 @@ import img2 from '@/Assets/home/animation/image copy.png'
 
 const ArtistCard = ({ image, title }) => {
     return (
-        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-col justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-180">
+        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-col justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-120">
             {/* IMAGE */}
             <div className="overflow-hidden">
                 <img
                     src={image}
                     alt={title}
-                    className="h-60 w-1/2 object-cover grayscale transition-all duration-500 ease-out group-hover:w-3/4"
+                    className="h-50 w-1/2 object-cover grayscale transition-all duration-500 ease-out group-hover:w-3/4"
                 />
             </div>
 
             {/* BOTTOM CONTENT */}
             <div className="flex flex-col items-start justify-between">
                 {/* TITLE */}
-                <h3 className="dm-sans-400 max-w-35 text-5xl leading-tight text-black uppercase">
+                <h3 className="dm-sans-400 max-w-35 text-4xl leading-tight text-black uppercase">
                     {title}
                 </h3>
 
@@ -29,7 +29,7 @@ const ArtistCard = ({ image, title }) => {
                     <img
                         src={arrow}
                         alt=""
-                        className="w-14 rotate-0 transition-transform duration-500 ease-out group-hover:-rotate-45"
+                        className="w-10 rotate-0 transition-transform duration-500 ease-out group-hover:-rotate-45"
                     />
                 </div>
             </div>
@@ -71,19 +71,19 @@ const ArtistsSection = ({ scrollY }) => {
             <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#453361]/100 to-[#453361]/50"></div>
 
             {/* GRID CONTAINER (UNCHANGED) */}
-            <div className="relative z-30 mx-auto pt-28 grid w-full max-w-full grid-cols-1 gap-10 px-6 sm:grid-cols-3">
+            <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-2  px-8 pt-28 sm:grid-cols-3">
                 {/* Featured Artist */}
-                <div ref={featuredRef}>
+                <div ref={featuredRef} className="w-90 flex items-center ">
                     <ArtistCard image={img2} title="Featured Artists" />
                 </div>
 
                 {/* Community Artist */}
-                <div ref={communityRef} className="">
+                <div ref={communityRef} className="w-90 items-center ">
                     <ArtistCard image={img2} title="Community Artists" />
                 </div>
 
                 {/* Image Card */}
-                <div ref={imageRef}>
+                <div ref={imageRef} className="w-100 h-120 items-center ">
                     <img
                         src={img1}
                         className="hidden h-full w-full object-contain sm:block"

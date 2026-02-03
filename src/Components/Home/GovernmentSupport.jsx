@@ -14,7 +14,7 @@ const GovernmentSupport = () => {
             <div className="mb-10 flex items-center justify-center gap-1 md:mb-16">
                 <div className="h-0.75 flex-1 rounded-full bg-white" />
 
-                <h2 className="text-center font-[Oswald] text-[28px] leading-9 font-medium whitespace-nowrap text-white uppercase sm:text-[40px] sm:leading-12.5 md:text-[64px] md:leading-20">
+                <h2 className="text-center font-[Oswald] text-[28px] leading-9 font-medium whitespace-nowrap text-white uppercase sm:text-5xl sm:leading-12.5 md:leading-20">
                     Government Support
                 </h2>
 
