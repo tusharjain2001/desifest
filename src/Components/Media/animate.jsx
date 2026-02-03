@@ -103,9 +103,9 @@ const Skiper30 = () => {
             <div className="relative w-full overflow-hidden">
                 {/* Centering container */}
                 <div className="flex justify-center">
-                    <div ref={galleryRef} className="relative flex h-[200vh] gap-6 bg-transparent">
+                    <div ref={galleryRef} className="relative flex md:h-[200vh] h-[150vh] gap-6 bg-transparent">
                         {columns.map((imgs, i) => (
-                            <div key={i} className="w-[300px] shrink-0">
+                            <div key={i} className="md:w-[300px] w-[150px]  shrink-0">
                                 <Column images={imgs} colRef={(el) => (colRefs.current[i] = el)} />
                             </div>
                         ))}

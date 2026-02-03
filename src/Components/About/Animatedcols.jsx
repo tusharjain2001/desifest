@@ -55,14 +55,14 @@ const ArtistCard = ({ image, title, description }) => {
 				<img
 					src={image}
 					alt={title}
-					className="w-1/2 h-full object-cover grayscale"
+					className="w-3/4 h-full object-cover grayscale"
 				/>
 			</div>
-			<h3 className="text-black uppercase mt-8  text-4xl sm:text-5xl dm-sans-400  text-nowrap overflow-visible text-start">
+			<h3 className="text-black uppercase md:mt-0 mt-4  text-4xl sm:text-5xl dm-sans-400  text-nowrap overflow-visible text-start">
 				{title}
 			</h3>
 			{/* DESCRIPTION */}
-			<div className="text-black dm-sans-400  w-full text-start text-xl sm:text-2xl mt-4 max-w-sm">
+			<div className="text-black dm-sans-400 md:mt-0 mt-4  w-full text-start text-xl sm:text-2xl max-w-sm">
 				{description}
 			</div>
 

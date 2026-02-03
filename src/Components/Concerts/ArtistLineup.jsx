@@ -1,6 +1,5 @@
 import React from 'react'
 import lineup from '../../Assets/concerts/artistlineupwb.svg'
-import lineuptwo from '../../Assets/concerts/artistlineup2.svg'
 import lineupbg from '../../Assets/concerts/artistlineupbg.svg'
 import { useEffect, useRef } from 'react'
 const ArtistLineup = ({ scrollY }) => {
@@ -51,7 +50,7 @@ const ArtistLineup = ({ scrollY }) => {
             id: 6,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
-            image: lineuptwo,
+            image: lineup,
             top: '52%',
             left: '15%',
         },
@@ -61,7 +60,7 @@ const ArtistLineup = ({ scrollY }) => {
             handle: '@musebox.photographer',
             image: lineup,
             top: '60%',
-            right: '2%',
+            right: '0%',
         },
         {
             id: 8,
@@ -84,7 +83,7 @@ const ArtistLineup = ({ scrollY }) => {
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
             image: lineup,
-            top: '82%',
+            top: '84%',
             left: '6%',
         },
         {
@@ -93,14 +92,14 @@ const ArtistLineup = ({ scrollY }) => {
             handle: '@musebox.photographer',
             image: lineup,
             top: '89%',
-            right: '3%',
+            right: '0%',
         },
         {
             id: 12,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
             image: lineup,
-            top: '96%',
+            top: '98%',
             left: '12%',
         },
     ]

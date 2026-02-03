@@ -55,7 +55,7 @@ const FoodFestivalSection = () => {
                 {/* Header */}
                 <div className="mb-14 flex items-center justify-between">
                     <div className="flex w-full items-center gap-1 md:gap-8 md:items-end">
-                        <h2 className="oswaldd text-[36px] font-medium tracking-wide oswaldd whitespace-nowrap text-white md:text-[100px]">
+                        <h2 className="oswaldd text-[36px] tracking-wide whitespace-nowrap text-white md:text-[100px]">
                             FOOD FESTIVAL
                         </h2>
 

@@ -5,7 +5,7 @@ export default function MissionSection() {
         <section className="w-full px-4 py-20 text-white">
             <div className="mx-auto max-w-6xl text-center">
                 {/* MISSION LABEL */}
-                <p className="mb-6 text-[18px] tracking-[0.3em] uppercase">Mission Statement</p>
+                <p className="mb-6 text-[18px] tracking-wide uppercase">Mission Statement</p>
 
                 {/* HEADING */}
                 <h1 className="oswaldd mb-6 text-5xl leading-tight md:text-[80px]">

@@ -18,7 +18,7 @@ export default function ArtistSignupForm() {
     ]
 
     // Form state
-    const [selected, setSelected] = useState(events[0])
+    const [selected, setSelected] = useState()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -41,10 +41,10 @@ export default function ArtistSignupForm() {
     const [otherGenre, setOtherGenre] = useState('')
 
     const [performanceLanguage, setPerformanceLanguage] = useState('')
-    const [isBand, setIsBand] = useState('YES')
-    const [performedBefore, setPerformedBefore] = useState('YES')
-    const [performanceType, setPerformanceType] = useState('SINGER/RAPPER')
-    const [socanRegistered, setSocanRegistered] = useState('YES')
+    const [isBand, setIsBand] = useState('')
+    const [performedBefore, setPerformedBefore] = useState('')
+    const [performanceType, setPerformanceType] = useState('')
+    const [socanRegistered, setSocanRegistered] = useState('')
 
     const [managerFirstName, setManagerFirstName] = useState('')
     const [managerLastName, setManagerLastName] = useState('')
@@ -621,7 +621,7 @@ export default function ArtistSignupForm() {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-neon-yellow p-3 text-xl font-bold uppercase shadow-md transition disabled:cursor-not-allowed disabled:opacity-50"
+                className="bg-neon-yellow hover:bg-lime-300 p-3 text-xl font-bold uppercase shadow-md transition disabled:cursor-not-allowed disabled:opacity-50"
             >
                 {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>

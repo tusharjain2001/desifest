@@ -32,7 +32,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex text-8xl sm:text-7xl items-center h-32  md:text-[120px] font-black special-gothic-one-regular text-neon-yellow leading-none">
+          <div className="flex text-8xl sm:text-7xl items-center h-32  md:text-[120px] font-black special-gothic-one-regular text-neon-yellow leading-none overflow-hidden">
             <Digit value={2} delay={0} />
             <Digit value={0} delay={0.1} />
             <Digit value={2} delay={0.2} />

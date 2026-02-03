@@ -4,18 +4,19 @@ import { HiMenu, HiX } from "react-icons/hi";
 import logo from "@/Assets/COMMON/logo.svg";
 
 const navLinks = [
+  { label: "The 2026 Concert", path: "/concerts" },
   { label: "About", path: "/about" },
   { label: "Artists", path: "/artist" },
   { label: "Community", path: "/community" },
   { label: "Media", path: "/media" },
-  { label: "Concerts", path: "/concerts" },
+  
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
+    <header className="absolute top-0 left-0 w-full z-50 bg-[#2C223C80]">
       <nav className="w-full px-6 md:px-28 py-4 flex items-center justify-between">
         {/* Logo */}
         <NavLink to="/" className="flex items-center">

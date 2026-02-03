@@ -214,7 +214,7 @@ export default function VolunteerSignupForm() {
               className={`px-4 py-2 border text-xs uppercase font-medium transition
   ${
     formData.genre === genre
-      ? "bg-white text-blue-black border-blue-black"
+      ? "bg-light-lavender text-blue-black border-blue-black"
       : "border-blue-black text-blue-black"
   }`}
             >
@@ -296,7 +296,7 @@ export default function VolunteerSignupForm() {
       <button
         onClick={handleSubmit}
         type="submit"
-        className="bg-neon-yellow p-3 text-xl font-bold uppercase transition shadow-md"
+        className="bg-neon-yellow hover:bg-lime-300 p-3 text-xl font-bold uppercase transition shadow-md"
       >
         Submit
       </button>

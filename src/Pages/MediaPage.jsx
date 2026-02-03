@@ -43,26 +43,26 @@ const MediaPage = () => {
                 <div className="w-full sm:pl-25 my-4">
                     <Animate scrollY={scrollY} scrollRef={scrollRef} />
                 </div>
-                <div className="oswald-500 mx-auto hidden max-w-6xl flex-col items-center justify-center gap-4 sm:flex sm:flex-row">
+                <div className="oswald-500 flex-col flex items-center justify-center gap-4 sm:flex sm:flex-row">
                     {/* Left Text */}
-                    <p className="text-sm md:text-[32px] font-medium tracking-wide text-white uppercase oswaldd">
+                    <div className="text-[24px] md:text-[32px] font-medium tracking-wide text-white uppercase oswaldd">
                         Get Our Press Details Here!
-                    </p>
+                    </div>
 
                     {/* Button */}
                     <button
                         onClick={() => navigate('/press-kit')}
-                        className="bg-neon-yellow hover:bg-lime-300 px-6 py-3 mt-5 font-medium md:text-[32px] oswaldd text-black uppercase transition-all duration-300 hover:bg-lime-300"
+                        className="bg-neon-yellow hover:bg-lime-300 px-6 py-3 font-medium text-[24px] md:text-[32px] oswaldd text-black uppercase transition-all duration-300"
                     >
                         View Press Kit
                     </button>
                 </div>
-                <div className="w-full sm:pl-25 ">
+                <div className="w-full sm:pl-25 mt-20  ">
                     <Media />
                     <Boost />
                 </div>
                 <div className="relative">
-                    <div className="absolute inset-0 z-10 h-24 bg-gradient-to-b from-[#100422] to-transparent"></div>
+                    <div className="absolute inset-0 z-10 h-24 bg-linear-to-b from-[#100422] to-transparent"></div>
                     <ContactForm />
                 </div>
             </div>
