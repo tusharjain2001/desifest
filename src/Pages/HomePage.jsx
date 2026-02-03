@@ -1,35 +1,34 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext } from 'react-router-dom'
 
-import HeroSection from "@/Components/Home/HeroSection";
-import GovernmentSupport from "@/Components/Home/GovernmentSupport";
-import PartnerSupport from "@/Components/Home/PartnerSupport";
-import ContactForm from "@/Components/Home/ContactForm";
-import backgroung1 from "@/Assets/home/background_1.png";
-import Animation from "@/Components/Home/Animation";
-import Shop from "@/Components/Home/Shop.jsx";
-import BlogsAndMedia from "@/Components/Home/BlogandMedia";
-import Community from "@/Components/Home/Community";
-import VerticalNavbar from "@/Components/Layout/VerticalNavbar";
+import HeroSection from '@/Components/Home/HeroSection'
+import GovernmentSupport from '@/Components/Home/GovernmentSupport'
+import PartnerSupport from '@/Components/Home/PartnerSupport'
+import ContactForm from '@/Components/Home/ContactForm'
+import backgroung1 from '@/Assets/home/background_1.png'
+import Animation from '@/Components/Home/Animation'
+import Shop from '@/Components/Home/Shop.jsx'
+import BlogsAndMedia from '@/Components/Home/BlogandMedia'
+import Community from '@/Components/Home/Community'
+import VerticalNavbar from '@/Components/Layout/VerticalNavbar'
 
 const HomePage = () => {
-	// 👇 GET SCROLL FROM MAINLAYOUT
-	const { scrollRef, scrollY } = useOutletContext();
+    // 👇 GET SCROLL FROM MAINLAYOUT
+    const { scrollRef, scrollY } = useOutletContext()
 
-	return (
-		<div className="relative min-h-screen h-full overflow-clip w-full">
-			
-			{/* BACKGROUND */}
-			<div className="absolute inset-0 h-220">
-				<img
-					src={backgroung1}
-					alt="background"
-					className="absolute inset-0 w-full h-full object-cover opacity-[0.16]"
-				/>
+    return (
+        <div className="relative h-full min-h-screen w-full overflow-clip">
+            {/* BACKGROUND */}
+            <div className="absolute inset-0 h-220">
+                <img
+                    src={backgroung1}
+                    alt="background"
+                    className="absolute inset-0 h-full w-full object-cover opacity-[0.16]"
+                />
 
-				<div
-					className="absolute inset-0 pointer-events-none"
-					style={{
-						background: `
+                <div
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                        background: `
               linear-gradient(
                 to left,
                 rgba(16, 4, 34, 0.8) 0%,
@@ -41,59 +40,91 @@ const HomePage = () => {
                 rgba(16, 4, 34, 0) 60%
               )
             `,
-					}}
-				/>
-			</div>
+                    }}
+                />
+            </div>
 
-			<div className="z-20 mx-auto px-1 flex flex-col w-full items-center">
-				<div className="w-full sm:pl-22">
-					<HeroSection />
+            <div className="z-20 mx-auto flex w-full flex-col items-center px-1">
+                <div className="w-full sm:pl-22">
+                    <HeroSection />
 
-					{/* 👇 PASS SCROLL TO ANIMATION */}
-					<Animation scrollY={scrollY} scrollRef={scrollRef} />
+                    {/* 👇 PASS SCROLL TO ANIMATION */}
+                    <Animation scrollY={scrollY} scrollRef={scrollRef} />
 
-					<Community />
-					<GovernmentSupport />
-					<PartnerSupport />
-					<div className="relative w-full py-20 krona-one-regular">
-  {/* FRONT RIBBON — STATIC */}
-  <div className="absolute w-full h-12 bg-[#C6B7DD] -rotate-3 z-10 overflow-hidden flex items-center">
-    <div className="flex w-max">
-      {Array.from({ length: 8 }).map((_, i) => (
-        <span
-          key={i}
-          className="whitespace-nowrap px-6 text-[12px] krona-one-regular text-[#1A102A]"
-        >
-          Canada’s #1 South Asian music festival
-          Toronto’s iconic Sankofa Square ·
-        </span>
-      ))}
-    </div>
-  </div>
+                    <Community />
+                    <GovernmentSupport />
+                    <PartnerSupport />
+                    <div className="krona-one-regular relative w-full py-20">
+                        <div className="krona-one-regular relative w-full py-20">
+                            <style>
+                                {`
+@keyframes marquee-ltr {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
-  {/* BACK RIBBON — STATIC */}
-  <div className="absolute w-full h-12 bg-[#453361] rotate-3 z-0 overflow-hidden flex items-center">
-    <div className="flex w-max">
-      {Array.from({ length: 8 }).map((_, i) => (
-        <span
-          key={i}
-          className="whitespace-nowrap px-6 text-[12px] krona-one-regular text-white"
-        >
-          Toronto’s iconic Sankofa Square ·
-          Canada’s #1 South Asian music festival ·
-        </span>
-      ))}
-    </div>
-  </div>
-</div>
+@keyframes marquee-rtl {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+`}
+                            </style>
 
-					<BlogsAndMedia scrollY={scrollY} scrollRef={scrollRef} />
-					<Shop />
-					<ContactForm />
-				</div>
-			</div>
-		</div>
-	);
-};
+                            {/* FRONT RIBBON — LEFT ➜ RIGHT */}
+                            <div className="absolute z-10 flex h-12 w-full -rotate-3 items-center overflow-hidden bg-[#C6B7DD]">
+                                <div
+                                    className="flex w-max"
+                                    style={{
+                                        animation: 'marquee-ltr 300s linear infinite', // ⬅ slower (35s instead of 18s)
+                                    }}
+                                >
+                                    {[
+                                        ...Array.from({ length: 18 }),
+                                        ...Array.from({ length: 18 }),
+                                    ].map((_, i) => (
+                                        <span
+                                            key={i}
+                                            className="px-6 text-xl whitespace-nowrap text-[#1A102A]"
+                                        >
+                                            Canada’s #1 South Asian music festival · Toronto’s
+                                            iconic Sankofa Square ·
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
 
-export default HomePage;
+                            {/* BACK RIBBON — RIGHT ➜ LEFT */}
+                            <div className="absolute z-0 flex h-12 w-full rotate-3 items-center overflow-hidden bg-[#453361]">
+                                <div
+                                    className="flex w-max"
+                                    style={{
+                                        animation: 'marquee-rtl 300s linear infinite',
+                                    }}
+                                >
+                                    {[
+                                        ...Array.from({ length: 18 }),
+                                        ...Array.from({ length: 18 }),
+                                    ].map((_, i) => (
+                                        <span
+                                            key={i}
+                                            className="px-6 text-xl whitespace-nowrap text-white"
+                                        >
+                                            Toronto’s iconic Sankofa Square · Canada’s #1 South
+                                            Asian music festival ·
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <BlogsAndMedia scrollY={scrollY} scrollRef={scrollRef} />
+                    <Shop />
+                    <ContactForm />
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default HomePage

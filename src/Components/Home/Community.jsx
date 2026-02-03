@@ -8,7 +8,7 @@ const Community = () => {
     return (
         <section className="w-full bg-transparent py-24 pl-6">
             <div className="w-full">
-                <div className="oswald mb-4 flex w-full items-center gap-3 text-3xl text-white uppercase sm:gap-4 sm:text-4xl md:text-[100px]">
+                <div className="oswald mb-4 flex w-full items-center gap-3 text-3xl text-white uppercase sm:gap-4 sm:text-5xl ">
                     <span className="whitespace-nowrap">Community</span>
 
                     <div className="h-[2px] flex-1 rounded-full bg-white sm:h-[3px]" />
