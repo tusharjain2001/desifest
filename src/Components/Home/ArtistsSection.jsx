@@ -7,7 +7,7 @@ import img2 from '@/Assets/home/animation/image copy.png'
 
 const ArtistCard = ({ image, title }) => {
     return (
-        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-col justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-180">
+        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-col justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-120">
             {/* IMAGE */}
             <div className="overflow-hidden">
                 <img
@@ -73,7 +73,7 @@ const ArtistsSection = ({ scrollY }) => {
             {/* GRID CONTAINER (UNCHANGED) */}
             <div className="relative z-30 mx-auto pt-28 grid w-full max-w-full grid-cols-1 gap-10 px-6 sm:grid-cols-3">
                 {/* Featured Artist */}
-                <div ref={featuredRef}>
+                <div ref={featuredRef} className='w-80'>
                     <ArtistCard image={img2} title="Featured Artists" />
                 </div>
 
