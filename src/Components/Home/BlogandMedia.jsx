@@ -7,6 +7,8 @@ import blog2 from '@/Assets/home/Media/image2.png'
 import blog3 from '@/Assets/home/Media/image3.png'
 import { useEffect, useRef } from 'react'
 import { useState } from 'react'
+import left from '../../Assets/concerts/leftwhitearrow.svg'
+import right from '../../Assets/concerts/rightwhitearrow.svg'
 
 const BlogsAndMedia = ({ scrollY }) => {
     const blogRefs = useRef([])
@@ -70,7 +72,7 @@ const BlogsAndMedia = ({ scrollY }) => {
                 </h2>
 
                 {/* CARDS */}
-                <div className="relative z-30 hidden w-full pt-36 justify-center gap-10 sm:mt-48 sm:flex">
+                <div className="relative z-30 hidden w-full justify-center gap-10 pt-36 sm:mt-48 sm:flex">
                     <img
                         src={background}
                         alt="background"
@@ -100,7 +102,6 @@ const BlogsAndMedia = ({ scrollY }) => {
                         src={background}
                         alt="background"
                         className="absolute -top-40 z-0 w-full object-cover"
-                        
                     />
 
                     {/* Scroll Container */}
@@ -116,6 +117,18 @@ export default BlogsAndMedia
 const MobileBlogSlider = ({ blogs }) => {
     const sliderRef = useRef(null)
     const [activeIndex, setActiveIndex] = useState(0)
+
+    const scrollToIndex = (index) => {
+        if (!sliderRef.current) return
+
+        const card = sliderRef.current.children[index]
+        if (!card) return
+
+        sliderRef.current.scrollTo({
+            left: card.offsetLeft - sliderRef.current.offsetWidth / 3 + card.offsetWidth / 3,
+            behavior: 'smooth',
+        })
+    }
 
     // Center middle card on load
     useEffect(() => {
@@ -160,25 +173,41 @@ const MobileBlogSlider = ({ blogs }) => {
     }, [])
 
     return (
-        <div
-            ref={sliderRef}
-            className="scrollbar-hide relative z-10 flex touch-pan-x snap-x snap-mandatory gap-4 overflow-x-auto px-[50vw]"
-        >
-            {blogs.map((blog, index) => (
-                <div
-                    key={blog.id}
-                    data-index={index}
-                    className={`flex snap-center w-72 pb-16 shrink-0 transition-transform duration-500 ease-out ${activeIndex === index ? 'translate-y-10' : 'translate-y-0'} `}
+        <div className="relative">
+            {/* ARROWS */}
+            <div className="absolute -top-14 left-1/2 z-20 flex -translate-x-1/2 gap-6">
+                <button
+                    onClick={() => scrollToIndex(Math.max(activeIndex - 1, 0))}
+                    className="rounded-full px-4 py-2"
                 >
-                    <EventCard
-                        image={blog.image}
-                        title={blog.title}
-                        date={blog.date}
-                        description={blog.description}
-                        readMoreLink={blog.link}
-                    />
-                </div>
-            ))}
+                    <img src={left} className="h-5 w-5" />
+                </button>
+
+                <button
+                    onClick={() => scrollToIndex(Math.min(activeIndex + 1, blogs.length - 1))}
+                    className="rounded-full px-4 py-2"
+                >
+                    <img src={right} className="h-5 w-5" />
+                </button>
+            </div>
+
+            {/* SLIDER */}
+            <div
+                ref={sliderRef}
+                className="scrollbar-hide relative z-10 flex touch-pan-x snap-x snap-mandatory gap-4 overflow-x-auto px-[50vw]"
+            >
+                {blogs.map((blog, index) => (
+                    <div
+                        key={blog.id}
+                        data-index={index}
+                        className={`flex w-72 shrink-0 snap-center pb-16 transition-transform duration-500 ease-out ${
+                            activeIndex === index ? 'translate-y-10' : 'translate-y-0'
+                        }`}
+                    >
+                        <EventCard {...blog} readMoreLink={blog.link} />
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
