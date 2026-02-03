@@ -4,9 +4,9 @@ import ArtistsSection from './ArtistsSection.jsx'
 
 const Animation = ({ scrollY }) => {
     return (
-        <section className="relative w-full overflow-hidden sm:mt-32">
+        <section className="relative w-full overflow-hidden  sm:mt-32">
             {/* VIDEO + PARALLAX */}
-            <div className="relative z-0 h-[600px] w-full">
+            <div className="relative z-0 h-100 sm:h-[600px] w-full">
                 <video
                     className="absolute inset-0 z-0 h-full w-full object-cover"
                     src={backgroundVideo}
@@ -25,7 +25,7 @@ const Animation = ({ scrollY }) => {
             </div>
 
             {/* ARTISTS SECTION ABOVE EVERYTHING */}
-            <div className="relative z-50">
+            <div className="relative  z-50">
                 <ArtistsSection scrollY={scrollY} />
             </div>
         </section>

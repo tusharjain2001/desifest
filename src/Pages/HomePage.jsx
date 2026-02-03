@@ -49,7 +49,7 @@ const HomePage = () => {
                     <HeroSection />
 
                     {/* 👇 PASS SCROLL TO ANIMATION */}
-                    <Animation scrollY={scrollY} scrollRef={scrollRef} />
+                    <Animation scrollY={scrollY} scrollRef={scrollRef}  />
 
                     <Community />
                     <GovernmentSupport />

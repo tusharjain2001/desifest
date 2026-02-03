@@ -7,29 +7,29 @@ import img2 from '@/Assets/home/animation/image copy.png'
 
 const ArtistCard = ({ image, title }) => {
     return (
-        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-col justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-120">
+        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-row sm:flex-col  sm:justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-120">
             {/* IMAGE */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden  w-1/2 sm:w-full">
                 <img
                     src={image}
                     alt={title}
-                    className="h-50 w-1/2 object-cover grayscale transition-all duration-500 ease-out group-hover:w-3/4"
+                    className="h-50 w-full sm:w-1/2 object-cover grayscale transition-all duration-500 ease-out group-hover:w-3/4"
                 />
             </div>
 
             {/* BOTTOM CONTENT */}
-            <div className="flex flex-col items-start justify-between">
+            <div className="flex flex-col px-2 items-start justify-between">
                 {/* TITLE */}
-                <h3 className="dm-sans-400 max-w-35 text-4xl leading-tight text-black uppercase">
+                <h3 className="dm-sans-400 max-w-35 text-3xl sm:text-4xl leading-tight text-black uppercase">
                     {title}
                 </h3>
 
                 {/* ARROW */}
-                <div className="flex w-full justify-end">
+                <div className="flex w-full  justify-end">
                     <img
                         src={arrow}
                         alt=""
-                        className="w-10 rotate-0 transition-transform duration-500 ease-out group-hover:-rotate-45"
+                        className="sm:w-10  w-10 rotate-0 transition-transform duration-500 ease-out group-hover:-rotate-45"
                     />
                 </div>
             </div>
@@ -59,7 +59,7 @@ const ArtistsSection = ({ scrollY }) => {
     }, [scrollY])
 
     return (
-        <section className="bg-deep-purple relative w-full py-32">
+        <section className="bg-deep-purple relative w-full py-2 sm:py-32">
             {/* BACKGROUND IMAGE */}
             <img
                 src={background2}
@@ -83,7 +83,7 @@ const ArtistsSection = ({ scrollY }) => {
                 </div>
 
                 {/* Image Card */}
-                <div ref={imageRef} className="w-100 h-120 items-center ">
+                <div ref={imageRef} className=" sm:block hidden w-100 h-120 items-center ">
                     <img
                         src={img1}
                         className="hidden h-full w-full object-contain sm:block"
