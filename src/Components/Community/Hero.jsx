@@ -1,7 +1,9 @@
 import React from "react";
 import group from "../../Assets/community/circlegroup.svg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="h-screen relative justify-center items-center flex flex-col gap-5 text-white leading-none">
       <img src={group} className="absolute top-0 right-0 " />
@@ -20,11 +22,11 @@ const Hero = () => {
             <div>But also go through our...</div>
           </div>
           <div className="mt-10 flex items-center justify-center gap-6">
-            <button className="bg-neon-yellow text-black px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl hover:opacity-90 transition font-medium hover:bg-lime-300">
+            <button onClick={() => navigate('/open-mic')} className="bg-neon-yellow text-black px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl hover:opacity-90 transition font-medium hover:bg-lime-300">
               Open-Mic
             </button>
-
-            <button className="border border-neon-yellow hover:bg-[#26193A80] text-neon-yellow px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl font-medium transition">
+            
+            <button onClick={() => navigate('/sofa-session')} className="border border-neon-yellow hover:bg-[#26193A80] text-neon-yellow px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl font-medium transition">
               Sofa-Sessions
             </button>
           </div>
