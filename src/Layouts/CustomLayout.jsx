@@ -5,7 +5,7 @@ import EventFooter from '@/Components/Layout/Custom/CustomFooter'
 import CustomVerticalNav from '@/Components/Layout/Custom/customverticalnavbar'
 import ScrollToTop from './ScrollToTop'
 
-export default function EventLayout({ navColor, footerColor, verticalNavColor, bgColor }) {
+export default function EventLayout({ navColor, footerColor, verticalNavColor }) {
     const scrollRef = useRef(null)
     const [scrollY, setScrollY] = useState(0)
 

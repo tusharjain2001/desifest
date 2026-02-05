@@ -2,6 +2,7 @@ import SecondSection from '@/Components/SofaSession/SecondSection'
 import bg from '../../Assets/sofa_session/sofasessionbg.png'
 import white from '../../Assets/sofa_session/whitecircles.png'
 import { useOutletContext } from 'react-router-dom'
+import ThirdSection from '@/Components/SofaSession/ThirdSection'
 
 const SofaSession = () => {
     const { bgColor } = useOutletContext()
@@ -26,6 +27,7 @@ const SofaSession = () => {
                 <img src={white} className="absolute left-0" />
             </section>
             <SecondSection />
+            <ThirdSection />
         </div>
     )
 }
