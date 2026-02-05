@@ -12,11 +12,11 @@ const OpenMic = () => {
 
     return (
         <section
-            className="relative flex h-full w-full items-center justify-center overflow-hidden"
+            className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden"
             style={{ backgroundColor: bgColor }}
         >
+            <Herosec bgColor={bgColor} />
             <div className="z-20 mx-auto flex h-full w-full flex-col sm:pl-24">
-                <Herosec bgColor={bgColor} />
                 <Popularart />
                 <Featuredartist />
                 <Customcontact desktopImage={desktopImage} mobileImage={mobileImage} />
