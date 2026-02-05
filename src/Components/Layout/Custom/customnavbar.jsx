@@ -16,7 +16,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-[#2C223C80]">
+    <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
       <nav className="w-full px-6 md:px-28 py-4 flex items-center justify-between">
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
