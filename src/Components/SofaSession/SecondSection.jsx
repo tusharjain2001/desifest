@@ -63,45 +63,47 @@ const SecondSection = ({ scrollY }) => {
     }, [scrollY])
 
     return (
-        <section className="relative w-full bg-[#AC48FF] py-16 md:h-[170vh] md:px-6 md:pl-40 lg:py-32">
-            {/* DESKTOP BG */}
-            <img
-                src={bg}
-                className="pointer-events-none absolute bottom-0 left-1/4 hidden lg:block"
-            />
+        <section className="relative w-full bg-[#AC48FF] py-16 lg:py-32 overflow-x-hidden">
+            <div className="md:px-6 md:pl-40">
+                {/* DESKTOP BG */}
+                <img
+                    src={bg}
+                    className="pointer-events-none absolute bottom-0 left-1/4 hidden lg:block"
+                />
 
-            {/* GRID CONTAINER (UNCHANGED) */}
-            <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-16 px-6 pt-20 lg:grid-cols-3">
-                {/* FIRST CARD – TOP */}
-                <div ref={featuredRef} className="self-start">
-                    <ArtistCard
-                        image={img2}
-                        title="Featured Artists"
-                        description="To celebrate and promote South Asian Arts & Culture on a Global Stage, dismantling stereotypes, eradicating bias and combating discrimination to empower individuals in their pursuit of passion."
-                    />
+                {/* GRID CONTAINER (UNCHANGED) */}
+                <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-16 px-6 pt-20 lg:grid-cols-3">
+                    {/* FIRST CARD – TOP */}
+                    <div ref={featuredRef} className="self-start">
+                        <ArtistCard
+                            image={img2}
+                            title="Featured Artists"
+                            description="To celebrate and promote South Asian Arts & Culture on a Global Stage, dismantling stereotypes, eradicating bias and combating discrimination to empower individuals in their pursuit of passion."
+                        />
+                    </div>
+                    {/* SECOND CARD – LOWER */}
+                    <div ref={communityRef} className="self-start sm:mt-20">
+                        <ArtistCard
+                            image={img2}
+                            title="Community Artists"
+                            description="To become the leading global platform for South Asian Arts & Culture. We aim to connect artists, creators and audiences from the diverse South Asian dispora, fostering a profound sense of belonging and mutual appreciation."
+                        />
+                    </div>
+                    {/* THIRD CARD – TOP */}
+                    <div className="relative self-start">
+                        <ArtistCard
+                            image={img2}
+                            title="Community Artists"
+                            description="We’re passionate about music and art and create new opportunities for artists and influencers to showcase their talent. With the support of our partners, we’re dedicated to promoting and supporting the next generation "
+                        />
+
+                        {/* BG attached to 3rd card */}
+                    </div>{' '}
                 </div>
-
-                {/* SECOND CARD – LOWER */}
-                <div ref={communityRef} className="self-start sm:mt-20">
-                    <ArtistCard
-                        image={img2}
-                        title="Community Artists"
-                        description="To become the leading global platform for South Asian Arts & Culture. We aim to connect artists, creators and audiences from the diverse South Asian dispora, fostering a profound sense of belonging and mutual appreciation."
-                    />
-                </div>
-
-                {/* THIRD CARD – TOP */}
-                <div className="relative mb-40 md:mb-0 self-start">
-                    <ArtistCard
-                        image={img2}
-                        title="Community Artists"
-                        description="We’re passionate about music and art and create new opportunities for artists and influencers to showcase their talent. With the support of our partners, we’re dedicated to promoting and supporting the next generation "
-                    />
-
-                    {/* BG attached to 3rd card */}
+                <div className="relative h-100 ">
                     <img
                         src={bg}
-                        className="pointer-events-none absolute -bottom-24 left-1/2 -z-10 -translate-x-1/2 translate-y-1/2 lg:hidden"
+                        className="pointer-events-none absolute left-10 scale-150 md:hidden"
                     />
                 </div>
             </div>
