@@ -63,7 +63,7 @@ const SecondSection = ({ scrollY }) => {
     }, [scrollY])
 
     return (
-        <section className="relative w-full bg-[#AC48FF] py-16 md:h-[170vh] md:px-6  lg:py-32">
+        <section className="relative w-full bg-[#AC48FF] py-16 md:h-[170vh] md:px-6 md:pl-40 lg:py-32">
             {/* DESKTOP BG */}
             <img
                 src={bg}
