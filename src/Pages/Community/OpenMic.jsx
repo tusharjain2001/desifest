@@ -1,21 +1,28 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext } from 'react-router-dom'
+
+import Herosec from '@/Components/OpenMic/Herosec'
+import Popularart from '@/Components/OpenMic/Popularart'
+import Featuredartist from '@/Components/OpenMic/Featuredartist'
+import Customcontact from '@/Components/Layout/Custom/customcontact'
+import desktopImage from '@/Assets/openmic/image copy.png'
+import mobileImage from '@/Assets/openmic/image copy 2.png'
 
 const OpenMic = () => {
-  const { bgColor } = useOutletContext();
+    const { bgColor } = useOutletContext()
 
-  return (
-    <section
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: bgColor }}
-    >
-      <div>
-        
-      </div>
-      
+    return (
+        <section
+            className="relative flex h-full w-full items-center justify-center overflow-hidden"
+            style={{ backgroundColor: bgColor }}
+        >
+            <div className="z-20 mx-auto flex h-full w-full flex-col sm:pl-24">
+                <Herosec bgColor={bgColor} />
+                <Popularart />
+                <Featuredartist />
+                <Customcontact desktopImage={desktopImage} mobileImage={mobileImage} />
+            </div>
+        </section>
+    )
+}
 
-
-    </section>
-  );
-};
-
-export default OpenMic;
+export default OpenMic

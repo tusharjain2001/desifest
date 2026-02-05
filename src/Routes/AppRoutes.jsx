@@ -24,7 +24,7 @@ export default function AppRoutes() {
     return (
         <Routes>
             {/* ===== Event Layout Routes (Top Level) ===== */}
-            <Route element={<CustomLayout footerColor="#022195" bgColor="#022195" />}>
+            <Route element={<CustomLayout footerColor="#022195" bgColor="#0136FE" />}>
                 <Route path="open-mic" element={<OpenMic />} />
             </Route>
 

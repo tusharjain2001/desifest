@@ -75,23 +75,26 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
             className="relative flex min-h-screen w-full flex-col overflow-hidden bg-transparent md:flex-row"
         >
             {/* IMAGE SECTION */}
-            <div className="hidden h-70 w-full sm:relative md:h-auto md:basis-[40%]">
+            {/* DESKTOP IMAGE */}
+            <div className="relative px-0 mx-0 hidden w-full md:block md:basis-[40%]">
                 <img
                     src={desktopImage}
                     alt="Crowd"
-                    className="absolute inset-0 object-cover sm:h-full sm:w-full"
+                    className="absolute inset-0 h-full w-full object-cover"
                 />
             </div>
-            <div className="relative h-60 w-full md:h-auto md:basis-[40%]">
+
+            {/* MOBILE IMAGE */}
+            <div className="relative w-full md:hidden">
                 <img
                     src={mobileImage}
                     alt="Crowd"
-                    className="absolute inset-0 object-cover sm:h-full sm:w-full"
+                    className="absolute inset-0 h-full w-full object-cover"
                 />
             </div>
 
             {/* FORM SECTION */}
-            <div className="relative flex w-full items-center px-6 py-12 md:basis-[60%] md:px-16 md:py-0">
+            <div className="relative flex w-full items-center px-6 py-12 md:basis-[60%] md:px-1 md:py-0">
                 <div className="w-full max-w-xl text-white">
                     <h2 className="font-[Oswald] text-6xl font-bold uppercase md:text-5xl">
                         Contact Us
