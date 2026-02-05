@@ -11,10 +11,10 @@ const navItems = [
   { label: "Media", path: "/media" },
 ];
 
-export default function VerticalNavbar({ bgColor = "#2C223C" }) {
+export default function VerticalNavbar({ bgColor = "#10042233" }) {
   return (
     <aside
-      className="hidden fixed md:flex z-60 absolute w-[99999px] top-0 left-0 h-24 origin-top-left"
+      className="hidden fixed md:flex z-50 absolute w-[99999px] top-0 left-0 h-24 origin-top-left"
       style={{
         transform: "rotate(-90deg) translateX(-100%)",
         backgroundColor: bgColor,
