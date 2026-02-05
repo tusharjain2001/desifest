@@ -145,3 +145,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.jersey {
+  font-family: "Jersey 10", sans-serif;
+}
