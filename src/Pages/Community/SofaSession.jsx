@@ -1,13 +1,14 @@
 import SecondSection from '@/Components/SofaSession/SecondSection'
 import bg from '../../Assets/sofa_session/sofasessionbg.png'
+import { useOutletContext } from 'react-router-dom'
 
 const SofaSession = () => {
-
+    const { bgColor } = useOutletContext()
 
     return (
-        <div className="flex flex-col md:pl-40  ">
+        <div className="flex flex-col" style={{ backgroundColor: bgColor }}>
             <section
-                className=" flex h-[100vh] w-full items-center bg-cover bg-center"
+                className="flex h-[100vh] md:pl-40 w-full items-center bg-cover bg-center"
                 style={{ backgroundImage: `url(${bg})` }}
             >
                 {/* content */}

@@ -29,7 +29,6 @@ export default function EventLayout({
     <div
       ref={scrollRef}
       className="w-full h-screen overflow-y-auto scrollbar-hide"
-      style={{ backgroundColor: bgColor }}
     >
       {/* Same as MainLayout */}
       <ScrollToTop scrollRef={scrollRef} />

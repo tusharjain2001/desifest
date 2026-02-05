@@ -6,7 +6,7 @@ import youtube from "../../../Assets/COMMON/youtube.svg";
 const navItems = [
   { label: "The 2026 Concert", path: "/concerts" },
   { label: "About", path: "/about" },
-  { label: "Artists", path: "/artist" },
+  { label: "Artists", path: "/our-artists" },
   { label: "Community", path: "/community" },
   { label: "Media", path: "/media" },
 ];
