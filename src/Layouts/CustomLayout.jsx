@@ -5,7 +5,7 @@ import EventFooter from '@/Components/Layout/Custom/CustomFooter'
 import CustomVerticalNav from '@/Components/Layout/Custom/customverticalnavbar'
 import ScrollToTop from './ScrollToTop'
 
-export default function EventLayout({ navColor, footerColor, verticalNavColor }) {
+export default function CustomLayout({ navColor, footerColor, verticalNavColor, bgColor }) {
     const scrollRef = useRef(null)
     const [scrollY, setScrollY] = useState(0)
 
@@ -33,7 +33,7 @@ export default function EventLayout({ navColor, footerColor, verticalNavColor })
                 <EventNavbar navColor={navColor} />
 
                 <main className="w-full flex-1">
-                    <Outlet context={{ scrollRef, scrollY }} />
+                    <Outlet context={{ scrollRef, scrollY, bgColor }} />
                 </main>
 
                 {/* Custom Footer */}
