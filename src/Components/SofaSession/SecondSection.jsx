@@ -63,10 +63,15 @@ const SecondSection = ({ scrollY }) => {
     }, [scrollY])
 
     return (
-        <section className="relative h-[170vh] w-full bg-[#AC48FF] px-30 py-2 sm:py-32 md:pl-40">
-            <img src={bg} className="absolute bottom-0 left-1/4" />
+        <section className="relative w-full bg-[#AC48FF] py-16 md:h-[170vh] md:px-6 md:pl-40 lg:py-32">
+            {/* DESKTOP BG */}
+            <img
+                src={bg}
+                className="pointer-events-none absolute bottom-0 left-1/4 hidden lg:block"
+            />
+
             {/* GRID CONTAINER (UNCHANGED) */}
-            <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-16 px-8 pt-28 sm:grid-cols-3">
+            <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-16 px-6 pt-20 lg:grid-cols-3">
                 {/* FIRST CARD – TOP */}
                 <div ref={featuredRef} className="self-start">
                     <ArtistCard
@@ -86,11 +91,17 @@ const SecondSection = ({ scrollY }) => {
                 </div>
 
                 {/* THIRD CARD – TOP */}
-                <div className="self-start">
+                <div className="relative mb-40 md:mb-0 self-start">
                     <ArtistCard
                         image={img2}
                         title="Community Artists"
                         description="We’re passionate about music and art and create new opportunities for artists and influencers to showcase their talent. With the support of our partners, we’re dedicated to promoting and supporting the next generation "
+                    />
+
+                    {/* BG attached to 3rd card */}
+                    <img
+                        src={bg}
+                        className="pointer-events-none absolute -bottom-24 left-1/2 z-[-10] -translate-x-1/2 translate-y-1/2 lg:hidden"
                     />
                 </div>
             </div>
