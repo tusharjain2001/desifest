@@ -57,6 +57,12 @@
   font-weight: 600;
   font-style: medium;
 }
+.dm-sans-700 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: medium;
+}
 
 /* =========================================================
    FONT UTILITIES — OSWALD
@@ -149,3 +155,6 @@
 .jersey {
   font-family: "Jersey 10", sans-serif;
 }
+
+
+
