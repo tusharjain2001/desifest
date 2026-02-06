@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 
-const ContactForm = ({ desktopImage, mobileImage }) => {
+const ContactForm = ({ desktopImage, mobileImage, textcolour }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -10,6 +10,10 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
     })
 
     const [loading, setLoading] = useState(false)
+
+    const textColor = textcolour || '#ffffff'
+    const mutedColor = textcolour ? `${textcolour}CC` : '#D1D5DB' // slightly faded
+    const borderColor = textcolour ? `${textcolour}66` : 'rgba(255,255,255,0.4)'
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target
@@ -38,13 +42,14 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
         try {
             setLoading(true)
 
-            const res = await fetch('https://desifest-backend.vercel.app/api/send-contact-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
+            const res = await fetch(
+                'https://desifest-backend.vercel.app/api/send-contact-email',
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                }
+            )
 
             const data = await res.json()
 
@@ -72,11 +77,10 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
     return (
         <section
             id="contact"
-            className="relative flex min-h-screen w-full flex-col overflow-hidden bg-transparent md:flex-row"
+            className="relative flex min-h-screen w-full flex-col overflow-hidden md:flex-row"
         >
-            {/* IMAGE SECTION */}
             {/* DESKTOP IMAGE */}
-            <div className="relative px-0 mx-0 hidden w-full md:block md:basis-[40%]">
+            <div className="relative hidden w-full md:block md:basis-[40%]">
                 <img
                     src={desktopImage}
                     alt="Crowd"
@@ -95,18 +99,27 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
 
             {/* FORM SECTION */}
             <div className="relative flex w-full items-center px-6 py-12 md:basis-[60%] md:px-1 md:py-0">
-                <div className="w-full max-w-xl text-white">
+                <div className="w-full max-w-xl" style={{ color: textColor }}>
                     <h2 className="font-[Oswald] text-6xl font-bold uppercase md:text-5xl">
                         Contact Us
                     </h2>
 
-                    <p className="text-md mt-2 text-gray-300 uppercase">
+                    <p
+                        className="text-md mt-2 uppercase"
+                        style={{ color: mutedColor }}
+                    >
                         Have an inquiry? We’ll be happy to assist you
                     </p>
 
-                    <div className="my-6 hidden h-[2px] w-24 bg-white md:block" />
+                    <div
+                        className="my-6 hidden h-[2px] w-24 md:block"
+                        style={{ backgroundColor: textColor }}
+                    />
 
-                    <form className="mt-5 space-y-6 md:mt-0" onSubmit={handleSubmit}>
+                    <form
+                        className="mt-5 space-y-6 md:mt-0"
+                        onSubmit={handleSubmit}
+                    >
                         <div>
                             <label className="text-md">Name*</label>
                             <input
@@ -114,7 +127,11 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="w-full border-b border-white/40 bg-transparent py-2 outline-none focus:border-white"
+                                className="w-full border-b bg-transparent py-2 outline-none"
+                                style={{
+                                    borderColor: borderColor,
+                                    color: textColor,
+                                }}
                             />
                         </div>
 
@@ -125,7 +142,11 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="w-full border-b border-white/40 bg-transparent py-2 outline-none focus:border-white"
+                                className="w-full border-b bg-transparent py-2 outline-none"
+                                style={{
+                                    borderColor: borderColor,
+                                    color: textColor,
+                                }}
                             />
                         </div>
 
@@ -137,11 +158,18 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
                                 value={formData.message}
                                 onChange={handleChange}
                                 placeholder="Type your message here"
-                                className="w-full resize-none border-b border-white/40 bg-transparent py-2 outline-none"
+                                className="w-full resize-none border-b bg-transparent py-2 outline-none"
+                                style={{
+                                    borderColor: borderColor,
+                                    color: textColor,
+                                }}
                             />
                         </div>
 
-                        <div className="text-md flex items-start gap-3 text-gray-300">
+                        <div
+                            className="text-md flex items-start gap-3"
+                            style={{ color: mutedColor }}
+                        >
                             <input
                                 type="checkbox"
                                 name="consent"
@@ -149,13 +177,15 @@ const ContactForm = ({ desktopImage, mobileImage }) => {
                                 onChange={handleChange}
                                 className="mt-1"
                             />
-                            <span>I agree to be contacted about sponsorship opportunities</span>
+                            <span>
+                                I agree to be contacted about sponsorship opportunities
+                            </span>
                         </div>
 
                         <button
                             type="submit"
                             disabled={loading}
-                            className="bg-neon-yellow oswaldd mt-4 px-8 py-3 text-[28px] font-medium text-black transition hover:bg-lime-300 hover:opacity-90 disabled:opacity-50"
+                            className="mt-4 bg-neon-yellow px-8 py-3 text-[28px] font-medium text-black transition hover:bg-lime-300 disabled:opacity-50"
                         >
                             {loading ? 'SENDING...' : 'SUBMIT'}
                         </button>
