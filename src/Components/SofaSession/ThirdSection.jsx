@@ -2,7 +2,7 @@ import React from 'react'
 
 const ThirdSection = () => {
     return (
-        <section className="flex md:h-screen w-full bg-[#AC48FF] items-center bg-cover bg-center pl-4 md:pl-80">
+        <section className="flex w-full bg-[#AC48FF] items-center bg-cover bg-center pl-4 md:pl-80">
             {/* content */}
             <div className="flex flex-col items-start justify-center leading-none">
                 <div className="jersey  text-[90px] leading-none text-[#10042266]  md:text-[160px]">
