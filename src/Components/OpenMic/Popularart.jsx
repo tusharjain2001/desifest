@@ -42,7 +42,7 @@ const Popularart = () => {
         })
     }
     return (
-        <div className="w-full overflow-hidden bg-[#0F2BFF] py-10">
+        <div className="w-full overflow-hidden  py-10">
             {/* Heading */}
             <div className="mb-10 flex items-center justify-center">
                 <div className="flex w-full items-center gap-1 md:items-center md:gap-4">
