@@ -8,14 +8,9 @@ import desktopImage from '@/Assets/openmic/image copy.png'
 import mobileImage from '@/Assets/openmic/image copy 2.png'
 
 const OpenMic = () => {
-    const { bgColor } = useOutletContext()
-
     return (
-        <section
-            className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden"
-            style={{ backgroundColor: bgColor }}
-        >
-            <Herosec bgColor={bgColor} />
+        <section className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden bg-[#0136FE]">
+            <Herosec  />
             <div className="z-20 mx-auto flex h-full w-full flex-col sm:pl-24">
                 <Popularart />
                 <Featuredartist />
