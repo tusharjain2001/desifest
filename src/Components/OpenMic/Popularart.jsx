@@ -67,23 +67,23 @@ const Popularart = () => {
             </div>
 
             {/* Scroll Container */}
-            <div className="scrollbar-hide flex items-start gap-6 overflow-x-auto px-6 pb-32 sm:px-12">
+            <div className="scrollbar-hide flex flex-col items-start overflow-x-auto px-6 sm:flex-row sm:gap-6 sm:px-12 sm:pb-32">
                 {artists.map((artist) => (
                     <div
                         key={artist.id}
                         className="group relative flex-shrink-0 basis-[260px] origin-top-left transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:basis-[395px] hover:scale-y-125 sm:basis-[320px] sm:hover:basis-[420px]"
                     >
-                        <div className="origin-top-left bg-[#FFFFFF40] p-4 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-[linear-gradient(180deg,#FFFFFF_0%,#7E6FF5_61.58%,#FAA7EB_100%)]">
-                            <div className="relative h-70 border-4 border-white">
+                        <div className="flex origin-top-left flex-row gap-2 bg-[linear-gradient(90deg,#FFFFFF_0%,#7E6FF5_61.58%,#FAA7EB_100%)] p-4 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:flex-col sm:gap-0 sm:bg-[#FFFFFF40] sm:bg-none sm:group-hover:bg-[linear-gradient(180deg,#FFFFFF_0%,#7E6FF5_61.58%,#FAA7EB_100%)]">
+                            <div className="relative h-45 w-1/2 border-4 border-white sm:h-70 sm:w-full">
                                 <img
                                     src={artist.image}
                                     alt={artist.name}
-                                    className="h-full w-full object-cover grayscale transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:grayscale-0"
+                                    className="h-full w-full object-cover transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:grayscale sm:group-hover:grayscale-0"
                                 />
                             </div>
 
-                            <div className="my-4 text-left">
-                                <h3 className="dm-sans-400 text-lg font-normal text-white sm:text-4xl">
+                            <div className="my-4 w-1/2 text-left sm:w-full">
+                                <h3 className="dm-sans-400 text-4xl font-normal tracking-wider text-white sm:text-4xl">
                                     {artist.name}
                                 </h3>
                                 <p className="dm-sans-400 text-lg font-normal text-white/70">
