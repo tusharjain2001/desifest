@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
-import EventNavbar from '@/Components/Layout/Custom/CustomNavbar'
-import EventFooter from '@/Components/Layout/Custom/CustomFooter'
+import EventNavbar from '@/Components/Layout/Custom/customnavbar'
+import EventFooter from '@/Components/Layout/Custom/customfooter'
 import CustomVerticalNav from '@/Components/Layout/Custom/customverticalnavbar'
 import ScrollToTop from './ScrollToTop'
 
