@@ -42,14 +42,11 @@ const ContactForm = ({ desktopImage, mobileImage, textcolour }) => {
         try {
             setLoading(true)
 
-            const res = await fetch(
-                'https://desifest-backend.vercel.app/api/send-contact-email',
-                {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData),
-                }
-            )
+            const res = await fetch('https://desifest-backend.vercel.app/api/send-contact-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
 
             const data = await res.json()
 
@@ -80,16 +77,17 @@ const ContactForm = ({ desktopImage, mobileImage, textcolour }) => {
             className="relative flex min-h-screen w-full flex-col overflow-hidden md:flex-row"
         >
             {/* DESKTOP IMAGE */}
-            <div className="relative hidden w-full md:block md:basis-[40%]">
+            <div className="relative hidden w-full sm:block md:basis-[40%]">
                 <img
                     src={desktopImage}
                     alt="Crowd"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover object-top-right"
                 />
             </div>
 
             {/* MOBILE IMAGE */}
-            <div className="relative w-full md:hidden">
+            {/* MOBILE IMAGE */}
+            <div className="relative min-h-[30vh] w-full sm:hidden">
                 <img
                     src={mobileImage}
                     alt="Crowd"
@@ -104,10 +102,7 @@ const ContactForm = ({ desktopImage, mobileImage, textcolour }) => {
                         Contact Us
                     </h2>
 
-                    <p
-                        className="text-md mt-2 uppercase"
-                        style={{ color: mutedColor }}
-                    >
+                    <p className="text-md mt-2 uppercase" style={{ color: mutedColor }}>
                         Have an inquiry? We’ll be happy to assist you
                     </p>
 
@@ -116,10 +111,7 @@ const ContactForm = ({ desktopImage, mobileImage, textcolour }) => {
                         style={{ backgroundColor: textColor }}
                     />
 
-                    <form
-                        className="mt-5 space-y-6 md:mt-0"
-                        onSubmit={handleSubmit}
-                    >
+                    <form className="mt-5 space-y-6 md:mt-0" onSubmit={handleSubmit}>
                         <div>
                             <label className="text-md">Name*</label>
                             <input
@@ -177,15 +169,13 @@ const ContactForm = ({ desktopImage, mobileImage, textcolour }) => {
                                 onChange={handleChange}
                                 className="mt-1"
                             />
-                            <span>
-                                I agree to be contacted about sponsorship opportunities
-                            </span>
+                            <span>I agree to be contacted about sponsorship opportunities</span>
                         </div>
 
                         <button
                             type="submit"
                             disabled={loading}
-                            className="mt-4 bg-neon-yellow px-8 py-3 text-[28px] font-medium text-black transition hover:bg-lime-300 disabled:opacity-50"
+                            className="bg-neon-yellow mt-4 px-8 py-3 text-[28px] font-medium text-black transition hover:bg-lime-300 disabled:opacity-50"
                         >
                             {loading ? 'SENDING...' : 'SUBMIT'}
                         </button>

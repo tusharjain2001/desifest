@@ -4,24 +4,29 @@ import arrow from '@/Assets/openmic/image copy 5.png'
 import left from '../../Assets/concerts/leftwhitearrow.svg'
 import right from '../../Assets/concerts/rightwhitearrow.svg'
 import { useRef } from 'react'
+
+import images1 from '@/Assets/artist/Featured/image 1.png'
+import images2 from '@/Assets/artist/Featured/image 2.png'
+import images3 from '@/Assets/artist/Featured/image 3.png'
+
 const artists = [
     {
         id: 1,
-        name: 'JONITA GANDHI',
+        name: 'kala-kaar',
         handle: '@artist.instaprofile',
-        image: images,
+        image: images1,
     },
     {
         id: 2,
         name: 'JONITA GANDHI',
         handle: '@artist.instaprofile',
-        image: images,
+        image: images2,
     },
     {
         id: 3,
         name: 'JONITA GANDHI',
         handle: '@artist.instaprofile',
-        image: images,
+        image: images3,
     },
 ]
 
@@ -53,7 +58,7 @@ const FeaturedArt = () => {
                     <div className="dm-sans-400 flex flex-1 flex-col items-center justify-start text-2xl sm:mt-8">
                         {/* Line */}
                         <div className="h-0.5 w-full bg-black" />
-                        <div className="hidden  sm:flex">
+                        <div className="hidden sm:flex">
                             The voices shaping the DESIFEST sound today.
                         </div>
                     </div>
@@ -72,7 +77,9 @@ const FeaturedArt = () => {
                         </button>
                     </div>
                 </div>
-                <div className="flex ml-2  sm:hidden">The voices shaping the DESIFEST sound today.</div>
+                <div className="ml-2 flex sm:hidden">
+                    The voices shaping the DESIFEST sound today.
+                </div>
             </div>
 
             {/* Scroll Container */}
@@ -80,26 +87,31 @@ const FeaturedArt = () => {
                 {artists.map((artist) => (
                     <div
                         key={artist.id}
-                        className="group relative flex-shrink-0 basis-[260px] origin-top-left transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:basis-[395px] hover:scale-y-125 sm:basis-[320px] sm:hover:basis-[420px]"
+                        className="group relative flex-shrink-0 basis-[260px] origin-top transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.2] sm:basis-[320px]"
                     >
-                        <div className="flex origin-top-left flex-row gap-2 p-4 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:flex-col sm:gap-0 sm:bg-none">
-                            <div className="relative h-45 w-1/2 border-4 border-black sm:h-70 sm:w-full">
+                        <div className="flex flex-row gap-2 p-4 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:flex-col sm:gap-0">
+                            {/* Image */}
+                            <div className="relative h-45 w-1/2 overflow-hidden border-4 border-black sm:h-70 sm:w-full">
                                 <img
                                     src={artist.image}
                                     alt={artist.name}
-                                    className="h-full w-full object-cover transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:grayscale sm:group-hover:grayscale-0"
+                                    className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                                 />
                             </div>
 
+                            {/* Content */}
                             <div className="my-4 w-1/2 text-left sm:w-full">
-                                <h3 className="dm-sans-700 pr-8 text-4xl font-normal tracking-wider text-[#EEFE08] [-webkit-text-stroke:1px_black] [text-stroke:1px_black] sm:text-5xl">
+                                <h3 className="dm-sans-700 pr-8 text-4xl tracking-wider text-[#EEFE08] [-webkit-text-stroke:1px_black] sm:text-5xl">
                                     {artist.name}
                                 </h3>
-                                <p className="dm-sans-400 text-lg font-normal text-[#26193A]">
+
+                                <p className="dm-sans-400 text-lg text-[#26193A]">
                                     {artist.handle}
                                 </p>
                             </div>
-                            <div className="absolute right-6 bottom-6 invert">
+
+                            {/* Arrow */}
+                            <div className="absolute right-6 bottom-6 invert transition-all duration-300 group-hover:translate-x-2">
                                 <img src={arrow} alt="" className="h-8" />
                             </div>
                         </div>

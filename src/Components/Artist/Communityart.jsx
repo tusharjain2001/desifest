@@ -120,7 +120,7 @@ const Communityart = () => {
     ]
 
     return (
-        <div className="w-full overflow-hidden py-10">
+        <div className="w-full overflow-hidden py-8">
             <div className="mb-10 flex flex-col items-start justify-center">
                 <div className="flex w-full items-center gap-1 md:items-center md:gap-4">
                     <h2 className="oswald-500 text-[36px] tracking-wide whitespace-nowrap text-black uppercase md:text-[60px]">
