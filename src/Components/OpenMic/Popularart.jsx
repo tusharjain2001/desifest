@@ -4,24 +4,29 @@ import arrow from '@/Assets/openmic/image copy 5.png'
 import left from '../../Assets/concerts/leftwhitearrow.svg'
 import right from '../../Assets/concerts/rightwhitearrow.svg'
 import { useRef } from 'react'
+
+import images1 from '@/Assets/openmic/Session/session 1.jpg'
+import images2 from '@/Assets/openmic/Session/session 2.jpg'
+import images3 from '@/Assets/openmic/Session/session 3.jpg'
+
 const artists = [
     {
         id: 1,
-        name: 'JONITA GANDHI',
+        name: 'DURHAM',
         handle: '@artist.instaprofile',
-        image: images,
+        image: images1,
     },
     {
         id: 2,
-        name: 'JONITA GANDHI',
+        name: 'LA HORE',
         handle: '@artist.instaprofile',
-        image: images,
+        image: images2,
     },
     {
         id: 3,
-        name: 'JONITA GANDHI',
+        name: 'TORONTO',
         handle: '@artist.instaprofile',
-        image: images,
+        image: images3,
     },
 ]
 
@@ -42,12 +47,12 @@ const Popularart = () => {
         })
     }
     return (
-        <div className="w-full overflow-hidden  py-10">
+        <div className="w-full overflow-hidden py-10">
             {/* Heading */}
             <div className="mb-10 flex items-center justify-center">
                 <div className="flex w-full items-center gap-1 md:items-center md:gap-4">
                     <h2 className="oswald-500 text-[36px] tracking-wide whitespace-nowrap text-white md:text-[80px]">
-                        POPULAR ARTIST
+                        SEASONS AND PLACES
                     </h2>
 
                     <div className="flex min-w-0 flex-1 flex-col items-center justify-center">
@@ -67,11 +72,11 @@ const Popularart = () => {
             </div>
 
             {/* Scroll Container */}
-            <div className="scrollbar-hide flex flex-col items-start overflow-x-auto px-6 sm:flex-row sm:gap-6 sm:px-12 sm:pb-32">
+            <div className="scrollbar-hide flex flex-col items-start overflow-x-auto px-6 sm:flex-row sm:gap-12 sm:px-12 sm:pb-32">
                 {artists.map((artist) => (
                     <div
                         key={artist.id}
-                        className="group relative flex-shrink-0 basis-[260px] origin-top-left transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:basis-[395px] hover:scale-y-125 sm:basis-[320px] sm:hover:basis-[420px]"
+                        className="group relative flex-shrink-0 basis-[260px] origin-top transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-[1.2] sm:basis-[320px]"
                     >
                         <div className="flex origin-top-left flex-row gap-2 bg-[linear-gradient(90deg,#FFFFFF_0%,#7E6FF5_61.58%,#FAA7EB_100%)] p-4 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:flex-col sm:gap-0 sm:bg-[#FFFFFF40] sm:bg-none sm:group-hover:bg-[linear-gradient(180deg,#FFFFFF_0%,#7E6FF5_61.58%,#FAA7EB_100%)]">
                             <div className="relative h-45 w-1/2 border-4 border-white sm:h-70 sm:w-full">
@@ -83,10 +88,10 @@ const Popularart = () => {
                             </div>
 
                             <div className="my-4 w-1/2 text-left sm:w-full">
-                                <h3 className="dm-sans-400 text-4xl font-normal tracking-wider text-white sm:text-4xl">
+                                <h3 className="dm-sans-400 text-4xl font-normal tracking-wider text-white group-hover:text-[#100422] sm:text-4xl">
                                     {artist.name}
                                 </h3>
-                                <p className="dm-sans-400 text-lg font-normal text-white/70">
+                                <p className="dm-sans-400 text-lg font-normal text-white/70 group-hover:text-[#100422]">
                                     {artist.handle}
                                 </p>
                             </div>

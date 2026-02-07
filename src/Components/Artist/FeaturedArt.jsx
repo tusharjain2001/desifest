@@ -18,13 +18,13 @@ const artists = [
     },
     {
         id: 2,
-        name: 'JONITA GANDHI',
+        name: 'Masterd',
         handle: '@artist.instaprofile',
         image: images2,
     },
     {
         id: 3,
-        name: 'JONITA GANDHI',
+        name: 'Landy garcia',
         handle: '@artist.instaprofile',
         image: images3,
     },
@@ -101,7 +101,7 @@ const FeaturedArt = () => {
 
                             {/* Content */}
                             <div className="my-4 w-1/2 text-left sm:w-full">
-                                <h3 className="dm-sans-700 pr-8 text-4xl tracking-wider text-[#EEFE08] [-webkit-text-stroke:1px_black] sm:text-5xl">
+                                <h3 className="dm-sans-700 uppercase pr-8 text-4xl tracking-wider text-[#EEFE08] [-webkit-text-stroke:1px_black] sm:text-5xl">
                                     {artist.name}
                                 </h3>
 
