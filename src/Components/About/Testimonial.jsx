@@ -1,90 +1,123 @@
-import { useEffect, useRef } from "react";
-import quote from "../../Assets/about/quote.svg";
+import { useEffect, useRef } from 'react'
+import quote from '../../Assets/about/quote.svg'
 
 export default function TestimonialCarousel() {
-  const scrollRef = useRef(null);
+    const scrollRef = useRef(null)
 
-  // ✅ TESTIMONIAL DATA (same file)
-  const testimonials = [
-    {
-      quote:
-        "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-      name: "John Doe",
-      role: "CEO, Company",
-    },
-    {
-      quote:
-        "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-      name: "John Doe",
-      role: "CEO, Company",
-    },
-    {
-      quote:
-        "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-      name: "John Doe",
-      role: "CEO, Company",
-    },
-    {
-      quote:
-        "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-      name: "John Doe",
-      role: "CEO, Company",
-    },
-  ];
+    // ✅ TESTIMONIAL DATA (same file)
+    const testimonials = [
+        {
+            quote: 'Awesome show last night. we had a great time listening to all those hits. Pratik Rao you were awesome, as usual ..... may your tribe increase.',
+            name: 'Ed Daniel',
+            role: 'March 27, 2022',
+        },
+        {
+            quote: 'Kudos and much respect to Team DesiFEST for brining the celebrations online. Brining artists & DJs all around the world together to showcase their talents and to entertain the masses as well. Amazing initiative. #djdeepzysingapore',
+            name: 'Pradeep Sidhu',
+            role: 'July 9, 2021',
+        },
+        {
+            quote: 'Desifest is the best place for amazing talents and all positive energy for various musicians. Sofa sessions have been great and now a habit, love you team. Highly recommended!',
+            name: 'Sharmila Ganesh',
+            role: 'June 11, 2020',
+        },
+        {
+            quote: 'DesiFEST has rekindled my passion for music. This summer, we enjoyed daily Sofa Sessions featuring amazing local and international artists, many of whom have become friends.  I also value the resources for artists, like webinars and networking. Thanks, Sathish and Michelle, for spreading joy through creativity during these tough times.',
+            name: 'Zohra Kassam',
+            role: 'June 5, 2020',
+        },
+        {
+            quote: 'DesiFEST is a great platform for upcoming artists. The team is amazing and very creative. Prior to Covid19 situation, my band Desirootz Music and I absolutely loved participating at the monthly Open stage concerts in downtown Toronto. Thanks to them, I have met some amazing artists and collaborators. I support their vision.',
+            name: 'Himaani Bee',
+            role: 'June 3, 2020',
+        },
+        {
+            quote: 'I highly recommend Desifest as a vibrant multicultural platform for artists worldwide to share their unique talents. The founders, Sathish and Michelle, are incredibly supportive and dedicated, giving a welcoming environment for all forms of music. As a self-taught singer and musician, I felt embraced with this fantastic opportunity.',
+            name: 'Seema Maraj',
+            role: 'June 2, 2020',
+        },
+        {
+            quote: 'DesiFEST provides an amazing platform for aspiring artists to display their skills. Thanks a lot Satish and Michelle for this wonderful platform.',
+            name: 'Ravi Yedery',
+            role: 'June 2, 2020',
+        },
+        {
+            quote: 'DesiFest is a huge platform for South Asian artists for show casing their talent! The team is amazing and so productive. They are absolutely passionate about what they do and always give their 100000% I love performing at any platform DesiFest provides.',
+            name: 'Rushna Imran',
+            role: 'June 2, 2020',
+        },
+        {
+            quote: 'An excellent platform for artists from all over the globe to showcase their talent. Great efforts put in by Michelle and Sathish to bring the audience a great show and provide participants with a very encouraging and supportive environment !',
+            name: 'Ritu Verma',
+            role: 'June 2, 2020',
+        },
+        {
+            quote: 'Desifest is an amazing platform for promoting talent. The dedicated team goes above and beyond to support local artists, helping them grow both professionally and personally. They ensure that every talent has the tools needed for success. Wishing the Desifest team all the best!',
+            name: 'Pratik Peters',
+            role: 'June 2, 2020',
+        },
+        {
+            quote: "I discovered desiFest by chance and I'm so thankful to Sathish and Michelle for treating me like family and for their passion in bringing together diverse artists from around the globe. If you're looking to make your mark in the Hindi music scene in Toronto, desiFest is the best place to showcase your talent. Thanks again to the desiFest team!",
+            name: 'Akxay Sharma',
+            role: 'June 2, 2020',
+        },
+        {
+            quote: 'Desifest has very quickly become a leader in helping new artist bring their talent to the masses. During these tough times (COVID-19) Desifest has created a platform for live performs to continue following their dreams. 5 stars!',
+            name: 'Bobby Gulati',
+            role: 'June 2, 2020',
+        },
+    ]
 
-  // ✅ SMOOTH AUTO SCROLL (NO LAG / NO REVERSE)
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
+    // ✅ SMOOTH AUTO SCROLL (NO LAG / NO REVERSE)
+    useEffect(() => {
+        const container = scrollRef.current
+        if (!container) return
 
-    const speed = 1; // smoother & visible
-    let intervalId;
+        const speed = 1 // smoother & visible
+        let intervalId
 
-    intervalId = setInterval(() => {
-      container.scrollLeft += speed;
+        intervalId = setInterval(() => {
+            container.scrollLeft += speed
 
-      if (container.scrollLeft >= container.scrollWidth / 2) {
-        container.scrollLeft = 0;
-      }
-    }, 16); // ~60fps
+            if (container.scrollLeft >= container.scrollWidth / 2) {
+                container.scrollLeft = 0
+            }
+        }, 16) // ~60fps
 
-    return () => clearInterval(intervalId);
-  }, []);
+        return () => clearInterval(intervalId)
+    }, [])
 
-  return (
-    <div className="w-full bg-[#120822] py-16 gap-5 overflow-hidden">
-      <h2 className="text-center font-[OSWALD] text-white text-4xl font-medium mb-10">
-        WHAT PEOPLE SAY ABOUT US...
-      </h2>
+    return (
+        <div className="w-full gap-5 overflow-hidden bg-[#120822] py-16">
+            <h2 className="mb-10 text-center font-[OSWALD] text-4xl font-medium text-white">
+                WHAT PEOPLE SAY ABOUT US...
+            </h2>
 
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-scroll px-10 no-scrollbar"
-      >
-        {[...testimonials, ...testimonials].map((item, index) => (
-          <div
-            key={index}
-            className="min-w-[320px] max-w-[320px] bg-[#1c1033] text-white rounded-xl p-6 flex flex-col justify-between shadow-lg"
-          >
-            <div className="">
-              <img src={quote} className="mb-3" />
-              <p className="text-sm leading-relaxed helva text-gray-300">
-                {item.quote}
-              </p>
+            <div ref={scrollRef} className="no-scrollbar flex gap-6 overflow-x-scroll px-10">
+                {[...testimonials, ...testimonials].map((item, index) => (
+                    <div
+                        key={index}
+                        className="flex max-w-[320px] min-w-[320px] flex-col justify-between rounded-xl bg-[#1c1033] p-6 text-white shadow-lg"
+                    >
+                        <div className="">
+                            <img src={quote} className="mb-3" />
+                            <p className="helva text-sm leading-relaxed text-gray-300">
+                                {item.quote}
+                            </p>
+                        </div>
+
+                        <div className="border-neon-yellow mt-6 flex items-center gap-4 border-t pt-4">
+                            {/* <div className="w-10 h-10 bg-purple-300 rounded-md" /> */}
+                            <div className="dm-sans-400">
+                                <p className="text-sm">{item.name}</p>
+                                <p className="text-xs">{item.role}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
-
-            <div className="mt-6 pt-4 border-t border-neon-yellow flex items-center gap-4">
-              <div className="w-10 h-10 bg-purple-300 rounded-md" />
-              <div className="dm-sans-400">
-                <p className="text-sm ">{item.name}</p>
-                <p className="text-xs">{item.role}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+        </div>
+    )
 }
 
 /* Add this once in your global CSS file
