@@ -22,11 +22,24 @@ const PartnerSupport = () => {
 
             {/* Cards */}
             {/* Cards */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-6 md:gap-10">
+            {/* MOBILE LAYOUT */}
+            <div className="grid grid-cols-2 gap-4 md:hidden">
                 {partners.map((logo, index) => (
                     <div
                         key={index}
-                        className={`flex min-h-[110px] items-center justify-center rounded-2xl bg-[#FFFFFF1F] px-6 transition-[border-radius] duration-500 ease-in-out hover:rounded-[80px] sm:min-h-[140px] sm:rounded-3xl sm:px-10 sm:py-16 ${index === 0 ? 'col-span-2' : 'col-span-1'} md:${index < 2 ? 'col-span-3' : 'col-span-2'} `}
+                        className={`flex min-h-[110px] items-center justify-center rounded-2xl bg-[#FFFFFF1F] px-6 py-10 transition-all duration-500 hover:rounded-[60px] ${index === 0 ? 'col-span-2' : 'col-span-1'} `}
+                    >
+                        <img src={logo} alt="Partner Logo" className="max-h-20 object-contain" />
+                    </div>
+                ))}
+            </div>
+
+            {/* DESKTOP LAYOUT */}
+            <div className="hidden gap-6 md:grid md:grid-cols-6 lg:gap-10">
+                {partners.map((logo, index) => (
+                    <div
+                        key={index}
+                        className={`flex min-h-[140px] items-center justify-center rounded-3xl bg-[#FFFFFF1F] px-10 py-16 transition-all duration-500 hover:rounded-[80px] ${index < 2 ? 'col-span-3' : 'col-span-2'} `}
                     >
                         <img src={logo} alt="Partner Logo" className="max-h-20 object-contain" />
                     </div>

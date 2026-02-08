@@ -75,7 +75,8 @@ const ArtistsSection = ({ scrollY }) => {
             <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-2  px-8 pt-28 sm:grid-cols-3">
                 {/* Featured Artist */}
                 <div ref={featuredRef} className="w-90 flex items-center ">
-                    <ArtistCard image={img1} title="Featured Artists" />
+                    <ArtistCard image={img1} title="alumni
+artists" />
                 </div>
 
                 {/* Community Artist */}
