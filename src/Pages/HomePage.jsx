@@ -10,6 +10,7 @@ import Shop from '@/Components/Home/Shop.jsx'
 import BlogsAndMedia from '@/Components/Home/BlogandMedia'
 import Community from '@/Components/Home/Community'
 import VerticalNavbar from '@/Components/Layout/VerticalNavbar'
+import Presentingsp from '@/Components/Home/presentingsp'
 
 const HomePage = () => {
     // 👇 GET SCROLL FROM MAINLAYOUT
@@ -53,6 +54,7 @@ const HomePage = () => {
 
                     <Community />
                     <GovernmentSupport />
+                    <Presentingsp />
                     <PartnerSupport />
                     <div className="krona-one-regular relative w-full py-20">
                         <div className="krona-one-regular relative w-full py-20">

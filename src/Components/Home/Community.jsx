@@ -1,8 +1,8 @@
 import CommunityCard from './CommunityCard'
 
-import img1 from '@/Assets/home/Community/image.png'
-import img2 from '@/Assets/home/Community/image.png'
-import img3 from '@/Assets/home/Community/image.png'
+import img1 from '@/Assets/home/Community/image1.png'
+import img2 from '@/Assets/home/Community/image2.png'
+import img3 from '@/Assets/home/Community/image3.png'
 
 const Community = () => {
     return (
@@ -14,7 +14,7 @@ const Community = () => {
                     <div className="h-[2px] flex-1 rounded-full bg-white sm:h-[3px]" />
                 </div>
 
-                <div className="flex snap-x snap-mandatory flex-col items-center justify-start gap-16 overflow-x-auto p-4 pr-8 sm:snap-none sm:flex-row sm:justify-start sm:overflow-visible">
+                <div className="flex snap-x snap-mandatory flex-col items-center justify-start gap-16 overflow-x-auto p-4 pl-8 sm:snap-none sm:flex-row sm:justify-start sm:overflow-visible">
                     <CommunityCard image={img1} title="Year-Round Program" />
 
                     <CommunityCard

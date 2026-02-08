@@ -12,7 +12,8 @@ const ProductCard = ({
           <img
             src={image}
             alt={title}
-            className="max-h-50 object-contain"
+            draggable="false"
+            className="max-h-50  object-contain"
           />
   
           {/* BADGE */}

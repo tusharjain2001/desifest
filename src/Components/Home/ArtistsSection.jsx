@@ -2,8 +2,9 @@ import arrow from '@/Assets/home/animation/image.png'
 import background2 from '@/Assets/home/background_2.png'
 import { useEffect, useRef } from 'react'
 // IMAGES
-import img1 from '@/Assets/home/animation/communitythird.svg'
-import img2 from '@/Assets/home/animation/image copy.png'
+import img1 from '@/Assets/home/animation/image1.png'
+import img2 from '@/Assets/home/animation/image2.png'
+import img3 from '@/Assets/home/animation/image3.png'
 
 const ArtistCard = ({ image, title }) => {
     return (
@@ -13,7 +14,7 @@ const ArtistCard = ({ image, title }) => {
                 <img
                     src={image}
                     alt={title}
-                    className="h-50 w-full sm:w-1/2 object-cover grayscale transition-all duration-500 ease-out group-hover:w-3/4"
+                    className="h-50 w-full sm:w-1/2 object-cover grayscale hover:grayscale-0  transition-all duration-500 ease-out group-hover:w-3/4"
                 />
             </div>
 
@@ -74,7 +75,7 @@ const ArtistsSection = ({ scrollY }) => {
             <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-2  px-8 pt-28 sm:grid-cols-3">
                 {/* Featured Artist */}
                 <div ref={featuredRef} className="w-90 flex items-center ">
-                    <ArtistCard image={img2} title="Featured Artists" />
+                    <ArtistCard image={img1} title="Featured Artists" />
                 </div>
 
                 {/* Community Artist */}
@@ -83,10 +84,10 @@ const ArtistsSection = ({ scrollY }) => {
                 </div>
 
                 {/* Image Card */}
-                <div ref={imageRef} className=" sm:block hidden w-100 h-120 items-center ">
+                <div ref={imageRef} className=" sm:block hidden w-80  border-8 border-white h-120 items-center ">
                     <img
-                        src={img1}
-                        className="hidden h-full w-full object-contain sm:block"
+                        src={img3}
+                        className="hidden h-full w-full object-cover sm:block"
                         alt=""
                     />
                 </div>

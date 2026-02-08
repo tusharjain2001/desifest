@@ -4,11 +4,11 @@ import ArtistsSection from './ArtistsSection.jsx'
 
 const Animation = ({ scrollY }) => {
     return (
-        <section className="relative w-full overflow-hidden  sm:mt-32">
+        <section className="relative w-full overflow-hidden sm:mt-20">
             {/* VIDEO + PARALLAX */}
-            <div className="relative z-0 h-100 sm:h-[600px] w-full">
+            <div className="relative z-0 h-100 w-full sm:h-[1200px]">
                 <video
-                    className="absolute inset-0 z-0 h-full w-full object-cover"
+                    className="absolute inset-0 z-0 h-[800px] w-full object-cover"
                     src={backgroundVideo}
                     autoPlay
                     loop
@@ -16,7 +16,8 @@ const Animation = ({ scrollY }) => {
                     playsInline
                 />
 
-                <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#100422] to-transparent"></div>
+                <div className="absolute inset-0 z-10 h-40 bg-gradient-to-b from-[#100422] to-transparent"></div>
+                <div className="absolute inset-0 z-10 top-170 h-30  bg-gradient-to-t from-[#100422] to-transparent"></div>
 
                 {/* Parallax should stay BELOW artists */}
                 <div className="absolute bottom-0 z-20 h-full w-full">
@@ -25,7 +26,7 @@ const Animation = ({ scrollY }) => {
             </div>
 
             {/* ARTISTS SECTION ABOVE EVERYTHING */}
-            <div className="relative  z-50">
+            <div className="relative z-50">
                 <ArtistsSection scrollY={scrollY} />
             </div>
         </section>

@@ -6,6 +6,7 @@ import windbreaker from "@/Assets/home/Shop/Shop1.png";
 import hoodieBlue from "@/Assets/home/Shop/Shop2.png";
 import hoodieBlack from "@/Assets/home/Shop/Shop3.png";
 import cap from "@/Assets/home/Shop/Shop4.png";
+import cap1 from "@/Assets/home/Shop/Shop5.png";
 
 const ShopSection = () => {
   const sliderRef = useRef(null);
@@ -41,6 +42,13 @@ const ShopSection = () => {
       title: "Desifest Vintage Cotton Twill Cap",
       price: "25.00",
       image: cap,
+      link: "/shop/vintage-cap",
+    },
+    {
+      id: 4,
+      title: "Organic Ribbed Beanie",
+      price: "21.00",
+      image: cap1,
       link: "/shop/vintage-cap",
     },
   ];
