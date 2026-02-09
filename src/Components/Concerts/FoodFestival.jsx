@@ -7,7 +7,6 @@ import three from '../../Assets/concerts/ff3.png'
 import four from '../../Assets/concerts/ff4.png'
 import five from '../../Assets/concerts/ff5.png'
 
-
 const vendors = [
     {
         name: 'Vendor Name',
@@ -99,14 +98,8 @@ const FoodFestivalSection = () => {
                             <img
                                 src={vendor.image}
                                 alt={vendor.name}
-                                className="h-75 w-full object-cover grayscale sm:h-85 md:h-90"
+                                className="h-75 w-full object-cover sm:h-85 md:h-90"
                             />
-
-                            {/* Overlay */}
-                            <div className="absolute top-0 right-0 bg-[#1a0b3d] px-4 py-3">
-                                <p className="text-lg font-semibold text-white">{vendor.name}</p>
-                                <p className="text-sm text-white/70">{vendor.handle}</p>
-                            </div>
                         </div>
                     ))}
                 </div>
