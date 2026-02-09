@@ -1,7 +1,7 @@
 import React from "react";
 import ArtistSignupForm from "./ArtistSignupForm";
 import VerticalNavbar from "../Layout/VerticalNavbar";
-import bg from "@/Assets/artist/image copy.png";
+import bg from "@/Assets/concerts/artistform.png";
 
 const ArtistSignUp = () => {
   return (
@@ -21,7 +21,7 @@ const ArtistSignUp = () => {
       <p className="mt-4 md:text-2xl uppercase -tracking-normal text-blue-black bg-off-white-lavender">
         Please find here the artists submissions signup for 2026 Desifest
       </p>
-      <img src={bg} alt="" className="my-4" />
+      <img src={bg} alt="" className="my-4 w-full" />
 
       <ArtistSignupForm />
     </div>

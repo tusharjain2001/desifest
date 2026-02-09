@@ -1,33 +1,38 @@
 import React, { useRef } from 'react'
 import left from '../../Assets/concerts/leftwhitearrow.svg'
 import right from '../../Assets/concerts/rightwhitearrow.svg'
-import foodimage from '../../Assets/concerts/foodimage.svg'
+import one from '../../Assets/concerts/ff1.png'
+import two from '../../Assets/concerts/ff2.png'
+import three from '../../Assets/concerts/ff3.png'
+import four from '../../Assets/concerts/ff4.png'
+import five from '../../Assets/concerts/ff5.png'
+
 
 const vendors = [
     {
         name: 'Vendor Name',
         handle: '@vedorId',
-        image: '/vendor.jpg',
+        image: one,
     },
     {
         name: 'Vendor Name',
         handle: '@vedorId',
-        image: '/vendor.jpg',
+        image: two,
     },
     {
         name: 'Vendor Name',
         handle: '@vedorId',
-        image: '/vendor.jpg',
+        image: three,
     },
     {
         name: 'Vendor Name',
         handle: '@vedorId',
-        image: '/vendor.jpg',
+        image: four,
     },
     {
         name: 'Vendor Name',
         handle: '@vedorId',
-        image: '/vendor.jpg',
+        image: five,
     },
 ]
 
@@ -54,24 +59,19 @@ const FoodFestivalSection = () => {
             <div className="mx-auto max-w-[90%]">
                 {/* Header */}
                 <div className="mb-14 flex items-center justify-between">
-                    <div className="flex w-full items-center gap-1 md:gap-8 md:items-end">
+                    <div className="flex w-full items-center gap-1 md:items-center md:gap-8">
                         <h2 className="oswaldd text-[36px] tracking-wide whitespace-nowrap text-white md:text-[100px]">
-                            FOOD FESTIVAL
+                            PAST VENDORS
                         </h2>
 
                         <div className="flex min-w-0 flex-1 flex-col">
                             {/* Line */}
                             <div className="h-0.5 w-full bg-white" />
-
-                            {/* Text */}
-                            <div className="mt-3 hidden text-xl pb-5 dm-sans-400 whitespace-nowrap text-white md:block">
-                                Flavour, culture, and community.
-                            </div>
                         </div>
                     </div>
 
                     {/* Arrows */}
-                    <div className="md:ml-10 flex shrink-0 items-center md:gap-4">
+                    <div className="flex shrink-0 items-center md:ml-10 md:gap-4">
                         <button onClick={scrollLeft} className="transition hover:opacity-70">
                             <img src={left} alt="left" className="h-8 w-8 md:h-10 md:w-10" />
                         </button>
@@ -97,7 +97,7 @@ const FoodFestivalSection = () => {
 
                             {/* Image */}
                             <img
-                                src={foodimage}
+                                src={vendor.image}
                                 alt={vendor.name}
                                 className="h-75 w-full object-cover grayscale sm:h-85 md:h-90"
                             />
