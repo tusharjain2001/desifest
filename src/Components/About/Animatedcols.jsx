@@ -4,7 +4,9 @@ import cultureImg from "@/Assets/about/image.png";
 import supportImg from "@/Assets/about/image.png";
 import arrow from "@/Assets/home/animation/image.png";
 import col2img from "@/Assets/about/col2img.png";
-import col3img from "@/Assets/about/col3img.png";
+import abouttwo from "@/Assets/about/abouttwo.svg";
+import aboutthree from "@/Assets/about/aboutthree.svg";
+import aboutfour from "@/Assets/about/aboutfour.svg";
 
 const artistCardsData = [
 	{
@@ -104,7 +106,7 @@ const AnimatedCols = ({ scrollY }) => {
 		refs.current.forEach((el, i) => {
 			if (!el) return;
 
-			const startOffset = columns[i].height;
+			// const startOffset = columns[i].height;
 			const translate = y * columns[i].speed;
 
 			el.style.transform = `translateY(${-translate}px)`;
@@ -138,7 +140,7 @@ const AnimatedCols = ({ scrollY }) => {
 											className="w-30"
 										/>
 										<img
-											src={col2img}
+											src={abouttwo}
 											alt=""
 											className="w-80"
 										/>
@@ -173,7 +175,7 @@ const AnimatedCols = ({ scrollY }) => {
 									/>
 									<div className="flex flex-row gap-2 items-start">
 										<img
-											src={col2img}
+											src={aboutthree}
 											alt=""
 											className="w-full"
 										/>
@@ -206,7 +208,7 @@ const AnimatedCols = ({ scrollY }) => {
 												artistCardsData[3].description
 											}
 										/>
-										<img src={col3img} alt="" />
+										<img src={aboutfour} alt="" />
 										<div className="flex items-start gap-4 mb-10">
 											<div className="w-px h-14 bg-white/60" />
 										</div>
