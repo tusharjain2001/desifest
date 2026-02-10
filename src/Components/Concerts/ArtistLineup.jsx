@@ -221,7 +221,7 @@ import lineupbg from '../../Assets/concerts/artistlineupbg.svg'
 
 const ArtistLineup = () => {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-white oswaldd overflow-hidden">
+    <div className=" relative min-h-screen  flex flex-col items-center justify-center text-white oswaldd overflow-hidden">
       
       {/* Background Image */}
       <img

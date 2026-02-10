@@ -6,6 +6,8 @@ import PopularCaseStudies from '@/Components/Media/PopularCaseStudies'
 import backgroung1 from '@/Assets/media/BACKGROUND.png'
 import PressKitLp from '@/Components/Media/PressKitLp'
 import { useOutletContext } from 'react-router-dom'
+import Video from '@/Components/Concerts/video'
+import ContactForm from '@/Components/Home/ContactForm'
 
 const PressKitPage = () => {
     const { scrollRef, scrollY } = useOutletContext()
@@ -19,33 +21,38 @@ const PressKitPage = () => {
                 />
                 <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#100422] to-transparent"></div>
             </div>
-            <div className="relative md:h-120 w-full overflow-hidden px-6 py-16 mt-10">
-                {/* Background subtle glow */}
+            <div className="relative mt-10 w-full overflow-hidden px-6 py-16 md:h-120">
                 <div className="relative z-10 mx-auto max-w-6xl text-center">
-                    {/* Small Top Text */}
-                    <p className="dm-sans-500 mb-4 text-[20px] tracking-[0.3em] text-white uppercase md:text-[20px]">
-                        Everything you need to tell our story right
+                    {/* Top Small Heading */}
+                    <p className="oswald-500 mb-4 text-[24px] text-neon-yellow uppercase sm:text-7xl">
+                        2026 DESIFEST
                     </p>
 
                     {/* Main Heading */}
-                    <h1 className="text-[64px] font-extrabold tracking-tight md:text-9xl">
-                        <span className="special-gothic-one-regular bg-gradient-to-r from-yellow-300 to-lime-400 bg-clip-text text-transparent">
-                            PRESS
-                        </span>{' '}
-                       
-                        <span className="special-gothic-one-regular bg-gradient-to-r from-lime-400 to-green-400 bg-clip-text text-transparent">
-                            KIT
-                        </span>
+                    <h1 className="text-[64px] special-gothic-one-regular font-extrabold tracking-tight text-[#C6B7DD] md:text-9xl">
+                        MEDIA KIT
                     </h1>
+
+                    {/* Subtext */}
+                    <p className="dm-sans-400 mt-12 text-[18px] tracking-[0.15em] text-white uppercase md:text-[20px]">
+                        Download the full 2026 media kit
+                    </p>
+
+                    {/* Button */}
+                    <div className="mt-8">
+                        <button className="bg-neon-yellow p-4  text-2xl font-bold tracking-wider oswald-500 text-black uppercase ">
+                            Download Kit
+                        </button>
+                    </div>
                 </div>
             </div>
-            <PressKitLp scrollY={scrollY} scrollRef={scrollRef} />
+            <Video />
 
             <MissionStatement />
-            <PopularCaseStudies />
-            <PeopleOfContact />
+            
             <OfficialLogos />
             <TestimonialCarousel />
+            <ContactForm />
         </div>
     )
 }

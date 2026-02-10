@@ -12,7 +12,6 @@ const Animation = ({ scrollY }) => {
                     src={backgroundVideo}
                     autoPlay
                     loop
-                    muted
                     playsInline
                 />
 

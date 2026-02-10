@@ -77,7 +77,7 @@ const ContactForm = ({ desktopImage, mobileImage, textcolour }) => {
             className="relative flex min-h-screen w-full flex-col overflow-hidden md:flex-row"
         >
             {/* DESKTOP IMAGE */}
-            <div className="relative hidden w-full sm:block md:basis-[40%]">
+            <div className="relative hidden w-full h-220 sm:block md:basis-[40%]">
                 <img
                     src={desktopImage}
                     alt="Crowd"

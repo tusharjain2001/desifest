@@ -1,27 +1,31 @@
 import BoostCard from './boostcard'
 import blog456 from '@/Assets/media/BWBG.png'
+import image1 from '@/Assets/media/Boost/image1.png'
+import image2 from '@/Assets/media/Boost/image2.png'
+import image3 from '@/Assets/media/Boost/image3.png'
+import image4 from '@/Assets/media/Boost/image4.png'
 
 const boostData = [
     {
-        image: blog456,
+        image: image1,
         title: 'Digital',
         description:
             'We use paid media across Facebook, YouTube, Instagram, TikTok, and display advertising to reach and attract our fans.',
     },
     {
-        image: blog456,
+        image: image2,
         title: 'Artists',
         description:
             'Our combined social media reach has increased drastically, growing at a year-over-year pace of nearly 47% from 2022.',
     },
     {
-        image: blog456,
+        image: image3,
         title: 'Traditional',
         description:
             'The PR team works to get coverage in mainstream media in conjunction with TV partners and local newspapers and radio.',
     },
     {
-        image: blog456,
+        image: image4,
         title: 'Influencers',
         description:
             'There is a growing influencer roster at DESIFEST, and their collective reach exceeds 1 billion followers.',
