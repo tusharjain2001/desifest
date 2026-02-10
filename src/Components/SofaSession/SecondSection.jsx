@@ -2,8 +2,8 @@ import arrow from '@/Assets/home/animation/image.png'
 import { useEffect, useRef } from 'react'
 // IMAGES
 
-import img2 from '@/Assets/sofa_session/sofasessionsecondsection.svg'
-import bg from '@/Assets/sofa_session/sofasessionsecondsectionbg.svg'
+import img2 from '@/Assets/sofa_session/sofasessionsecondsection.png'
+import bg from '@/Assets/sofa_session/sofasessionsecondsectionbg.png'
 
 const ArtistCard = ({ image, title, description }) => {
     return (
@@ -63,12 +63,12 @@ const SecondSection = ({ scrollY }) => {
     }, [scrollY])
 
     return (
-        <section className="relative w-full bg-[#AC48FF] py-16 lg:py-32 overflow-x-hidden">
+        <section className="relative w-full bg-[#AC48FF] py-16 lg:py-32 overflow-x-hidden overflow-y-clip">
             <div className="md:px-6 md:pl-40">
                 {/* DESKTOP BG */}
                 <img
                     src={bg}
-                    className="pointer-events-none absolute bottom-0 left-1/4 hidden lg:block"
+                    className="pointer-events-none absolute -bottom-50 h-250  hidden lg:block"
                 />
 
                 {/* GRID CONTAINER (UNCHANGED) */}
