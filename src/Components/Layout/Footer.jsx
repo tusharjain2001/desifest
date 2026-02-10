@@ -13,9 +13,21 @@ import canadianheritagelogo from '../../Assets/COMPANIES/canadianheritagelogo.sv
 
 const Footer = () => {
     const socials = [
-        { name: 'instagram', icon: insta },
-        { name: 'facebook', icon: facebook },
-        { name: 'youtube', icon: youtube },
+        {
+            name: 'instagram',
+            icon: insta,
+            href: 'https://www.instagram.com/desifestmusic/',
+        },
+        {
+            name: 'facebook',
+            icon: facebook,
+            href: 'https://www.facebook.com/desiFEST',
+        },
+        {
+            name: 'youtube',
+            icon: youtube,
+            href: 'https://www.youtube.com/@desifestmusic/videos',
+        },
     ]
 
     return (
@@ -25,8 +37,15 @@ const Footer = () => {
                 <img src={logo} alt="DesiFest" className="h-14" />
 
                 <div className="flex gap-3">
-                    {socials.map(({ name, icon }) => (
-                        <a key={name} href="#" className="flex items-center justify-center">
+                    {socials.map(({ name, icon, href }) => (
+                        <a
+                            key={name}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={name}
+                            className="flex items-center justify-center transition hover:opacity-80"
+                        >
                             <img src={icon} alt={name} />
                         </a>
                     ))}
