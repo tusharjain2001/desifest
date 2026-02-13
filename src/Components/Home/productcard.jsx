@@ -28,7 +28,7 @@ const ProductCard = ({
             {title}
           </h3>
   
-          <p className="text-[32px] special-gothic-one-regular font-bold">
+          <p className="text-[18px] special-gothic-one-regular font-bold">
             ${price}
           </p>
         </div>
