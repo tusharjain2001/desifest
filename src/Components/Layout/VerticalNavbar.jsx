@@ -54,21 +54,21 @@ export default function VerticalNavbar() {
         {/* Social Icons (below nav) */}
         <div className="flex flex-row-reverse items-center gap-4 text-soft-lavender">
           <a
-            href="#"
+            href="https://www.facebook.com/desiFEST"
             className="hover:opacity-100 opacity-70 transition rotate-90"
           >
             <img src={facebook} alt="Facebook" className="h-10" />
           </a>
 
           <a
-            href="#"
+            href="https://www.instagram.com/desifestmusic/"
             className="hover:opacity-100 opacity-70 transition rotate-90"
           >
             <img src={insta} alt="Instagram" className="h-10" />
           </a>
 
           <a
-            href="#"
+            href="https://www.youtube.com/@desifestmusic/videos"
             className="hover:opacity-100 opacity-70 transition rotate-90"
           >
             <img src={youtube} alt="YouTube" className="h-10" />

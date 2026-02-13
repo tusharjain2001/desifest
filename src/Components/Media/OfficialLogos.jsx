@@ -35,7 +35,7 @@ const OfficialLogos = () => {
                             <img
                                 src={logo}
                                 alt="Official logo"
-                                className="h-16 w-auto object-contain opacity-90"
+                                className="h-24 w-auto object-contain opacity-90"
                             />
                         </div>
                     ))}
@@ -50,7 +50,7 @@ const OfficialLogos = () => {
                                 key={index}
                                 src={logo}
                                 alt="Official logo"
-                                className="h-24 w-auto object-contain opacity-90"
+                                className="h-32 w-auto object-contain opacity-90"
                             />
                         ))}
                     </div>
@@ -62,7 +62,7 @@ const OfficialLogos = () => {
                                 key={index}
                                 src={logo}
                                 alt="Official logo"
-                                className="h-20 w-auto object-contain opacity-90"
+                                className="h-32 w-auto object-contain opacity-90"
                             />
                         ))}
                     </div>

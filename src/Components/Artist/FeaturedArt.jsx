@@ -1,5 +1,4 @@
 import React from 'react'
-import images from '@/Assets/openmic/image copy 4.png'
 import arrow from '@/Assets/openmic/image copy 5.png'
 import left from '../../Assets/concerts/leftwhitearrow.svg'
 import right from '../../Assets/concerts/rightwhitearrow.svg'
@@ -13,19 +12,19 @@ const artists = [
     {
         id: 1,
         name: 'kala-kaar',
-        handle: '@artist.instaprofile',
+        handle: 'https://www.instagram.com/kalakaarcollective/',
         image: images1,
     },
     {
         id: 2,
         name: 'Masterd',
-        handle: '@artist.instaprofile',
+        handle: 'https://www.instagram.com/masterdofficial/',
         image: images2,
     },
     {
         id: 3,
         name: 'Landy garcia',
-        handle: '@artist.instaprofile',
+        handle: 'https://www.instagram.com/landygarciamtl/',
         image: images3,
     },
 ]
@@ -101,13 +100,18 @@ const FeaturedArt = () => {
 
                             {/* Content */}
                             <div className="my-4 w-1/2 text-left sm:w-full">
-                                <h3 className="dm-sans-700 uppercase pr-8 text-4xl tracking-wider text-[#EEFE08] [-webkit-text-stroke:1px_black] sm:text-5xl">
+                                <h3 className="dm-sans-700 pr-8 text-4xl tracking-wider text-[#EEFE08] uppercase [-webkit-text-stroke:1px_black] sm:text-5xl">
                                     {artist.name}
                                 </h3>
 
-                                <p className="dm-sans-400 text-lg text-[#26193A]">
-                                    {artist.handle}
-                                </p>
+                                <a
+                                    href={artist.handle}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="dm-sans-400 text-lg text-[#26193A] hover:underline"
+                                >
+                                    @{artist.handle.split('/').filter(Boolean).pop()}
+                                </a>
                             </div>
 
                             {/* Arrow */}
