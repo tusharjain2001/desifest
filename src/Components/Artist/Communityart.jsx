@@ -336,7 +336,7 @@ const BigCircle = forwardRef(({ img, name, index, activeIndex, setActiveIndex },
 
             {/* RINGS */}
             <div
-                className={`absolute -right-28 -bottom-28 z-[-10] flex h-120 w-120 items-center justify-center transition-all duration-700 ease-out ${isActive ? 'scale-100 opacity-100' : 'scale-90 opacity-0'} md:scale-90 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100`}
+                className={`absolute -right-34 -bottom-34 z-[-10] flex h-120 w-120 items-center justify-center transition-all duration-700 ease-out ${isActive ? 'scale-100 opacity-100' : 'scale-90 opacity-0'} md:scale-90 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100`}
             >
                 <div className="absolute inset-24.75 rounded-[45px] border border-black/90 transition-all duration-700" />
                 <div className="absolute inset-16.5 rounded-[45px] border border-black/60 transition-all delay-75 duration-700" />
