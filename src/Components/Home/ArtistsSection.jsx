@@ -6,37 +6,54 @@ import img1 from '@/Assets/home/animation/image1.png'
 import img2 from '@/Assets/home/animation/image2.png'
 import img3 from '@/Assets/home/animation/image3.png'
 
+import { useNavigate } from 'react-router-dom'
+
+
 const ArtistCard = ({ image, title }) => {
+    const navigate = useNavigate()
+
+    const goToArtists = () => {
+        navigate('/our-artists')
+    }
+
     return (
-        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-row sm:flex-col  sm:justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-120">
+        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-row sm:flex-col sm:justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-120">
+            
             {/* IMAGE */}
-            <div className="overflow-hidden  w-1/2 sm:w-full">
+            <div className="overflow-hidden w-1/2 sm:w-full">
                 <img
                     src={image}
                     alt={title}
-                    className="h-50 w-full sm:w-1/2 object-cover grayscale group-hover:grayscale-0  transition-all duration-500 ease-out group-hover:w-3/4"
+                    className="h-50 w-full sm:w-1/2 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 ease-out group-hover:w-3/4"
                 />
             </div>
 
-            {/* BOTTOM CONTENT */}
-            <div className="flex flex-col px-2 items-start justify-between">
-                {/* TITLE */}
+            {/* CONTENT */}
+            <div className="flex flex-col px-2 items-start justify-between w-full">
+                
                 <h3 className="dm-sans-400 max-w-35 text-3xl sm:text-5xl leading-tight text-black uppercase">
                     {title}
                 </h3>
 
-                {/* ARROW */}
-                <div className="flex w-full  justify-end">
-                    <img
-                        src={arrow}
-                        alt=""
-                        className="sm:w-10  w-10 rotate-0 transition-transform duration-500 ease-out group-hover:-rotate-45"
-                    />
+                {/* 🔥 ARROW BUTTON */}
+                <div className="flex w-full justify-end">
+                    <button
+                        onClick={goToArtists}
+                        className="transition-transform duration-500 ease-out group-hover:-rotate-45"
+                    >
+                        <img
+                            src={arrow}
+                            alt="Go to Our Artists"
+                            className="w-10"
+                        />
+                    </button>
                 </div>
+
             </div>
         </div>
     )
 }
+
 
 const ArtistsSection = ({ scrollY }) => {
     const featuredRef = useRef(null)
