@@ -24,7 +24,7 @@ export default function AppRoutes() {
     return (
         <Routes>
             {/* ===== Event Layout Routes (Top Level) ===== */}
-            <Route element={<CustomLayout footerColor="#022195"  />}>
+            <Route element={<CustomLayout footerColor="#022195"   />}>
                 <Route path="open-mic" element={<OpenMic />} />
             </Route>
 
@@ -32,7 +32,7 @@ export default function AppRoutes() {
                 <Route path="sofa-session" element={<SofaSession />} />
             </Route>
 
-            <Route element={<CustomLayout footerColor="#CEBDE6" />}>
+            <Route element={<CustomLayout footerColor="#CEBDE6" textcolour="#100422" />}>
                 <Route path="our-artists" element={<OurArtists />} />
             </Route>
 

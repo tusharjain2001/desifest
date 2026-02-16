@@ -1,78 +1,143 @@
 import React from 'react'
+
 import logo from '../../../Assets/COMMON/completelogo.svg'
+import logoinvert from '../../../Assets/COMMON/completelogoinvert.svg'
+
 import insta from '../../../Assets/COMMON/insta.svg'
 import facebook from '../../../Assets/COMMON/facebook.svg'
 import youtube from '../../../Assets/COMMON/youtube.svg'
-import ontariologo from '../../../Assets/COMPANIES/ontariologo.svg'
-import mississaugalogo from '../../../Assets/COMPANIES/mississaugalogo.svg'
-import factorlogo from '../../../Assets/COMPANIES/factorlogo.svg'
-import ontariowhitelogo from '../../../Assets/COMPANIES/ontariowhitelogo.svg'
-import ontarioartslogo from '../../../Assets/COMPANIES/ontarioartslogo.svg'
-import canadalogo from '../../../Assets/COMPANIES/canadalogo.svg'
-import canadianheritagelogo from '../../../Assets/COMPANIES/canadianheritagelogo.svg'
 
-const Footer = ({ footerColor }) => {
+import ontariologo from '../../../Assets/COMPANIES/ontariologo.svg'
+import ontariologoinvert from '../../../Assets/COMPANIES/ontariologoinvert.svg'
+
+import mississaugalogo from '../../../Assets/COMPANIES/mississaugalogo.svg'
+import mississaugalogoinvert from '../../../Assets/COMPANIES/mississaugalogoinvert.svg'
+
+import factorlogo from '../../../Assets/COMPANIES/factorlogo.svg'
+import factorlogoinvert from '../../../Assets/COMPANIES/factorlogoinvert.svg'
+
+import ontariowhitelogo from '../../../Assets/COMPANIES/ontariowhitelogo.svg'
+import ontariowhitelogoinvert from '../../../Assets/COMPANIES/ontariowhitelogoinvert.svg'
+
+import ontarioartslogo from '../../../Assets/COMPANIES/ontarioartslogo.svg'
+import ontarioartslogoinvert from '../../../Assets/COMPANIES/ontarioartslogoinvert.svg'
+
+import canadalogo from '../../../Assets/COMPANIES/canadalogo.svg'
+import canadalogoinvert from '../../../Assets/COMPANIES/canadalogoinvert.svg'
+
+import canadianheritagelogo from '../../../Assets/COMPANIES/canadianheritagelogo.svg'
+import canadianheritagelogoinvert from '../../../Assets/COMPANIES/canadianheritagelogoinvert.svg'
+
+
+const Footer = ({ footerColor, textcolour }) => {
+
+    const finalColor = textcolour || 'white'
+    const useInvert = !!textcolour
+
     const socials = [
         { name: 'instagram', icon: insta },
         { name: 'facebook', icon: facebook },
         { name: 'youtube', icon: youtube },
     ]
 
+    const sponsors = [
+        { normal: ontariologo, invert: ontariologoinvert },
+        { normal: mississaugalogo, invert: mississaugalogoinvert },
+        { normal: factorlogo, invert: factorlogoinvert },
+        { normal: ontariowhitelogo, invert: ontariowhitelogoinvert },
+        { normal: ontarioartslogo, invert: ontarioartslogoinvert },
+        { normal: canadalogo, invert: canadalogoinvert },
+        { normal: canadianheritagelogo, invert: canadianheritagelogoinvert },
+    ]
+
     return (
         <footer
-            className="z-0 flex w-full flex-col p-8 text-white md:py-10 md:pl-28"
-            style={{ backgroundColor: footerColor }}
+            className="z-0 flex w-full flex-col p-8 md:py-10 md:pl-28"
+            style={{
+                backgroundColor: footerColor,
+                color: finalColor,
+            }}
         >
+
             {/* TOP */}
             <div className="flex items-center justify-between gap-4">
-                <img src={logo} alt="DesiFest" className="h-14" />
+
+                <img
+                    src={useInvert ? logoinvert : logo}
+                    alt="DesiFest"
+                    className="h-14"
+                />
 
                 <div className="flex gap-3">
                     {socials.map(({ name, icon }) => (
-                        <a key={name} href="#" className="flex items-center justify-center">
-                            <img src={icon} alt={name} />
+                        <a key={name} href="#">
+                            <img
+                                src={icon}
+                                alt={name}
+                                style={{
+                                    filter: useInvert ? 'invert(1)' : 'none',
+                                    transition: '0.3s ease'
+                                }}
+                            />
                         </a>
                     ))}
                 </div>
+
             </div>
+
 
             {/* NEWSLETTER */}
             <div className="flex flex-col gap-4 py-10 md:flex-row">
+
                 <input
                     type="text"
                     placeholder="Enter Name"
-                    className="flex-1 border border-white bg-[#FFFFFF0D] px-4 py-4 text-sm outline-none placeholder:text-xl placeholder:text-[#F5F5F580]"
+                    className="flex-1 bg-[#FFFFFF0D] px-4 py-4 text-sm outline-none placeholder:text-xl"
+                    style={{
+                        border: `1px solid ${finalColor}`,
+                        color: finalColor,
+                    }}
                 />
 
                 <input
                     type="email"
                     placeholder="Enter Email"
-                    className="flex-1 border border-white bg-[#FFFFFF0D] px-4 py-4 text-sm outline-none placeholder:text-xl placeholder:text-[#F5F5F580]"
+                    className="flex-1 bg-[#FFFFFF0D] px-4 py-4 text-sm outline-none placeholder:text-xl"
+                    style={{
+                        border: `1px solid ${finalColor}`,
+                        color: finalColor,
+                    }}
                 />
 
                 <button className="bg-neon-yellow px-6 py-2 text-lg font-bold whitespace-nowrap text-black uppercase hover:bg-lime-300">
                     Subscribe to our Newsletter
                 </button>
+
             </div>
+
 
             {/* SPONSORS */}
             <div className="flex flex-wrap items-center justify-between py-10">
-                {[
-                    ontariologo,
-                    mississaugalogo,
-                    factorlogo,
-                    ontariowhitelogo,
-                    ontarioartslogo,
-                    canadalogo,
-                    canadianheritagelogo,
-                ].map((logo, index) => (
-                    <img key={index} src={logo} alt="Sponsor" className="object-contain" />
+                {sponsors.map((item, index) => (
+                    <img
+                        key={index}
+                        src={useInvert ? item.invert : item.normal}
+                        alt="Sponsor"
+                        className="object-contain"
+                    />
                 ))}
             </div>
 
+
             {/* BOTTOM */}
-            <div className="mt-12 flex flex-col justify-between border-t border-[#FEFDFD] pt-6 text-xs opacity-70 md:flex-row">
-                <p className="text-[#FEFDFD]">
+            <div
+                className="mt-12 flex flex-col justify-between pt-6 text-xs opacity-70 md:flex-row"
+                style={{
+                    borderTop: `1px solid ${finalColor}`,
+                }}
+            >
+
+                <p>
                     Desifest© 2025. All rights reserved with the owner.
                 </p>
 
@@ -88,7 +153,9 @@ const Footer = ({ footerColor }) => {
                         </a>
                     ))}
                 </div>
+
             </div>
+
         </footer>
     )
 }

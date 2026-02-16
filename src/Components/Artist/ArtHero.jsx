@@ -13,7 +13,7 @@ const Herosec = ({ bgColor }) => {
 
                 {/* White Edge Fade Overlay */}
                 <div
-                    className="pointer-events-none absolute inset-0 backdrop-blur-xs"
+                    className="pointer-events-none absolute inset-0 "
                     style={{
                         background: `
        radial-gradient(circle, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 70%, rgb(255, 255, 255) 100%)
@@ -58,13 +58,7 @@ const Herosec = ({ bgColor }) => {
                         </p>
                     </div>
 
-                    <div className="absolute top-50 z-[-10] flex h-80 w-80 items-center justify-center sm:top-14 sm:h-120 sm:w-120">
-                        {/* Concentric rings (inner → outer, opacity decreases) */}
-                        <div className="absolute inset-24.75 rounded-full border border-white/90" />
-                        <div className="absolute inset-16.5 rounded-full border border-white/70" />
-                        <div className="absolute inset-9.25 rounded-full border border-white/60" />
-                        <div className="absolute inset-0 rounded-full border border-white/40" />
-                    </div>
+                   
                 </div>
             </div>
         </section>

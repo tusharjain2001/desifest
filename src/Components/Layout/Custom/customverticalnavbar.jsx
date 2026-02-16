@@ -1,76 +1,73 @@
-import { NavLink } from "react-router-dom";
-import insta from "../../../Assets/COMMON/insta.svg";
-import facebook from "../../../Assets/COMMON/facebook.svg";
-import youtube from "../../../Assets/COMMON/youtube.svg";
+import { NavLink } from 'react-router-dom'
+import insta from '../../../Assets/COMMON/insta.svg'
+import facebook from '../../../Assets/COMMON/facebook.svg'
+import youtube from '../../../Assets/COMMON/youtube.svg'
 
 const navItems = [
-  { label: "The 2026 Concert", path: "/concerts" },
-  { label: "About", path: "/about" },
-  { label: "Artists", path: "/our-artists" },
-  { label: "Community", path: "/community" },
-  { label: "Media", path: "/media" },
-];
+    { label: 'The 2026 Concert', path: '/concerts' },
+    { label: 'About', path: '/about' },
+    { label: 'Artists', path: '/our-artists' },
+    { label: 'Community', path: '/community' },
+    { label: 'Media', path: '/media' },
+]
 
-export default function VerticalNavbar({ bgColor = "#10042233" }) {
-  return (
-    <aside
-      className="hidden fixed md:flex z-50 absolute w-[99999px] top-0 left-0 h-24 origin-top-left"
-      style={{
-        transform: "rotate(-90deg) translateX(-100%)",
-        backgroundColor: bgColor,
-      }}
-    >
-      <div className="flex flex-row-reverse items-center gap-4 w-full h-full px-2">
-        
-        {/* Navigation */}
-        <div className="flex flex-row-reverse items-center gap-2">
-          {navItems.map((item) => (
-            <div
-              key={item.label}
-              className="h-28 flex items-center justify-center shrink-0"
-            >
-              <NavLink
-                to={item.path}
-                className={({ isActive }) =>
-                  `
-                  text-center
-                  px-2 py-2
-                  rounded-full
-                  text-xm
-                  tracking-wide
-                  dm-sans-400
-                  border
-                  transition
-                  ${
-                    isActive
-                      ? "border-neon-yellow text-neon-yellow"
-                      : "border-white text-white"
-                  }
-                  `
-                }
-              >
-                {item.label}
-              </NavLink>
+export default function VerticalNavbar({ bgColor = '#10042233', textcolour }) {
+    const finalColor = textcolour || 'white'
+
+    return (
+        <aside
+            className="absolute fixed top-0 left-0 z-50 hidden h-24 w-[99999px] origin-top-left md:flex"
+            style={{
+                transform: 'rotate(-90deg) translateX(-100%)',
+                backgroundColor: bgColor,
+            }}
+        >
+            <div className="flex h-full w-full flex-row-reverse items-center gap-4 px-2">
+                {/* Navigation */}
+                <div className="flex flex-row-reverse items-center gap-2">
+                    {navItems.map((item) => (
+                        <div
+                            key={item.label}
+                            className="flex h-28 shrink-0 items-center justify-center"
+                        >
+                            <NavLink
+                                to={item.path}
+                                className="text-xm dm-sans-400 rounded-full border px-2 py-2 text-center tracking-wide transition"
+                                style={({ isActive }) => ({
+                                    color: finalColor,
+                                    borderColor: finalColor,
+                                    ...(isActive && {
+                                        color: finalColor,
+                                        borderColor: finalColor,
+                                    }),
+                                })}
+                            >
+                                {item.label}
+                            </NavLink>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Social Icons */}
+                <div className="flex flex-row-reverse items-center gap-4">
+                    {[facebook, insta, youtube].map((icon, index) => (
+                        <a
+                            key={index}
+                            href="#"
+                            className="rotate-90 opacity-70 transition hover:opacity-100"
+                        >
+                            <img
+                                src={icon}
+                                alt="social"
+                                className="h-10"
+                                style={{
+                                    filter: textcolour ? 'invert(1)' : 'none',
+                                }}
+                            />
+                        </a>
+                    ))}
+                </div>
             </div>
-          ))}
-        </div>
-
-        {/* Social Icons */}
-        <div className="flex flex-row-reverse items-center gap-4 text-soft-lavender">
-          <a href="#" className="hover:opacity-100 opacity-70 transition rotate-90">
-            <img src={facebook} alt="Facebook" className="h-10" />
-          </a>
-
-          <a href="#" className="hover:opacity-100 opacity-70 transition rotate-90">
-            <img src={insta} alt="Instagram" className="h-10" />
-          </a>
-
-          <a href="#" className="hover:opacity-100 opacity-70 transition rotate-90">
-            <img src={youtube} alt="YouTube" className="h-10" />
-          </a>
-        </div>
-
-      </div>
-    </aside>
-  );
+        </aside>
+    )
 }
