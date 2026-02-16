@@ -36,13 +36,13 @@ const Herosec = ({ bgColor }) => {
                         </h2>
 
                         {/* ARTISTS */}
-                        <h1 className="special-gothic-one-regular text-7xl text-[#D9FF00] uppercase md:text-9xl">
+                        <h1 className="special-gothic-one-regular text-7xl text-[#EEFE08] uppercase md:text-9xl">
                             ARTISTS
                         </h1>
 
                         {/* Buttons */}
                         <div className="mt-6 flex gap-4">
-                            <button className="oswald-500 bg-[#D9FF00] px-6 py-2 text-2xl font-bold text-black uppercase shadow-md">
+                            <button className="oswald-500 bg-[#EEFE08] px-6 py-2 text-2xl font-bold text-black uppercase shadow-md">
                                 Featured
                             </button>
 

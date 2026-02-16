@@ -33,15 +33,17 @@ import Silder13 from '../../Assets/artist/Silder/Silder13.png'
 import left from '../../Assets/concerts/leftwhitearrow.svg'
 import right from '../../Assets/concerts/rightwhitearrow.svg'
 
-import { useRef, useState } from 'react'
+import { useRef, useState ,useEffect } from 'react'
 
 const Communityart = () => {
     const scrollRef = useRef(null)
+    const contentRef = useRef(null)
     const [activeIndex, setActiveIndex] = useState(null)
 
     const isDown = useRef(false)
     const startX = useRef(0)
     const scrollLeftPos = useRef(0)
+
     const handleScrollStart = () => {
         setActiveIndex(null)
     }
@@ -66,61 +68,106 @@ const Communityart = () => {
     const handleMouseMove = (e) => {
         if (!isDown.current) return
         e.preventDefault()
-
         const walk = (e.pageX - startX.current) * 1.2
         scrollRef.current.scrollLeft = scrollLeftPos.current - walk
     }
 
     const scrollLeftBtn = () => {
-        scrollRef.current.scrollTo({
-            left: scrollRef.current.scrollLeft - 400,
-            behavior: 'smooth',
-        })
+        scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' })
     }
 
     const scrollRightBtn = () => {
-        scrollRef.current.scrollTo({
-            left: scrollRef.current.scrollLeft + 400,
-            behavior: 'smooth',
-        })
+        scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' })
     }
 
-    // const images = [
-    //     Silder1,
-    //     Silder2_1,
-    //     Silder2_2,
-    //     Silder2_3,
-    //     Silder2_4,
-    //     Silder3,
-    //     Silder4_1,
-    //     Silder4_2,
-    //     Silder4_3,
-    //     Silder4_4,
-    //     Silder5,
-    //     Silder6_1,
-    //     Silder6_2,
-    //     Silder6_3,
-    //     Silder6_4,
-    //     Silder7,
-    //     Silder8_1,
-    //     Silder8_2,
-    //     Silder8_3,
-    //     Silder8_4,
-    //     Silder9,
-    //     Silder10_1,
-    //     Silder10_2,
-    //     Silder10_3,
-    //     Silder10_4,
-    //     Silder11,
-    //     Silder12_1,
-    //     Silder12_2,
-    //     Silder12_3,
-    //     Silder12_4,
-    //     Silder13,
-    // ]
+    useEffect(() => {
+        const container = scrollRef.current
+        const content = contentRef.current
+
+        if (!container || !content) return
+
+        const singleWidth = content.scrollWidth / 3
+
+        // Start from middle copy
+        container.scrollLeft = singleWidth
+
+        const handleInfinite = () => {
+            if (container.scrollLeft <= 0) {
+                container.scrollLeft = singleWidth
+            }
+
+            if (container.scrollLeft >= singleWidth * 2) {
+                container.scrollLeft = singleWidth
+            }
+        }
+
+        container.addEventListener('scroll', handleInfinite)
+        return () => container.removeEventListener('scroll', handleInfinite)
+    }, [])
+
+    const sliderContent = (
+        <>
+            <BigCircle
+                index={0}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder1}
+                name="queens of bollywood"
+            />
+            <SmallGrid images={[Silder2_1, Silder2_2, Silder2_3, Silder2_4]} />
+            <BigCircle
+                index={1}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder3}
+                name="spitty"
+            />
+            <SmallGrid images={[Silder4_1, Silder4_2, Silder4_3, Silder4_4]} />
+            <BigCircle
+                index={2}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder5}
+                name="Yanchan"
+            />
+            <SmallGrid images={[Silder6_1, Silder6_2, Silder6_3, Silder6_4]} />
+            <BigCircle
+                index={3}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder7}
+                name="desiriff"
+            />
+            <SmallGrid images={[Silder8_1, Silder8_2, Silder8_3, Silder8_4]} />
+            <BigCircle
+                index={4}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder9}
+                name="anchante"
+            />
+            <SmallGrid images={[Silder10_1, Silder10_2, Silder10_3, Silder10_4]} />
+            <BigCircle
+                index={5}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder11}
+                name="Bollywood duet"
+            />
+            <SmallGrid images={[Silder12_1, Silder12_2, Silder12_3, Silder12_4]} />
+            <BigCircle
+                index={6}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder13}
+                name="muse box"
+            />
+        </>
+    )
 
     return (
         <div className="w-full overflow-hidden py-8">
+            {/* ===== HEADER (UNCHANGED) ===== */}
             <div className="mb-10 flex flex-col items-start justify-center">
                 <div className="flex w-full items-center gap-1 md:items-center md:gap-4">
                     <h2 className="oswald-500 text-[36px] tracking-wide whitespace-nowrap text-black uppercase md:text-[60px]">
@@ -128,11 +175,9 @@ const Communityart = () => {
                     </h2>
 
                     <div className="dm-sans-400 flex flex-1 flex-col items-center justify-start text-2xl sm:mt-8">
-                        {/* Line */}
                         <div className="h-0.5 w-full bg-black" />
                     </div>
 
-                    {/* Arrows */}
                     <div className="flex shrink-0 items-center md:ml-10 md:gap-4">
                         <button onClick={scrollLeftBtn} className="transition hover:opacity-70">
                             <img src={left} alt="left" className="h-8 w-8 invert md:h-10 md:w-10" />
@@ -146,108 +191,33 @@ const Communityart = () => {
                         </button>
                     </div>
                 </div>
+
                 <div className="ml-2 flex sm:hidden">
                     Once part of the journey. <br /> Always part of the community.
                 </div>
             </div>
-            {/* slider */}
-            {/* slider */}
-            {/* slider */}
-            <div className="relative w-full overflow-hidden select-none">
-                <div
-                    ref={scrollRef}
-                    onMouseDown={(e) => {
-                        handleScrollStart()
-                        handleMouseDown(e)
-                    }}
-                    onTouchStart={() => {
-                        handleScrollStart()
-                    }}
-                    onMouseLeave={handleMouseLeave}
-                    onMouseUp={handleMouseUp}
-                    onMouseMove={handleMouseMove}
-                    className="no-scrollbar flex cursor-grab items-center overflow-x-auto py-30 active:cursor-grabbing"
-                >
-                    {/* BIG 1 */}
-                    <BigCircle
-                        index={0}
-                        activeIndex={activeIndex}
-                        setActiveIndex={setActiveIndex}
-                        img={Silder1}
-                        name="queens of bollywood"
-                    />
 
-                    {/* GROUP 2 */}
-                    <SmallGrid images={[Silder2_1, Silder2_2, Silder2_3, Silder2_4]} />
-
-                    {/* BIG 3 */}
-                    <BigCircle
-                        index={1}
-                        activeIndex={activeIndex}
-                        setActiveIndex={setActiveIndex}
-                        img={Silder3}
-                        name="spitty"
-                    />
-
-                    {/* GROUP 4 */}
-                    <SmallGrid images={[Silder4_1, Silder4_2, Silder4_3, Silder4_4]} />
-
-                    {/* BIG 5 */}
-                    <BigCircle
-                        index={2}
-                        activeIndex={activeIndex}
-                        setActiveIndex={setActiveIndex}
-                        img={Silder5}
-                        name="Yanchan"
-                    />
-
-                    {/* GROUP 6 */}
-                    <SmallGrid images={[Silder6_1, Silder6_2, Silder6_3, Silder6_4]} />
-
-                    {/* BIG 7 */}
-                    <BigCircle
-                        index={3}
-                        activeIndex={activeIndex}
-                        setActiveIndex={setActiveIndex}
-                        img={Silder7}
-                        name="desiriff"
-                    />
-
-                    <SmallGrid images={[Silder8_1, Silder8_2, Silder8_3, Silder8_4]} />
-
-                    {/* BIG 9 */}
-                    <BigCircle
-                        index={4}
-                        activeIndex={activeIndex}
-                        setActiveIndex={setActiveIndex}
-                        img={Silder9}
-                        name="anchante"
-                    />
-
-                    <SmallGrid images={[Silder10_1, Silder10_2, Silder10_3, Silder10_4]} />
-
-                    {/* BIG 11 */}
-                    <BigCircle
-                        index={5}
-                        activeIndex={activeIndex}
-                        setActiveIndex={setActiveIndex}
-                        img={Silder11}
-                        name="Bollywood duet"
-                    />
-
-                    <SmallGrid images={[Silder12_1, Silder12_2, Silder12_3, Silder12_4]} />
-
-                    {/* BIG 13 */}
-                    <BigCircle
-                        index={6}
-                        activeIndex={activeIndex}
-                        setActiveIndex={setActiveIndex}
-                        img={Silder13}
-                        name="muse box"
-                    />
+            {/* ===== SLIDER ===== */}
+            <div
+                ref={scrollRef}
+                onMouseDown={(e) => {
+                    handleScrollStart()
+                    handleMouseDown(e)
+                }}
+                onTouchStart={handleScrollStart}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                className="no-scrollbar flex cursor-grab items-center overflow-x-auto py-30 active:cursor-grabbing"
+            >
+                <div ref={contentRef} className="flex items-center">
+                    {sliderContent}
+                    {sliderContent}
+                    {sliderContent}
                 </div>
             </div>
 
+            {/* FOOTER (UNCHANGED) */}
             <div className="flex w-full flex-col items-center px-4 text-xl sm:items-end sm:text-3xl">
                 <div className="oswald-500">Thank you </div>
                 <div className="Oswald-400">for being a part of our</div>
