@@ -73,26 +73,30 @@ const ArtistCard = ({ image, title, description }) => {
 import { useEffect, useRef } from 'react'
 
 const columns = [
-    { height: 1800, speed: 0.06 },
-    { height: 1800, speed: 0.0 },
-    { height: 2000, speed: 0.22 },
+    { height: 1800, speed: 0.06, initialOffset: 0 },
+    { height: 1800, speed: 0.02, initialOffset: 150 },
+    { height: 2000, speed: 0.07, initialOffset: -50 },
 ]
+
 
 const AnimatedCols = ({ scrollY }) => {
     const refs = useRef([])
 
     useEffect(() => {
         const y = scrollY ?? 0
-
+    
         refs.current.forEach((el, i) => {
             if (!el) return
-
-            // const startOffset = columns[i].height;
-            const translate = y * columns[i].speed
-
-            el.style.transform = `translateY(${-translate}px)`
+    
+            const baseOffset = columns[i].initialOffset
+            const scrollMovement = y * columns[i].speed
+    
+            const totalTranslate = baseOffset - scrollMovement
+    
+            el.style.transform = `translateY(${totalTranslate}px)`
         })
     }, [scrollY])
+    
 
     return (
         <div className="relative flex w-full items-start justify-start">
@@ -125,7 +129,7 @@ const AnimatedCols = ({ scrollY }) => {
                                         </h3>
                                     </div>
                                     {/* INSTAGRAM FANS */}
-                                    <div className="mt-16 w-full translate-x-80 border-l-2 border-amber-50 pl-4 text-start">
+                                    <div className="mt-20 w-full translate-x-80 border-l-2 border-amber-50 pl-4 text-start">
                                         <p className="dm-sans-500 text-2xl tracking-wide text-white/80 uppercase">
                                             Instagram Fans
                                         </p>
@@ -169,9 +173,9 @@ const AnimatedCols = ({ scrollY }) => {
                                     />
                                     <img src={aboutfour} alt="" />
                                     <div className="mb-10 flex items-start gap-4">
-                                        <div className="h-14 w-px bg-white/60" />
+                                        <div className="h-14 w-px" />
                                     </div>
-                                    <div className="mt-72 w-full border-l-2 border-amber-50 pl-4 text-start">
+                                    <div className="mt-30 w-full border-l-2 border-amber-50 pl-4 text-start">
                                         <p className="dm-sans-500 text-2xl tracking-wide text-white/80 uppercase">
                                             Festival Attendance
                                         </p>
@@ -211,7 +215,7 @@ const AnimatedCols = ({ scrollY }) => {
                     </div>
 
                     {/* INSTAGRAM FANS */}
-                    <div className="w-full translate-x-18 border-l-2 border-amber-50 pl-4 text-start">
+                    <div className="w-full  translate-x-18 border-l-2 border-amber-50 pl-4 text-start">
                         <p className="dm-sans-500 text-lg tracking-wide text-white/80 uppercase">
                             Instagram Fans
                         </p>
