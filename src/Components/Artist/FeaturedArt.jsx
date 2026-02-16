@@ -11,7 +11,7 @@ import images3 from '@/Assets/artist/Featured/image 3.png'
 const artists = [
     {
         id: 1,
-        name: 'kala-kaar',
+        name: 'kalakaar',
         handle: 'https://www.instagram.com/kalakaarcollective/',
         image: images1,
     },

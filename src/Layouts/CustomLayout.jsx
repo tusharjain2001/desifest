@@ -31,7 +31,7 @@ export default function CustomLayout({footerColor ,textcolour }) {
 
             <div className="flex min-h-full flex-col">
                 {/* Custom Navbar */}
-                <EventNavbar />
+                <EventNavbar  textcolour={textcolour}  />
 
                 <main className="w-full flex-1">
                     <Outlet context={{ scrollRef, scrollY }} />
