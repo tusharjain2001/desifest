@@ -85,7 +85,7 @@ const CommunityPage = () => {
                         </div>
                     </div>
 
-                    <img src={bgimg} alt="" className="my-12" />
+                    <img src={bgimg} alt="" className="my-12 w-full" />
 
                     <ContactForm />
                 </div>

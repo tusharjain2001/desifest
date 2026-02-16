@@ -59,7 +59,7 @@ const FoodFestivalSection = () => {
                 {/* Header */}
                 <div className="mb-14 flex items-center justify-between">
                     <div className="flex w-full items-center gap-1 md:items-center md:gap-8">
-                        <h2 className="oswaldd text-[36px] tracking-wide whitespace-nowrap text-white md:text-[100px]">
+                        <h2 className="oswaldd text-[36px] tracking-wide whitespace-nowrap text-white md:text-[64px]">
                             PAST VENDORS
                         </h2>
 

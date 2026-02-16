@@ -50,7 +50,7 @@ const OfficialLogos = () => {
                                 key={index}
                                 src={logo}
                                 alt="Official logo"
-                                className="h-32 w-auto object-contain opacity-90"
+                                className="h-30 w-auto object-contain opacity-90"
                             />
                         ))}
                     </div>
@@ -62,7 +62,7 @@ const OfficialLogos = () => {
                                 key={index}
                                 src={logo}
                                 alt="Official logo"
-                                className="h-32 w-auto object-contain opacity-90"
+                                className="h-26 w-auto object-contain opacity-90"
                             />
                         ))}
                     </div>

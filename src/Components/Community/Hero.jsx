@@ -26,7 +26,7 @@ const Hero = () => {
               Open-Mic
             </button>
             
-            <button onClick={() => navigate('/sofa-session')} className="border border-neon-yellow hover:bg-[#26193A80] text-neon-yellow px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl font-medium transition">
+            <button onClick={() => navigate('/sofa-session')} className="border border-neon-yellow hover:bg-midnight-purple text-neon-yellow px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl font-medium transition">
               Sofa-Sessions
             </button>
           </div>

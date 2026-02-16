@@ -227,7 +227,7 @@ const ArtistLineup = () => {
       <img
         src={lineupbg}
         alt="bg"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain"
       />
 
       <div className="text-[80px] font-medium">2026</div>
