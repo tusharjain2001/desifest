@@ -33,9 +33,17 @@ import Silder13 from '../../Assets/artist/Silder/Silder13.png'
 import left from '../../Assets/concerts/leftwhitearrow.svg'
 import right from '../../Assets/concerts/rightwhitearrow.svg'
 
-import { useRef, useState ,useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 const Communityart = () => {
+    const bigCircleRefs = useRef([])
+    bigCircleRefs.current = []
+    const addToRefs = (el) => {
+        if (el && !bigCircleRefs.current.includes(el)) {
+            bigCircleRefs.current.push(el)
+        }
+    }
+
     const scrollRef = useRef(null)
     const contentRef = useRef(null)
     const [activeIndex, setActiveIndex] = useState(null)
@@ -86,7 +94,7 @@ const Communityart = () => {
 
         if (!container || !content) return
 
-        const singleWidth = content.scrollWidth / 3
+        const singleWidth = content.scrollWidth / 4
 
         // Start from middle copy
         container.scrollLeft = singleWidth
@@ -104,64 +112,128 @@ const Communityart = () => {
         container.addEventListener('scroll', handleInfinite)
         return () => container.removeEventListener('scroll', handleInfinite)
     }, [])
+    const snapToClosest = () => {
+        const container = scrollRef.current
+        if (!container) return
+
+        const containerCenter = container.scrollLeft + container.offsetWidth / 2
+
+        let closest = null
+        let closestDistance = Infinity
+
+        bigCircleRefs.current.forEach((circle) => {
+            const circleCenter = circle.offsetLeft + circle.offsetWidth / 2
+
+            const distance = Math.abs(containerCenter - circleCenter)
+
+            if (distance < closestDistance) {
+                closestDistance = distance
+                closest = circle
+            }
+        })
+
+        if (closest) {
+            const scrollTo =
+                closest.offsetLeft - container.offsetWidth / 2 + closest.offsetWidth / 2
+
+            container.scrollTo({
+                left: scrollTo,
+                behavior: 'smooth',
+            })
+        }
+    }
+    useEffect(() => {
+        const container = scrollRef.current
+        if (!container) return
+
+        let timeout
+
+        const handleScrollEnd = () => {
+            clearTimeout(timeout)
+            timeout = setTimeout(() => {
+                snapToClosest()
+            }, 120)
+        }
+
+        container.addEventListener('scroll', handleScrollEnd)
+
+        return () => {
+            container.removeEventListener('scroll', handleScrollEnd)
+        }
+    }, [])
 
     const sliderContent = (
         <>
             <BigCircle
+                ref={addToRefs}
                 index={0}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
+                draggable="false"
                 img={Silder1}
                 name="queens of bollywood"
             />
             <SmallGrid images={[Silder2_1, Silder2_2, Silder2_3, Silder2_4]} />
             <BigCircle
+                ref={addToRefs}
                 index={1}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
+                draggable="false"
                 img={Silder3}
                 name="spitty"
             />
             <SmallGrid images={[Silder4_1, Silder4_2, Silder4_3, Silder4_4]} />
             <BigCircle
+                ref={addToRefs}
                 index={2}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
                 img={Silder5}
+                draggable="false"
                 name="Yanchan"
             />
             <SmallGrid images={[Silder6_1, Silder6_2, Silder6_3, Silder6_4]} />
             <BigCircle
                 index={3}
+                ref={addToRefs}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
+                draggable="false"
                 img={Silder7}
                 name="desiriff"
             />
             <SmallGrid images={[Silder8_1, Silder8_2, Silder8_3, Silder8_4]} />
             <BigCircle
                 index={4}
+                ref={addToRefs}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
+                draggable="false"
                 img={Silder9}
                 name="anchante"
             />
             <SmallGrid images={[Silder10_1, Silder10_2, Silder10_3, Silder10_4]} />
             <BigCircle
+                ref={addToRefs}
                 index={5}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
+                draggable="false"
                 img={Silder11}
                 name="Bollywood duet"
             />
             <SmallGrid images={[Silder12_1, Silder12_2, Silder12_3, Silder12_4]} />
             <BigCircle
                 index={6}
+                ref={addToRefs}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
+                draggable="false"
                 img={Silder13}
                 name="muse box"
             />
+             <SmallGrid images={[Silder12_1, Silder12_2, Silder12_3, Silder12_4]} /> 
         </>
     )
 
@@ -208,7 +280,7 @@ const Communityart = () => {
                 onMouseLeave={handleMouseLeave}
                 onMouseUp={handleMouseUp}
                 onMouseMove={handleMouseMove}
-                className="no-scrollbar flex cursor-grab items-center overflow-x-auto py-30 active:cursor-grabbing"
+                className="no-scrollbar flex cursor-grab items-center overflow-x-auto py-30 select-none active:cursor-grabbing"
             >
                 <div ref={contentRef} className="flex items-center">
                     {sliderContent}
@@ -228,8 +300,9 @@ const Communityart = () => {
 }
 
 export default Communityart
+import { forwardRef } from 'react'
 
-const BigCircle = ({ img, name, index, activeIndex, setActiveIndex }) => {
+const BigCircle = forwardRef(({ img, name, index, activeIndex, setActiveIndex }, ref) => {
     const isActive = activeIndex === index
 
     const handleClick = () => {
@@ -240,6 +313,7 @@ const BigCircle = ({ img, name, index, activeIndex, setActiveIndex }) => {
 
     return (
         <div
+            ref={ref}
             onClick={handleClick}
             className="group relative h-full flex-shrink-0 cursor-pointer overflow-visible"
         >
@@ -271,7 +345,7 @@ const BigCircle = ({ img, name, index, activeIndex, setActiveIndex }) => {
             </div>
         </div>
     )
-}
+})
 
 const SmallGrid = ({ images }) => {
     return (
