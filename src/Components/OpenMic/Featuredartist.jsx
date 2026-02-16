@@ -44,141 +44,142 @@ const Featuredartist = ({ scrollY }) => {
             id: 1,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image1,
             top: '0%',
             left: '55%',
         },
-
         {
             id: 2,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image2,
             top: '6.53%',
             right: '55%',
         },
-
         {
             id: 3,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image3,
             top: '13.07%',
             right: '18%',
         },
-
         {
             id: 4,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image4,
             top: '19.6%',
             left: '12%',
         },
-
         {
             id: 5,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image5,
             top: '26.13%',
             right: '6%',
         },
-
         {
             id: 6,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image6,
             top: '32.67%',
             left: '18%',
         },
-
         {
             id: 7,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image7,
             top: '39.2%',
             right: '4%',
         },
-
         {
             id: 8,
-            name: 'MUSE BOX',
-            handle: '@musebox.photographer',
+            name: 'Vasundhara Taneja',
+            handle: '@vasutnja',
+            instagram: 'https://www.instagram.com/vasutnja/',
             image: image8,
             top: '45.73%',
             left: '8%',
         },
-
         {
             id: 9,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image9,
             top: '52.27%',
             right: '14%',
         },
-
         {
             id: 10,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image10,
             top: '58.8%',
             left: '10%',
         },
-
         {
             id: 11,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image11,
             top: '65.33%',
             right: '20%',
         },
-
         {
             id: 12,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image12,
             top: '71.87%',
             left: '15%',
         },
-
         {
             id: 13,
-            name: 'MUSE BOX',
-            handle: '@musebox.photographer',
+            name: 'Sidharth khanna',
+            handle: '@sid',
+            instagram: 'https://www.instagram.com/sidplaysguitar/',
             image: image13,
             top: '78.4%',
             right: '8%',
         },
-
         {
             id: 14,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image14,
             top: '84.93%',
             left: '3%',
         },
-
         {
             id: 15,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image15,
             top: '91.47%',
             right: '12%',
         },
-
         {
             id: 16,
             name: 'MUSE BOX',
             handle: '@musebox.photographer',
+            instagram: '',
             image: image16,
             top: '98%',
             left: '18%',
@@ -238,14 +239,25 @@ const Featuredartist = ({ scrollY }) => {
 
                         <div>
                             <h3 className="text-xl font-bold text-white">{artist.name}</h3>
-                            <p className="text-base text-white opacity-80">{artist.handle}</p>
+                            {artist.instagram ? (
+                                <a
+                                    href={artist.instagram}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-neon-yellow text-base text-white opacity-80 transition-colors duration-300"
+                                >
+                                    {artist.handle}
+                                </a>
+                            ) : (
+                                <p className="text-base text-white opacity-80">{artist.handle}</p>
+                            )}
                         </div>
                     </div>
                 ))}
             </div>
 
             {/* Artist Cards Container */}
-            <div className="relative mx-auto my-30 mb-80 hidden h-[3800px] w-full  md:block">
+            <div className="relative mx-auto my-30 mb-80 hidden h-[3800px] w-full md:block">
                 {artists.map((artist, i) => (
                     <div
                         key={artist.id}
@@ -274,9 +286,20 @@ const Featuredartist = ({ scrollY }) => {
                                     <div className="text-neon-yellow dm-sans-600 text-2xl leading-tight drop-shadow-lg">
                                         {artist.name}
                                     </div>
-                                    <div className="dm-sans-400 text-lg text-white drop-shadow-lg">
-                                        {artist.handle}
-                                    </div>
+                                    {artist.instagram ? (
+                                        <a
+                                            href={artist.instagram}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="dm-sans-400 hover:text-neon-yellow text-lg text-white drop-shadow-lg transition-colors duration-300"
+                                        >
+                                            {artist.handle}
+                                        </a>
+                                    ) : (
+                                        <p className="dm-sans-400 text-lg text-white drop-shadow-lg">
+                                            {artist.handle}
+                                        </p>
+                                    )}
                                 </div>
                             </div>
 

@@ -13,19 +13,19 @@ const artists = [
     {
         id: 1,
         name: 'DURHAM',
-        handle: '@artist.instaprofile',
+        handle: 'SEASON 3',
         image: images1,
     },
     {
         id: 2,
         name: 'LA HORE',
-        handle: '@artist.instaprofile',
+        handle: 'SEASON 3',
         image: images2,
     },
     {
         id: 3,
         name: 'TORONTO',
-        handle: '@artist.instaprofile',
+        handle: 'SEASON 3',
         image: images3,
     },
 ]

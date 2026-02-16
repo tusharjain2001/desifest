@@ -20,7 +20,7 @@ const Footer = ({ footerColor }) => {
 
     return (
         <footer
-            className="z-50 flex w-full flex-col p-8 text-white md:py-10 md:pl-28"
+            className="z-0 flex w-full flex-col p-8 text-white md:py-10 md:pl-28"
             style={{ backgroundColor: footerColor }}
         >
             {/* TOP */}
