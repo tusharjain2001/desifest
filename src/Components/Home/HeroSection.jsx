@@ -17,11 +17,11 @@ const HeroSection = () => {
                 {/* LEFT TEXT */}
                 <div className="h-screen w-full px-6 pt-24 text-white lg:w-2/3">
                     <h1 className="font-[oswald] leading-tight font-medium uppercase">
-                        <span className="text-neon-yellow my-4 block text-3xl sm:text-7xl">
-                            Where South
+                        <span className="text-neon-yellow my-4 block text-3xl sm:text-[70px]">
+                        Where South asian
                         </span>
-                        <span className="text-neon-yellow \ block text-5xl sm:text-8xl">
-                            Asian Culture
+                        <span className="text-neon-yellow  block text-5xl sm:text-8xl">
+                        culture meets
                         </span>
                         <span className="mt-4 inline-block w-160 bg-white px-2 py-2 text-[44px] text-black md:text-[72px]">
                             Meets the World.
@@ -110,8 +110,8 @@ const HeroSection = () => {
 
                 {/* HEADLINE */}
                 <h1 className="mb-5 flex w-full flex-col items-start justify-start font-[oswald] leading-tight uppercase">
-                    <span className="text-neon-yellow block text-[36px]">Where South</span>
-                    <span className="text-neon-yellow block text-[46px]">Asian Culture</span>
+                    <span className="text-neon-yellow block text-[30px]">Where South asian</span>
+                    <span className="text-neon-yellow block text-[46px]">culture meets</span>
                     <span className="mt-3 block bg-white px-4 text-[36px] text-black">
                         Meets the World.
                     </span>

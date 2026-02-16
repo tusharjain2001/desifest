@@ -14,14 +14,14 @@ const ArtistCard = ({ image, title }) => {
                 <img
                     src={image}
                     alt={title}
-                    className="h-50 w-full sm:w-1/2 object-cover grayscale hover:grayscale-0  transition-all duration-500 ease-out group-hover:w-3/4"
+                    className="h-50 w-full sm:w-1/2 object-cover grayscale group-hover:grayscale-0  transition-all duration-500 ease-out group-hover:w-3/4"
                 />
             </div>
 
             {/* BOTTOM CONTENT */}
             <div className="flex flex-col px-2 items-start justify-between">
                 {/* TITLE */}
-                <h3 className="dm-sans-400 max-w-35 text-3xl sm:text-4xl leading-tight text-black uppercase">
+                <h3 className="dm-sans-400 max-w-35 text-3xl sm:text-5xl leading-tight text-black uppercase">
                     {title}
                 </h3>
 
