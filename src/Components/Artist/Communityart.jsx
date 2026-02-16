@@ -1,4 +1,3 @@
-import { useRef, useState, useEffect } from 'react'
 import Silder1 from '../../Assets/artist/Silder/Silder1.png'
 import Silder2_1 from '../../Assets/artist/Silder/Silder2.1.png'
 import Silder2_2 from '../../Assets/artist/Silder/Silder2.2.png'
@@ -31,112 +30,261 @@ import Silder12_3 from '../../Assets/artist/Silder/Silder12.3.png'
 import Silder12_4 from '../../Assets/artist/Silder/Silder12.4.png'
 import Silder13 from '../../Assets/artist/Silder/Silder13.png'
 
+import left from '../../Assets/concerts/leftwhitearrow.svg'
+import right from '../../Assets/concerts/rightwhitearrow.svg'
+
+import { useRef, useState ,useEffect } from 'react'
+
 const Communityart = () => {
     const scrollRef = useRef(null)
-    const bigRefs = useRef([])
-    const [activeIndex, setActiveIndex] = useState(0)
+    const contentRef = useRef(null)
+    const [activeIndex, setActiveIndex] = useState(null)
 
-    const bigImages = [
-        { img: Silder1, name: 'queens of bollywood' },
-        { img: Silder3, name: 'spitty' },
-        { img: Silder5, name: 'Yanchan' },
-        { img: Silder7, name: 'desiriff' },
-        { img: Silder9, name: 'anchante' },
-        { img: Silder11, name: 'Bollywood duet' },
-        { img: Silder13, name: 'muse box' },
-    ]
+    const isDown = useRef(false)
+    const startX = useRef(0)
+    const scrollLeftPos = useRef(0)
 
-    const handleScroll = () => {
-        const container = scrollRef.current
-        const containerCenter = container.offsetWidth / 2 + container.scrollLeft
+    const handleScrollStart = () => {
+        setActiveIndex(null)
+    }
 
-        let closestIndex = 0
-        let closestDistance = Infinity
+    const handleMouseDown = (e) => {
+        isDown.current = true
+        scrollRef.current.classList.add('cursor-grabbing')
+        startX.current = e.pageX
+        scrollLeftPos.current = scrollRef.current.scrollLeft
+    }
 
-        bigRefs.current.forEach((el, index) => {
-            if (!el) return
-            const elCenter = el.offsetLeft + el.offsetWidth / 2
-            const distance = Math.abs(containerCenter - elCenter)
+    const handleMouseLeave = () => {
+        isDown.current = false
+        scrollRef.current.classList.remove('cursor-grabbing')
+    }
 
-            if (distance < closestDistance) {
-                closestDistance = distance
-                closestIndex = index
-            }
-        })
+    const handleMouseUp = () => {
+        isDown.current = false
+        scrollRef.current.classList.remove('cursor-grabbing')
+    }
 
-        setActiveIndex(closestIndex)
+    const handleMouseMove = (e) => {
+        if (!isDown.current) return
+        e.preventDefault()
+        const walk = (e.pageX - startX.current) * 1.2
+        scrollRef.current.scrollLeft = scrollLeftPos.current - walk
+    }
+
+    const scrollLeftBtn = () => {
+        scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' })
+    }
+
+    const scrollRightBtn = () => {
+        scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' })
     }
 
     useEffect(() => {
         const container = scrollRef.current
-        container.addEventListener('scroll', handleScroll)
-        handleScroll()
+        const content = contentRef.current
 
-        return () => container.removeEventListener('scroll', handleScroll)
+        if (!container || !content) return
+
+        const singleWidth = content.scrollWidth / 3
+
+        // Start from middle copy
+        container.scrollLeft = singleWidth
+
+        const handleInfinite = () => {
+            if (container.scrollLeft <= 0) {
+                container.scrollLeft = singleWidth
+            }
+
+            if (container.scrollLeft >= singleWidth * 2) {
+                container.scrollLeft = singleWidth
+            }
+        }
+
+        container.addEventListener('scroll', handleInfinite)
+        return () => container.removeEventListener('scroll', handleInfinite)
     }, [])
 
+    const sliderContent = (
+        <>
+            <BigCircle
+                index={0}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder1}
+                name="queens of bollywood"
+            />
+            <SmallGrid images={[Silder2_1, Silder2_2, Silder2_3, Silder2_4]} />
+            <BigCircle
+                index={1}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder3}
+                name="spitty"
+            />
+            <SmallGrid images={[Silder4_1, Silder4_2, Silder4_3, Silder4_4]} />
+            <BigCircle
+                index={2}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder5}
+                name="Yanchan"
+            />
+            <SmallGrid images={[Silder6_1, Silder6_2, Silder6_3, Silder6_4]} />
+            <BigCircle
+                index={3}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder7}
+                name="desiriff"
+            />
+            <SmallGrid images={[Silder8_1, Silder8_2, Silder8_3, Silder8_4]} />
+            <BigCircle
+                index={4}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder9}
+                name="anchante"
+            />
+            <SmallGrid images={[Silder10_1, Silder10_2, Silder10_3, Silder10_4]} />
+            <BigCircle
+                index={5}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder11}
+                name="Bollywood duet"
+            />
+            <SmallGrid images={[Silder12_1, Silder12_2, Silder12_3, Silder12_4]} />
+            <BigCircle
+                index={6}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                img={Silder13}
+                name="muse box"
+            />
+        </>
+    )
+
     return (
-        <div className="w-full overflow-hidden py-10">
+        <div className="w-full overflow-hidden py-8">
+            {/* ===== HEADER (UNCHANGED) ===== */}
+            <div className="mb-10 flex flex-col items-start justify-center">
+                <div className="flex w-full items-center gap-1 md:items-center md:gap-4">
+                    <h2 className="oswald-500 text-[36px] tracking-wide whitespace-nowrap text-black uppercase md:text-[60px]">
+                        community artists
+                    </h2>
 
-            <div
-                ref={scrollRef}
-                className="no-scrollbar flex items-center overflow-x-auto gap-16 px-10"
-            >
+                    <div className="dm-sans-400 flex flex-1 flex-col items-center justify-start text-2xl sm:mt-8">
+                        <div className="h-0.5 w-full bg-black" />
+                    </div>
 
-                {bigImages.map((item, index) => (
-                    <BigCircle
-                        key={index}
-                        ref={(el) => (bigRefs.current[index] = el)}
-                        img={item.img}
-                        name={item.name}
-                        isActive={activeIndex === index}
-                    />
-                ))}
+                    <div className="flex shrink-0 items-center md:ml-10 md:gap-4">
+                        <button onClick={scrollLeftBtn} className="transition hover:opacity-70">
+                            <img src={left} alt="left" className="h-8 w-8 invert md:h-10 md:w-10" />
+                        </button>
+                        <button onClick={scrollRightBtn} className="transition hover:opacity-70">
+                            <img
+                                src={right}
+                                alt="right"
+                                className="h-8 w-8 invert md:h-10 md:w-10"
+                            />
+                        </button>
+                    </div>
+                </div>
 
+                <div className="ml-2 flex sm:hidden">
+                    Once part of the journey. <br /> Always part of the community.
+                </div>
             </div>
 
+            {/* ===== SLIDER ===== */}
+            <div
+                ref={scrollRef}
+                onMouseDown={(e) => {
+                    handleScrollStart()
+                    handleMouseDown(e)
+                }}
+                onTouchStart={handleScrollStart}
+                onMouseLeave={handleMouseLeave}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                className="no-scrollbar flex cursor-grab items-center overflow-x-auto py-30 active:cursor-grabbing"
+            >
+                <div ref={contentRef} className="flex items-center">
+                    {sliderContent}
+                    {sliderContent}
+                    {sliderContent}
+                </div>
+            </div>
+
+            {/* FOOTER (UNCHANGED) */}
+            <div className="flex w-full flex-col items-center px-4 text-xl sm:items-end sm:text-3xl">
+                <div className="oswald-500">Thank you </div>
+                <div className="Oswald-400">for being a part of our</div>
+                <div className="oswald-500">desifest comunity!</div>
+            </div>
         </div>
     )
 }
 
 export default Communityart
 
+const BigCircle = ({ img, name, index, activeIndex, setActiveIndex }) => {
+    const isActive = activeIndex === index
 
-const BigCircle = React.forwardRef(({ img, name, isActive }, ref) => {
+    const handleClick = () => {
+        if (window.innerWidth < 768) {
+            setActiveIndex(isActive ? null : index)
+        }
+    }
+
     return (
         <div
-            ref={ref}
-            className="relative flex-shrink-0 transition-all duration-500"
+            onClick={handleClick}
+            className="group relative h-full flex-shrink-0 cursor-pointer overflow-visible"
         >
+            {/* IMAGE */}
             <img
                 src={img}
                 alt={name}
                 draggable="false"
-                className={`h-[280px] w-[280px] object-cover transition-all duration-500 ${
-                    isActive ? 'rounded-[45px]' : 'rounded-full'
-                }`}
+                className={`pointer-events-none h-[260px] w-[260px] object-cover transition-all duration-500 ${isActive ? 'rounded-[45px]' : 'rounded-[130px]'} md:group-hover:rounded-[45px]`}
             />
 
+            {/* NAME */}
             <div
-                className={`absolute bottom-0 w-full transition-all duration-500 ${
-                    isActive ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`absolute bottom-0 w-full overflow-hidden transition-all duration-500 ${isActive ? 'opacity-100' : 'opacity-0'} md:opacity-0 md:group-hover:opacity-100`}
             >
-                <div className="rounded-[45px] bg-[#10042299] py-8 text-center text-xl text-white uppercase">
+                <div className="dm-sans-500 rounded-[45px] bg-[#10042299] py-8 text-center text-xl text-white uppercase">
                     {name}
                 </div>
             </div>
 
+            {/* RINGS */}
             <div
-                className={`absolute -right-28 -bottom-28 flex h-120 w-120 items-center justify-center transition-all duration-700 ${
-                    isActive ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-                }`}
+                className={`absolute -right-28 -bottom-28 z-[-10] flex h-120 w-120 items-center justify-center transition-all duration-700 ease-out ${isActive ? 'scale-100 opacity-100' : 'scale-90 opacity-0'} md:scale-90 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100`}
             >
-                <div className="absolute inset-24 rounded-[45px] border border-black/90" />
-                <div className="absolute inset-16 rounded-[45px] border border-black/60" />
-                <div className="absolute inset-8 rounded-[45px] border border-black/30" />
-                <div className="absolute inset-0 rounded-[45px] border border-black/10" />
+                <div className="absolute inset-24.75 rounded-[45px] border border-black/90 transition-all duration-700" />
+                <div className="absolute inset-16.5 rounded-[45px] border border-black/60 transition-all delay-75 duration-700" />
+                <div className="absolute inset-9.25 rounded-[45px] border border-black/30 transition-all delay-150 duration-700" />
+                <div className="absolute inset-0 rounded-[45px] border border-black/10 transition-all delay-200 duration-700" />
             </div>
         </div>
     )
-})
+}
+
+const SmallGrid = ({ images }) => {
+    return (
+        <div className="grid flex-shrink-0 grid-cols-2 gap-0">
+            {images.map((img, index) => (
+                <img
+                    key={index}
+                    src={img}
+                    alt="artist"
+                    draggable="false"
+                    className="pointer-events-none h-[110px] w-[110px] rounded-full object-cover"
+                />
+            ))}
+        </div>
+    )
+}
