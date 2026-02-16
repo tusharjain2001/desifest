@@ -3,7 +3,10 @@ import bg from '../../Assets/sofa_session/sofasessionbg.png'
 import white from '../../Assets/sofa_session/whitecircles.png'
 import ThirdSection from '@/Components/SofaSession/ThirdSection'
 import ImageCarousel from '@/Components/SofaSession/ImageCarousel'
-
+import desktopImage from '@/Assets/sofa_session/sofacontactdesktop.svg'
+import mobileImage from '@/Assets/sofa_session/sofacontactmobile.svg'
+import SofaContact from '@/Components/SofaSession/SofaContact'
+    
 const SofaSession = () => {
     return (
         <div className="relative flex flex-col bg-[#AC48FF]">
@@ -29,6 +32,7 @@ const SofaSession = () => {
             <SecondSection />
             <ThirdSection />
             <ImageCarousel />
+            <SofaContact desktopImage={desktopImage} mobileImage={mobileImage} />
         </div>
     )
 }

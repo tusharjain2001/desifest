@@ -2,8 +2,8 @@ import arrow from '@/Assets/home/animation/image.png'
 import { useEffect, useRef } from 'react'
 // IMAGES
 
-import img2 from '@/Assets/sofa_session/sofasessionsecondsection.png'
-import bg from '@/Assets/sofa_session/sofasessionsecondsectionbg.png'
+import img2 from '@/Assets/sofa_session/sofasessionsecondsection.svg'
+import bg from '@/Assets/sofa_session/sofasessionsecondsectionbg.svg'
 
 const ArtistCard = ({ image, title, description }) => {
     return (
@@ -14,7 +14,7 @@ const ArtistCard = ({ image, title, description }) => {
                 <img
                     src={image}
                     alt={title}
-                    className="h-52 w-1/2 origin-left object-cover grayscale transition-all duration-500 ease-out group-hover:w-[80%] group-hover:grayscale-0"
+                    className="h-52 w-full origin-left object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0"
                 />
             </div>
 
@@ -63,12 +63,12 @@ const SecondSection = ({ scrollY }) => {
     }, [scrollY])
 
     return (
-        <section className="relative w-full bg-[#AC48FF] py-16 lg:py-32 overflow-x-hidden overflow-y-clip">
+        <section className="relative w-full overflow-x-hidden overflow-y-clip bg-[#AC48FF] py-16 lg:py-32">
             <div className="md:px-6 md:pl-40">
                 {/* DESKTOP BG */}
                 <img
                     src={bg}
-                    className="pointer-events-none absolute -bottom-50 h-250  hidden lg:block"
+                    className="pointer-events-none absolute -bottom-10 hidden h-200 lg:block"
                 />
 
                 {/* GRID CONTAINER (UNCHANGED) */}
@@ -77,30 +77,30 @@ const SecondSection = ({ scrollY }) => {
                     <div ref={featuredRef} className="self-start">
                         <ArtistCard
                             image={img2}
-                            title="Featured Artists"
-                            description="To celebrate and promote South Asian Arts & Culture on a Global Stage, dismantling stereotypes, eradicating bias and combating discrimination to empower individuals in their pursuit of passion."
+                            title="The beginning"
+                            description="Born during the pandemic, DESIFEST Sofa Sessions brought our community together when live performances stopped."
                         />
                     </div>
                     {/* SECOND CARD – LOWER */}
                     <div ref={communityRef} className="self-start sm:mt-20">
                         <ArtistCard
                             image={img2}
-                            title="Community Artists"
-                            description="To become the leading global platform for South Asian Arts & Culture. We aim to connect artists, creators and audiences from the diverse South Asian dispora, fostering a profound sense of belonging and mutual appreciation."
+                            title="Artist Platform"
+                            description="What began as a simple sofa evolved into a hub for genuine conversations, talent showcases, and the inspiring stories of South Asian artists. We celebrate their journeys and creative paths beyond the spotlight."
                         />
                     </div>
                     {/* THIRD CARD – TOP */}
                     <div className="relative self-start">
                         <ArtistCard
                             image={img2}
-                            title="Community Artists"
-                            description="We’re passionate about music and art and create new opportunities for artists and influencers to showcase their talent. With the support of our partners, we’re dedicated to promoting and supporting the next generation "
+                            title="Community & Culture"
+                            description="This initiative focuses on building community, celebrating culture, and keeping the conversation going. Even when the music pauses, the stories continue to resonate."
                         />
 
                         {/* BG attached to 3rd card */}
                     </div>{' '}
                 </div>
-                <div className="relative h-100 ">
+                <div className="relative h-100">
                     <img
                         src={bg}
                         className="pointer-events-none absolute left-10 scale-150 md:hidden"
