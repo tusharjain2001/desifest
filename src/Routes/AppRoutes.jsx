@@ -20,6 +20,7 @@ import ArtistSignUp from '@/Components/Concerts/ArtistSignUp'
 import Volunteer2026 from '@/Components/Concerts/Volunteer2026'
 
 import ShopPage from '@/Pages/ShopPage'
+import TypoGraphicBlog from '@/Components/Media/TypoGraphicBlog'
 export default function AppRoutes() {
     return (
         <Routes>
@@ -46,6 +47,7 @@ export default function AppRoutes() {
                 <Route path="shop" element={<ShopPage />} />
                 <Route path="artistsignup" element={<ArtistSignUp />} />
                 <Route path="volunteersignup" element={<Volunteer2026 />} />
+                <Route path="a-typographic-legend" element={<TypoGraphicBlog />} />
 
                 {/* Community only shows CommunityPage */}
                 <Route path="community" element={<CommunityPage />} />

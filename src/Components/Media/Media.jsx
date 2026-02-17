@@ -2,7 +2,6 @@ import EventCard from '@/Components/Home/meadiacard.jsx'
 import blog1 from '@/Assets/home/Media/image1.png'
 import blog2 from '@/Assets/home/Media/image2.png'
 import blog3 from '@/Assets/home/Media/image3.png'
-import blog456 from '@/Assets/media/BWBG.png'
 import left from '../../Assets/concerts/leftwhitearrow.svg'
 import right from '../../Assets/concerts/rightwhitearrow.svg'
 import { useRef } from 'react'
@@ -30,28 +29,7 @@ const mediaData = [
         date: 'Jan 07, 2024',
         description:
             'Jan Middendorp (4/9/56–12/8/23) contributed an incredible wealth of knowledge to the field of typography...',
-        readMoreLink: '#',
-    },
-    {
-        image: blog456,
-        title: 'BLOG NAME',
-        date: 'Mar 04, 2024',
-        description: 'Technologies change. Careers evolve. Roles become irrelevant...',
-        readMoreLink: '#',
-    },
-    {
-        image: blog456,
-        title: 'BLOG NAME',
-        date: 'Mar 04, 2024',
-        description: 'Technologies change. Careers evolve. Roles become irrelevant...',
-        readMoreLink: '#',
-    },
-    {
-        image: blog456,
-        title: 'BLOG NAME',
-        date: 'Mar 04, 2024',
-        description: 'Technologies change. Careers evolve. Roles become irrelevant...',
-        readMoreLink: '#',
+        readMoreLink: 'a-typographic-legend',
     },
 ]
 
@@ -67,10 +45,9 @@ const MediaBlogs = () => {
     }
 
     return (
-        <div className=" my-6 flex flex-col px-2">
+        <div className="my-6 flex flex-col px-2">
             {/* Header */}
             <div className="mb-8 text-white uppercase">
-                
                 {/* Desktop header */}
                 <div className="oswald-500 hidden items-center gap-4 text-5xl sm:flex">
                     <span className="whitespace-nowrap">MEDIA BLOGS</span>
@@ -78,8 +55,8 @@ const MediaBlogs = () => {
                 </div>
 
                 {/* Mobile header */}
-                <div className="sm:hidden flex flex-row ">
-                    <div className="oswald-500 text-nowrap mr-4 text-4xl">MEDIA BLOGS</div>
+                <div className="flex flex-row sm:hidden">
+                    <div className="oswald-500 mr-4 text-4xl text-nowrap">MEDIA BLOGS</div>
 
                     <div className="mt-3 flex w-full justify-center">
                         <div className="flex w-full items-center gap-3">
@@ -106,20 +83,10 @@ const MediaBlogs = () => {
             {/* Cards Wrapper */}
             <div
                 ref={scrollRef}
-                className="
-                    flex gap-6 overflow-x-auto pb-4 
-                    cursor-grab active:cursor-grabbing
-                    sm:grid sm:grid-cols-3 sm:gap-8 sm:overflow-visible
-                "
+                className="flex cursor-grab gap-6 overflow-x-auto pb-4 active:cursor-grabbing sm:grid sm:grid-cols-3 sm:gap-8 sm:overflow-visible"
             >
                 {mediaData.map((item, index) => (
-                    <div
-                        key={index}
-                        className="
-                            min-w-[280px] flex-shrink-0
-                            sm:min-w-0
-                        "
-                    >
+                    <div key={index} className="min-w-[280px] flex-shrink-0 sm:min-w-0">
                         <EventCard {...item} />
                     </div>
                 ))}
