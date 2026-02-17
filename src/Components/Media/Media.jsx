@@ -13,7 +13,7 @@ const mediaData = [
         date: 'May 15, 2025',
         description:
             'DESIFEST 2025 Doubles Down on Canadian South Asian Talent with Bold “We Are Canadian” Return to Sankofa Square...',
-        readMoreLink: 'Desifest-Press-Release#',
+        readMoreLink: 'desifest-press-release',
     },
     {
         image: blog2,
@@ -86,7 +86,7 @@ const MediaBlogs = () => {
                 className="flex cursor-grab gap-6 overflow-x-auto pb-4 active:cursor-grabbing sm:grid sm:grid-cols-3 sm:gap-8 sm:overflow-visible"
             >
                 {mediaData.map((item, index) => (
-                    <div key={index} className="min-w-[280px] flex-shrink-0 sm:min-w-0">
+                    <div key={index} className=" flex-shrink-0 sm:w-full w-90 ">
                         <EventCard {...item} />
                     </div>
                 ))}

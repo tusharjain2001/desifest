@@ -151,7 +151,7 @@ const Skiper30 = () => {
                 <div className="flex justify-center">
                     <div
                         ref={galleryRef}
-                        className="relative flex h-[150vh] gap-6 bg-transparent md:h-[200vh]"
+                        className="relative flex h-[100vh] gap-6 bg-transparent md:h-[200vh]"
                     >
                         {columns.map((imgs, i) => (
                             <div key={i} className="w-[150px] shrink-0 md:w-[300px]">

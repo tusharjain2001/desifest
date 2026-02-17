@@ -51,7 +51,7 @@ export default function AppRoutes() {
                 <Route path="volunteersignup" element={<Volunteer2026 />} />
                 <Route path="a-typographic-legend" element={<TypoGraphicBlog />} />
                 <Route path="open-mic-unplugged" element={<OpenMicUnpluggedBlog />} />
-                <Route path="Desifest-Press-Release" element={<DesifestPressRelease />} />
+                <Route path="desifest-press-release" element={<DesifestPressRelease />} />
 
                 {/* Community only shows CommunityPage */}
                 <Route path="community" element={<CommunityPage />} />
