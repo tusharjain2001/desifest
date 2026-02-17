@@ -1,3 +1,4 @@
+import blog3 from '@/Assets/home/Media/image3.png'
 /* eslint-disable no-unused-vars */
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 
@@ -15,76 +16,112 @@ const TypoGraphicBlog = () => {
         },
         {
             name: 'LinkedIn',
-            href: 'https://www.linkedin.com/feed/?linkOrigin=LI_BADGE&shareActive=true&shareUrl=https%3A%2F%2Fdesifest.ca%2Fa-typographic-legend-jan-middendorp%2F',
+            href: 'https://www.linkedin.com/feed/?shareActive=true&shareUrl=https%3A%2F%2Fdesifest.ca%2Fa-typographic-legend-jan-middendorp%2F',
             icon: FaLinkedinIn,
         },
     ]
 
     return (
         <main className="relative mt-5 min-h-screen w-full bg-[#100422] px-6 py-16 text-white md:px-12 md:py-20 lg:px-20">
+
+            {/* Soft Background Glow */}
             <div className="pointer-events-none absolute inset-0 opacity-30">
                 <div className="absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#453361] blur-3xl" />
             </div>
 
-            <article className="relative mx-auto w-full max-w-4xl">
-                <h1 className="oswald-500 text-4xl leading-tight uppercase md:text-6xl">
-                    A Typographic Legend: Jan Middendorp
-                </h1>
+            <article className="relative mx-auto w-full max-w-5xl">
 
-                <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[#d6cfea] md:text-base">
+                {/* HERO IMAGE */}
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                    <img
+                        src={blog3}
+                        alt="Jan Middendorp"
+                        className="h-[350px] w-full object-cover md:h-[450px]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#100422] via-[#100422]/40 to-transparent" />
+
+                    <div className="absolute bottom-8 left-8 right-8">
+                        <p className="text-sm uppercase tracking-widest text-neon-yellow">
+                            In Memoriam
+                        </p>
+                        <h1 className="oswald-500 mt-3 text-3xl leading-tight md:text-5xl">
+                            A Typographic Legend: Jan Middendorp
+                        </h1>
+                    </div>
+                </div>
+
+                {/* Meta Info */}
+                <div className="mt-8 flex flex-wrap items-center gap-3 text-sm text-[#d6cfea] md:text-base">
                     <span>January 7, 2024</span>
                     <span className="text-neon-yellow">|</span>
                     <span>by andrealeksen</span>
                     <span className="text-neon-yellow">|</span>
-                    <span>Uncategorized</span>
+                    <span>Tribute</span>
                 </div>
 
-                <div className="mt-8 h-[2px] w-full bg-white/20" />
+                <div className="mt-6 h-[2px] w-full bg-white/20" />
 
+                {/* CONTENT */}
                 <div className="dm-sans-400 mt-10 space-y-8 text-base leading-8 text-[#f5f1fb] md:text-lg">
-                    <p>
-                        Jan Middendorp (4/9/56-12/8/23) contributed an incredible wealth of
-                        knowledge to the field of typography and was an integral part of our
-                        typographic family. I met Jan at my first TypeCon conference in Milwaukee in
-                        2012. He was one of my first type design mentors, who offered business
-                        advice, type critiques, and introduced me to invaluable new contacts in the
-                        field. Jan was at almost every one of the larger type conferences, and I can
-                        vividly see him sitting in the lobby with his backpack slouched next to him,
-                        giving critiques to students or discussing the latest type controversies
-                        with colleagues. He published a great number of typography books that were
-                        not only jam packed with knowledge, but also beautifully designed, and
-                        written with a fresh, approachable style. I used his textbook "Shaping Text"
-                        in my Intro to Typography courses over the years, not only because it was
-                        thorough, but also because he knew how to draw students in with inviting
-                        content, with subheads like "Seducing with Type".
+
+                    <p className="text-xl font-medium text-white">
+                        Jan Middendorp (1956–2023) leaves behind a legacy that shaped modern typography and touched countless designers around the world.
                     </p>
 
                     <p>
-                        The conference talks are often enlightening, but the great networking and
-                        real fun happens after the talks, with dinner, drinks, and dancing. I found
-                        out that Jan was not only the center of many professional talks at the
-                        conferences, but also the life of the party, in his own quiet way. One night
-                        in Milwaukee, several of us went to a bar called the SafeHouse, where we had
-                        to do the chicken dance to get inside. Jan didn't miss a beat! I so wish I
-                        had a photo of that moment. Over the years there were countless type
-                        conferences...with paella on the beach in Barcelona, a dance floor packed
-                        with type designers at a German bar in Amsterdam, and beautiful rooftop
-                        happy hours in many cities across the globe. The photo, above, is from the
-                        2018 Kerning Conference in Faenza, Italy, when Jan and I went for a coffee
-                        and walk around the farmer's market, and he told me about his illness. Due
-                        to the pandemic, it ended up being our final goodbye.
+                        I met Jan at my first TypeCon conference in Milwaukee in 2012.
+                        He quickly became one of my earliest mentors — offering business advice,
+                        type critiques, and introductions that opened doors across the global
+                        typography community.
                     </p>
 
+                    <h2 className="oswald-500 mt-10 text-2xl uppercase text-neon-yellow">
+                        A Teacher & Author
+                    </h2>
+
                     <p>
-                        Our international type community is small, and a bright light has been lost
-                        this last year. I am immeasurably grateful for the ways that Jan Middendorp
-                        changed not only our type community, but also for the countless ways in
-                        which he impacted both my career and personal life. May your memory live on,
-                        dear Jan!
+                        Jan authored numerous typography books that were not only rich in knowledge,
+                        but beautifully designed and written with warmth and accessibility.
+                        His textbook <span className="italic">“Shaping Text”</span> became a staple in my
+                        Intro to Typography courses — thoughtful, thorough, and filled with
+                        inviting chapter titles like “Seducing with Type.”
                     </p>
+
+                    <h2 className="oswald-500 mt-10 text-2xl uppercase text-neon-yellow">
+                        Beyond the Conference Stage
+                    </h2>
+
+                    <p>
+                        Conferences were where ideas were exchanged — but the real magic
+                        often happened afterward. Whether it was paella on a beach in Barcelona,
+                        dancing in Amsterdam, or rooftop gatherings across Europe,
+                        Jan was always present — thoughtful, observant, and quietly joyful.
+                    </p>
+
+                    <blockquote className="rounded-xl border-l-4 border-neon-yellow bg-white/[0.03] px-6 py-5 text-white">
+                        A bright light in the international type community has dimmed —
+                        but the influence, generosity, and knowledge he shared will endure.
+                    </blockquote>
+
+                    <p>
+                        Our community is small, but deeply connected. Jan’s impact on my
+                        professional journey — and personal life — is immeasurable.
+                        May your memory live on, dear Jan.
+                    </p>
+
+                    {/* Closing Tribute Section */}
+                    <div className="mt-12 rounded-2xl border border-white/15 bg-white/[0.04] p-8 text-center backdrop-blur-sm">
+                        <p className="text-lg italic text-[#efe7ff]">
+                            Thank you for the mentorship, the wisdom, and the inspiration.
+                        </p>
+                        <p className="mt-4 font-semibold text-white">
+                            1956 – 2023
+                        </p>
+                    </div>
                 </div>
 
-                <div className="mt-12 flex items-center gap-4">
+                {/* SOCIAL SHARE */}
+                <div className="mt-14 flex items-center gap-4">
                     {socialLinks.map(({ name, href, icon: Icon }) => (
                         <a
                             key={name}
@@ -92,12 +129,13 @@ const TypoGraphicBlog = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={name}
-                            className="hover:border-neon-yellow hover:text-neon-yellow flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/5 transition"
+                            className="hover:border-neon-yellow hover:text-neon-yellow flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/5 transition duration-300"
                         >
                             <Icon className="text-base" />
                         </a>
                     ))}
                 </div>
+
             </article>
         </main>
     )

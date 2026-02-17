@@ -13,7 +13,7 @@ const mediaData = [
         date: 'May 15, 2025',
         description:
             'DESIFEST 2025 Doubles Down on Canadian South Asian Talent with Bold “We Are Canadian” Return to Sankofa Square...',
-        readMoreLink: '#',
+        readMoreLink: 'Desifest-Press-Release#',
     },
     {
         image: blog2,
