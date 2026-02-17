@@ -21,7 +21,7 @@ const mediaData = [
         date: 'May 15, 2025',
         description:
             'Open Mic Unplugged Brings South Asian Music Back to the Heart of Gerrard Street May 31,...',
-        readMoreLink: '#',
+        readMoreLink: 'open-mic-unplugged',
     },
     {
         image: blog3,

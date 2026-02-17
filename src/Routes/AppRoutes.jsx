@@ -21,6 +21,7 @@ import Volunteer2026 from '@/Components/Concerts/Volunteer2026'
 
 import ShopPage from '@/Pages/ShopPage'
 import TypoGraphicBlog from '@/Components/Media/TypoGraphicBlog'
+import OpenMicUnpluggedBlog from '@/Components/Media/OpenMicUnpluggedBlog'
 export default function AppRoutes() {
     return (
         <Routes>
@@ -48,6 +49,7 @@ export default function AppRoutes() {
                 <Route path="artistsignup" element={<ArtistSignUp />} />
                 <Route path="volunteersignup" element={<Volunteer2026 />} />
                 <Route path="a-typographic-legend" element={<TypoGraphicBlog />} />
+                <Route path="open-mic-unplugged" element={<OpenMicUnpluggedBlog />} />
 
                 {/* Community only shows CommunityPage */}
                 <Route path="community" element={<CommunityPage />} />
