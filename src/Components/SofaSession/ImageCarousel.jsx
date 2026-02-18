@@ -16,11 +16,11 @@ import innercircle from '../../Assets/sofa_session/innercircle.svg'
 const images = [a, b, c, d, e]
 
 const SLOTS = [
-    { x: -720, scale: 0.7, opacity: 0.45, zIndex: 1 },
-    { x: -360, scale: 0.85, opacity: 0.7, zIndex: 2 },
-    { x: 0, scale: 1.25, opacity: 1, zIndex: 3 },
-    { x: 360, scale: 0.85, opacity: 0.7, zIndex: 2 },
-    { x: 720, scale: 0.7, opacity: 0.45, zIndex: 1 },
+    { x: -720, scale: 0.65, opacity: 0.45, zIndex: 1 },
+    { x: -400, scale: 0.65, opacity: 0.7, zIndex: 2 },
+    { x: 0, scale: 1.15, opacity: 1, zIndex: 3 },
+    { x: 400, scale: 0.65, opacity: 0.7, zIndex: 2 },
+    { x: 720, scale: 0.65, opacity: 0.45, zIndex: 1 },
 ]
 
 const OFF_LEFT = -1100
