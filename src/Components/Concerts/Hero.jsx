@@ -12,16 +12,16 @@ const Hero = () => {
                 <div className="dm-sans-400 flex gap-4">
                     <button
                         onClick={() => navigate('/sponsorship')}
-                        className="bg-neon-yellow oswald-500 bg-midnight-purple border-2 px-3 py-2 text-sm text-black uppercase md:text-3xl"
+                        className="bg-neon-yellow oswald-500 bg-midnight-purple cursor-pointer border-2 px-3 py-2 text-sm text-black uppercase md:text-3xl"
                     >
                         Sponsorship
                     </button>
                 </div>
 
                 {/* HERO TEXT */}
-                <div className="flex flex-col">
+                <div className="flex flex-col leading-none">
                     <div className="flex items-end gap-3 leading-none">
-                        <div className="oswaldd text-soft-lavender text-8xl leading-none font-medium md:text-9xl">
+                        <div className="oswaldd text-soft-lavender pointer-events-none text-8xl leading-none font-medium md:text-9xl">
                             THE
                         </div>
 
