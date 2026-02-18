@@ -20,7 +20,7 @@ export default function Navbar() {
       <nav className="w-full px-6 md:px-28 py-4 flex items-center justify-between">
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
-          <img src={logo} alt="DESIFEST" className="h-8 w-auto" />
+          <img src={logo} alt="DESIFEST" className="h-16 w-auto" />
         </NavLink>
 
         {/* Right Section */}

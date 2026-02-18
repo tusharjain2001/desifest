@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../Assets/COMMON/completelogo.svg'
+import logo from '../../Assets/COMMON/logo.svg'
 import insta from '../../Assets/COMMON/insta.svg'
 import facebook from '../../Assets/COMMON/facebook.svg'
 import youtube from '../../Assets/COMMON/youtube.svg'
