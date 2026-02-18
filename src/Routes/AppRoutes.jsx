@@ -23,6 +23,7 @@ import ShopPage from '@/Pages/ShopPage'
 import TypoGraphicBlog from '@/Components/Media/TypoGraphicBlog'
 import OpenMicUnpluggedBlog from '@/Components/Media/OpenMicUnpluggedBlog'
 import DesifestPressRelease from '@/Components/Media/DesifestPressRelease'
+import Sponsorship from '@/Pages/Sponsorship'
 export default function AppRoutes() {
     return (
         <Routes>
@@ -52,6 +53,7 @@ export default function AppRoutes() {
                 <Route path="a-typographic-legend" element={<TypoGraphicBlog />} />
                 <Route path="open-mic-unplugged" element={<OpenMicUnpluggedBlog />} />
                 <Route path="desifest-press-release" element={<DesifestPressRelease />} />
+                <Route path="sponsorship" element={<Sponsorship />} />
 
                 {/* Community only shows CommunityPage */}
                 <Route path="community" element={<CommunityPage />} />
