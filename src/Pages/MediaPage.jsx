@@ -5,6 +5,7 @@ import Media from '@/Components/Media/Media.jsx'
 import Boost from '@/Components/Media/Boost.jsx'
 import { useOutletContext } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import YoutubePlaylist from '@/Components/Media/YoutubePlaylist'
 
 const MediaPage = () => {
     const navigate = useNavigate()
@@ -58,6 +59,7 @@ const MediaPage = () => {
                     </button>
                 </div>
                 <div className="w-full sm:pl-25 mt-20  ">
+                    <YoutubePlaylist />
                     <Media />
                     <Boost />
                 </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import blog2 from '@/Assets/home/Media/image2.png'
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 import { CalendarDays, Clock3, MapPin } from 'lucide-react'

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 
-import a from '../../Assets/sofa_session/carone.svg' // use your real images
+import a from '../../Assets/sofa_session/carone.svg'
 import b from '../../Assets/sofa_session/cartwo.svg'
 import c from '../../Assets/sofa_session/carone.svg'
 import d from '../../Assets/sofa_session/carone.svg'
@@ -15,14 +15,16 @@ import innercircle from '../../Assets/sofa_session/innercircle.svg'
 
 const images = [a, b, c, d, e]
 
-// 5 fixed slots (tweak x values until perfect for your design)
-const INITIAL_SLOTS = [
-    { x: -720, scale: 0.7, opacity: 0.45, zIndex: 1 }, // far left
-    { x: -360, scale: 0.85, opacity: 0.7, zIndex: 2 }, // left
-    { x: 0, scale: 1.25, opacity: 1, zIndex: 3 }, // center
-    { x: 360, scale: 0.85, opacity: 0.7, zIndex: 2 }, // right
-    { x: 720, scale: 0.7, opacity: 0.45, zIndex: 1 }, // far right
+const SLOTS = [
+    { x: -720, scale: 0.7,  opacity: 0.45, zIndex: 1 },
+    { x: -360, scale: 0.85, opacity: 0.7,  zIndex: 2 },
+    { x: 0,    scale: 1.25, opacity: 1,    zIndex: 3 },
+    { x: 360,  scale: 0.85, opacity: 0.7,  zIndex: 2 },
+    { x: 720,  scale: 0.7,  opacity: 0.45, zIndex: 1 },
 ]
+
+const OFF_LEFT  = -1100
+const OFF_RIGHT =  1100
 
 function mod(n, m) {
     return ((n % m) + m) % m
@@ -30,23 +32,26 @@ function mod(n, m) {
 
 export default function RealCarousel() {
     const n = images.length
-    const [active, setActive] = useState(2) // center initially (c)
-    const slots = INITIAL_SLOTS
-    // indices for visible 5: active-2 ... active+2
+    const [step, setStep] = useState(0)
+    const [dir, setDir] = useState(1) // 1 = next →, -1 = prev ←
+
+    const next = () => { setDir(1);  setStep((p) => p + 1) }
+    const prev = () => { setDir(-1); setStep((p) => p - 1) }
+
     const visible = useMemo(() => {
         return [-2, -1, 0, 1, 2].map((offset) => {
-            const idx = mod(active + offset, n)
-            return { idx, src: images[idx], slot: offset + 2 } // slot 0..4
+            const logicalPos = step + offset
+            const idx = mod(logicalPos, n)
+            return { key: logicalPos, src: images[idx], slot: offset + 2 }
         })
-    }, [active, n])
+    }, [step, n])
 
-    const next = () => setActive((p) => mod(p + 1, n))
-    const prev = () => setActive((p) => mod(p - 1, n))
+    const enterFrom = dir === 1 ? OFF_RIGHT : OFF_LEFT
+    const exitTo    = dir === 1 ? OFF_LEFT  : OFF_RIGHT
 
     return (
         <div className="mt-10 flex w-full flex-col items-center justify-center overflow-hidden">
             <div className="relative mt-10 flex min-h-125 w-full items-center justify-center overflow-hidden">
-                {/* circles fixed on center */}
                 <img
                     src={outercircle}
                     className="pointer-events-none absolute top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2"
@@ -59,38 +64,27 @@ export default function RealCarousel() {
                 />
 
                 <AnimatePresence initial={false}>
-                    {visible.map(({ idx, src, slot }) => {
-                        const s = slots[slot]
+                    {visible.map(({ key, src, slot }) => {
+                        const s = SLOTS[slot]
 
                         return (
                             <motion.img
-                                key={idx} // important: key by real index
+                                key={key}
                                 src={src}
                                 alt=""
                                 className={`absolute object-cover ${slot === 2 ? 'rounded-full' : ''}`}
-
                                 style={{ zIndex: s.zIndex }}
-                                animate={{
-                                    x: s.x,
-                                    scale: s.scale,
-                                    opacity: s.opacity,
-                                }}
+                                initial={{ x: enterFrom, scale: s.scale, opacity: 0 }}
+                                animate={{ x: s.x,       scale: s.scale, opacity: s.opacity }}
+                                exit={{    x: exitTo,    scale: s.scale, opacity: 0 }}
                                 transition={{
                                     duration: 0.5,
-                                    ease: [0.22, 1, 0.36, 1], // nice smooth ease
+                                    ease: [0.22, 1, 0.36, 1],
                                 }}
                             />
                         )
                     })}
                 </AnimatePresence>
-
-                {/* sizes controlled separately (center bigger) */}
-                {/* If you need exact sizes like your code, do it like this: */}
-                {/*
-          - keep all images same base size here
-          - and use scale in slots to make center bigger
-          - that feels smoother than snapping width/height
-        */}
             </div>
 
             <div className="mt-10 flex">
