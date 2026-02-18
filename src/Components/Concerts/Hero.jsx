@@ -11,10 +11,8 @@ const Hero = () => {
         {/* Header Navigation */}
         <div className="flex gap-4 mb-6 dm-sans-400">
           <button className="text-neon-yellow border-neon-yellow bg-midnight-purple border-2 text-sm md:text-xl px-3 py-2">
-            Vendors
-          </button>
-          <button className="text-neon-yellow bg-midnight-purple border-neon-yellow border-2 text-sm md:text-xl px-3 py-2">
-            Sponsors
+            Sponsorship
+
           </button>
         </div>
 

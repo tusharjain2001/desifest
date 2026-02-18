@@ -14,7 +14,7 @@ const navItems = [
 export default function VerticalNavbar() {
   return (
     <aside
-      className="hidden fixed md:flex bg-[#2C223C] z-60 absolute w-[99999px]  top-0 left-0 h-24 origin-top-left"
+      className="hidden fixed md:flex bg-[#2C223C] z-90 absolute w-[99999px]  top-0 left-0 h-24 origin-top-left"
       style={{  transform: "rotate(-90deg) translateX(-100%)" }}
     >
       <div className="flex flex-row-reverse items-center gap-4 w-full h-full px-2">
