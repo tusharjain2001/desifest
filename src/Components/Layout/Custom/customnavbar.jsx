@@ -31,7 +31,7 @@ export default function Navbar({ textcolour }) {
           <img
             src={useInvert ? logoinvert : logo}
             alt="DESIFEST"
-            className="h-8 w-auto"
+            className="h-16 w-auto"
           />
         </NavLink>
 
