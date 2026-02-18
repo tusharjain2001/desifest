@@ -1,106 +1,118 @@
-import React from "react";
-import Digit from "../Animations/Digit";
-import { useNavigate } from "react-router-dom";
+import React from 'react'
+import Digit from '../Animations/Digit'
+import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
-  const navigate = useNavigate();
-  return (
-    <div className="min-h-screen mt-20 z-30 px-6 py-12 md:px-20 md:py-16 flex flex-col md:flex-row md:justify-between gap-16">
-      {/* LEFT SECTION */}
-      <div className="flex flex-col flex-1">
-        {/* Header Navigation */}
-        <div className="flex gap-4 mb-6 dm-sans-400">
-          <button className="text-neon-yellow border-neon-yellow bg-midnight-purple border-2 text-sm md:text-xl px-3 py-2">
-            Sponsorship
+    const navigate = useNavigate()
+    return (
+        <div className="z-30 mt-20 flex min-h-screen flex-col gap-16 px-6 py-12 md:flex-row md:justify-between md:px-20 md:py-16">
+            {/* LEFT SECTION */}
+            <div className="flex flex-1 flex-col">
+                {/* Header Navigation */}
+                <div className="dm-sans-400 flex gap-4">
+                    <button
+                        onClick={() => navigate('/sponsorship')}
+                        className="bg-neon-yellow oswald-500 bg-midnight-purple border-2 px-3 py-2 text-sm text-black uppercase md:text-3xl"
+                    >
+                        Sponsorship
+                    </button>
+                </div>
 
-          </button>
-        </div>
+                {/* HERO TEXT */}
+                <div className="flex flex-col">
+                    <div className="flex items-end gap-3 leading-none">
+                        <div className="oswaldd text-soft-lavender text-8xl leading-none font-medium md:text-9xl">
+                            THE
+                        </div>
 
-        {/* HERO TEXT */}
-        <div className="flex flex-col">
-          <div className="flex gap-3 items-end leading-none">
-            <div className="text-8xl md:text-9xl font-medium oswaldd text-soft-lavender leading-none">
-              THE
+                        <div className="dm-sans-400 text-sm text-white md:text-lg">
+                            <div>TWO DAYS.</div>
+                            <div>ONE COMMUNITY.</div>
+                            <div>COUNTLESS MOMENTS.</div>
+                        </div>
+                    </div>
+
+                    <div className="special-gothic-one-regular text-neon-yellow flex h-32 items-center overflow-hidden text-8xl leading-none font-black sm:text-7xl md:text-[120px]">
+                        <Digit value={2} delay={0} />
+                        <Digit value={0} delay={0.1} />
+                        <Digit value={2} delay={0.2} />
+                        <Digit value={6} delay={0.3} />
+                    </div>
+
+                    <div className="oswaldd text-soft-lavender text-8xl leading-none font-medium sm:text-6xl md:text-[120px]">
+                        CONCERT
+                    </div>
+
+                    <p className="dm-sans-400 max-w-xl text-sm font-light tracking-wide text-white sm:text-lg md:text-xl">
+                        LIVE MUSIC. SHARED ENERGY. REAL CONNECTION
+                    </p>
+
+                    {/* CTA Buttons */}
+                    <div className="flex flex-row gap-4 pt-6">
+                        <button
+                            onClick={() => navigate('/artistsignup')}
+                            className="oswaldd bg-neon-yellow px-6 py-4 text-lg font-medium text-black hover:cursor-pointer hover:bg-lime-300 md:px-8 md:text-3xl"
+                        >
+                            ARTIST SIGN UP
+                        </button>
+
+                        <button
+                            onClick={() => navigate('/volunteersignup')}
+                            className="oswaldd border-neon-yellow text-neon-yellow bg-midnight-purple border-2 px-6 py-4 text-lg font-medium hover:cursor-pointer hover:bg-[#26193A80] md:px-8 md:text-3xl"
+                        >
+                            VOLUNTEER
+                        </button>
+                    </div>
+                </div>
             </div>
 
-            <div className="text-white text-sm md:text-lg dm-sans-400">
-              <div>TWO DAYS.</div>
-              <div>ONE COMMUNITY.</div>
-              <div>COUNTLESS MOMENTS.</div>
+            {/* RIGHT SECTION */}
+            <div className="dm-sans-400 flex flex-1 flex-col gap-10 text-white">
+                {/* Day 01 */}
+                <div className="border-b border-white pb-10">
+                    <p className="dm-sans-500 mb-2 text-xl font-semibold tracking-wider md:text-xl">
+                        DAY 01
+                    </p>
+
+                    <h3 className="special-gothic-one-regular mb-3 text-5xl font-extrabold md:text-5xl">
+                        JUNE 19
+                    </h3>
+
+                    <p className="mb-6 text-xl md:text-lg">7:00PM – 10:00PM</p>
+
+                    <h4 className="oswaldd mb-2 text-2xl font-medium tracking-wide md:text-2xl">
+                        EVENING SHOWCASE
+                    </h4>
+
+                    <p className="max-w-md text-xl font-thin text-white md:text-xl">
+                        19+ International artist for a ticketed event
+                    </p>
+                </div>
+
+                {/* Day 02 */}
+                <div className="border-b border-white pb-10">
+                    <p className="dm-sans-500 mb-2 text-xl font-semibold tracking-wider md:text-xl">
+                        DAY 02
+                    </p>
+
+                    <h3 className="special-gothic-one-regular mb-3 text-5xl font-extrabold md:text-5xl">
+                        JUNE 20
+                    </h3>
+
+                    <p className="mb-6 text-xl md:text-lg">5:00PM – 10:00PM</p>
+
+                    <h4 className="oswaldd mb-2 text-2xl font-medium tracking-wide md:text-2xl">
+                        FOOD VENDORS, BRAND ACTIVATION
+                    </h4>
+
+                    <p className="max-w-md text-xl font-thin text-white md:text-xl">
+                        8 to 10 fusion and multicultural performances, focusing on HipHop, Dance and
+                        Pop music
+                    </p>
+                </div>
             </div>
-          </div>
-
-          <div className="flex text-8xl sm:text-7xl items-center h-32  md:text-[120px] font-black special-gothic-one-regular text-neon-yellow leading-none overflow-hidden">
-            <Digit value={2} delay={0} />
-            <Digit value={0} delay={0.1} />
-            <Digit value={2} delay={0.2} />
-            <Digit value={6} delay={0.3} />
-          </div>
-
-          <div className="text-8xl sm:text-6xl md:text-[120px] oswaldd font-medium text-soft-lavender leading-none">
-            CONCERT
-          </div>
-
-          <p className="text-sm sm:text-lg md:text-xl dm-sans-400 text-white font-light tracking-wide max-w-xl">
-            LIVE MUSIC. SHARED ENERGY. REAL CONNECTION
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-row gap-4 pt-6">
-            <button onClick={() => navigate("/artistsignup")} className="px-6 oswaldd md:px-8 py-4 bg-neon-yellow hover:bg-lime-300 text-black font-medium text-lg md:text-3xl hover:cursor-pointer">
-              ARTIST SIGN UP
-            </button>
-
-            <button onClick={() => navigate("/volunteersignup")} className="px-6 md:px-8 py-4 border-2 oswaldd border-neon-yellow hover:bg-[#26193A80] text-neon-yellow bg-midnight-purple font-medium text-lg md:text-3xl hover:cursor-pointer">
-              VOLUNTEER
-            </button>
-          </div>
         </div>
-      </div>
+    )
+}
 
-      {/* RIGHT SECTION */}
-      <div className="flex flex-col text-white flex-1 gap-10 dm-sans-400">
-        {/* Day 01 */}
-        <div className="pb-10 border-b border-white">
-          <p className="text-xl md:text-xl font-semibold dm-sans-500 tracking-wider mb-2 ">
-            DAY 01
-          </p>
-
-          <h3 className="text-5xl md:text-5xl font-extrabold mb-3 special-gothic-one-regular">JUNE 19</h3>
-
-          <p className="text-xl md:text-lg mb-6">7:00PM – 10:00PM</p>
-
-          <h4 className="text-2xl md:text-2xl font-medium oswaldd tracking-wide mb-2">
-            EVENING SHOWCASE
-          </h4>
-
-          <p className="text-white max-w-md font-thin text-xl md:text-xl">
-            19+ International artist for a ticketed event
-          </p>
-        </div>
-
-        {/* Day 02 */}
-        <div className="pb-10 border-b border-white">
-          <p className="text-xl md:text-xl font-semibold dm-sans-500 tracking-wider mb-2">
-            DAY 02
-          </p>
-
-          <h3 className="text-5xl md:text-5xl font-extrabold mb-3 special-gothic-one-regular">JUNE 20</h3>
-
-          <p className="text-xl md:text-lg mb-6">5:00PM – 10:00PM</p>
-
-          <h4 className="text-2xl md:text-2xl font-medium oswaldd tracking-wide mb-2">
-            FOOD VENDORS, BRAND ACTIVATION
-          </h4>
-
-          <p className="text-white max-w-md font-thin text-xl md:text-xl">
-            8 to 10 fusion and multicultural performances, focusing on HipHop,
-            Dance and Pop music
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Hero;
+export default Hero
