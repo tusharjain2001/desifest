@@ -16,9 +16,9 @@ const ArtistCard = ({ image, title }) => {
     }
 
     return (
-        <div className="group h-60 hover:bg-neon-yellow relative flex w-full cursor-pointer flex-row bg-white p-6 transition-all duration-500 ease-out sm:h-120 sm:flex-col sm:justify-between">
+        <div className="group h-60 hover:bg-neon-yellow relative flex w-full cursor-pointer flex-row bg-white p-6 transition-all duration-500 ease-out sm:h-120 sm:flex-col sm:gap-2">
             {/* IMAGE */}
-            <div className="w-full  overflow-hidden sm:h-180 sm:w-full">
+            <div className="w-full  overflow-hidden sm:h-200 sm:w-full">
                 <img
                     src={image}
                     alt={title}
@@ -27,7 +27,7 @@ const ArtistCard = ({ image, title }) => {
             </div>
 
             {/* CONTENT */}
-            <div className="flex w-full flex-col h-full items-start justify-between px-2">
+            <div className="flex w-full flex-col  items-start justify-between px-2">
                 <div className="dm-sans-400 flex flex-col h-full sm:flex-row justify-between sm:items-end sm:justify-between text-3xl leading-tight text-black uppercase sm:text-4xl">
                     <div className='w-3/4'>{title}</div>
                     <div className='w-full text-end '> <button

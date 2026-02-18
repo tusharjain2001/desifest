@@ -14,7 +14,7 @@ const ArtistCard = ({ image, title, description }) => {
                 <img
                     src={image}
                     alt={title}
-                    className="h-52 w-full origin-left object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0"
+                    className="h-60 w-3/5 group-hover:w-4/5 object-cover  transition-all duration-500 ease-out "
                 />
             </div>
 

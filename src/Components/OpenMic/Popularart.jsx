@@ -83,7 +83,7 @@ const Popularart = () => {
                                 <img
                                     src={artist.image}
                                     alt={artist.name}
-                                    className="h-full w-full object-cover transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:grayscale sm:group-hover:grayscale-0"
+                                    className="h-full w-full object-cover transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]  "
                                 />
                             </div>
 
