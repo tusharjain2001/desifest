@@ -37,10 +37,10 @@ const ParallaxColumns = ({ scrollY }) => {
 						}}
 					>
 						<div className="h-full flex flex-col justify-start pt-4 items-center">
-							<h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold oswaldd">
+							<h2 className="text-white text-3xl md:text-5xl lg:text-7xl font-bold oswaldd">
 								{col.text}
 							</h2>
-							<p className="text-white text-sm md:text-xl lg:text-2xl mt-2 dm-sans-400">
+							<p className="text-white text-sm md:text-xl lg:text-3xl mt-2 dm-sans-400">
 								{col.text2}
 							</p>
 						</div>

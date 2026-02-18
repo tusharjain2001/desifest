@@ -8,7 +8,7 @@ const BoostCard = ({ image, title, description }) => {
                 <img
                     src={image}
                     alt={title}
-                    className="w-full object-cover grayscale transition duration-500 group-hover:grayscale-0"
+                    className="w-full object-cover  transition duration-500 "
                 />
             </div>
 

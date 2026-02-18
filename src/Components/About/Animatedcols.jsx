@@ -43,7 +43,7 @@ const ArtistCard = ({ image, title, description }) => {
                 <img
                     src={image}
                     alt={title}
-                    className="h-full w-3/4 object-cover grayscale transition-all duration-500 ease-out group-hover:grayscale-0"
+                    className="h-full w-3/4 group-hover:w-full object-cover transition-all duration-500 ease-out "
                 />
             </div>
             <h3 className="dm-sans-400 mt-4 overflow-visible text-start text-4xl text-nowrap text-black uppercase sm:text-5xl md:mt-0">

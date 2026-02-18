@@ -26,7 +26,7 @@ const Animation = ({ scrollY }) => {
 
     return (
         <section className="relative w-full overflow-hidden sm:mt-20">
-            <div className="relative z-0 h-100 w-full sm:h-[1200px]">
+            <div className="relative z-0 h-100 w-full sm:h-[1100px]">
                 <video
                     ref={videoRef}
                     className="absolute inset-0 z-0 h-[800px] w-full object-cover"
@@ -54,7 +54,7 @@ const Animation = ({ scrollY }) => {
                 </div>
             </div>
 
-            <div className="relative z-50">
+            <div className="relative sm:-translate-y-20 z-50">
                 <ArtistsSection scrollY={scrollY} />
             </div>
         </section>

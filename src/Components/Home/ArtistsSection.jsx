@@ -8,7 +8,6 @@ import img3 from '@/Assets/home/animation/image3.png'
 
 import { useNavigate } from 'react-router-dom'
 
-
 const ArtistCard = ({ image, title }) => {
     const navigate = useNavigate()
 
@@ -17,43 +16,34 @@ const ArtistCard = ({ image, title }) => {
     }
 
     return (
-        <div className="group hover:bg-neon-yellow relative flex w-full cursor-pointer flex-row sm:flex-col sm:justify-between bg-white p-6 transition-all duration-500 ease-out sm:h-120">
-            
+        <div className="group h-60 hover:bg-neon-yellow relative flex w-full cursor-pointer flex-row bg-white p-6 transition-all duration-500 ease-out sm:h-120 sm:flex-col sm:gap-2">
             {/* IMAGE */}
-            <div className="overflow-hidden w-1/2 sm:w-full">
+            <div className="w-full  overflow-hidden sm:h-200 sm:w-full">
                 <img
                     src={image}
                     alt={title}
-                    className="h-50 w-full sm:w-1/2 object-cover grayscale group-hover:grayscale-0 transition-all duration-500 ease-out group-hover:w-3/4"
+                    className="sm:h-80 h-50 w-full object-cover  transition-all duration-500 ease-out group-hover:w-full sm:w-4/5"
                 />
             </div>
 
             {/* CONTENT */}
-            <div className="flex flex-col px-2 items-start justify-between w-full">
-                
-                <h3 className="dm-sans-400 max-w-35 text-3xl sm:text-5xl leading-tight text-black uppercase">
-                    {title}
-                </h3>
-
-                {/* 🔥 ARROW BUTTON */}
-                <div className="flex w-full justify-end">
-                    <button
+            <div className="flex w-full flex-col  items-start justify-between px-2">
+                <div className="dm-sans-400 flex flex-col h-full sm:flex-row justify-between sm:items-end sm:justify-between text-3xl leading-tight text-black uppercase sm:text-4xl">
+                    <div className='w-3/4'>{title}</div>
+                    <div className='w-full text-end '> <button
                         onClick={goToArtists}
                         className="transition-transform duration-500 ease-out group-hover:-rotate-45"
                     >
-                        <img
-                            src={arrow}
-                            alt="Go to Our Artists"
-                            className="w-10"
-                        />
-                    </button>
+                        <img src={arrow} alt="Go to Our Artists" className="w-10" />
+                    </button></div>
+                   
                 </div>
 
+                {/* 🔥 ARROW BUTTON */}
             </div>
         </div>
     )
 }
-
 
 const ArtistsSection = ({ scrollY }) => {
     const featuredRef = useRef(null)
@@ -89,25 +79,27 @@ const ArtistsSection = ({ scrollY }) => {
             <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#453361]/100 to-[#453361]/50"></div>
 
             {/* GRID CONTAINER (UNCHANGED) */}
-            <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-2  px-8 pt-28 sm:grid-cols-3">
+            <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-2 px-8 pt-28 sm:grid-cols-3">
                 {/* Featured Artist */}
-                <div ref={featuredRef} className="w-90 flex items-center ">
-                    <ArtistCard image={img1} title="alumni
-artists" />
+                <div ref={featuredRef} className="flex w-90 items-center">
+                    <ArtistCard
+                        image={img1}
+                        title="alumni
+artists"
+                    />
                 </div>
 
                 {/* Community Artist */}
-                <div ref={communityRef} className="w-90 items-center ">
+                <div ref={communityRef} className="w-90 items-center">
                     <ArtistCard image={img2} title="Community Artists" />
                 </div>
 
                 {/* Image Card */}
-                <div ref={imageRef} className=" sm:block hidden w-80  border-8 border-white h-120 items-center ">
-                    <img
-                        src={img3}
-                        className="hidden h-full w-full object-cover sm:block"
-                        alt=""
-                    />
+                <div
+                    ref={imageRef}
+                    className="hidden h-120 w-80 items-center border-8 border-white sm:block"
+                >
+                    <img src={img3} className="hidden h-full w-full object-cover sm:block" alt="" />
                 </div>
             </div>
         </section>

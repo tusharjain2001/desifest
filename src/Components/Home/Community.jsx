@@ -6,7 +6,7 @@ import img3 from '@/Assets/home/Community/image3.png'
 
 const Community = () => {
     return (
-        <section className="w-full bg-transparent py-24 pl-6">
+        <section className="w-full bg-transparent  pl-6">
             <div className="w-full">
                 <div className="oswald mb-4 flex w-full items-center gap-3 text-3xl text-white uppercase sm:gap-4 sm:text-[64px]">
                     <span className="whitespace-nowrap">Community</span>
