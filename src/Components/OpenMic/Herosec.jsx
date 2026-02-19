@@ -21,7 +21,7 @@ const Herosec = ({ bgColor }) => {
             {/* Content */}
             <div className="relative z-20 flex w-full flex-col items-center py-50 sm:py-60 sm:justify-center justify-start px-6 sm:px-24">
                 <h1 className="dm-sans-300 relative flex-nowrap text-nowrap text-neon-yellow text-6xl max-text-xl leading-30 font-bold tracking-wide uppercase sm:text-[200px]">
-                    OPEN – MIC
+                    OPEN MIC
                     <div className="absolute sm:-right-25 sm:-bottom-55 -bottom-25 -right-26 flex h-80 w-80 sm:h-140 sm:w-140 items-center justify-center">
                         {/* Concentric rings (inner → outer, opacity decreases) */}
                         <div className="absolute inset-24.75 rounded-full border border-white/40" />

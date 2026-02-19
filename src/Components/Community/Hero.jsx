@@ -23,11 +23,11 @@ const Hero = () => {
           </div>
           <div className="mt-10 flex items-center justify-center gap-6">
             <button onClick={() => navigate('/open-mic')} className="bg-neon-yellow text-black px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl hover:opacity-90 transition font-medium hover:bg-lime-300">
-              Open-Mic
+              Open Mic
             </button>
             
             <button onClick={() => navigate('/sofa-session')} className="border border-neon-yellow hover:bg-midnight-purple text-neon-yellow px-8 py-3 font-[Oswald] uppercase tracking-wide text-sm md:text-2xl font-medium transition">
-              Sofa-Sessions
+              Sofa Sessions
             </button>
           </div>
         </div>
