@@ -14,7 +14,7 @@ export default function VolunteerSignupForm() {
     firstName: "",
     lastName: "",
     email: "",
-    phoneCode: "+91",
+    phoneCode: "+1",
     phone: "",
     address: "",
     city: "",
@@ -66,7 +66,7 @@ export default function VolunteerSignupForm() {
       firstName: "",
       lastName: "",
       email: "",
-      phoneCode: "+91",
+      phoneCode: "+1",
       phone: "",
       address: "",
       city: "",
@@ -192,6 +192,7 @@ export default function VolunteerSignupForm() {
                 <option>India</option>
                 <option>United States</option>
                 <option>United Kingdom</option>
+                <option>Canada</option>
               </select>
             </div>
           </div>
