@@ -82,7 +82,7 @@ const Footer = () => {
             </div>
 
             {/* SPONSORS */}
-            <div className="flex flex-wrap items-center justify-between py-10">
+            <div className="flex flex-wrap items-center justify-between py-16">
                 {[
                     ontariologo,
                     mississaugalogo,
@@ -92,7 +92,7 @@ const Footer = () => {
                     canadalogo,
                     canadianheritagelogo,
                 ].map((logo, index) => (
-                    <img key={index} src={logo} alt="Sponsor" className="object-contain" />
+                    <img key={index} src={logo} alt="Sponsor" className="py-2  object-contain" />
                 ))}
             </div>
 

@@ -108,7 +108,7 @@ const Footer = ({ footerColor, textcolour }) => {
                         key={index}
                         src={useInvert ? item.invert : item.normal}
                         alt="Sponsor"
-                        className="object-contain"
+                        className="object-contain py-2 "
                     />
                 ))}
             </div>
