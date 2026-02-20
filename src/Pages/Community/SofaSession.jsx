@@ -6,7 +6,7 @@ import ImageCarousel from '@/Components/SofaSession/ImageCarousel'
 import desktopImage from '@/Assets/sofa_session/sofacontactdesktop.svg'
 import mobileImage from '@/Assets/sofa_session/sofacontactmobile.svg'
 import SofaContact from '@/Components/SofaSession/SofaContact'
-    
+
 const SofaSession = () => {
     return (
         <div className="relative flex flex-col bg-[#AC48FF]">
@@ -29,7 +29,20 @@ const SofaSession = () => {
                 </div>
                 <img src={white} className="absolute left-0" />
             </section>
+
             <SecondSection />
+            <div className='flex justify-center sm:ml-24'>
+            <section className="sm:h-160 sm:w-340 h-70 w-95 ">
+                <iframe
+                    className="h-full w-full"
+                    src="https://www.youtube.com/embed/Y02aT2YSD00?autoplay=1&mute=1&controls=1&rel=0"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+            </section>
+            </div>
             <ThirdSection />
             <ImageCarousel />
             <SofaContact desktopImage={desktopImage} mobileImage={mobileImage} />

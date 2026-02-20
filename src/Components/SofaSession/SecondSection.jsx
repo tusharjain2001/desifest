@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 // IMAGES
 
 import img2 from '@/Assets/sofa_session/sofasessionsecondsection.svg'
-import bg from '@/Assets/sofa_session/sofasessionsecondsectionbg.svg'
+import bg from '@/Assets/sofa_session/sofasessionsecondsectionbg.png'
 
 const ArtistCard = ({ image, title, description }) => {
     return (
