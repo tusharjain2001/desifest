@@ -24,7 +24,7 @@ import ontarioartslogoinvert from '../../../Assets/COMPANIES/ontarioartslogoinve
 
 import canadalogo from '../../../Assets/COMPANIES/canadalogo.svg'
 import canadalogoinvert from '../../../Assets/COMPANIES/canadalogoinvert.svg'
-
+import { Link } from 'react-router-dom'
 import canadianheritagelogo from '../../../Assets/COMPANIES/canadianheritagelogo.svg'
 import canadianheritagelogoinvert from '../../../Assets/COMPANIES/canadianheritagelogoinvert.svg'
 import OmnisendNewsletter from '../OmnisendNewsletter'
@@ -80,7 +80,27 @@ const Footer = ({ footerColor, textcolour }) => {
             <div className="flex flex-col gap-6 py-10">
                 <OmnisendNewsletter />
             </div>
-
+            {/* 📱 MOBILE NAV LINKS ONLY */}
+            <div className="flex flex-col gap-4 py-6 text-sm md:hidden">
+                {[
+                    { label: 'HOME', path: '/' },
+                    { label: 'THE 2026 CONCERT', path: '/concerts' },
+                    { label: 'ABOUT', path: '/about' },
+                    { label: 'ARTISTS', path: '/our-artists' },
+                    { label: 'COMMUNITY', path: '/community' },
+                    { label: 'MEDIA', path: '/media' },
+                    { label: 'SHOP', path: '/' },
+                    { label: 'CONTACT US', path: '/' },
+                ].map((item) => (
+                    <Link
+                        key={item.label}
+                        to={item.path}
+                        className="tracking-wide dm-sans-400 text-xl text-white uppercase hover:opacity-80"
+                    >
+                        {item.label}
+                    </Link>
+                ))}
+            </div>
             {/* SPONSORS */}
             <div className="flex flex-wrap items-center justify-between py-10">
                 {sponsors.map((item, index) => (

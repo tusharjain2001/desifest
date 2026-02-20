@@ -7,7 +7,7 @@ const Herosec = ({ bgColor }) => {
             <img
                 src={backgroung}
                 alt="Open Mic Background"
-                className="absolute inset-0 h-full w-full  object-cover-bottom"
+                className="absolute inset-0 w-full h-full object-cover"
             />
 
             {/* Optional Blue Tint Layer (like your design) */}

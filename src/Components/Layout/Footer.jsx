@@ -12,10 +12,8 @@ import ontariowhitelogo from '../../Assets/COMPANIES/ontariowhitelogo.svg'
 import ontarioartslogo from '../../Assets/COMPANIES/ontarioartslogo.svg'
 import canadalogo from '../../Assets/COMPANIES/canadalogo.svg'
 import canadianheritagelogo from '../../Assets/COMPANIES/canadianheritagelogo.svg'
-
+import { Link } from 'react-router-dom'
 const Footer = () => {
-
-
     const socials = [
         {
             name: 'instagram',
@@ -60,6 +58,27 @@ const Footer = () => {
             {/* NEWSLETTER */}
             <div className="flex flex-col gap-6 py-10">
                 <OmnisendNewsletter />
+            </div>
+            {/* 📱 MOBILE NAV LINKS ONLY */}
+            <div className="flex flex-col gap-4 py-6 text-sm md:hidden">
+                {[
+                    { label: 'HOME', path: '/' },
+                    { label: 'THE 2026 CONCERT', path: '/concerts' },
+                    { label: 'ABOUT', path: '/about' },
+                    { label: 'ARTISTS', path: '/our-artists' },
+                    { label: 'COMMUNITY', path: '/community' },
+                    { label: 'MEDIA', path: '/media' },
+                    { label: 'SHOP', path: '/' },
+                    { label: 'CONTACT US', path: '/' },
+                ].map((item) => (
+                    <Link
+                        key={item.label}
+                        to={item.path}
+                        className="tracking-wide dm-sans-400 text-xl text-white uppercase hover:opacity-80"
+                    >
+                        {item.label}
+                    </Link>
+                ))}
             </div>
 
             {/* SPONSORS */}
