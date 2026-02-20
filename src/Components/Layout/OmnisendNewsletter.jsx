@@ -64,33 +64,33 @@ const OmnisendNewsletter = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 max-w-xl"
+      className="flex flex-col sm:flex-row gap-4 w-full"
     >
       {/* First Name */}
       <input
         type="text"
-        placeholder="Enter your first name"
+        placeholder="Enter Name"
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
         required
-        className="rounded-lg border border-white bg-transparent p-4 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
+        className=" border w-full border-white bg-transparent p-4  text-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-white"
       />
 
       {/* Email */}
       <input
         type="email"
-        placeholder="Enter your email"
+        placeholder="Enter Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="rounded-lg border border-white bg-transparent p-4 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white"
+        className=" border w-full border-white bg-transparent p-4 text-xl text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-white"
       />
 
       {/* Subscribe Button */}
       <button
         type="submit"
         disabled={loading}
-        className="rounded-lg bg-neon-yellow p-4 text-black font-semibold transition hover:opacity-90 disabled:opacity-60"
+        className=" bg-neon-yellow p-4 w-full oswald-500 uppercase text-black font-medium text-2xl transition hover:opacity-90 disabled:opacity-60"
       >
         {loading ? "Subscribing..." : "Subscribe to Newsletter"}
       </button>
