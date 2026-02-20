@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useOmnisend } from "react-omnisend";
+// import { useOmnisend } from "react-omnisend";
 
 import logo from "../../Assets/COMMON/logon.png";
 import insta from "../../Assets/COMMON/insta.svg";
@@ -14,7 +14,7 @@ import canadalogo from "../../Assets/COMPANIES/canadalogo.svg";
 import canadianheritagelogo from "../../Assets/COMPANIES/canadianheritagelogo.svg";
 
 const Footer = () => {
-  const omnisend = useOmnisend();
+  // const omnisend = useOmnisend();
 
   const socials = [
     {
@@ -34,11 +34,11 @@ const Footer = () => {
     },
   ];
 
-  const handleSubscribeClick = () => {
-    omnisend.trackEvent("newsletter_button_clicked", {
-      location: "footer",
-    });
-  };
+  // const handleSubscribeClick = () => {
+  //   omnisend.trackEvent("newsletter_button_clicked", {
+  //     location: "footer",
+  //   });
+  // };
 
   return (
     <footer className="bg-midnight-purple z-50 flex w-full flex-col p-8 text-white md:py-10 md:pl-28">
@@ -64,15 +64,15 @@ const Footer = () => {
       </div>
 
       {/* NEWSLETTER */}
-      <div className="flex flex-col gap-6 py-10">
+      {/* <div className="flex flex-col gap-6 py-10">
         
-        {/* Omnisend Embedded Form */}
+      
         <div
           id="omnisend-embedded-v2-6367213965bcf558f067c20c"
           onClick={handleSubscribeClick}
         ></div>
 
-      </div>
+      </div> */}
 
       {/* SPONSORS */}
       <div className="flex flex-wrap items-center justify-between py-10">
