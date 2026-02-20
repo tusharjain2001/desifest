@@ -7,9 +7,9 @@ import { OmnisendProvider } from 'react-omnisend'
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <BrowserRouter>
-            <OmnisendProvider brandID="YOUR_BRAND_ID">
+            
                 <App />
-            </OmnisendProvider>
+          
         </BrowserRouter>
     </React.StrictMode>
 )
