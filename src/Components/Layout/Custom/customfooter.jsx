@@ -27,10 +27,8 @@ import canadalogoinvert from '../../../Assets/COMPANIES/canadalogoinvert.svg'
 
 import canadianheritagelogo from '../../../Assets/COMPANIES/canadianheritagelogo.svg'
 import canadianheritagelogoinvert from '../../../Assets/COMPANIES/canadianheritagelogoinvert.svg'
-
-
+import OmnisendNewsletter from '../OmnisendNewsletter'
 const Footer = ({ footerColor, textcolour }) => {
-
     const finalColor = textcolour || 'white'
     const useInvert = !!textcolour
 
@@ -58,15 +56,9 @@ const Footer = ({ footerColor, textcolour }) => {
                 color: finalColor,
             }}
         >
-
             {/* TOP */}
             <div className="flex items-center justify-between gap-4">
-
-                <img
-                    src={useInvert ? logoinvert : logo}
-                    alt="DesiFest"
-                    className="h-14"
-                />
+                <img src={useInvert ? logoinvert : logo} alt="DesiFest" className="h-14" />
 
                 <div className="flex gap-3">
                     {socials.map(({ name, icon }) => (
@@ -76,45 +68,18 @@ const Footer = ({ footerColor, textcolour }) => {
                                 alt={name}
                                 style={{
                                     filter: useInvert ? 'invert(1)' : 'none',
-                                    transition: '0.3s ease'
+                                    transition: '0.3s ease',
                                 }}
                             />
                         </a>
                     ))}
                 </div>
-
             </div>
-
 
             {/* NEWSLETTER */}
-            <div className="flex flex-col gap-4 py-10 md:flex-row">
-
-                <input
-                    type="text"
-                    placeholder="Enter Name"
-                    className="flex-1 bg-[#FFFFFF0D] px-4 py-4 text-sm outline-none placeholder:text-xl"
-                    style={{
-                        border: `1px solid ${finalColor}`,
-                        color: finalColor,
-                    }}
-                />
-
-                <input
-                    type="email"
-                    placeholder="Enter Email"
-                    className="flex-1 bg-[#FFFFFF0D] px-4 py-4 text-sm outline-none placeholder:text-xl"
-                    style={{
-                        border: `1px solid ${finalColor}`,
-                        color: finalColor,
-                    }}
-                />
-
-                <button className="bg-neon-yellow px-6 py-2 text-lg font-bold whitespace-nowrap text-black uppercase hover:bg-lime-300">
-                    Subscribe to our Newsletter
-                </button>
-
+            <div className="flex flex-col gap-6 py-10">
+                <OmnisendNewsletter />
             </div>
-
 
             {/* SPONSORS */}
             <div className="flex flex-wrap items-center justify-between py-10">
@@ -128,7 +93,6 @@ const Footer = ({ footerColor, textcolour }) => {
                 ))}
             </div>
 
-
             {/* BOTTOM */}
             <div
                 className="mt-12 flex flex-col justify-between pt-6 text-xs opacity-70 md:flex-row"
@@ -136,10 +100,7 @@ const Footer = ({ footerColor, textcolour }) => {
                     borderTop: `1px solid ${finalColor}`,
                 }}
             >
-
-                <p>
-                    Desifest© 2025. All rights reserved with the owner.
-                </p>
+                <p>Desifest© 2025. All rights reserved with the owner.</p>
 
                 <div className="mt-4 flex gap-6 md:mt-0">
                     {[
@@ -153,9 +114,7 @@ const Footer = ({ footerColor, textcolour }) => {
                         </a>
                     ))}
                 </div>
-
             </div>
-
         </footer>
     )
 }
