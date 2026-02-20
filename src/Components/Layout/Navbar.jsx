@@ -36,7 +36,7 @@ export default function Navbar() {
 
           {/* JOIN IN (always visible) */}
           <NavLink
-            to="/join"
+            to="/"
             className="bg-neon-yellow text-black font-medium px-3 md:px-5 py-2 md:text-2xl oswaldd hover:opacity-90 transition hover:bg-lime-300"
           >
             JOIN IN
