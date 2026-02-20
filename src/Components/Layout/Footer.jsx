@@ -14,14 +14,7 @@ import canadalogo from '../../Assets/COMPANIES/canadalogo.svg'
 import canadianheritagelogo from '../../Assets/COMPANIES/canadianheritagelogo.svg'
 
 const Footer = () => {
-    useEffect(() => {
-        if (!window.omnisend) {
-            const script = document.createElement('script')
-            script.src = 'https://omnisend.com/sdk/omnisend.js'
-            script.async = true
-            document.body.appendChild(script)
-        }
-    }, [])
+
 
     const socials = [
         {
