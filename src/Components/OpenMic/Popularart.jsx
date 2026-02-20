@@ -18,7 +18,7 @@ const artists = [
     },
     {
         id: 2,
-        name: 'LA HORE',
+        name: 'Lahore Tikka House',
         handle: 'SEASON 3',
         image: images2,
     },
@@ -88,7 +88,7 @@ const Popularart = () => {
                             </div>
 
                             <div className="my-4 w-1/2 text-left sm:w-full">
-                                <h3 className="dm-sans-400 text-4xl font-normal tracking-wider text-white group-hover:text-[#100422] sm:text-4xl">
+                                <h3 className="dm-sans-400 text-4xl font-normal tracking-wider uppercase text-white group-hover:text-[#100422] sm:text-4xl">
                                     {artist.name}
                                 </h3>
                                 <p className="dm-sans-400 text-lg font-normal text-white/70 group-hover:text-[#100422]">
