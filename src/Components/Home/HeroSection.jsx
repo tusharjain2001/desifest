@@ -6,6 +6,7 @@ const HeroSection = () => {
     const navigate = useNavigate()
     return (
         <>
+        {/* desktop */}
             <section className="relative hidden h-220 w-full overflow-hidden pl-5 md:flex">
                 {/* RIGHT ARTIST IMAGE */}
                 <img

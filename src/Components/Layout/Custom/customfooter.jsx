@@ -1,7 +1,7 @@
 import React from 'react'
 
-import logo from '../../../Assets/COMMON/completelogo.svg'
-import logoinvert from '../../../Assets/COMMON/completelogoinvert.svg'
+import logo from '../../../Assets/COMMON/logon.png'
+import logoinvert from '@/Assets/COMMON/logoinvert.png'
 
 import insta from '../../../Assets/COMMON/insta.svg'
 import facebook from '../../../Assets/COMMON/facebook.svg'

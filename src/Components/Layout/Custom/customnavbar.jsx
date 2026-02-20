@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
-import logo from "@/Assets/COMMON/logo.svg";
-import logoinvert from "@/Assets/COMMON/logoinvert.svg";
+import logo from "@/Assets/COMMON/logon.png";
+import logoinvert from "@/Assets/COMMON/logoinvert.png";
 
 const navLinks = [
   { label: "The 2026 Concert", path: "/concerts" },
