@@ -48,14 +48,14 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={name}
-                            className="flex items-center justify-center transition hover:opacity-80"
+                            className="flex items-center justify-center"
                         >
                             <img src={icon} alt={name} />
                         </a>
                     ))}
                     <a
                         href="https://www.tiktok.com/@desifest"
-                        className=" opacity-70 transition hover:opacity-100"
+                        className=""
                     >
                         <img src={tiktok} alt="TikTok" className="h-12 rounded-full border-2 border-black p-2 invert" />
                     </a>
