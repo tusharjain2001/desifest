@@ -15,9 +15,9 @@ const Community = () => {
                 </div>
 
                 <div className="flex snap-x snap-mandatory flex-col items-center justify-center gap-16 overflow-x-auto p-4 pl-8 sm:snap-none sm:flex-row sm:overflow-visible">
-                    <CommunityCard image={img1} title="Year-Round Program" />
+                    <CommunityCard image={img1} title="Year Round Program" />
 
-                    <CommunityCard image={img2} title="Open - Mic" />
+                    <CommunityCard image={img2} title="Open Mic" />
 
                     <CommunityCard image={img3} title="Sofa Sessions" />
                 </div>
