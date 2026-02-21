@@ -1,7 +1,11 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function VolunteerSignupForm() {
+  const recaptchaRef = useRef(null);
+const [captchaToken, setCaptchaToken] = useState(null);
   const genres = [
     "June 19th (Afternoon / Evening)",
     "June 20th (Morning)",
@@ -43,7 +47,10 @@ export default function VolunteerSignupForm() {
     toast.error("Please agree to be contacted");
     return;
   }
-
+  if (!captchaToken) {
+    toast.error("Please verify that you are not a robot 🤖");
+    return;
+  }
   const toastId = toast.loading("Submitting form...");
 
   try {
@@ -52,7 +59,10 @@ export default function VolunteerSignupForm() {
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          captchaToken,
+        }),
       }
     );
 
@@ -78,6 +88,8 @@ export default function VolunteerSignupForm() {
       howCanWeHelpYou: "",
       consent: false,
     });
+    setCaptchaToken(null);
+recaptchaRef.current.reset();
   } catch (err) {
     toast.error("Something went wrong ❌", { id: toastId });
     console.error(err);
@@ -292,6 +304,13 @@ export default function VolunteerSignupForm() {
         />
         I agree to be contacted about sponsorship opportunities
       </label>
+      <div className="my-6">
+  <ReCAPTCHA
+    ref={recaptchaRef}
+    sitekey="6LdifHIsAAAAAPc5b2rHrABlMwM1nZhy7T80EP1g"
+    onChange={(value) => setCaptchaToken(value)}
+  />
+</div>
 
       {/* SUBMIT */}
       <button

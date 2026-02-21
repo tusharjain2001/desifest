@@ -48,7 +48,7 @@ const ContactForm = () => {
         try {
             setLoading(true)
 
-            const res = await fetch('http://localhost:5000/api/send-contact-email', {
+            const res = await fetch('https://desifest-backend.vercel.app/api/send-contact-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

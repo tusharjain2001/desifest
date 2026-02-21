@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import toast from 'react-hot-toast'
-
+import ReCAPTCHA from 'react-google-recaptcha'
+import { useRef } from 'react'
 export default function ArtistSignupForm() {
+    const recaptchaRef = useRef(null)
+    const [captchaToken, setCaptchaToken] = useState(null)
     const events = ['Hip Hop Showcase', 'DJ Showcase', 'Desifest 2026', 'She Rocks EP4']
     const genres = [
         'BOLLYWOOD',
@@ -76,6 +79,10 @@ export default function ArtistSignupForm() {
             toast.error('Please agree to be contacted')
             return
         }
+        if (!captchaToken) {
+            toast.error('Please verify that you are not a robot 🤖')
+            return
+        }
 
         const toastId = toast.loading('Submitting artist application...')
 
@@ -128,7 +135,10 @@ export default function ArtistSignupForm() {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(formData),
+                    body: JSON.stringify({
+                        ...formData,
+                        captchaToken,
+                    }),
                 }
             )
 
@@ -171,6 +181,8 @@ export default function ArtistSignupForm() {
             setPastLink4('')
             setIdeas('')
             setConsent(false)
+            setCaptchaToken(null)
+            recaptchaRef.current.reset()
         } catch (error) {
             toast.error(error.message || 'Network error. Please try again ❌', { id: toastId })
             console.error('Submit error:', error)
@@ -617,12 +629,19 @@ export default function ArtistSignupForm() {
                     onChange={(e) => setIdeas(e.target.value)}
                 />
             </div>
+            <div className="my-6">
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                  sitekey="6LdifHIsAAAAAPc5b2rHrABlMwM1nZhy7T80EP1g"
+                    onChange={(value) => setCaptchaToken(value)}
+                />
+            </div>
 
             {/* SUBMIT */}
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-neon-yellow hover:bg-lime-300 p-3 text-xl font-bold uppercase shadow-md transition disabled:cursor-not-allowed disabled:opacity-50"
+                className="bg-neon-yellow p-3 text-xl font-bold uppercase shadow-md transition hover:bg-lime-300 disabled:cursor-not-allowed disabled:opacity-50"
             >
                 {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
