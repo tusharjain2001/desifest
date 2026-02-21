@@ -6,7 +6,7 @@ const Volunteer2026 = () => {
   return (
     <div className="relative min-h-screen h-full overflow-clip w-full">
 			<VerticalNavbar />
-    <div className=" bg-[#F5F1FB] md:pl-32 pl-4 py-10 ">
+    <div className=" bg-[#F5F1FB] md:pl-32 pl-4 sm:py-16 py-18 ">
       {/* Top row: title + line */}
       <div className="flex items-center gap-6 mt-6">
         <h1 className="text-3xl md:text-9xl font-medium tracking-wide text-[#100422] whitespace-nowrap">
