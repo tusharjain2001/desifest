@@ -16,6 +16,12 @@ import canadalogo from '../../Assets/COMPANIES/canadalogo.svg'
 import canadianheritagelogo from '../../Assets/COMPANIES/canadianheritagelogo.svg'
 import { Link } from 'react-router-dom'
 const Footer = () => {
+    const scrollToContact = () => {
+        const el = document.getElementById('contact')
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
     const socials = [
         {
             name: 'instagram',
@@ -55,9 +61,13 @@ const Footer = () => {
                     ))}
                     <a
                         href="https://www.tiktok.com/@desifest"
-                        className=" opacity-70 transition hover:opacity-100"
+                        className="opacity-70 transition hover:opacity-100"
                     >
-                        <img src={tiktok} alt="TikTok" className="h-12 rounded-full border-2 border-black p-2 invert" />
+                        <img
+                            src={tiktok}
+                            alt="TikTok"
+                            className="h-12 rounded-full border-2 border-black p-2 invert"
+                        />
                     </a>
                 </div>
             </div>
@@ -77,16 +87,26 @@ const Footer = () => {
                     { label: 'COMMUNITY', path: '/community' },
                     { label: 'MEDIA', path: '/media' },
                     { label: 'SHOP', path: '/' },
-                    { label: 'CONTACT US', path: '/' },
-                ].map((item) => (
-                    <Link
-                        key={item.label}
-                        to={item.path}
-                        className="tracking-wide dm-sans-400 text-xl text-white uppercase hover:opacity-80"
-                    >
-                        {item.label}
-                    </Link>
-                ))}
+                    { label: 'CONTACT US', action: scrollToContact },
+                ].map((item) =>
+                    item.path ? (
+                        <Link
+                            key={item.label}
+                            to={item.path}
+                            className="dm-sans-400 text-xl tracking-wide text-white uppercase hover:opacity-80"
+                        >
+                            {item.label}
+                        </Link>
+                    ) : (
+                        <button
+                            key={item.label}
+                            onClick={item.action}
+                            className="dm-sans-400 text-left text-xl tracking-wide text-white uppercase hover:opacity-80"
+                        >
+                            {item.label}
+                        </button>
+                    )
+                )}
             </div>
 
             {/* SPONSORS */}
@@ -100,7 +120,7 @@ const Footer = () => {
                     canadalogo,
                     canadianheritagelogo,
                 ].map((logo, index) => (
-                    <img key={index} src={logo} alt="Sponsor" className="py-2  object-contain" />
+                    <img key={index} src={logo} alt="Sponsor" className="object-contain py-2" />
                 ))}
             </div>
 
