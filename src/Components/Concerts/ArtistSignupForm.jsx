@@ -22,7 +22,7 @@ export default function ArtistSignupForm() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
-    const [phoneCode, setPhoneCode] = useState('+91')
+    const [phoneCode, setPhoneCode] = useState('+1')
     const [phone, setPhone] = useState('')
     const [address, setAddress] = useState('')
     const [city, setCity] = useState('')
@@ -49,7 +49,7 @@ export default function ArtistSignupForm() {
     const [managerFirstName, setManagerFirstName] = useState('')
     const [managerLastName, setManagerLastName] = useState('')
     const [managerEmail, setManagerEmail] = useState('')
-    const [managerPhoneCode, setManagerPhoneCode] = useState('+91')
+    const [managerPhoneCode, setManagerPhoneCode] = useState('+1')
     const [managerPhone, setManagerPhone] = useState('')
 
     const [pastLink1, setPastLink1] = useState('')
@@ -317,6 +317,7 @@ export default function ArtistSignupForm() {
                                 <option value="">Choose your country</option>
                                 <option>India</option>
                                 <option>United States</option>
+                                <option>Canada</option>
                                 <option>United Kingdom</option>
                             </select>
                         </div>
