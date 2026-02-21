@@ -2,6 +2,7 @@ import React from 'react'
 
 import logo from '../../../Assets/COMMON/logon.png'
 import logoinvert from '@/Assets/COMMON/logoinvert.png'
+import tiktok from '@/Assets/COMMON/image.png'
 
 import insta from '../../../Assets/COMMON/insta.svg'
 import facebook from '../../../Assets/COMMON/facebook.svg'
@@ -73,6 +74,12 @@ const Footer = ({ footerColor, textcolour }) => {
                             />
                         </a>
                     ))}
+                    <a
+                        href="https://www.tiktok.com/@desifest"
+                        className="opacity-70 transition hover:opacity-100"
+                    >
+                        <img src={tiktok} alt="TikTok" className="h-12 rounded-full border-2 border-black p-2 invert" />
+                    </a>
                 </div>
             </div>
 
