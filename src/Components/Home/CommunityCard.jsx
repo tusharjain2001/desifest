@@ -5,7 +5,7 @@ const CommunityCard = ({ image, title, description }) => {
         <>
             {/* DESKTOP CARD */}
             <div className="hidden md:block">
-                <div className="group relative w-full max-w-[320px] cursor-pointer bg-midnight-purple p-4 transition-all duration-500 ease-out md:h-115 md:w-[320px] md:origin-top md:p-6 md:hover:scale-[1.3] md:hover:bg-[#3A2B51]">
+                <div className="group relative w-full max-w-[4000px] cursor-pointer bg-midnight-purple p-4 transition-all duration-500 ease-out md:h-115 md:w-[400px] md:origin-top md:p-6 md:hover:scale-[1.3] md:hover:bg-[#3A2B51]">
                     {/* Image */}
                     <div className="relative   border-4 border-white">
                         <img src={image} alt={title} className=" h-60 w-full object-cover " />
@@ -34,13 +34,13 @@ const CommunityCard = ({ image, title, description }) => {
             </div>
             {/* MOBILE CARD */}
             <div className="w-full md:hidden">
-                <div className="relative flex items-start gap-4 border bg-midnight-purple p-4">
+                <div className="relative flex h-45 items-start gap-2 border bg-midnight-purple p-4">
                     {/* Image */}
-                    <div className="w-1/2 shrink-0 overflow-hidden">
+                    <div className=" w-1/2 h-full overflow-hidden">
                         <img
                             src={image}
                             alt={title}
-                            className="h-full w-full object-cover "
+                            className=" h-full object-cover "
                         />
                     </div>
 

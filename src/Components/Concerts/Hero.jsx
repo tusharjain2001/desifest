@@ -78,7 +78,7 @@ const Hero = () => {
                         JUNE 19
                     </h3>
 
-                    <p className="mb-6 text-xl md:text-lg">7:00PM – 10:00PM</p>
+                    <p className="mb-6 text-xl md:text-lg">5:00PM – 11:00PM</p>
 
                     <h4 className="oswaldd mb-2 text-2xl font-medium tracking-wide md:text-2xl">
                         EVENING SHOWCASE
@@ -99,7 +99,7 @@ const Hero = () => {
                         JUNE 20
                     </h3>
 
-                    <p className="mb-6 text-xl md:text-lg">5:00PM – 10:00PM</p>
+                    <p className="mb-6 text-xl md:text-lg">11:00AM – 11:00PM</p>
 
                     <h4 className="oswaldd mb-2 text-2xl font-medium tracking-wide md:text-2xl">
                         FOOD VENDORS, BRAND ACTIVATION

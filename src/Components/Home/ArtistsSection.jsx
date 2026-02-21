@@ -79,9 +79,9 @@ const ArtistsSection = ({ scrollY }) => {
             <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#453361]/100 to-[#453361]/50"></div>
 
             {/* GRID CONTAINER (UNCHANGED) */}
-            <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-2 px-8 pt-28 sm:grid-cols-3">
+            <div className="relative z-30 mx-auto grid w-full max-w-full grid-cols-1 gap-8  sm:px-8 pt-28 sm:grid-cols-3">
                 {/* Featured Artist */}
-                <div ref={featuredRef} className="flex w-90 items-center">
+                <div ref={featuredRef} className="flex sm:w-90 w-80 mx-auto items-center">
                     <ArtistCard
                         image={img1}
                         title="alumni
@@ -90,7 +90,7 @@ artists"
                 </div>
 
                 {/* Community Artist */}
-                <div ref={communityRef} className="w-90 items-center">
+                <div ref={communityRef} className="sm:w-90 w-80 mx-auto items-center">
                     <ArtistCard image={img2} title="Community Artists" />
                 </div>
 
