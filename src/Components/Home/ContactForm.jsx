@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import desktopImage from '@/Assets/home/Contact_us_bg.png'
 import mobileImage from '@/Assets/home/image copy 2.png'
 import toast from 'react-hot-toast'
+import ReCAPTCHA from "react-google-recaptcha"
 
 const ContactForm = () => {
+    const recaptchaRef = useRef(null)
+    const [captchaValue, setCaptchaValue] = useState(null)
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -15,7 +19,6 @@ const ContactForm = () => {
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target
-
         setFormData((prev) => ({
             ...prev,
             [name]: type === 'checkbox' ? checked : value,
@@ -35,17 +38,25 @@ const ContactForm = () => {
             return
         }
 
+        if (!captchaValue) {
+            toast.error("Please verify that you are not a robot 🤖")
+            return
+        }
+
         const toastId = toast.loading('Sending message...')
 
         try {
             setLoading(true)
 
-            const res = await fetch('https://desifest-backend.vercel.app/api/send-contact-email', {
+            const res = await fetch('http://localhost:5000/api/send-contact-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    ...formData,
+                    captchaToken: captchaValue, // ✅ sending token
+                }),
             })
 
             const data = await res.json()
@@ -56,12 +67,16 @@ const ContactForm = () => {
 
             toast.success('Message sent successfully ✨', { id: toastId })
 
+            // Reset form
             setFormData({
                 name: '',
                 email: '',
                 message: '',
                 consent: false,
             })
+
+            setCaptchaValue(null)
+            recaptchaRef.current.reset() // ✅ reset checkbox
         } catch (err) {
             toast.error(err.message || 'Failed to send message ❌', {
                 id: toastId,
@@ -77,7 +92,6 @@ const ContactForm = () => {
             className="relative flex min-h-screen w-full flex-col overflow-hidden bg-transparent md:flex-row"
         >
             {/* IMAGE SECTION */}
-            {/* DESKTOP IMAGE */}
             <div className="relative hidden w-full sm:block md:basis-[40%]">
                 <img
                     src={desktopImage}
@@ -86,8 +100,6 @@ const ContactForm = () => {
                 />
             </div>
 
-            {/* MOBILE IMAGE */}
-            {/* MOBILE IMAGE */}
             <div className="relative min-h-[30vh] w-full sm:hidden">
                 <img
                     src={mobileImage}
@@ -153,6 +165,16 @@ const ContactForm = () => {
                                 className="mt-1"
                             />
                             <span>I agree to be contacted about sponsorship opportunities</span>
+                        </div>
+
+                        {/* ✅ CAPTCHA ADDED HERE */}
+                        <div className="mt-4">
+                            <ReCAPTCHA
+                                ref={recaptchaRef}
+                                sitekey="6LdifHIsAAAAAPc5b2rHrABlMwM1nZhy7T80EP1g"
+                                onChange={(value) => setCaptchaValue(value)}
+                                theme="dark" // matches your dark UI 🌙
+                            />
                         </div>
 
                         <button
