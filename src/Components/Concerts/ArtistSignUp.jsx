@@ -7,7 +7,7 @@ const ArtistSignUp = () => {
   return (
     <div className="relative min-h-screen h-full overflow-clip w-full ">
 			<VerticalNavbar />
-      <div className=" bg-off-white-lavender md:pl-32  pl-4 py-10 ">
+      <div className=" bg-off-white-lavender md:pl-32  pl-4 sm:py-16  py-18">
       {/* Top row: title + line */}
       <div className=" flex items-center gap-6 w-full mt-6">
         <h1 className="text-3xl md:text-9xl font-medium tracking-normal text-blue-black whitespace-nowrap">
