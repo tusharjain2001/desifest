@@ -30,6 +30,12 @@ import canadianheritagelogo from '../../../Assets/COMPANIES/canadianheritagelogo
 import canadianheritagelogoinvert from '../../../Assets/COMPANIES/canadianheritagelogoinvert.svg'
 import OmnisendNewsletter from '../OmnisendNewsletter'
 const Footer = ({ footerColor, textcolour }) => {
+    const scrollToContact = () => {
+        const el = document.getElementById('contact')
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
     const finalColor = textcolour || 'white'
     const useInvert = !!textcolour
 
@@ -96,17 +102,27 @@ const Footer = ({ footerColor, textcolour }) => {
                     { label: 'ARTISTS', path: '/our-artists' },
                     { label: 'COMMUNITY', path: '/community' },
                     { label: 'MEDIA', path: '/media' },
-                    { label: 'SHOP', path: '/' },
-                    { label: 'CONTACT US', path: '/' },
-                ].map((item) => (
-                    <Link
-                        key={item.label}
-                        to={item.path}
-                        className="tracking-wide dm-sans-400 text-xl text-white uppercase hover:opacity-80"
-                    >
-                        {item.label}
-                    </Link>
-                ))}
+                    { label: 'SHOP', external: 'https://store.desifest.ca/' },
+                    { label: 'CONTACT US', action: scrollToContact },
+                ].map((item) =>
+                    item.path ? (
+                        <Link
+                            key={item.label}
+                            to={item.path}
+                            className="dm-sans-400 text-xl tracking-wide text-white uppercase hover:opacity-80"
+                        >
+                            {item.label}
+                        </Link>
+                    ) : (
+                        <button
+                            key={item.label}
+                            onClick={item.action}
+                            className="dm-sans-400 text-left text-xl tracking-wide text-white uppercase hover:opacity-80"
+                        >
+                            {item.label}
+                        </button>
+                    )
+                )}
             </div>
             {/* SPONSORS */}
             <div className="flex flex-wrap items-center justify-between py-10">

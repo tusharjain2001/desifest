@@ -21,35 +21,35 @@ const ShopSection = () => {
       title: "DESIFEST Unisex Windbreaker",
       price: "30.00",
       image: windbreaker,
-      link: "/shop/windbreaker",
+      link: "https://store.desifest.ca/",
     },
     {
       id: 2,
       title: "Desifest Hoodie Blue",
       price: "29.00",
       image: hoodieBlue,
-      link: "/shop/hoodie-blue",
+      link: "https://store.desifest.ca/",
     },
     {
       id: 3,
       title: "Desifest Hoodie Black",
       price: "29.00",
       image: hoodieBlack,
-      link: "/shop/hoodie-black",
+      link: "https://store.desifest.ca/",
     },
     {
       id: 4,
       title: "Desifest Vintage Cotton Twill Cap",
       price: "25.00",
       image: cap,
-      link: "/shop/vintage-cap",
+      link: "https://store.desifest.ca/",
     },
     {
-      id: 4,
+      id: 5,
       title: "Organic Ribbed Beanie",
       price: "21.00",
       image: cap1,
-      link: "/shop/vintage-cap",
+      link: "https://store.desifest.ca/",
     },
   ];
 
@@ -91,7 +91,7 @@ const ShopSection = () => {
         </div>
 
         <a
-          href="/shop"
+          href="https://store.desifest.ca/"
           className="text-neon-yellow  font-[oswald] text-3xl whitespace-nowrap hover:underline"
         >
           VIEW ALL

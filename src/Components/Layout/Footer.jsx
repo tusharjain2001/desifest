@@ -86,7 +86,7 @@ const Footer = () => {
                     { label: 'ARTISTS', path: '/our-artists' },
                     { label: 'COMMUNITY', path: '/community' },
                     { label: 'MEDIA', path: '/media' },
-                    { label: 'SHOP', path: '/' },
+                    { label: 'SHOP', external: 'https://store.desifest.ca/' },
                     { label: 'CONTACT US', action: scrollToContact },
                 ].map((item) =>
                     item.path ? (
