@@ -25,7 +25,7 @@ const HeroSection = () => {
                         culture meets
                         </span>
                         <span className="mt-4 inline-block w-160 bg-white px-2 py-2 text-[44px] text-black md:text-[72px]">
-                            Meets the World.
+                             the World.
                         </span>
                     </h1>
 
