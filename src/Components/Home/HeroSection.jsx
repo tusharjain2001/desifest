@@ -114,7 +114,7 @@ const HeroSection = () => {
                     <span className="text-neon-yellow block text-[30px]">Where South asian</span>
                     <span className="text-neon-yellow block text-[46px]">culture meets</span>
                     <span className="mt-3 block bg-white px-4 text-[36px] text-black">
-                        Meets the World.
+                        the World.
                     </span>
                 </h1>
 
