@@ -102,37 +102,37 @@ const SecondSection = ({ scrollY }) => {
             <div className="ml-24 flex w-full items-center justify-center sm:pb-40">
                 <div className="relative flex min-h-screen w-full items-center justify-center">
                     {/* Gradient Blob */}
-                    <div className="absolute h-60 w-60  -translate-x-28  translate-y-10 sm:translate-y-20 sm:-translate-x-16 sm:h-80   sm:w-80 ">
+                    <div className="absolute h-60 w-60 -translate-x-28 translate-y-10 sm:h-80 sm:w-80 sm:-translate-x-16 sm:translate-y-20">
                         {/* Circle Background */}
                         <div className="absolute inset-0 -rotate-30 rounded-full bg-[linear-gradient(180deg,_#DDFE08_0%,_#541FDF_100%)]"></div>
 
                         {/* Circular Text */}
-                        <div className="absolute inset-0 jersey flex sm:translate-y-0 -translate-y-8 sm:-translate-x-4 items-center justify-center rotate-0">
-  {'LET’S LIVE!!'.split('').map((char, index) => {
-    const total = 13
-    const spread = 180
-    const rotation = spread / 2 - (spread / total) * index
+                        <div className="jersey absolute inset-0 flex -translate-y-8 rotate-0 items-center justify-center sm:-translate-x-4 sm:translate-y-0">
+                            {'LET’S LIVE!!'.split('').map((char, index) => {
+                                const total = 13
+                                const spread = 180
+                                const rotation = spread / 2 - (spread / total) * index
 
-    return (
-      <span
-        key={index}
-        className="absolute left-1/2 top-1/2 origin-top text-5xl sm:text-8xl font-bold sm:tracking-widest tracking-wide text-white"
-        style={{
-          transform: `rotate(${rotation}deg) rotate(${rotation/44}deg)  translateY(160px) `,
-        }}
-      >
-        {char}
-      </span>
-    )
-  })}
-</div>
+                                return (
+                                    <span
+                                        key={index}
+                                        className="absolute top-1/2 left-1/2 origin-top text-5xl font-bold tracking-wide text-white sm:text-8xl sm:tracking-widest"
+                                        style={{
+                                            transform: `rotate(${rotation}deg) rotate(${rotation / 44}deg)  translateY(160px) `,
+                                        }}
+                                    >
+                                        {char}
+                                    </span>
+                                )
+                            })}
+                        </div>
                     </div>
                     {/* Left Circle */}
-                    <div className="absolute h-80 w-80   -translate-y-40  -translate-x-46   sm:-translate-y-64  sm:-translate-x-60  z-20 overflow-hidden rounded-full border-8 border-white sm:h-140 sm:w-140">
+                    <div className="absolute z-20 h-80 w-80 -translate-x-46 -translate-y-40 overflow-hidden rounded-full border-8 border-white sm:h-140 sm:w-140 sm:-translate-x-60 sm:-translate-y-64">
                         <img src={image1} alt="Live Band" className="h-full w-full object-cover" />
                     </div>
                     {/* Right Circle */}
-                    <div className="absolute h-80 w-80   -translate-y-4 translate-x-16  sm:-translate-y-36  sm:translate-x-60 z-10 overflow-hidden rounded-full sm:h-140 sm:w-140">
+                    <div className="absolute z-10 h-80 w-80 translate-x-16 -translate-y-4 overflow-hidden rounded-full sm:h-140 sm:w-140 sm:translate-x-60 sm:-translate-y-36">
                         <img
                             src={image2}
                             alt="Live Singer"
